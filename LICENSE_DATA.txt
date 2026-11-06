@@ -1,3 +1,49 @@
-The data in the resources/ directory is a sample written for this library.
-List each source here with its licence before the first release (see
-doc/data.md).
+id-generator's data, in resources/, comes from these sources. See doc/data.md
+for how each table is built.
+
+Derived by the scripts in scripts/:
+
+places.tsv, place_cities.tsv
+  - France: INSEE, Code officiel geographique 2025 (communes, arrondissements,
+    communes since 1943, countries). Licence Ouverte / Open Licence 2.0
+    (https://www.etalab.gouv.fr/licence-ouverte-open-licence), which requires
+    credit to INSEE.
+  - Italy: Ministero dell'Interno, ANPR, Archivio comuni and table 2, Stati
+    esteri (https://www.anagrafenazionale.interno.it/area-tecnica/tabelle-di-decodifica/),
+    from Istat, the Agenzia delle Entrate and the foreign ministry. The page
+    states no licence. Only official codes and names are used.
+  - China, Indonesia, Thailand: Wikidata (properties P13971, P2588, P300, P1566,
+    P1082). CC0 1.0.
+  - The United States: Social Security Administration, area numbers by state.
+    US public domain.
+  - Cities and the population weights: GeoNames (https://www.geonames.org/),
+    through city-generator. Creative Commons Attribution 4.0 International
+    (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/), which requires
+    credit to GeoNames.
+
+series.tsv
+  - The United States: Social Security Administration, High Group Lists from
+    1999 to 2011, as archived by the Internet Archive's Wayback Machine.
+    US public domain.
+
+test_numbers.tsv
+  - Sweden: Skatteverket, test personnummer, published as open data. The
+    metadata read states no licence.
+  - Iceland: Thjodskra, the six test numbers on its page about kennitala.
+
+countries.tsv
+  - The population column is copied from country-generator, which states its
+    own sources. The ICAO codes follow ICAO Doc 9303 Part 3.
+
+Curated for this library from laws, the authorities' published rules, reference
+works and specimens: the facts in schemes.tsv, documents.tsv, validity.tsv,
+name_rules.tsv, the other rows of places.tsv and series.tsv, and the primary
+scheme in countries.tsv. Each scheme and document row is based on the sources
+named in scripts/curated/survey_numbers.tsv and survey_documents.tsv, among them
+Microsoft Purview's sensitive information type definitions (CC BY 4.0, credit
+to Microsoft) and Wikipedia and Wikidata for facts. No text or images are
+shipped from them, and specimen images were only read. These facts are released
+under the MIT licence of the library.
+
+python-stdnum (LGPL) is not shipped. It is only used to check values in
+development.

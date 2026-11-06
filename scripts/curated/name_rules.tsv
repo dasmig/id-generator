@@ -1,0 +1,34 @@
+# RENAPO, Reglas para la asignacion de la CURP (2021), section 5. kind: particle (a leading surname or given-name word that is skipped), given_skip (a first given name skipped when a second exists), char (a character replaced in the CURP letters). The Anexo 01 word list is not in the public PDF and is not shipped yet (see doc/data.md).
+scheme	kind	word	replacement
+mx-curp	particle	DA
+mx-curp	particle	DAS
+mx-curp	particle	DE
+mx-curp	particle	DEL
+mx-curp	particle	DER
+mx-curp	particle	DI
+mx-curp	particle	DIE
+mx-curp	particle	DD
+mx-curp	particle	EL
+mx-curp	particle	LA
+mx-curp	particle	LAS
+mx-curp	particle	LE
+mx-curp	particle	LES
+mx-curp	particle	LOS
+mx-curp	particle	MAC
+mx-curp	particle	MC
+mx-curp	particle	VAN
+mx-curp	particle	VON
+mx-curp	particle	Y
+mx-curp	given_skip	MARIA
+mx-curp	given_skip	MA.
+mx-curp	given_skip	MA
+mx-curp	given_skip	M.
+mx-curp	given_skip	M
+mx-curp	given_skip	JOSE
+mx-curp	given_skip	J.
+mx-curp	given_skip	J
+mx-curp	char	Ñ	X
+mx-curp	char	/	X
+mx-curp	char	-	X
+mx-curp	char	.	X
+mx-curp	char	'	X

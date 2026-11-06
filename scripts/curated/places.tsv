@@ -1,0 +1,600 @@
+# Curated place codes from the number survey's sources (laws, authorities' lists and national Wikipedias, see doc/data.md), mapped by hand to GeoNames admin1 or admin2. admin2 also gives city-level codes at build time.
+scheme	code	label	admin1	admin2	country	from	until	reserved
+ba-jmb	10	Banja Luka (SFRJ area)	02				2013-01-01	
+ba-jmb	11	Bihac (SFRJ area)	01	3343704			2013-01-01	
+ba-jmb	11	Banja Luka, Prijedor, Gradiska	02			2013-01-01		
+ba-jmb	12	Doboj (SFRJ area)	02				2013-01-01	
+ba-jmb	12	Bijeljina, Doboj, Brod	02			2013-01-01		
+ba-jmb	13	Gorazde (SFRJ area)	01				2013-01-01	
+ba-jmb	13	Trebinje, Foca, Zvornik, Istocno Sarajevo	02			2013-01-01		
+ba-jmb	14	Livno (SFRJ area)	01				2013-01-01	
+ba-jmb	14	Brcko Distrikt	BRC			2013-01-01		
+ba-jmb	15	Mostar (SFRJ area)	01	3343740			2013-01-01	
+ba-jmb	15	Mostar, Konjic, Siroki Brijeg	01	3343740		2013-01-01		
+ba-jmb	16	Prijedor (SFRJ area)	02				2013-01-01	
+ba-jmb	16	Bihac, Livno, Cazin	01	3343704		2013-01-01		
+ba-jmb	17	Sarajevo (SFRJ area)	01	3343737			2013-01-01	
+ba-jmb	17	Sarajevo, Gorazde	01	3343737		2013-01-01		
+ba-jmb	18	Tuzla (SFRJ area)	01	3343716			2013-01-01	
+ba-jmb	18	Tuzla, Gradacac, Orasje	01	3343716		2013-01-01		
+ba-jmb	19	Zenica (SFRJ area)	01	3343731			2013-01-01	
+ba-jmb	19	Zenica, Travnik, Bugojno	01	3343731		2013-01-01		
+bg-egn	000-043	Blagoevgrad	38					
+bg-egn	044-093	Burgas	39					
+bg-egn	094-139	Varna	61					
+bg-egn	140-169	Veliko Tarnovo	62					
+bg-egn	170-183	Vidin	63					
+bg-egn	184-217	Vratsa	64					
+bg-egn	218-233	Gabrovo	41					
+bg-egn	234-281	Kardzhali	44					
+bg-egn	282-301	Kyustendil	45					
+bg-egn	302-319	Lovech	46					
+bg-egn	320-341	Montana	47					
+bg-egn	342-377	Pazardzhik	48					
+bg-egn	378-395	Pernik	49					
+bg-egn	396-435	Pleven	50					
+bg-egn	436-501	Plovdiv	51					
+bg-egn	502-527	Razgrad	52					
+bg-egn	528-555	Ruse	53					
+bg-egn	556-575	Silistra	55					
+bg-egn	576-601	Sliven	56					
+bg-egn	602-623	Smolyan	57					
+bg-egn	624-721	Sofia city	42					
+bg-egn	722-751	Sofia district	58					
+bg-egn	752-789	Stara Zagora	59					
+bg-egn	790-821	Dobrich	40					
+bg-egn	822-843	Targovishte	60					
+bg-egn	844-871	Haskovo	43					
+bg-egn	872-903	Shumen	54					
+bg-egn	904-925	Yambol	65					
+bg-egn	926-999	Other or unknown			*			
+br-cpf	0	RS	23					
+br-cpf	1	DF, GO, MT, MS, TO	07;29;14;11;31					
+br-cpf	2	PA, AM, AC, AP, RO, RR	16;04;01;03;24;25					
+br-cpf	3	CE, MA, PI	06;13;20					
+br-cpf	4	PE, RN, PB, AL	30;22;17;02					
+br-cpf	5	BA, SE	05;28					
+br-cpf	6	MG	15					
+br-cpf	7	RJ, ES	21;08					
+br-cpf	8	SP	27					
+br-cpf	9	PR, SC	18;26					
+ca-sin	1	Atlantic provinces	07;04;09;05					
+ca-sin	2	Quebec	10					
+ca-sin	3	Quebec	10					
+ca-sin	4	Ontario	08					
+ca-sin	5	Ontario	08					
+ca-sin	6	Prairies, North-western Ontario, territories	03;11;01;13;14					
+ca-sin	7	British Columbia, Yukon	02;12					
+ec-cedula	01	Azuay	02					
+ec-cedula	02	Bolivar	03					
+ec-cedula	03	Canar	04					
+ec-cedula	04	Carchi	05					
+ec-cedula	05	Cotopaxi	07					
+ec-cedula	06	Chimborazo	06					
+ec-cedula	07	El Oro	08					
+ec-cedula	08	Esmeraldas	09					
+ec-cedula	09	Guayas	10					
+ec-cedula	10	Imbabura	11					
+ec-cedula	11	Loja	12					
+ec-cedula	12	Los Rios	13					
+ec-cedula	13	Manabi	14					
+ec-cedula	14	Morona Santiago	15					
+ec-cedula	15	Napo	23					
+ec-cedula	16	Pastaza	17					
+ec-cedula	17	Pichincha	18					
+ec-cedula	18	Tungurahua	19					
+ec-cedula	19	Zamora Chinchipe	20					
+ec-cedula	20	Galapagos	01					
+ec-cedula	21	Sucumbios	22					
+ec-cedula	22	Orellana	24					
+ec-cedula	23	Santo Domingo de los Tsachilas	26					
+ec-cedula	24	Santa Elena	25					
+ec-cedula	30	Abroad			*	2012-04-12		
+kr-rrn	00	Seoul	11				2020-10-05	
+kr-rrn	01	Seoul	11				2020-10-05	
+kr-rrn	02	Seoul	11				2020-10-05	
+kr-rrn	03	Seoul	11				2020-10-05	
+kr-rrn	04	Seoul	11				2020-10-05	
+kr-rrn	05	Seoul	11				2020-10-05	
+kr-rrn	06	Seoul	11				2020-10-05	
+kr-rrn	07	Seoul	11				2020-10-05	
+kr-rrn	08	Seoul	11				2020-10-05	
+kr-rrn	09	Busan	10				2020-10-05	
+kr-rrn	10	Busan	10				2020-10-05	
+kr-rrn	11	Busan	10				2020-10-05	
+kr-rrn	12	Busan	10				2020-10-05	
+kr-rrn	13	Incheon	12				2020-10-05	
+kr-rrn	14	Incheon	12				2020-10-05	
+kr-rrn	15	Incheon	12				2020-10-05	
+kr-rrn	16	Gyeonggi	13				2020-10-05	
+kr-rrn	17	Gyeonggi	13				2020-10-05	
+kr-rrn	18	Gyeonggi	13				2020-10-05	
+kr-rrn	19	Gyeonggi	13				2020-10-05	
+kr-rrn	20	Gyeonggi	13				2020-10-05	
+kr-rrn	21	Gyeonggi	13				2020-10-05	
+kr-rrn	22	Gyeonggi	13				2020-10-05	
+kr-rrn	23	Gyeonggi	13				2020-10-05	
+kr-rrn	24	Gyeonggi	13				2020-10-05	
+kr-rrn	25	Gyeonggi	13				2020-10-05	
+kr-rrn	26	Gangwon	06				2020-10-05	
+kr-rrn	27	Gangwon	06				2020-10-05	
+kr-rrn	28	Gangwon	06				2020-10-05	
+kr-rrn	29	Gangwon	06				2020-10-05	
+kr-rrn	30	Gangwon	06				2020-10-05	
+kr-rrn	31	Gangwon	06				2020-10-05	
+kr-rrn	32	Gangwon	06				2020-10-05	
+kr-rrn	33	Gangwon	06				2020-10-05	
+kr-rrn	34	Gangwon	06				2020-10-05	
+kr-rrn	35	North Chungcheong	05				2020-10-05	
+kr-rrn	36	North Chungcheong	05				2020-10-05	
+kr-rrn	37	North Chungcheong	05				2020-10-05	
+kr-rrn	38	North Chungcheong	05				2020-10-05	
+kr-rrn	39	North Chungcheong	05				2020-10-05	
+kr-rrn	40	Daejeon	19				2020-10-05	
+kr-rrn	41	Daejeon	19				2020-10-05	
+kr-rrn	42	South Chungcheong	17				2020-10-05	
+kr-rrn	43	South Chungcheong	17				2020-10-05	
+kr-rrn	44	Sejong	22				2020-10-05	
+kr-rrn	45	South Chungcheong	17				2020-10-05	
+kr-rrn	46	South Chungcheong	17				2020-10-05	
+kr-rrn	47	South Chungcheong	17				2020-10-05	
+kr-rrn	48	North Jeolla	03				2020-10-05	
+kr-rrn	49	North Jeolla	03				2020-10-05	
+kr-rrn	50	North Jeolla	03				2020-10-05	
+kr-rrn	51	North Jeolla	03				2020-10-05	
+kr-rrn	52	North Jeolla	03				2020-10-05	
+kr-rrn	53	North Jeolla	03				2020-10-05	
+kr-rrn	54	North Jeolla	03				2020-10-05	
+kr-rrn	55	Gwangju	18				2020-10-05	
+kr-rrn	56	Gwangju	18				2020-10-05	
+kr-rrn	57	South Jeolla	16				2020-10-05	
+kr-rrn	58	South Jeolla	16				2020-10-05	
+kr-rrn	59	South Jeolla	16				2020-10-05	
+kr-rrn	60	South Jeolla	16				2020-10-05	
+kr-rrn	61	South Jeolla	16				2020-10-05	
+kr-rrn	62	South Jeolla	16				2020-10-05	
+kr-rrn	63	South Jeolla	16				2020-10-05	
+kr-rrn	64	South Jeolla	16				2020-10-05	
+kr-rrn	65	Gwangju	18				2020-10-05	
+kr-rrn	66	Gwangju	18				2020-10-05	
+kr-rrn	67	Daegu	15				2020-10-05	
+kr-rrn	68	Daegu	15				2020-10-05	
+kr-rrn	69	Daegu	15				2020-10-05	
+kr-rrn	70	North Gyeongsang	14				2020-10-05	
+kr-rrn	71	North Gyeongsang	14				2020-10-05	
+kr-rrn	72	North Gyeongsang	14				2020-10-05	
+kr-rrn	73	North Gyeongsang	14				2020-10-05	
+kr-rrn	74	North Gyeongsang	14				2020-10-05	
+kr-rrn	75	North Gyeongsang	14				2020-10-05	
+kr-rrn	76	Daegu	15				2020-10-05	
+kr-rrn	77	North Gyeongsang	14				2020-10-05	
+kr-rrn	78	North Gyeongsang	14				2020-10-05	
+kr-rrn	79	North Gyeongsang	14				2020-10-05	
+kr-rrn	80	North Gyeongsang	14				2020-10-05	
+kr-rrn	81	North Gyeongsang	14				2020-10-05	
+kr-rrn	82	South Gyeongsang	20				2020-10-05	
+kr-rrn	83	South Gyeongsang	20				2020-10-05	
+kr-rrn	84	South Gyeongsang	20				2020-10-05	
+kr-rrn	85	Ulsan	21				2020-10-05	
+kr-rrn	86	South Gyeongsang	20				2020-10-05	
+kr-rrn	87	South Gyeongsang	20				2020-10-05	
+kr-rrn	88	South Gyeongsang	20				2020-10-05	
+kr-rrn	89	South Gyeongsang	20				2020-10-05	
+kr-rrn	90	Ulsan	21				2020-10-05	
+kr-rrn	91	South Gyeongsang	20				2020-10-05	
+kr-rrn	92	South Gyeongsang	20				2020-10-05	
+kr-rrn	93	Jeju	01				2020-10-05	
+kr-rrn	94	Jeju	01				2020-10-05	
+kr-rrn	95	Jeju	01				2020-10-05	
+kr-rrn	96	Sejong	22				2020-10-05	
+me-jmbg	21	Podgorica, Danilovgrad, Kolasin	16;07;09;24;25					
+me-jmbg	22	Bar, Ulcinj	02;20					
+me-jmbg	23	Budva, Kotor, Tivat	05;10;19					
+me-jmbg	24	Herceg Novi	08					
+me-jmbg	25	Cetinje	06					
+me-jmbg	26	Niksic, Pluzine, Savnik	12;15;18					
+me-jmbg	27	Berane, Rozaje, Plav, Andrijevica	03;17;13;01;22;23					
+me-jmbg	28	Bijelo Polje, Mojkovac	04;11					
+me-jmbg	29	Pljevlja, Zabljak	14;21					
+mk-embg	41	Bitola	06;86;D3;E1;D9					
+mk-embg	42	Kumanovo	D7;51;52;59;85;97					
+mk-embg	43	Ohrid	E2;D2;43;E6;F5;B3;18;80					
+mk-embg	44	Prilep	E3;54;D8;28;53					
+mk-embg	45	Skopje	F6;01;36;79;92;A2;C2;20					
+mk-embg	46	Strumica	E7;E9;84;11;A9;72;47					
+mk-embg	47	Tetovo	E8;D4;C7;12;D5;A5;B7;C3;E4					
+mk-embg	48	Veles	F1;33;D6;69;08;E5;25;35;87;C9;60					
+mk-embg	49	Stip	98;04;B4;22;46;83;A4;78;19;62;40;C6					
+mx-curp	AS	Aguascalientes	01					
+mx-curp	BC	Baja California	02					
+mx-curp	BS	Baja California Sur	03					
+mx-curp	CC	Campeche	04					
+mx-curp	CH	Chihuahua	06					
+mx-curp	CL	Coahuila	07					
+mx-curp	CM	Colima	08					
+mx-curp	CS	Chiapas	05					
+mx-curp	DF	Ciudad de Mexico	09					
+mx-curp	DG	Durango	10					
+mx-curp	GR	Guerrero	12					
+mx-curp	GT	Guanajuato	11					
+mx-curp	HG	Hidalgo	13					
+mx-curp	JC	Jalisco	14					
+mx-curp	MC	Estado de Mexico	15					
+mx-curp	MN	Michoacan	16					
+mx-curp	MS	Morelos	17					
+mx-curp	NE	Born abroad			*			
+mx-curp	NL	Nuevo Leon	19					
+mx-curp	NT	Nayarit	18					
+mx-curp	OC	Oaxaca	20					
+mx-curp	PL	Puebla	21					
+mx-curp	QR	Quintana Roo	23					
+mx-curp	QT	Queretaro	22					
+mx-curp	SL	Sinaloa	25					
+mx-curp	SP	San Luis Potosi	24					
+mx-curp	SR	Sonora	26					
+mx-curp	TC	Tabasco	27					
+mx-curp	TL	Tlaxcala	29					
+mx-curp	TS	Tamaulipas	28					
+mx-curp	VZ	Veracruz	30					
+mx-curp	YN	Yucatan	31					
+mx-curp	ZS	Zacatecas	32					
+my-mykad	00	Unassigned (safe mode)						1
+my-mykad	01	Johor	01					
+my-mykad	02	Kedah	02					
+my-mykad	03	Kelantan	03					
+my-mykad	04	Melaka	04					
+my-mykad	05	Negeri Sembilan	05					
+my-mykad	06	Pahang	06					
+my-mykad	07	Pulau Pinang	09					
+my-mykad	08	Perak	07					
+my-mykad	09	Perlis	08					
+my-mykad	10	Selangor	12					
+my-mykad	11	Terengganu	13					
+my-mykad	12	Sabah	16					
+my-mykad	13	Sarawak	11					
+my-mykad	14	WP Kuala Lumpur	14					
+my-mykad	15	WP Labuan	15					
+my-mykad	16	WP Putrajaya	17					
+my-mykad	17	Unassigned (safe mode)						1
+my-mykad	18	Unassigned (safe mode)						1
+my-mykad	19	Unassigned (safe mode)						1
+my-mykad	20	Unassigned (safe mode)						1
+my-mykad	21	Johor	01					
+my-mykad	22	Johor	01					
+my-mykad	23	Johor	01					
+my-mykad	24	Johor	01					
+my-mykad	25	Kedah	02					
+my-mykad	26	Kedah	02					
+my-mykad	27	Kedah	02					
+my-mykad	28	Kelantan	03					
+my-mykad	29	Kelantan	03					
+my-mykad	30	Melaka	04					
+my-mykad	31	Negeri Sembilan	05					
+my-mykad	32	Pahang	06					
+my-mykad	33	Pahang	06					
+my-mykad	34	Pulau Pinang	09					
+my-mykad	35	Pulau Pinang	09					
+my-mykad	36	Perak	07					
+my-mykad	37	Perak	07					
+my-mykad	38	Perak	07					
+my-mykad	39	Perak	07					
+my-mykad	40	Perlis	08					
+my-mykad	41	Selangor	12					
+my-mykad	42	Selangor	12					
+my-mykad	43	Selangor	12					
+my-mykad	44	Selangor	12					
+my-mykad	45	Terengganu	13					
+my-mykad	46	Terengganu	13					
+my-mykad	47	Sabah	16					
+my-mykad	48	Sabah	16					
+my-mykad	49	Sabah	16					
+my-mykad	50	Sarawak	11					
+my-mykad	51	Sarawak	11					
+my-mykad	52	Sarawak	11					
+my-mykad	53	Sarawak	11					
+my-mykad	54	WP Kuala Lumpur	14					
+my-mykad	55	WP Kuala Lumpur	14					
+my-mykad	56	WP Kuala Lumpur	14					
+my-mykad	57	WP Kuala Lumpur	14					
+my-mykad	58	WP Labuan	15					
+my-mykad	59	Negeri Sembilan	05					
+my-mykad	60	Brunei			BN			
+my-mykad	61	Indonesia			ID			
+my-mykad	62	Cambodia			KH			
+my-mykad	63	Laos			LA			
+my-mykad	64	Myanmar			MM			
+my-mykad	65	Philippines			PH			
+my-mykad	66	Singapore			SG			
+my-mykad	67	Thailand			TH			
+my-mykad	68	Vietnam			VN			
+my-mykad	69	Unassigned (safe mode)						1
+my-mykad	70	Unassigned (safe mode)						1
+my-mykad	71	Abroad			*			
+my-mykad	72	Abroad			*			
+my-mykad	73	Unassigned (safe mode)						1
+my-mykad	74	China			CN			
+my-mykad	75	India			IN			
+my-mykad	76	Pakistan			PK			
+my-mykad	77	Saudi Arabia			SA			
+my-mykad	78	Sri Lanka			LK			
+my-mykad	79	Bangladesh			BD			
+my-mykad	80	Unassigned (safe mode)						1
+my-mykad	81	Unassigned (safe mode)						1
+my-mykad	82	State unknown						
+my-mykad	83	Asia-Pacific and Oceania						
+my-mykad	84	South America						
+my-mykad	85	Africa						
+my-mykad	86	Europe						
+my-mykad	87	Britain and Ireland						
+my-mykad	88	Middle East						
+my-mykad	89	Far East						
+my-mykad	90	Caribbean and Central America						
+my-mykad	91	North America						
+my-mykad	92	Eastern Europe						
+my-mykad	93	Others						
+my-mykad	94	Unassigned (safe mode)						1
+my-mykad	95	Unassigned (safe mode)						1
+my-mykad	96	Unassigned (safe mode)						1
+my-mykad	97	Unassigned (safe mode)						1
+my-mykad	98	Stateless						
+my-mykad	99	Refugee or unspecified						
+pk-cnic	0	Unassigned (safe mode)						1
+pk-cnic	1	Khyber Pakhtunkhwa	03					
+pk-cnic	2	FATA (merged into Khyber Pakhtunkhwa in 2018)	03					
+pk-cnic	3	Punjab	04					
+pk-cnic	4	Sindh	05					
+pk-cnic	5	Balochistan	02					
+pk-cnic	6	Islamabad	08					
+pk-cnic	7	Gilgit-Baltistan	07					
+pk-cnic	8	Azad Kashmir	06					
+pk-cnic	9	Unassigned (safe mode)						1
+ro-cnp	01	Alba	01					
+ro-cnp	02	Arad	02					
+ro-cnp	03	Arges	03					
+ro-cnp	04	Bacau	04					
+ro-cnp	05	Bihor	05					
+ro-cnp	06	Bistrita-Nasaud	06					
+ro-cnp	07	Botosani	07					
+ro-cnp	08	Brasov	09					
+ro-cnp	09	Braila	08					
+ro-cnp	10	Buzau	11					
+ro-cnp	11	Caras-Severin	12					
+ro-cnp	12	Cluj	13					
+ro-cnp	13	Constanta	14					
+ro-cnp	14	Covasna	15					
+ro-cnp	15	Dambovita	16					
+ro-cnp	16	Dolj	17					
+ro-cnp	17	Galati	18					
+ro-cnp	18	Gorj	19					
+ro-cnp	19	Harghita	20					
+ro-cnp	20	Hunedoara	21					
+ro-cnp	21	Ialomita	22					
+ro-cnp	22	Iasi	23					
+ro-cnp	23	Ilfov	43					
+ro-cnp	24	Maramures	25					
+ro-cnp	25	Mehedinti	26					
+ro-cnp	26	Mures	27					
+ro-cnp	27	Neamt	28					
+ro-cnp	28	Olt	29					
+ro-cnp	29	Prahova	30					
+ro-cnp	30	Satu Mare	32					
+ro-cnp	31	Salaj	31					
+ro-cnp	32	Sibiu	33					
+ro-cnp	33	Suceava	34					
+ro-cnp	34	Teleorman	35					
+ro-cnp	35	Timis	36					
+ro-cnp	36	Tulcea	37					
+ro-cnp	37	Vaslui	38					
+ro-cnp	38	Valcea	39					
+ro-cnp	39	Vrancea	40					
+ro-cnp	40	Bucuresti	10					
+ro-cnp	41	Bucuresti sector 1	10					
+ro-cnp	42	Bucuresti sector 2	10					
+ro-cnp	43	Bucuresti sector 3	10					
+ro-cnp	44	Bucuresti sector 4	10					
+ro-cnp	45	Bucuresti sector 5	10					
+ro-cnp	46	Bucuresti sector 6	10					
+ro-cnp	47	Bucuresti sector 7 (abolished)						
+ro-cnp	48	Bucuresti sector 8 (abolished)						
+ro-cnp	51	Calarasi	41					
+ro-cnp	52	Giurgiu	42					
+ro-cnp	70	Any place (numbers generated from 2024-05-08)				2024-05-08		
+rs-jmbg	70	Abroad (consular post)			*			
+rs-jmbg	71	Beograd	SE	0				
+rs-jmbg	72	Sumadija, Pomoravlje	SE	12;13				
+rs-jmbg	73	Nis area	SE	20;21;22				
+rs-jmbg	74	South Morava	SE	23;24				
+rs-jmbg	75	Zajecar, Bor	SE	14;15				
+rs-jmbg	76	Podunavlje, Branicevo	SE	10;11				
+rs-jmbg	77	Podrinje, Kolubara	SE	8;9				
+rs-jmbg	78	Kraljevo, Rasina, Raska	SE	18;19				
+rs-jmbg	79	Uzice, Moravica	SE	16;17				
+rs-jmbg	80	Novi Sad	VO	6				
+rs-jmbg	81	Sombor	VO	5				
+rs-jmbg	82	Subotica	VO	1				
+rs-jmbg	83	Becej, Srbobran	VO	6				
+rs-jmbg	84	Kikinda	VO	3				
+rs-jmbg	85	Zrenjanin	VO	2				
+rs-jmbg	86	Pancevo	VO	4				
+rs-jmbg	87	Vrsac	VO	4				
+rs-jmbg	88	Ruma, Indjija	VO	7				
+rs-jmbg	89	Sremska Mitrovica	VO	7				
+rs-jmbg	91	Kosovo and Metohija						
+rs-jmbg	92	Kosovo and Metohija						
+rs-jmbg	93	Kosovo and Metohija						
+rs-jmbg	94	Kosovo and Metohija						
+rs-jmbg	95	Kosovo and Metohija						
+rs-jmbg	96	Kosovo and Metohija						
+rs-jmbg	97	Kosovo and Metohija						
+ru-inn	01	Adygea	01					
+ru-inn	02	Bashkortostan	08					
+ru-inn	03	Buryatia	11					
+ru-inn	04	Altai Republic	03					
+ru-inn	05	Dagestan	17					
+ru-inn	06	Ingushetia	19					
+ru-inn	07	Kabardino-Balkaria	22					
+ru-inn	08	Kalmykia	24					
+ru-inn	09	Karachay-Cherkessia	27					
+ru-inn	10	Karelia	28					
+ru-inn	11	Komi	34					
+ru-inn	12	Mari El	45					
+ru-inn	13	Mordovia	46					
+ru-inn	14	Sakha	63					
+ru-inn	15	North Ossetia	68					
+ru-inn	16	Tatarstan	73					
+ru-inn	17	Tyva	79					
+ru-inn	18	Udmurtia	80					
+ru-inn	19	Khakassia	31					
+ru-inn	20	Chechnya	12					
+ru-inn	21	Chuvashia	16					
+ru-inn	22	Altai Krai	04					
+ru-inn	23	Krasnodar	38					
+ru-inn	24	Krasnoyarsk	91					
+ru-inn	25	Primorye	59					
+ru-inn	26	Stavropol	70					
+ru-inn	27	Khabarovsk	30					
+ru-inn	28	Amur	05					
+ru-inn	29	Arkhangelsk	06					
+ru-inn	30	Astrakhan	07					
+ru-inn	31	Belgorod	09					
+ru-inn	32	Bryansk	10					
+ru-inn	33	Vladimir	83					
+ru-inn	34	Volgograd	84					
+ru-inn	35	Vologda	85					
+ru-inn	36	Voronezh	86					
+ru-inn	37	Ivanovo	21					
+ru-inn	38	Irkutsk	20					
+ru-inn	39	Kaliningrad	23					
+ru-inn	40	Kaluga	25					
+ru-inn	41	Kamchatka	92					
+ru-inn	42	Kemerovo	29					
+ru-inn	43	Kirov	33					
+ru-inn	44	Kostroma	37					
+ru-inn	45	Kurgan	40					
+ru-inn	46	Kursk	41					
+ru-inn	47	Leningrad	42					
+ru-inn	48	Lipetsk	43					
+ru-inn	49	Magadan	44					
+ru-inn	50	Moscow Oblast	47					
+ru-inn	51	Murmansk	49					
+ru-inn	52	Nizhny Novgorod	51					
+ru-inn	53	Novgorod	52					
+ru-inn	54	Novosibirsk	53					
+ru-inn	55	Omsk	54					
+ru-inn	56	Orenburg	55					
+ru-inn	57	Oryol	56					
+ru-inn	58	Penza	57					
+ru-inn	59	Perm	90					
+ru-inn	60	Pskov	60					
+ru-inn	61	Rostov	61					
+ru-inn	62	Ryazan	62					
+ru-inn	63	Samara	65					
+ru-inn	64	Saratov	67					
+ru-inn	65	Sakhalin	64					
+ru-inn	66	Sverdlovsk	71					
+ru-inn	67	Smolensk	69					
+ru-inn	68	Tambov	72					
+ru-inn	69	Tver	77					
+ru-inn	70	Tomsk	75					
+ru-inn	71	Tula	76					
+ru-inn	72	Tyumen	78					
+ru-inn	73	Ulyanovsk	81					
+ru-inn	74	Chelyabinsk	13					
+ru-inn	75	Zabaykalsky	93					
+ru-inn	76	Yaroslavl	88					
+ru-inn	77	Moscow	48					
+ru-inn	78	Saint Petersburg	66					
+ru-inn	79	Jewish Autonomous Oblast	89					
+ru-inn	83	Nenets	50					
+ru-inn	86	Khanty-Mansi	32					
+ru-inn	87	Chukotka	15					
+ru-inn	89	Yamalo-Nenets	87					
+tw-nid	A	Taipei City		TPE				
+tw-nid	B	Taichung City		TXG				
+tw-nid	C	Keelung City		KEE				
+tw-nid	D	Tainan City		TNN				
+tw-nid	E	Kaohsiung City		KHH				
+tw-nid	F	New Taipei City		TPQ				
+tw-nid	G	Yilan County		ILA				
+tw-nid	H	Taoyuan		TAO				
+tw-nid	I	Chiayi City		CYI		1982-07-01		
+tw-nid	J	Hsinchu County		HSZ				
+tw-nid	K	Miaoli County		MIA				
+tw-nid	L	Taichung County (before the 2010 merger)		TXG			2010-12-25	
+tw-nid	M	Nantou County		NAN				
+tw-nid	N	Changhua County		CHA				
+tw-nid	O	Hsinchu City		HSQ		1982-07-01		
+tw-nid	P	Yunlin County		YUN				
+tw-nid	Q	Chiayi County		CYQ				
+tw-nid	R	Tainan County (before the 2010 merger)		TNN			2010-12-25	
+tw-nid	S	Kaohsiung County (before the 2010 merger)		KHH			2010-12-25	
+tw-nid	T	Pingtung County		PIF				
+tw-nid	U	Hualien County		HUA				
+tw-nid	V	Taitung County		TTT				
+tw-nid	W	Kinmen County		KIN				
+tw-nid	X	Penghu County		PEN				
+tw-nid	Y	Yangmingshan (until 1974)					1974-01-01	
+tw-nid	Z	Lienchiang County		LIE				
+vn-cccd	001	Ha Noi	01					
+vn-cccd	002	Ha Giang	08					
+vn-cccd	004	Cao Bang	04					
+vn-cccd	006	Bac Kan	19					
+vn-cccd	008	Tuyen Quang	08					
+vn-cccd	010	Lao Cai	15					
+vn-cccd	011	Dien Bien	11					
+vn-cccd	012	Lai Chau	12					
+vn-cccd	014	Son La	14					
+vn-cccd	015	Yen Bai	15					
+vn-cccd	017	Hoa Binh	25					
+vn-cccd	019	Thai Nguyen	19					
+vn-cccd	020	Lang Son	20					
+vn-cccd	022	Quang Ninh	22					
+vn-cccd	024	Bac Giang	24					
+vn-cccd	025	Phu Tho	25					
+vn-cccd	026	Vinh Phuc	25					
+vn-cccd	027	Bac Ninh	24					
+vn-cccd	030	Hai Duong	31					
+vn-cccd	031	Hai Phong	31					
+vn-cccd	033	Hung Yen	33					
+vn-cccd	034	Thai Binh	33					
+vn-cccd	035	Ha Nam	37					
+vn-cccd	036	Nam Dinh	37					
+vn-cccd	037	Ninh Binh	37					
+vn-cccd	038	Thanh Hoa	38					
+vn-cccd	040	Nghe An	40					
+vn-cccd	042	Ha Tinh	42					
+vn-cccd	044	Quang Binh	44					
+vn-cccd	045	Quang Tri	44					
+vn-cccd	046	Thua Thien Hue	46					
+vn-cccd	048	Da Nang	48					
+vn-cccd	049	Quang Nam	48					
+vn-cccd	051	Quang Ngai	51					
+vn-cccd	052	Binh Dinh	52					
+vn-cccd	054	Phu Yen	66					
+vn-cccd	056	Khanh Hoa	56					
+vn-cccd	058	Ninh Thuan	56					
+vn-cccd	060	Binh Thuan	68					
+vn-cccd	062	Kon Tum	51					
+vn-cccd	064	Gia Lai	52					
+vn-cccd	066	Dak Lak	66					
+vn-cccd	067	Dak Nong	68					
+vn-cccd	068	Lam Dong	68					
+vn-cccd	070	Binh Phuoc	75					
+vn-cccd	072	Tay Ninh	80					
+vn-cccd	074	Binh Duong	79					
+vn-cccd	075	Dong Nai	75					
+vn-cccd	077	Ba Ria Vung Tau	79					
+vn-cccd	079	Ho Chi Minh City	79					
+vn-cccd	080	Long An	80					
+vn-cccd	082	Tien Giang	82					
+vn-cccd	083	Ben Tre	86					
+vn-cccd	084	Tra Vinh	86					
+vn-cccd	086	Vinh Long	86					
+vn-cccd	087	Dong Thap	82					
+vn-cccd	089	An Giang	91					
+vn-cccd	091	Kien Giang	91					
+vn-cccd	092	Can Tho	92					
+vn-cccd	093	Hau Giang	92					
+vn-cccd	094	Soc Trang	92					
+vn-cccd	095	Bac Lieu	96					
+vn-cccd	096	Ca Mau	96					

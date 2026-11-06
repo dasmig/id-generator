@@ -1,0 +1,108 @@
+# Worked examples from the number survey, for check_schemes.py and the builder tests. kind: valid (a number of this scheme); safe (a reserved or test number); algorithm (shows only the check rule: the shared JMBG examples use register 50, and pt-nif's is a company).
+scheme	value	kind	source
+ae-eid	784199012345676	valid	computed under the Luhn rule the survey found (no authority example)
+ar-cuil	20123456786	valid	es.wikipedia worked figures
+ar-cuil	20055361682	valid	python-stdnum
+ar-cuil	20267565393	valid	python-stdnum
+ar-dni	20123456	valid	python-stdnum format example
+at-svnr	1237010180	valid	de.wikipedia
+au-tfn	123456782	valid	Wikipedia worked example
+ba-jmb	2902932505526	algorithm	Slovenian Uredba 1999 annex 1
+be-nn	42012205181	valid	Registre national TI000
+be-nn	40000100133	valid	Registre national TI000
+bg-egn	0847038794	valid	bg.wikipedia
+bg-egn	0011113966	valid	bg.wikipedia
+bg-egn	1012191435	valid	bg.wikipedia
+br-cpf	12345678909	valid	pt.wikipedia worked example
+br-cpf	39053344705	valid	python-stdnum
+br-cpf	11144477735	valid	common worked example
+ca-sin	123456782	valid	python-stdnum
+ch-ahv	7569217076985	valid	de.wikipedia
+ch-ahv	7561234567897	valid	widely used non-official example
+cl-run	123456785	valid	T13 worked example
+cl-run	125319092	valid	python-stdnum
+cn-ric	11010519491231002X	valid	GB 11643-1999 appendix
+cn-ric	440524188001010014	valid	GB 11643-1999 appendix
+cn-ric	11010219840406970X	valid	zh.wikipedia
+cz-rc	7103192745	valid	python-stdnum
+cz-rc	7360285163	valid	cs.wikipedia
+de-idnr	86095742719	valid	ITZ Bund concept (illustration only)
+de-idnr	47036892816	valid	ITZ Bund concept (illustration only)
+de-idnr	65929970489	valid	ITZ Bund concept (digit 9 three times)
+de-idnr	57549285017	valid	ITZ Bund concept (illustration only)
+de-idnr	25768131411	valid	ITZ Bund concept (illustration only)
+de-idnr	02476291358	safe	ELSTER test IdNr
+dk-cpr	2110625629	valid	da.wikipedia
+ec-cedula	0903686962	valid	ESPOL exam 2018
+ec-cedula	1714307103	valid	python-stdnum
+ee-isikukood	37605030299	valid	et.wikipedia
+ee-isikukood	34501234215	valid	et.wikipedia
+ee-isikukood	49403136515	valid	et.wikipedia
+ee-isikukood	49403136526	valid	et.wikipedia
+es-dni	54362315K	valid	python-stdnum
+es-dni	12345678Z	valid	widely used non-official example
+fi-hetu	100190-999P	safe	DVV press release
+fi-hetu	100190Y999P	safe	DVV press release
+fi-hetu	131052-308T	valid	survey
+fr-nir	151024610204325	valid	INSEE schema example
+fr-nir	278112B05000286	valid	INSEE schema example
+gb-nino	QQ123456A	safe	HMRC NIM39110
+gr-amka	01013099997	valid	python-stdnum
+hk-hkid	A1234563	valid	computed, passes the mod 11 rule
+hk-hkid	B2552413	valid	third-party write-up
+hr-oib	33392005961	valid	python-stdnum
+id-nik	3171011708450001	valid	python-stdnum
+id-nik	3171015708450001	valid	python-stdnum
+ie-ppsn	6433435F	valid	python-stdnum
+ie-ppsn	6433435FW	valid	python-stdnum
+ie-ppsn	6433435OA	valid	python-stdnum
+il-idnr	050012343	valid	he.wikipedia infobox sample
+il-idnr	039337423	valid	python-stdnum
+in-aadhaar	234123412346	valid	python-stdnum
+ir-codemeli	7731689956	valid	ekhtebar.ir body, check computed
+is-kennitala	1201743399	valid	en.wikipedia citing Thjodskra
+it-cf	RSSMRA80A01H501U	valid	survey worked example
+it-cf	VRDGFR72L21F839N	valid	survey worked example
+jp-mynumber	621498320257	valid	python-stdnum
+kr-rrn	9710139019902	valid	python-stdnum
+kz-iin	910509300750	valid	digitalbusiness.kz explainer
+lt-asmens-kodas	33309240064	valid	survey worked example
+lv-personas-kods	16117519997	valid	python-stdnum (old format)
+lv-personas-kods	32867300679	valid	python-stdnum (new format)
+me-jmbg	2902932505526	algorithm	Slovenian Uredba 1999 annex 1
+mk-embg	2902932505526	algorithm	Slovenian Uredba 1999 annex 1
+mx-curp	BOXW310820HNERXN09	valid	python-stdnum
+mx-curp	SABC560626MDFLRN01	valid	computed from RENAPO's illustrative case
+my-mykad	770305021234	valid	python-stdnum
+nl-bsn	999900006	safe	SBV-Z test BSN (via search excerpt)
+nl-bsn	999900110	safe	SBV-Z test BSN (via search excerpt)
+no-fodselsnummer	02013299997	valid	Skatteetaten worked example
+nz-ird	49091850	valid	python-stdnum
+nz-ird	49098576	valid	python-stdnum
+pe-dni	101174102	valid	python-stdnum
+pk-cnic	3420108912318	valid	python-stdnum
+pk-cnic	4220103976408	valid	python-stdnum
+pl-pesel	02070803628	valid	OECD / Polish Ministry of Finance
+pt-nif	501964843	algorithm	python-stdnum (a company, range 5)
+ro-cnp	1630615123457	valid	python-stdnum
+rs-jmbg	2902932505526	algorithm	Slovenian Uredba 1999 annex 1
+ru-inn	123456789047	valid	python-stdnum
+ru-snils	11223344595	valid	PFR rule via Business::PFR
+sa-nid	1012345672	valid	computed under the Luhn rule the survey found (no authority example)
+se-personnummer	196408233234	valid	Skatteverket worked example
+se-personnummer	189001019802	safe	Skatteverket test personnummer
+sg-nric	S1234567D	valid	common demonstration number
+sg-nric	T0212345I	valid	computed, passes the rule
+si-emso	2902932505526	valid	Slovenian Uredba 1999 annex 1
+si-emso	0101006500006	valid	en.wikipedia
+sk-rc	7103192745	valid	python-stdnum
+sk-rc	7360285163	valid	cs.wikipedia
+th-pin	3100600445635	valid	python-stdnum
+th-pin	1234545678781	valid	python-stdnum
+tr-tckn	17291716060	valid	python-stdnum
+tw-nid	A123456789	valid	widely used demonstration number
+ua-rnokpp	1759013776	valid	python-stdnum
+ua-rnokpp	2530414071	valid	python-stdnum
+uy-cedula	12345672	valid	hacecuentas.com worked example
+vn-cccd	012198123456	valid	LuatVietnam
+za-idnr	7503305044089	valid	python-stdnum
