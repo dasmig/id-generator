@@ -695,6 +695,65 @@ TEST_CASE("the CURP applies RENAPO's name rules", "[builders]")
     REQUIRE(abroad[16] >= 'A');
 }
 
+TEST_CASE("a CURP never starts with a word on the list", "[builders]")
+{
+    const auto& gen = shared_generator();
+    identity_request q = person("MX", {"mx-curp"});
+    q.birth_date = date(1980, 5, 14);
+    q.sex = sex::female;
+    q.birthplace = id_place{.country_code = "MX", .admin1_code = "09", .geonameid = std::nullopt};
+
+    // The published cases: the second letter becomes X, and only that letter.
+    q.surname = "Pedrero";
+    q.second_surname = "Domínguez";
+    q.given_names = "Ofelia";
+    const std::string pedrero = one_number(gen, q, 3).value;
+    REQUIRE(pedrero.substr(0, 4) == "PXDO");
+    REQUIRE(pedrero.substr(13, 3) == "DMF");
+    REQUIRE(gen.is_valid("mx-curp", pedrero));
+
+    q.surname = "Pulido";
+    q.second_surname = "Torres";
+    q.given_names = "Amanda";
+    REQUIRE(one_number(gen, q, 3).value.substr(0, 4) == "PXTA");
+
+    // A word is invalid whatever the check digit; its replacement has one right digit.
+    int with_word = 0;
+    int with_x = 0;
+    std::string text = pedrero;
+    for (char digit = '0'; digit <= '9'; ++digit)
+    {
+        text[17] = digit;
+        text[1] = 'X';
+        with_x += gen.is_valid("mx-curp", text) ? 1 : 0;
+        text[1] = 'E';
+        with_word += gen.is_valid("mx-curp", text) ? 1 : 0;
+    }
+    REQUIRE(with_x == 1);
+    REQUIRE(with_word == 0);
+
+    // Drawn letters follow the rule too: a drawn vowel is never X, so X here is a replacement.
+    identity_request drawn = person("MX", {"mx-curp"});
+    int replaced = 0;
+    for (std::uint64_t seed = 0; seed < 20'000; ++seed)
+    {
+        const std::string value = one_number(gen, drawn, seed).value;
+        REQUIRE(gen.is_valid("mx-curp", value));
+        replaced += value[1] == 'X' ? 1 : 0;
+    }
+    REQUIRE(replaced > 0);
+
+    // The list is data: a layer can remove a word, and a bad replacement is refused.
+    auto layered = make_loaded_generator();
+    REQUIRE_THROWS_AS(layered.extend_from_string(id_table::name_rules, "scheme\tkind\tword\treplacement\nmx-curp\tword\tPEDO\tPXD\n", "short.tsv"),
+                      dasmig::core::tsv_error);
+    layered.extend_from_string(id_table::name_rules, "scheme\tkind\tword\tdisabled\nmx-curp\tword\tPEDO\t1\n", "remove.tsv");
+    q.surname = "Pedrero";
+    q.second_surname = "Domínguez";
+    q.given_names = "Ofelia";
+    REQUIRE(one_number(layered, q, 3).value.substr(0, 4) == "PEDO");
+}
+
 TEST_CASE("the NIR follows Corsica's department change and births abroad", "[builders]")
 {
     const auto& gen = shared_generator();
@@ -2226,7 +2285,7 @@ TEST_CASE("to_json and signature", "[json]")
 // a major version.
 // ---------------------------------------------------------------------------
 
-static const std::uint64_t kat_data_hash = 0x66cc134c6484ade6ULL;
+static const std::uint64_t kat_data_hash = 0x14750e64ceb541acULL;
 
 // A person who holds both documents, on a fixed date.
 static identity_request kat_holder()
@@ -2246,13 +2305,13 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     REQUIRE(gen.data_hash() == kat_data_hash);
 
     REQUIRE(gen.get_identity(identity_request{}, std::uint64_t{1}).to_json() ==
-            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2357812144","formatted":"235781214-4","assigned":"1958-05-11","place_code":"23","reserved":false}],"documents":[],"signature":{"seed":"0000000000000001","data":"66cc134c6484ade6"}})x");
+            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2357812144","formatted":"235781214-4","assigned":"1958-05-11","place_code":"23","reserved":false}],"documents":[],"signature":{"seed":"0000000000000001","data":"14750e64ceb541ac"}})x");
     REQUIRE(gen.get_identity(person("IT", {"it-cf"}), std::uint64_t{3}).to_json() ==
-            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"LDZGFG61R56G371P","formatted":"LDZGFG61R56G371P","assigned":"1977-01-01","place_code":"G371","reserved":false}],"documents":[],"signature":{"seed":"0000000000000003","data":"66cc134c6484ade6"}})x");
+            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"LDZGFG61R56G371P","formatted":"LDZGFG61R56G371P","assigned":"1977-01-01","place_code":"G371","reserved":false}],"documents":[],"signature":{"seed":"0000000000000003","data":"14750e64ceb541ac"}})x");
     identity_request every = person("AR", {"*"});
     every.safe = true;
     REQUIRE(gen.get_identity(every, std::uint64_t{5}).to_json() ==
-            R"x({"country_code":"AR","birth_date":"1966-05-29","sex":"male","numbers":[{"scheme":"ar-dni","label":"National Identity Document number","native_label":"Documento Nacional de Identidad (DNI)","value":"75438212","formatted":"75.438.212","assigned":"1968-01-01","place_code":"","reserved":true},{"scheme":"ar-cuil","label":"Unique Labour Identification Code","native_label":"Código Único de Identificación Laboral (CUIL)","value":"20754382122","formatted":"20-75438212-2","assigned":"1998-01-02","place_code":"","reserved":true}],"documents":[],"signature":{"seed":"0000000000000005","data":"66cc134c6484ade6"}})x");
+            R"x({"country_code":"AR","birth_date":"1966-05-29","sex":"male","numbers":[{"scheme":"ar-dni","label":"National Identity Document number","native_label":"Documento Nacional de Identidad (DNI)","value":"75438212","formatted":"75.438.212","assigned":"1968-01-01","place_code":"","reserved":true},{"scheme":"ar-cuil","label":"Unique Labour Identification Code","native_label":"Código Único de Identificación Laboral (CUIL)","value":"20754382122","formatted":"20-75438212-2","assigned":"1998-01-02","place_code":"","reserved":true}],"documents":[],"signature":{"seed":"0000000000000005","data":"14750e64ceb541ac"}})x");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s)
@@ -2263,7 +2322,7 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0xeae80057d1eafe83ULL);
+    REQUIRE(h == 0x01a7ae9e0aef6a87ULL);
 }
 
 TEST_CASE("known answers for documents", "[kat][documents]")
@@ -2276,13 +2335,13 @@ TEST_CASE("known answers for documents", "[kat][documents]")
     germany.country = "DE";
     germany.schemes = std::vector<std::string>{};
     REQUIRE(gen.get_identity(germany, std::uint64_t{7}).to_json() ==
-            R"x({"country_code":"DE","birth_date":"1959-02-10","sex":"female","numbers":[],"documents":[{"kind":"passport","format":"de-passport-2007","number":"JHM7XW56H","issuing_state":"D","issued":"2023-08-30","expires":"2033-08-30","mrz":["P<D<<ROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","JHM7XW56H6D<<5902109F3308305<<<<<<<<<<<<<<04"],"evidence":"reference","generic_validity":false,"reserved":false},{"kind":"id_card","format":"de-id-card-2010","number":"PZ19W6JPY","issuing_state":"D","issued":"2023-07-12","expires":"2033-07-12","mrz":["IDD<<PZ19W6JPY8<<<<<<<<<<<<<<<","5902109F3307124D<<<<<<<<<<<<<0","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":false}],"signature":{"seed":"0000000000000007","data":"66cc134c6484ade6"}})x");
+            R"x({"country_code":"DE","birth_date":"1959-02-10","sex":"female","numbers":[],"documents":[{"kind":"passport","format":"de-passport-2007","number":"JHM7XW56H","issuing_state":"D","issued":"2023-08-30","expires":"2033-08-30","mrz":["P<D<<ROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","JHM7XW56H6D<<5902109F3308305<<<<<<<<<<<<<<04"],"evidence":"reference","generic_validity":false,"reserved":false},{"kind":"id_card","format":"de-id-card-2010","number":"PZ19W6JPY","issuing_state":"D","issued":"2023-07-12","expires":"2033-07-12","mrz":["IDD<<PZ19W6JPY8<<<<<<<<<<<<<<<","5902109F3307124D<<<<<<<<<<<<<0","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":false}],"signature":{"seed":"0000000000000007","data":"14750e64ceb541ac"}})x");
     identity_request belgium = kat_holder();
     belgium.country = "BE";
     belgium.schemes = std::vector<std::string>{"be-nn"};
     belgium.safe = true;
     REQUIRE(gen.get_identity(belgium, std::uint64_t{9}).to_json() ==
-            R"x({"country_code":"BE","birth_date":"1984-11-18","sex":"male","numbers":[{"scheme":"be-nn","label":"National Register number (identification number)","native_label":"numéro de registre national / rijksregisternummer (numéro d'identification)","value":"84111895754","formatted":"84.11.18-957.54","assigned":"1984-11-19","place_code":"","reserved":true}],"documents":[{"kind":"passport","format":"be-passport-current","number":"0N533763","issuing_state":"BEL","issued":"2021-04-04","expires":"2028-04-03","mrz":["P<BELROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","0N533763<2BEL8411187M2804039<<<<<<<<<<<<<<02"],"evidence":"specimen","generic_validity":false,"reserved":true},{"kind":"id_card","format":"be-id-card-2020","number":"X46967047359","issuing_state":"BEL","issued":"2022-02-21","expires":"2032-02-21","mrz":["IDBELX46967047<3591<<<<<<<<<<<","8411187M3202218BEL841118957545","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":true}],"signature":{"seed":"0000000000000009","data":"66cc134c6484ade6"}})x");
+            R"x({"country_code":"BE","birth_date":"1984-11-18","sex":"male","numbers":[{"scheme":"be-nn","label":"National Register number (identification number)","native_label":"numéro de registre national / rijksregisternummer (numéro d'identification)","value":"84111895754","formatted":"84.11.18-957.54","assigned":"1984-11-19","place_code":"","reserved":true}],"documents":[{"kind":"passport","format":"be-passport-current","number":"0N533763","issuing_state":"BEL","issued":"2021-04-04","expires":"2028-04-03","mrz":["P<BELROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","0N533763<2BEL8411187M2804039<<<<<<<<<<<<<<02"],"evidence":"specimen","generic_validity":false,"reserved":true},{"kind":"id_card","format":"be-id-card-2020","number":"X46967047359","issuing_state":"BEL","issued":"2022-02-21","expires":"2032-02-21","mrz":["IDBELX46967047<3591<<<<<<<<<<<","8411187M3202218BEL841118957545","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":true}],"signature":{"seed":"0000000000000009","data":"14750e64ceb541ac"}})x");
 
     const identity_request holder = kat_holder();
     std::uint64_t h = 0xcbf29ce484222325ULL;
@@ -2294,7 +2353,7 @@ TEST_CASE("known answers for documents", "[kat][documents]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0xf53997b1715a4f7eULL);
+    REQUIRE(h == 0xfdd91b7649f43dfcULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -2499,5 +2558,5 @@ TEST_CASE("identity batch: known answer of 10,000 items", "[batch][kat]")
     gen.for_each_identity(request, {.count = 10000, .threads = 4}, 1,
                           [&](std::uint64_t, const identity& item)
                           { hash = dasmig::core::hash_combine(hash, dasmig::core::fnv1a64(item.to_json())); });
-    REQUIRE(hash == 0x483b67e8e07129f2ULL);
+    REQUIRE(hash == 0x24abd4118309e528ULL);
 }

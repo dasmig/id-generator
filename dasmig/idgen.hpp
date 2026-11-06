@@ -1823,7 +1823,12 @@ inline bool build_mx_curp(build_ctx& b, std::string& out)
     const curp_name other = second ? *second : (b.surname != nullptr ? curp_name{} : curp_drawn(b.r));
     const curp_name given = curp_parts(b.given, true, rules).value_or(curp_drawn(b.r));
     const bool letter_century = to_day(b.date) >= b.s.param_day("century_letter_from_birth");
-    out = std::string{first.initial, first.vowel, other.initial, given.initial} + two(b.date.y) + two(b.date.m) + two(b.date.d);
+    std::string head{first.initial, first.vowel, other.initial, given.initial};
+    for (const auto& [word, replacement] : rules.words)
+    {
+        if (word == head) head = replacement;
+    }
+    out = head + two(b.date.y) + two(b.date.m) + two(b.date.d);
     out += b.male() ? 'H' : 'M';
     out += b.place;
     out += first.consonant;
@@ -1838,6 +1843,10 @@ inline bool build_mx_curp(build_ctx& b, std::string& out)
 inline bool valid_mx_curp(const valid_ctx& v, std::string_view t)
 {
     if (!v.s.pattern.matches(t)) return false;
+    for (const auto& [word, replacement] : v.s.names.words)
+    {
+        if (t.substr(0, 4) == word) return false;
+    }
     const char homonymy = t[16];
     if (!((homonymy >= '0' && homonymy <= '9') || (homonymy >= 'A' && homonymy <= 'J'))) return false;
     const int century = homonymy <= '9' ? 1900 : 2000;
@@ -3727,6 +3736,10 @@ class idg
             if (kind != "particle" && kind != "given_skip" && kind != "char" && kind != "word")
             {
                 throw row.error("kind", "unknown kind '" + std::string{kind} + "'");
+            }
+            if (kind == "word" && row["replacement"].size() != row["word"].size())
+            {
+                throw row.error("replacement", "must be as long as the word");
             }
             break;
         }
