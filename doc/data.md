@@ -13,7 +13,7 @@ The data in `resources/` and how id-generator uses it (rule 6 of the dasmig stan
 | `series.tsv` | 5,631 | 5,631 |
 | `documents.tsv` | 536 | 536 |
 | `validity.tsv` | 524 | 524 |
-| `name_rules.tsv` | 32 | 32 |
+| `name_rules.tsv` | 113 | 113 |
 | `test_numbers.tsv` | 2,153 | 42,945 |
 
 The tables total 0.55 MB in `lite` and 5.44 MB in `full`. The tiers differ in three tables:
@@ -56,6 +56,7 @@ Key columns cannot be empty. In `places.tsv` and `validity.tsv`, a `from` of `19
 | `ba-jmb`, `rs-jmbg`, `mk-embg` | Each country's law on the number | Official; the mapping to GeoNames is by hand |
 | `my-mykad` | JPN's state and country code lists | Official |
 | `ro-cnp`, `bg-egn`, `vn-cccd`, `tw-nid`, `mx-curp`, `ec-cedula`, `br-cpf`, `ca-sin`, `pk-cnic`, `ru-inn` | The sources in the number survey | Official or reference, per scheme below |
+| `mx-curp`'s word list | django-localflavor's `CURP_INCONVENIENT_WORDS` (BSD), plus `VACA` | Reference (see the limits) |
 | `me-jmbg` | en.wikipedia and sr.wikipedia, citing a Pravilnik that could not be retrieved | Reference |
 | `kr-rrn` | ko.wikipedia, citing a government press release | Reference, and its ranges overlap (see the limits) |
 
@@ -253,7 +254,7 @@ The script corrects stdnum in four schemes, and each correction is explained in 
 
 **Not available:**
 
-- **CURP's word list.** Anexo 01 of RENAPO's 2021 rules is omitted from the public PDF, so `name_rules.tsv` has the particles and character rules but not the words. A CURP whose first four letters form a listed word keeps them instead of taking an `X`. In the validation sample, 6 of 6,000 realistic CURPs hit python-stdnum's copy of the list.
+- **RENAPO's own CURP word list.** Anexo 01 of its 2021 rules is omitted from the public PDF, so the 81 words in `name_rules.tsv` are not RENAPO's copy, and the current list may differ. They are django-localflavor's 80 and `VACA`, the one word python-stdnum's list adds, whose other spellings `BACA`, `BAKA` and `VAKA` are on both. A CURP whose first four letters form a listed word takes an `X` as its second letter, as RENAPO's rule says, and `is_valid` rejects the word itself, as both of those libraries do. A layer can add or remove words.
 - **Vietnam's Appendix II**, the codes for births abroad. `vn-cccd` has no abroad codes, and safe mode uses an impossible date.
 - **Iranian office codes:** no list exists, so `ir-code` has no place mapping.
 - **Authority examples.** Spain, the Netherlands, Switzerland, Ireland, Portugal and the JMBG countries have no worked example from their authority. Their examples are from reference works or checked by arithmetic.

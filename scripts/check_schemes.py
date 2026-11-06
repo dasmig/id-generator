@@ -514,6 +514,10 @@ def check_lists(tier, rules, tests, schemes, regexes):
     for r in rules:
         if r["scheme"] not in keys or r["kind"] not in ("particle", "given_skip", "char", "word"):
             fail(f"{tier}/name_rules: bad row {r}")
+    words = {r["word"] for r in rules if r["kind"] == "word"}
+    for r in rules:
+        if r["kind"] == "word" and (len(r["replacement"]) != len(r["word"]) or r["replacement"] in words):
+            fail(f"{tier}/name_rules: bad replacement {r}")
     counted = Counter()
     for r in tests:
         key = r["scheme"]

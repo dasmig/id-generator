@@ -144,7 +144,7 @@ Tested with:
 
 ## Data
 
-The rules are curated for this library from laws, authorities' published rules, reference works and specimens read for their format, with a source for each scheme and document. Place codes come from INSEE, ANPR, Wikidata (CC0), the US Social Security Administration and GeoNames (CC BY 4.0); see [doc/data.md](doc/data.md) and [LICENSE_DATA.txt](LICENSE_DATA.txt).
+The rules are curated for this library from laws, authorities' published rules, reference works and specimens read for their format, with a source for each scheme and document. Place codes come from INSEE, ANPR, Wikidata (CC0), the US Social Security Administration and GeoNames (CC BY 4.0), and the CURP's word list from django-localflavor (BSD); see [doc/data.md](doc/data.md) and [LICENSE_DATA.txt](LICENSE_DATA.txt).
 
 ## Related Libraries
 

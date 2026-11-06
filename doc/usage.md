@@ -154,7 +154,7 @@ gen.is_valid("br-cpf", "111.444.777-36"); // false
 gen.is_valid("se-personnummer", "196408233234", std::chrono::year{1960} / 1 / 1); // false: not born yet
 ```
 
-`is_valid` checks structure, check digit and encoded date. It cannot tell whether a number is in use.
+`is_valid` checks structure, check digit and encoded date, and for a CURP that its first four letters are not on the word list. It cannot tell whether a number is in use.
 
 ## Seeding and Deterministic Generation
 

@@ -11,8 +11,7 @@ python-stdnum is LGPL and is for this script only; it is never shipped or vendor
     .venv/Scripts/python scripts/validate_numbers.py [--tier lite] [--count 2000] [--cxx clang++]
 
 Target: every realistic number valid, and each safe number rejected or accepted as
-its scheme's method declares (SAFE_REJECTED below). A hit on CURP's word list is
-reported, not failed, while the library ships no list (doc/data.md).
+its scheme's method declares (SAFE_REJECTED below).
 
 Documents, for all 199 countries, are read back by the ICAO 9303 code in this script:
 line lengths, every check digit, each field against the result, the name as written
@@ -237,12 +236,6 @@ def reason(scheme, value):
     return ""
 
 
-def curp_word_hit(value):
-    from stdnum.mx import curp
-
-    return value[:4] in curp._name_blacklist  # noqa: SLF001, the module has no public list
-
-
 # ICAO 9303 Part 3, 4.9: weights 7, 3, 1; letters count from 10, the filler 0.
 def icao_digit(text):
     total = 0
@@ -450,7 +443,6 @@ def main():
 
     counts = defaultdict(Counter)
     shown = Counter()
-    curp_words = set()
     failures = 0
     checkers = {}
     with open(sample, encoding="utf-8", newline="") as f:
@@ -468,10 +460,6 @@ def main():
             kind = "safe" if safe else "realistic"
             counts[scheme][f"{kind} total"] += 1
             counts[scheme][f"{kind} valid"] += ok
-            if scheme == "mx-curp" and not safe and not ok and curp_word_hit(value):
-                curp_words.add(value[:4])
-                counts[scheme]["realistic word"] += 1
-                continue
             expected = True
             if safe:
                 if scheme in EITHER_WHEN_SAFE:
@@ -495,8 +483,6 @@ def main():
     if missing:
         print("schemes with no sample:", sorted(missing))
         failures += len(missing)
-    if curp_words:
-        print(f"\nCURP word-list hits, reported only: {counts['mx-curp']['realistic word']} numbers, {len(curp_words)} words: {sorted(curp_words)[:20]}")
     print("\nstdnum*: stdnum with the corrections described at cn_ric, id_nik, kr_rrn and pk_cnic.")
     failures += check_documents(document_sample, args.tier)
     print(f"\n{failures} unexpected results")

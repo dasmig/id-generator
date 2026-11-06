@@ -16,7 +16,7 @@ LITE_STEP = 20
 def main():
     rules = read_tsv(CURATED / "name_rules.tsv")
     write_all_tiers("name_rules.tsv",
-                    "RENAPO, Reglas para la asignacion de la CURP (2021), section 5; the Anexo 01 word list is not shipped yet",
+                    "RENAPO, Reglas para la asignacion de la CURP (2021), section 5; the words: django-localflavor (BSD, see LICENSE_DATA.txt) and VACA, not RENAPO's Anexo 01",
                     ["scheme", "kind", "word", "replacement"], rules)
 
     swedish = sorted({line.strip() for line in (RAW / "se_test_numbers.txt").read_text().splitlines() if line.strip()})
