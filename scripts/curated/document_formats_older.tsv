@@ -1,0 +1,26 @@
+# Older number formats still in circulation, each stated in the document survey's notes (survey_documents.tsv) for that country and document. Evidence is the survey's wording: a shape from a real document is specimen, a third-party shape is placeholder.
+country	kind	pattern	from	until	evidence	note
+AU	passport	[NEDFACUX]#{7}	1900-01-01	2014-01-01	reference	Purview, older books
+AU	passport	P@#{7}	2014-01-01	2022-01-01	reference	P series 2014-2022
+BE	passport	@{2}#{6}	1900-01-01	2022-01-01	specimen	2017 specimen TA000000
+BG	id_card	#{9}	1900-01-01	2024-06-17	reference	previous model, 9-digit card number
+CA	passport	@{2}#{6}	1900-01-01	2023-01-01	reference	pre-2023 books, Purview
+CD	passport	OB#{7}	1900-01-01	2015-01-01	reference	2000s series, UN list
+CL	id_card	#{9}	2013-01-01	2024-01-01	specimen	2013-2024 cards, specimen 100000001
+CN	passport	E#{8}	2012-01-01	2017-01-01	reference	older e-passport series
+CN	passport	G#{8}	1900-01-01	2012-01-01	specimen	97-2 version, real document, shape only
+DE	passport	#{9}	1900-01-01	2007-11-01	reference	before 1 Nov 2007, sequential digits
+EE	passport	@#{7}	1900-01-01	2021-01-01	reference	Purview, likely the older series
+HK	passport	K#{8}	2007-01-01	2019-01-01	placeholder	earlier e-passport series, reported, not confirmed
+IN	passport	@#{7}	1900-01-01	2024-04-01	placeholder	pre-e-passport books, third-party documents
+IT	id_card	@{2}#{7}	1900-01-01	2016-01-01	placeholder	old paper card
+KR	passport	[MS]#{8}	2008-01-01	2021-12-21	specimen	2008-2021 series, specimen M70689098
+LI	passport	R#{5}	2006-01-01	2026-01-01	placeholder	2006 biometric series, R + 5 digits
+LK	id_card	#{9}[VX]	1900-01-01	2016-01-01	reference	old NIC format, valid for life
+NL	id_card	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	issuer	RvIG: digit 0 only before 1 Dec 2019
+NL	passport	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	issuer	RvIG: digit 0 only before 1 Dec 2019
+PH	passport	@{2}#{7}	2009-01-01	2016-01-01	placeholder	earlier e-passports, Purview, not confirmed
+RO	id_card	@{2}#{6}	1900-01-01	2025-03-20	reference	pre-2025 CI: series + 6 digits
+SE	passport	#{8}	1900-01-01	2022-01-01	reference	Purview, pre-2022 passports, not confirmed
+US	passport	#{9}	1900-01-01	2021-01-01	specimen	pre-2021 books, real 2019 book, shape only
+VN	passport	@#{7}	1900-01-01	2022-01-01	placeholder	pre-2022 design, specimen B0000000

@@ -1,0 +1,26 @@
+# Sequential numbers without an official table. The note says how each anchor is known. AR: only the 2023 jump is official (argentina.gob.ar); the rest is the informal press table by birth period (Infonegocios, 2025). CL: only 1930 (first number) and 12 million in 1984 come from sources; 2025 is an undated Registro Civil remark, so these anchors are derived. PE: the series by birth period on es.wikipedia (uncited).
+scheme	segment	date	value	note
+ar-dni		1900-01-01	1	informal
+ar-dni		1940-01-01	5000000	informal
+ar-dni		1950-01-01	10000000	informal
+ar-dni		1960-01-01	15000000	informal
+ar-dni		1970-01-01	20000000	informal
+ar-dni		1980-01-01	25000000	informal
+ar-dni		1990-01-01	30000000	informal
+ar-dni		1995-01-01	35000000	informal
+ar-dni		2000-01-01	40000000	informal
+ar-dni		2008-01-01	45000000	informal
+ar-dni		2013-01-01	50000000	informal
+ar-dni		2017-01-01	55000000	informal
+ar-dni		2023-08-31	59999999	official: the series ran out
+ar-dni		2023-09-01	70000000	official: newborns jump to 70 million
+ar-dni		2026-01-01	71800000	derived: the 2017-2023 rate carried forward
+cl-run		1930-01-01	1	first identity number (Registro Civil, 2014)
+cl-run		1984-01-01	12000000	es.wikipedia: correlative from 1984, below about 12 million older
+cl-run		2025-01-01	28000000	derived: Registro Civil, undated, "in the 28 million range"
+pe-dni	national	1978-09-01	40000000	es.wikipedia: 40-49 for births from September 1978
+pe-dni	national	1992-01-01	49999999	es.wikipedia: to the early 1990s
+pe-dni	national	1992-01-02	70000000	es.wikipedia: 70-78 for births about 1992-2003
+pe-dni	national	2003-12-31	78999999	es.wikipedia
+pe-dni	national	2004-01-01	90000000	es.wikipedia: 60-63, 81 and 90-91 from 2002; 90-91 used here
+pe-dni	national	2026-01-01	91999999	derived: the end of the series the source lists

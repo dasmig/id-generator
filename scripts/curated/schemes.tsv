@@ -1,0 +1,67 @@
+# Curated from the number survey (survey_numbers.tsv): how each national scheme is built. prepare_schemes.py joins the country, labels and source.
+key	builder	display	assigned	safe_method	pattern	check	place_source	from	until	safe_pattern	params
+ae-eid	generic_dated	###-####-#######-#	birth;lag:5	wrong_check	784{YYYY}#{7}	luhn		2005-01-01
+ar-cuil	ar_cuil	##-########-#	birth;lag:3	wrong_check	2[03-7]#{8}#			1998-01-01			random_prefix_from=2021-01-01
+ar-dni	ar_dni	##.###.###	birth;lag:2	unissued_series	#{7,8}			1968-01-01			reserved_block=60000000-69999999;safe_below=90000000
+at-svnr	at_svnr	#### ######	birth;lag:2	wrong_check	[1-9]#{9}			1970-01-01
+au-tfn	generic	### ### ###	age:14-18;lag:3	wrong_check	[1-9]#{7}	weights:1 4 3 7 5 8 6 9:r		1988-07-01
+ba-jmb	jmbg		birth;lag:2	wrong_check	#{13}		birthplace	1977-01-08
+be-nn	be_nn	##.##.##-###.##	birth;lag:2	wrong_check	#{11}			1968-01-01			prefix2_from_birth=2000-01-01
+bg-egn	bg_egn		birth;lag:2	wrong_check	#{10}		birthplace	1977-11-01
+br-cpf	br_cpf	###.###.###-##	age:16-25;birth_from:2015-12-01;lag:3	wrong_check	#{11}		residence	1968-12-30
+ca-sin	ca_sin	### ### ###	age:14-18;lag:2	wrong_check	[1-7]#{8}		residence	1964-01-01
+ch-ahv	generic	###.####.####.##	birth;lag:1	wrong_check	756#{9}	gtin		2008-07-01
+cl-run	cl_run	##.###.###-#	birth	wrong_check	#{7,8}[0-9K]			1930-01-01
+cn-ric	cn_ric		birth;lag:5	wrong_check	#{17}[0-9X]		birthplace	1999-10-01
+cz-rc	rc	######/####	birth;lag:1	wrong_check	#{9,10}			1947-01-01			nine_digit_until_birth=1953-12-31;extra_series_from=2004-01-01
+de-idnr	de_idnr	## ### ### ###	birth;lag:1	reserved_range	[1-9]#{10}			2007-01-01		0#{10}	low_prefix_from=2014-01-01
+dk-cpr	dk_cpr	######-####	birth;lag:1	impossible_date	#{10}			1968-04-02			mod11_until=2007-09-30;no_mod11_jan1=1960,1962,1964,1965,1966,1967,1969,1970,1974,1975,1978,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996
+ec-cedula	ec_cedula	#########-#	birth;lag:5	wrong_check	(0[1-9]|1#|2[0-4]|30)[0-5]#{7}		birthplace
+ee-isikukood	baltic_code		birth;lag:2	wrong_check	[1-8]#{10}			1990-01-01
+es-dni	es_dni	########-#	age:6-14;lag:3	wrong_check	#{8}[TRWAGMYFPDXBNJZSQVHLCKE]			1951-01-01
+fi-hetu	fi_hetu		birth;lag:1	reserved_range	#{6}[-+YXWVUABCDEF]#{3}[0-9A-FHJ-NPR-Y]			1964-01-01		9##	new_signs_from=2023-12-19
+fr-nir	fr_nir	# ## ## ## ### ### ##	birth;lag:1	wrong_check	[12]##(0[1-9]|1[0-2])#[0-9AB]#{8}		birthplace	1946-01-01			corsica_letters_from_birth=1976-01-01
+gb-nino	gb_nino	## ## ## ## #	age:15-16;lag:2	reserved_range	[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]#{6}[A-D]			1948-07-05		QQ#{6}[A-D]	barred=BG,GB,KN,NK,NT,TN,ZZ
+gr-amka	generic_dated		birth;lag:17	wrong_check	{DDMMYY}###{S:odd_male}	luhn		1992-01-01
+hk-hkid	hk_hkid	#########(#)	age:11-11;lag:2	wrong_check	@{1,2}#{6}[0-9A]			1980-01-01
+hr-oib	generic		birth;lag:1	wrong_check	#{10}	mod11_10		2009-01-01
+id-nik	id_nik		birth;lag:2	unassigned_place	#{16}		residence	2006-01-01
+ie-ppsn	ie_ppsn		birth;lag:3	wrong_check	#{7}[A-W][ABHW]{0,1}			1998-01-01			suffix_a_from=2013-01-01;suffix_b_from=2024-01-01
+il-idnr	generic		birth	wrong_check	#{8}	luhn
+in-aadhaar	generic	#### #### ####	birth;lag:8	wrong_check	[2-9]#{10}	verhoeff		2010-09-01			no_palindrome=1
+ir-codemeli	ir_code	###-######-#	birth;lag:5	wrong_check	#{10}			1989-01-01
+is-kennitala	is_kennitala	######-####	birth;lag:1	test_numbers	#{10}			1960-01-01			no_check_from=2026-02-18
+it-cf	it_cf		birth;lag:1	wrong_check	@{6}##[A-EHLMPR-T]##@###@		birthplace	1977-01-01
+jp-mynumber	generic	#### #### ####	birth;lag:1	wrong_check	#{11}	weights:6 5 4 3 2 7 6 5 4 3 2:11-r,10=0		2015-10-05
+kr-rrn	kr_rrn	######-#######	birth;lag:2	impossible_date	#{13}		birthplace	1975-01-01			random_from=2020-10-05
+kz-iin	kz_iin		birth;lag:3	wrong_check	#{12}			2007-05-22
+lt-asmens-kodas	baltic_code		birth;lag:1	wrong_check	[1-6]#{10}			1991-12-01
+lv-personas-kods	lv_code	######-#####	birth;lag:1	wrong_check	#{11}						random_from=2017-07-01
+me-jmbg	jmbg		birth;lag:2	wrong_check	#{13}		birthplace	1977-01-08
+mk-embg	jmbg		birth;lag:2	wrong_check	#{13}		birthplace	1977-01-08
+mx-curp	mx_curp		birth;lag:5	wrong_check	@{4}#{6}[HM]@{5}[0-9A-J]#		birthplace	1996-10-23			century_letter_from_birth=2000-01-01
+my-mykad	my_mykad	######-##-####	birth;lag:2	unassigned_place	#{12}		birthplace	1991-01-01
+nl-bsn	generic		birth;lag:1	wrong_check	#{8}	weights:9 8 7 6 5 4 3 2:r		2007-11-26
+no-fodselsnummer	no_fnr		birth;lag:1	reserved_range	#{11}			1964-01-01			new_rule_from=2032-01-01;synthetic_month_offset=80
+nz-ird	nz_ird	###-###-###	age:5-18;lag:3	wrong_check	#{8,9}						min=10000000;max=150000000
+pe-dni	pe_dni	########-#	age:17-18;birth_from:2003-01-01;lag:3	wrong_check	#{9}			1984-01-01
+pk-cnic	pk_cnic	#####-#######-#	age:18-18;lag:3	unassigned_place	#{13}		residence	2000-01-01		[09]#{12}
+pl-pesel	pl_pesel		birth;lag:1	wrong_check	#{11}			1979-01-01
+pt-nif	pt_nif	### ### ###	age:6-18;lag:3	wrong_check	[123]#{8}			1986-01-01			range3_from=2019-06-01
+ro-cnp	ro_cnp		birth;lag:1	wrong_check	[1-6]#{12}		birthplace	1978-03-02			any_county_from=2024-05-08
+rs-jmbg	jmbg		birth;lag:2	wrong_check	#{13}		birthplace	1977-01-08
+ru-inn	ru_inn		age:14-18;lag:5	wrong_check	#{12}		residence	1999-01-01
+ru-snils	ru_snils	###-###-### ##	age:16-25;birth_from:2020-07-15;lag:3	wrong_check	#{11}			1996-04-01
+sa-nid	generic		birth	wrong_check	1#{8}	luhn
+se-personnummer	se_personnummer		birth;lag:1	test_numbers	(18|19|20)#{10}			1947-01-01
+sg-nric	sg_nric		birth;lag:1	wrong_check	[ST]#{7}@			1965-08-09			t_prefix_from_birth=2000-01-01;year_digits_from_birth=1968-01-01
+si-emso	jmbg		birth;lag:2	wrong_check	#{13}			1977-01-08			register=50;overflow_from=2024-01-01
+sk-rc	rc	######/####	birth;lag:1	wrong_check	#{9,10}			1947-01-01			nine_digit_until_birth=1953-12-31
+th-pin	th_pin	#-####-#####-##-#	birth;lag:2	wrong_check	[1-8]#{12}		birthplace	1984-01-01
+tr-tckn	tr_tckn		birth;lag:1	wrong_check	[1-9]#{10}			2000-10-28
+tw-nid	tw_nid		birth;lag:1	wrong_check	@[12]#{8}		birthplace	1969-01-01
+ua-rnokpp	ua_rnokpp		age:14-18;lag:3	wrong_check	#{10}			1994-12-22
+us-ssn	us_ssn	###-##-####	age:14-20;birth_from:1987-01-01;lag:3	reserved_range	#{9}		residence	1936-11-01		(000|666)#{6}	random_from=2011-06-25
+uy-cedula	generic	#.###.###-#	age:0-1;lag:5	wrong_check	#{7}	weights:2 9 8 7 6 3 4:10-r
+vn-cccd	vn_cccd		birth;lag:5	impossible_date	#{12}		birthplace	2016-01-01
+za-idnr	za_idnr	###### #### ###	birth;lag:1	wrong_check	#{13}			1997-01-01

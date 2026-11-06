@@ -1,0 +1,3863 @@
+# national lists from the authorities (INSEE Licence Ouverte; ANPR, Ministero dell'Interno; SSA, US public domain; laws), Wikidata CC0 (CN, ID, TH); weights from city-generator
+scheme	code	label	weight	admin1	country	from	until	reserved
+ba-jmb	10	Banja Luka (SFRJ area)	257677	02		1900-01-01	2013-01-01	
+ba-jmb	11	Bihac (SFRJ area)	75641	01		1900-01-01	2013-01-01	
+ba-jmb	11	Banja Luka, Prijedor, Gradiska	257677	02		2013-01-01		
+ba-jmb	12	Doboj (SFRJ area)	257677	02		1900-01-01	2013-01-01	
+ba-jmb	12	Bijeljina, Doboj, Brod	257677	02		2013-01-01		
+ba-jmb	13	Gorazde (SFRJ area)	619104	01		1900-01-01	2013-01-01	
+ba-jmb	13	Trebinje, Foca, Zvornik, Istocno Sarajevo	257677	02		2013-01-01		
+ba-jmb	14	Livno (SFRJ area)	619104	01		1900-01-01	2013-01-01	
+ba-jmb	14	Brcko Distrikt	41768	BRC		2013-01-01		
+ba-jmb	15	Mostar (SFRJ area)	110983	01		1900-01-01	2013-01-01	
+ba-jmb	15	Mostar, Konjic, Siroki Brijeg	110983	01		2013-01-01		
+ba-jmb	16	Prijedor (SFRJ area)	257677	02		1900-01-01	2013-01-01	
+ba-jmb	16	Bihac, Livno, Cazin	75641	01		2013-01-01		
+ba-jmb	17	Sarajevo (SFRJ area)	768008	01		1900-01-01	2013-01-01	
+ba-jmb	17	Sarajevo, Gorazde	768008	01		2013-01-01		
+ba-jmb	18	Tuzla (SFRJ area)	51731	01		1900-01-01	2013-01-01	
+ba-jmb	18	Tuzla, Gradacac, Orasje	51731	01		2013-01-01		
+ba-jmb	19	Zenica (SFRJ area)	41378	01		1900-01-01	2013-01-01	
+ba-jmb	19	Zenica, Travnik, Bugojno	41378	01		2013-01-01		
+bg-egn	000-043	Blagoevgrad	204723	38		1900-01-01		
+bg-egn	044-093	Burgas	336667	39		1900-01-01		
+bg-egn	094-139	Varna	421253	61		1900-01-01		
+bg-egn	140-169	Veliko Tarnovo	178437	62		1900-01-01		
+bg-egn	170-183	Vidin	59048	63		1900-01-01		
+bg-egn	184-217	Vratsa	104267	64		1900-01-01		
+bg-egn	218-233	Gabrovo	94879	41		1900-01-01		
+bg-egn	234-281	Kardzhali	57461	44		1900-01-01		
+bg-egn	282-301	Kyustendil	102165	45		1900-01-01		
+bg-egn	302-319	Lovech	83235	46		1900-01-01		
+bg-egn	320-341	Montana	105743	47		1900-01-01		
+bg-egn	342-377	Pazardzhik	151929	48		1900-01-01		
+bg-egn	378-395	Pernik	108709	49		1900-01-01		
+bg-egn	396-435	Pleven	160042	50		1900-01-01		
+bg-egn	436-501	Plovdiv	505695	51		1900-01-01		
+bg-egn	502-527	Razgrad	60483	52		1900-01-01		
+bg-egn	528-555	Ruse	141072	53		1900-01-01		
+bg-egn	556-575	Silistra	51883	55		1900-01-01		
+bg-egn	576-601	Sliven	122527	56		1900-01-01		
+bg-egn	602-623	Smolyan	73557	57		1900-01-01		
+bg-egn	624-721	Sofia city	1176039	42		1900-01-01		
+bg-egn	722-751	Sofia district	156679	58		1900-01-01		
+bg-egn	752-789	Stara Zagora	236644	59		1900-01-01		
+bg-egn	790-821	Dobrich	114750	40		1900-01-01		
+bg-egn	822-843	Targovishte	64979	60		1900-01-01		
+bg-egn	844-871	Haskovo	167651	43		1900-01-01		
+bg-egn	872-903	Shumen	114142	54		1900-01-01		
+bg-egn	904-925	Yambol	81265	65		1900-01-01		
+bg-egn	926-999	Other or unknown	0		*	1900-01-01		
+br-cpf	0	RS	10946727	23		1900-01-01		
+br-cpf	1	DF, GO, MT, MS, TO	19678442	07;29;14;11;31		1900-01-01		
+br-cpf	2	PA, AM, AC, AP, RO, RR	16331096	16;04;01;03;24;25		1900-01-01		
+br-cpf	3	CE, MA, PI	18518878	06;13;20		1900-01-01		
+br-cpf	4	PE, RN, PB, AL	20665875	30;22;17;02		1900-01-01		
+br-cpf	5	BA, SE	16418147	05;28		1900-01-01		
+br-cpf	6	MG	20791918	15		1900-01-01		
+br-cpf	7	RJ, ES	19706636	21;08		1900-01-01		
+br-cpf	8	SP	56033164	27		1900-01-01		
+br-cpf	9	PR, SC	18769978	18;26		1900-01-01		
+ca-sin	1	Atlantic provinces	3329714	07;04;09;05		1900-01-01		
+ca-sin	2	Quebec	5305748	10		1900-01-01		
+ca-sin	3	Quebec	5305748	10		1900-01-01		
+ca-sin	4	Ontario	8809652	08		1900-01-01		
+ca-sin	5	Ontario	8809652	08		1900-01-01		
+ca-sin	6	Prairies, North-western Ontario, territories	8438404	03;11;01;13;14		1900-01-01		
+ca-sin	7	British Columbia, Yukon	8376967	02;12		1900-01-01		
+cn-ric	110105	Chaoyang District	3922000	22		1900-01-01		
+cn-ric	120116	Binhai New Area	1973752	28		1900-01-01		
+cn-ric	130102	Chang'an District	1059572	10		1900-01-01		
+cn-ric	130184	Xinle City	487652	10		1900-01-01		
+cn-ric	130208	Fengrun District	916092	10		1900-01-01		
+cn-ric	130302	Haigang District	1024876	10		1900-01-01		
+cn-ric	130303	Shanhaiguan District	178769	10		1900-01-01		
+cn-ric	130408	Yongnian District	1018459	10		1900-01-01		
+cn-ric	130503	Xindu District	798770	10		1900-01-01		
+cn-ric	130581	Nangong	476096	10		1900-01-01		
+cn-ric	130682	Dingzhou	1165182	10		1900-01-01		
+cn-ric	130705	Xuanhua District	542358	10		1900-01-01		
+cn-ric	130881	Pingquan	446939	10		1900-01-01		
+cn-ric	130981	Botou	584308	10		1900-01-01		
+cn-ric	130982	Renqiu	822455	10		1900-01-01		
+cn-ric	131082	Sanhe	965075	10		1900-01-01		
+cn-ric	131102	Taocheng District	608586	10		1900-01-01		
+cn-ric	131103	Jizhou District	362013	10		1900-01-01		
+cn-ric	140105	Xiaodian District	1139798	24		1900-01-01		
+cn-ric	140213	Pingcheng District	1101942	24		1900-01-01		
+cn-ric	140321	Pingding County	317062	24		1900-01-01		
+cn-ric	140403	Luzhou  District	895280	24		1900-01-01		
+cn-ric	140502	Chengqu	574665	24		1900-01-01		
+cn-ric	140702	Yuci District	904518	24		1900-01-01		
+cn-ric	140781	Jiexiu	432095	24		1900-01-01		
+cn-ric	140802	Yanhu District	928334	24		1900-01-01		
+cn-ric	140902	Xinfu District	577089	24		1900-01-01		
+cn-ric	140981	Yuanping	491213	24		1900-01-01		
+cn-ric	141002	Yaodu District	959198	24		1900-01-01		
+cn-ric	141124	Lin County	579077	24		1900-01-01		
+cn-ric	150105	Saihan District	885321	20		1900-01-01		
+cn-ric	150203	Hondlon District	787681	20		1900-01-01		
+cn-ric	150205	Shiguai District	35803	20		1900-01-01		
+cn-ric	150302	Haibowan District	339155	20		1900-01-01		
+cn-ric	150304	Wuda District	133370	20		1900-01-01		
+cn-ric	150404	Songshan District	706312	20		1900-01-01		
+cn-ric	150502	Horqin District	898895	20		1900-01-01		
+cn-ric	150602	Dongsheng District	574242	20		1900-01-01		
+cn-ric	150702	Hailar District	365012	20		1900-01-01		
+cn-ric	150703	Jalainur District	90000	20		1900-01-01		
+cn-ric	150781	Manzhouli	249472	20		1900-01-01		
+cn-ric	150782	Yakeshi	352173	20		1900-01-01		
+cn-ric	150783	Zalantun	366323	20		1900-01-01		
+cn-ric	150784	Ergun City	76667	20		1900-01-01		
+cn-ric	150785	Genhe	120942	20		1900-01-01		
+cn-ric	150802	Linhe District	582206	20		1900-01-01		
+cn-ric	150902	Jining District	425059	20		1900-01-01		
+cn-ric	152201	Ulanhot	356035	20		1900-01-01		
+cn-ric	152501	Erenhot	75794	20		1900-01-01		
+cn-ric	152502	Xilinhot	349953	20		1900-01-01		
+cn-ric	152921	Alxa Left Banner	176744	20		1900-01-01		
+cn-ric	210106	Tiexi District	1335935	19		1900-01-01		
+cn-ric	210115	Liaozhong District	530000	19		1900-01-01		
+cn-ric	210181	Xinmin	680000	19		1900-01-01		
+cn-ric	210211	Ganjingzi District	1798458	19		1900-01-01		
+cn-ric	210214	Pulandian District	817837	19		1900-01-01		
+cn-ric	210281	Wafangdian	1024876	19		1900-01-01		
+cn-ric	210283	Zhuanghe	905852	19		1900-01-01		
+cn-ric	210381	Haicheng	1293877	19		1900-01-01		
+cn-ric	210411	Shuncheng District	472920	19		1900-01-01		
+cn-ric	210504	Mingshan District	409576	19		1900-01-01		
+cn-ric	210522	Huanren Manchu Autonomous County	319026	19		1900-01-01		
+cn-ric	210624	Kuandian Manchu Autonomous County	407713	19		1900-01-01		
+cn-ric	210681	Donggang	568566	19		1900-01-01		
+cn-ric	210682	Fengcheng	543933	19		1900-01-01		
+cn-ric	210726	Heishan County	615085	19		1900-01-01		
+cn-ric	210782	Beizhen City	514898	19		1900-01-01		
+cn-ric	210882	Dashiqiao	704891	19		1900-01-01		
+cn-ric	210921	Fuxin Mongol Autonomous County	664971	19		1900-01-01		
+cn-ric	211021	Liaoyang County	573509	19		1900-01-01		
+cn-ric	211103	Xinglongtai District	529394	19		1900-01-01		
+cn-ric	211224	Changtu County	847924	19		1900-01-01		
+cn-ric	211381	Beipiao	496164	19		1900-01-01		
+cn-ric	211382	Lingyuan	570660	19		1900-01-01		
+cn-ric	211402	Lianshan District	605186	19		1900-01-01		
+cn-ric	211481	Xingcheng	546176	19		1900-01-01		
+cn-ric	220113	Jiutai District	830000	05		1900-01-01		
+cn-ric	220182	Yushu	1304436	05		1900-01-01		
+cn-ric	220183	Dehui	839786	05		1900-01-01		
+cn-ric	220184	Gongzhuling	1092692	05		1900-01-01		
+cn-ric	220281	Jiaohe	453265	05		1900-01-01		
+cn-ric	220282	Huadian	455339	05		1900-01-01		
+cn-ric	220283	Shulan	663403	05		1900-01-01		
+cn-ric	220322	Lishu County	800400	05		1900-01-01		
+cn-ric	220421	Dongfeng County	404235	05		1900-01-01		
+cn-ric	220523	Huinan County	353974	05		1900-01-01		
+cn-ric	220524	Liuhe County	373280	05		1900-01-01		
+cn-ric	220581	Meihekou	618251	05		1900-01-01		
+cn-ric	220602	Hunjiang District	346141	05		1900-01-01		
+cn-ric	220681	Linjiang	173903	05		1900-01-01		
+cn-ric	220722	Changling County	639757	05		1900-01-01		
+cn-ric	220781	Fuyu	769349	05		1900-01-01		
+cn-ric	220802	Taobei District	510167	05		1900-01-01		
+cn-ric	220881	Taonan	437559	05		1900-01-01		
+cn-ric	222401	Yanji	686136	05		1900-01-01		
+cn-ric	222402	Tumen	128212	05		1900-01-01		
+cn-ric	222403	Dunhua	483811	05		1900-01-01		
+cn-ric	222404	Hunchun	239359	05		1900-01-01		
+cn-ric	222405	Longjing	129286	05		1900-01-01		
+cn-ric	222406	Helong	197885	05		1900-01-01		
+cn-ric	222424	Wangqing County	244689	05		1900-01-01		
+cn-ric	230103	Nangang District	1390679	08		1900-01-01		
+cn-ric	230112	Acheng District	596856	08		1900-01-01		
+cn-ric	230113	Shuangcheng District	825634	08		1900-01-01		
+cn-ric	230125	Bin County, Heilongjiang	551271	08		1900-01-01		
+cn-ric	230183	Shangzhi	585386	08		1900-01-01		
+cn-ric	230206	Fularji District	250000	08		1900-01-01		
+cn-ric	230207	Nianzishan District	80000	08		1900-01-01		
+cn-ric	230221	Longjiang County	610000	08		1900-01-01		
+cn-ric	230225	Gannan County	400000	08		1900-01-01		
+cn-ric	230281	Nehe	740000	08		1900-01-01		
+cn-ric	230304	Didao District	120000	08		1900-01-01		
+cn-ric	230306	Chengzihe District	140000	08		1900-01-01		
+cn-ric	230321	Jidong County	300000	08		1900-01-01		
+cn-ric	230382	Mishan	420000	08		1900-01-01		
+cn-ric	230421	Luobei County	220000	08		1900-01-01		
+cn-ric	230503	Lingdong District	80000	08		1900-01-01		
+cn-ric	230523	Baoqing County	420000	08		1900-01-01		
+cn-ric	230604	Ranghulu District	592603	08		1900-01-01		
+cn-ric	230781	Tieli	390000	08		1900-01-01		
+cn-ric	230883	Fuyuan	480000	08		1900-01-01		
+cn-ric	230921	Boli County	360000	08		1900-01-01		
+cn-ric	231081	Suifenhe	114564	08		1900-01-01		
+cn-ric	231083	Hailin	400859	08		1900-01-01		
+cn-ric	231084	Ning'an	440000	08		1900-01-01		
+cn-ric	231181	Bei'an	470000	08		1900-01-01		
+cn-ric	231282	Zhaodong	980000	08		1900-01-01		
+cn-ric	231283	Hailun	850000	08		1900-01-01		
+cn-ric	232721	Huma County	340000	08		1900-01-01		
+cn-ric	310115	Pudong	5681512	23		1900-01-01		
+cn-ric	320115	Jiangning District	1926117	04		1900-01-01		
+cn-ric	320281	Jiangyin	1285785	04		1900-01-01		
+cn-ric	320282	Yixing	1285785	04		1900-01-01		
+cn-ric	320322	Pei County	1038337	04		1900-01-01		
+cn-ric	320381	Xinyi	969922	04		1900-01-01		
+cn-ric	320382	Pizhou	1462563	04		1900-01-01		
+cn-ric	320412	Wujin District	1697380	04		1900-01-01		
+cn-ric	320582	Zhangjiagang	1432044	04		1900-01-01		
+cn-ric	320583	Kunshan	2092496	04		1900-01-01		
+cn-ric	320585	Taicang	831113	04		1900-01-01		
+cn-ric	320612	Tongzhou District	1258739	04		1900-01-01		
+cn-ric	320706	Haizhou District	744773	04		1900-01-01		
+cn-ric	320722	Donghai County	1047357	04		1900-01-01		
+cn-ric	320826	Lianshui County	829699	04		1900-01-01		
+cn-ric	320981	Dongtai	888410	04		1900-01-01		
+cn-ric	321012	Jiangdu District	1017000	04		1900-01-01		
+cn-ric	321084	Gaoyou	811800	04		1900-01-01		
+cn-ric	321181	Danyang	988900	04		1900-01-01		
+cn-ric	321204	Jiangyan District	668408	04		1900-01-01		
+cn-ric	321281	Xinghua	1128204	04		1900-01-01		
+cn-ric	321322	Shuyang County	1674978	04		1900-01-01		
+cn-ric	330110	Yuhang District	2402514	02		1900-01-01		
+cn-ric	330111	Fuyang District	832017	02		1900-01-01		
+cn-ric	330213	Fenghua District	577505	02		1900-01-01		
+cn-ric	330281	Yuyao City	1254032	02		1900-01-01		
+cn-ric	330282	Cixi City	1829488	02		1900-01-01		
+cn-ric	330381	Rui'an	1520386	02		1900-01-01		
+cn-ric	330481	Haining	1076199	02		1900-01-01		
+cn-ric	330502	Wuxing District	1015937	02		1900-01-01		
+cn-ric	330604	Shangyu District	839747	02		1900-01-01		
+cn-ric	330681	Zhuji	1218072	02		1900-01-01		
+cn-ric	330781	Lanxi	574801	02		1900-01-01		
+cn-ric	330782	Yiwu	1859390	02		1900-01-01		
+cn-ric	330783	Dongyang	1087950	02		1900-01-01		
+cn-ric	330784	Yongkang	964203	02		1900-01-01		
+cn-ric	330802	Kecheng District	528847	02		1900-01-01		
+cn-ric	330902	Dinghai District	500030	02		1900-01-01		
+cn-ric	331002	Jiaojiang District	826074	02		1900-01-01		
+cn-ric	331081	Wenling	1416199	02		1900-01-01		
+cn-ric	331102	Liandu District	562116	02		1900-01-01		
+cn-ric	340111	Baohe District	1217469	01		1900-01-01		
+cn-ric	340281	Wuwei City	1180069	01		1900-01-01		
+cn-ric	340321	Huaiyuan County	1028066	01		1900-01-01		
+cn-ric	340422	Shou County	838507	01		1900-01-01		
+cn-ric	340521	Dangtu County	454883	01		1900-01-01		
+cn-ric	340621	Suixi County	1000955	01		1900-01-01		
+cn-ric	340722	Zongyang County	469051	01		1900-01-01		
+cn-ric	340826	Susong County	841000	01		1900-01-01		
+cn-ric	341021	She County	362962	01		1900-01-01		
+cn-ric	341125	Dingyuan County	671361	01		1900-01-01		
+cn-ric	341182	Mingguang	485627	01		1900-01-01		
+cn-ric	341221	Linquan County	1658442	01		1900-01-01		
+cn-ric	341282	Jieshou	650870	01		1900-01-01		
+cn-ric	341302	Yongqiao District	1658682	01		1900-01-01		
+cn-ric	341522	Huoqiu County	944985	01		1900-01-01		
+cn-ric	341602	Qiaocheng District	1537231	01		1900-01-01		
+cn-ric	341702	Guichi District	615274	01		1900-01-01		
+cn-ric	341802	Xuanzhou District	671209	01		1900-01-01		
+cn-ric	350181	Fuqing	1390487	07		1900-01-01		
+cn-ric	350203	Siming District	1073315	07		1900-01-01		
+cn-ric	350322	Xianyou County	905068	07		1900-01-01		
+cn-ric	350404	Sanyuan District	408000	07		1900-01-01		
+cn-ric	350582	Jinjiang	2061600	07		1900-01-01		
+cn-ric	350604	Longhai District	952000	07		1900-01-01		
+cn-ric	350702	Yanping District	454605	07		1900-01-01		
+cn-ric	350782	Wuyishan	259668	07		1900-01-01		
+cn-ric	350783	Jian'ou	434451	07		1900-01-01		
+cn-ric	350802	Xinluo District	841745	07		1900-01-01		
+cn-ric	350902	Jiaocheng District	623840	07		1900-01-01		
+cn-ric	350981	Fu'an	609779	07		1900-01-01		
+cn-ric	360121	Nanchang County	1452502	03		1900-01-01		
+cn-ric	360281	Leping	753787	03		1900-01-01		
+cn-ric	360302	Anyuan District	553293	03		1900-01-01		
+cn-ric	360424	Xiushui County	710620	03		1900-01-01		
+cn-ric	360430	Pengze County	284757	03		1900-01-01		
+cn-ric	360502	Yushui District	927950	03		1900-01-01		
+cn-ric	360681	Guixi	540572	03		1900-01-01		
+cn-ric	360702	Zhanggong District	1123276	03		1900-01-01		
+cn-ric	360827	Suichuan County	512109	03		1900-01-01		
+cn-ric	360902	Yuanzhou District	1121707	03		1900-01-01		
+cn-ric	361002	Linchuan District	1102421	03		1900-01-01		
+cn-ric	361021	Nancheng County	286260	03		1900-01-01		
+cn-ric	361128	Poyang County	1184097	03		1900-01-01		
+cn-ric	370112	Licheng District	1316289	25		1900-01-01		
+cn-ric	370124	Pingyin County	323072	25		1900-01-01		
+cn-ric	370211	Huangdao District	1903595	25		1900-01-01		
+cn-ric	370215	Jimo District	1336077	25		1900-01-01		
+cn-ric	370281	Jiaozhou City	987820	25		1900-01-01		
+cn-ric	370283	Pingdu	1191348	25		1900-01-01		
+cn-ric	370285	Laixi	720103	25		1900-01-01		
+cn-ric	370303	Zhangdian District	1272967	25		1900-01-01		
+cn-ric	370321	Huantai County	489479	25		1900-01-01		
+cn-ric	370481	Tengzhou	1574648	25		1900-01-01		
+cn-ric	370502	Dongying District	848620	25		1900-01-01		
+cn-ric	370602	Zhifu District	877237	25		1900-01-01		
+cn-ric	370681	Longkou	729880	25		1900-01-01		
+cn-ric	370682	Laiyang	794986	25		1900-01-01		
+cn-ric	370683	Laizhou	859424	25		1900-01-01		
+cn-ric	370685	Zhaoyuan	543127	25		1900-01-01		
+cn-ric	370686	Qixia	435405	25		1900-01-01		
+cn-ric	370687	Haiyang	582711	25		1900-01-01		
+cn-ric	370781	Qingzhou	960882	25		1900-01-01		
+cn-ric	370782	Zhucheng	1078178	25		1900-01-01		
+cn-ric	370783	Shouguang	1163364	25		1900-01-01		
+cn-ric	370785	Gaomi	877393	25		1900-01-01		
+cn-ric	370786	Changyi	564501	25		1900-01-01		
+cn-ric	370811	Rencheng District	1245371	25		1900-01-01		
+cn-ric	370812	Yanzhou District	540662	25		1900-01-01		
+cn-ric	370830	Wenshang County	687544	25		1900-01-01		
+cn-ric	370831	Sishui County	542895	25		1900-01-01		
+cn-ric	370881	Qufu	621971	25		1900-01-01		
+cn-ric	370883	Zoucheng	1166559	25		1900-01-01		
+cn-ric	370982	Xintai	1338254	25		1900-01-01		
+cn-ric	370983	Feicheng	894115	25		1900-01-01		
+cn-ric	371082	Rongcheng	714211	25		1900-01-01		
+cn-ric	371102	Donggang District	1003712	25		1900-01-01		
+cn-ric	371302	Lanshan District	1837789	25		1900-01-01		
+cn-ric	371323	Yishui County	967570	25		1900-01-01		
+cn-ric	371328	Mengyin County	485252	25		1900-01-01		
+cn-ric	371481	Laoling	689867	25		1900-01-01		
+cn-ric	371502	Dongchangfu District	1488905	25		1900-01-01		
+cn-ric	371581	Linqing	794529	25		1900-01-01		
+cn-ric	371602	Bincheng District	853649	25		1900-01-01		
+cn-ric	371721	Cao County	1384282	25		1900-01-01		
+cn-ric	371724	Juye County	923923	25		1900-01-01		
+cn-ric	410105	Jinshui District	2145588	09		1900-01-01		
+cn-ric	410185	Dengfeng	729332	09		1900-01-01		
+cn-ric	410221	Qi County	956533	09		1900-01-01		
+cn-ric	410311	Luolong District	918358	09		1900-01-01		
+cn-ric	410482	Ruzhou	974541	09		1900-01-01		
+cn-ric	410526	Hua County	1202600	09		1900-01-01		
+cn-ric	410621	Xun County	665338	09		1900-01-01		
+cn-ric	410783	Changyuan City	905436	09		1900-01-01		
+cn-ric	410823	Wuzhi County	713945	09		1900-01-01		
+cn-ric	410928	Puyang County	1046654	09		1900-01-01		
+cn-ric	411081	Yuzhou	1109782	09		1900-01-01		
+cn-ric	411122	Linying County	593673	09		1900-01-01		
+cn-ric	411282	Lingbao City	721049	09		1900-01-01		
+cn-ric	411381	Dengzhou	1247807	09		1900-01-01		
+cn-ric	411481	Yongcheng	1256409	09		1900-01-01		
+cn-ric	411525	Gushi County	1041399	09		1900-01-01		
+cn-ric	411627	Taikang County	1152685	09		1900-01-01		
+cn-ric	411722	Shangcai County	1005745	09		1900-01-01		
+cn-ric	419001	Jiyuan	727265	09		1900-01-01		
+cn-ric	420111	Hongshan District	2554403	12		1900-01-01		
+cn-ric	420114	Caidian District	930818	12		1900-01-01		
+cn-ric	420116	Huangpi District	1151644	12		1900-01-01		
+cn-ric	420281	Daye	909724	12		1900-01-01		
+cn-ric	420302	Maojian District	601548	12		1900-01-01		
+cn-ric	420582	Dangyang	560000	12		1900-01-01		
+cn-ric	420583	Zhijiang	495995	12		1900-01-01		
+cn-ric	420682	Laohekou	471482	12		1900-01-01		
+cn-ric	420683	Zaoyang City	1004741	12		1900-01-01		
+cn-ric	420704	Echeng District	695697	12		1900-01-01		
+cn-ric	420881	Zhongxiang City	1022514	12		1900-01-01		
+cn-ric	420982	Anlu	720000	12		1900-01-01		
+cn-ric	420984	Hanchuan City	1092700	12		1900-01-01		
+cn-ric	421088	Jianli	1162770	12		1900-01-01		
+cn-ric	421127	Huangmei County	858806	12		1900-01-01		
+cn-ric	421181	Macheng	893654	12		1900-01-01		
+cn-ric	421182	Wuxue	676264	12		1900-01-01		
+cn-ric	421202	Xian'an District	657590	12		1900-01-01		
+cn-ric	421321	Sui County	787730	12		1900-01-01		
+cn-ric	422801	Enshi City	836781	12		1900-01-01		
+cn-ric	422802	Lichuan	913700	12		1900-01-01		
+cn-ric	429004	Xiantao	1268715	12		1900-01-01		
+cn-ric	429005	Qianjiang	886547	12		1900-01-01		
+cn-ric	430104	Yuelu District	1526641	11		1900-01-01		
+cn-ric	430182	Ningxiang City	1368117	11		1900-01-01		
+cn-ric	430281	Liling	1060000	11		1900-01-01		
+cn-ric	430321	Xiangtan County	915997	11		1900-01-01		
+cn-ric	430381	Xiangxiang City	787216	11		1900-01-01		
+cn-ric	430481	Leiyang	1151554	11		1900-01-01		
+cn-ric	430581	Wugang	734870	11		1900-01-01		
+cn-ric	430582	Shaodong City	1335900	11		1900-01-01		
+cn-ric	430602	Yueyanglou District	980401	11		1900-01-01		
+cn-ric	430723	Li County	919500	11		1900-01-01		
+cn-ric	430821	Cili County	705792	11		1900-01-01		
+cn-ric	430923	Anhua County	901043	11		1900-01-01		
+cn-ric	431021	Guiyang County	709372	11		1900-01-01		
+cn-ric	431181	Qiyang	853197	11		1900-01-01		
+cn-ric	431224	Xupu County	932400	11		1900-01-01		
+cn-ric	431281	Hongjiang	498100	11		1900-01-01		
+cn-ric	431322	Xinhua County	1196538	11		1900-01-01		
+cn-ric	431381	Lengshuijiang	370300	11		1900-01-01		
+cn-ric	431382	Lianyuan	1162928	11		1900-01-01		
+cn-ric	433127	Yongshun County	538200	11		1900-01-01		
+cn-ric	440111	Baiyun District	3742991	30		1900-01-01		
+cn-ric	440113	Panyu District	2658397	30		1900-01-01		
+cn-ric	440118	Zengcheng District	1466331	30		1900-01-01		
+cn-ric	440281	Lechang	383498	30		1900-01-01		
+cn-ric	440306	Bao'an District	4476554	30		1900-01-01		
+cn-ric	440307	Longgang District	4135273	30		1900-01-01		
+cn-ric	440402	Xiangzhou District	1384317	30		1900-01-01		
+cn-ric	440403	Doumen District	608899	30		1900-01-01		
+cn-ric	440513	Chaoyang District	1654276	30		1900-01-01		
+cn-ric	440605	Nanhai District	3667247	30		1900-01-01		
+cn-ric	440607	Sanshui District	803226	30		1900-01-01		
+cn-ric	440705	Xinhui District	909277	30		1900-01-01		
+cn-ric	440781	Taishan	907744	30		1900-01-01		
+cn-ric	440881	Lianjiang	1363470	30		1900-01-01		
+cn-ric	440883	Wuchuan	907354	30		1900-01-01		
+cn-ric	440904	Dianbai District	1503737	30		1900-01-01		
+cn-ric	440981	Gaozhou	1328657	30		1900-01-01		
+cn-ric	440982	Huazhou	1291668	30		1900-01-01		
+cn-ric	440983	Xinyi	1014577	30		1900-01-01		
+cn-ric	441224	Huaiji County	805177	30		1900-01-01		
+cn-ric	441302	Huicheng District	2090578	30		1900-01-01		
+cn-ric	441424	Wuhua County	916961	30		1900-01-01		
+cn-ric	441481	Xingning	779411	30		1900-01-01		
+cn-ric	441581	Lufeng	1235827	30		1900-01-01		
+cn-ric	441602	Yuancheng District	703607	30		1900-01-01		
+cn-ric	441781	Yangchun	875896	30		1900-01-01		
+cn-ric	441802	Qingcheng District	1119901	30		1900-01-01		
+cn-ric	441882	Lianzhou	377220	30		1900-01-01		
+cn-ric	441900	Dongguan	10466625	30		1900-01-01		
+cn-ric	442000	Zhongshan	4418060	30		1900-01-01		
+cn-ric	445103	Chao'an District	1175150	30		1900-01-01		
+cn-ric	445281	Puning	1998619	30		1900-01-01		
+cn-ric	445381	Luoding	936931	30		1900-01-01		
+cn-ric	450107	Xixiangtang District	1643819	16		1900-01-01		
+cn-ric	450203	Yufeng District	668961	16		1900-01-01		
+cn-ric	450324	Quanzhou County	565696	16		1900-01-01		
+cn-ric	450422	Teng County	795612	16		1900-01-01		
+cn-ric	450521	Hepu County	864193	16		1900-01-01		
+cn-ric	450603	Fangcheng District	390961	16		1900-01-01		
+cn-ric	450681	Dongxing	216053	16		1900-01-01		
+cn-ric	450721	Lingshan County	1218140	16		1900-01-01		
+cn-ric	450881	Guiping	1511011	16		1900-01-01		
+cn-ric	450923	Bobai County	1390612	16		1900-01-01		
+cn-ric	450981	Beiliu	1211637	16		1900-01-01		
+cn-ric	451081	Jingxi	489163	16		1900-01-01		
+cn-ric	451102	Babu District	655994	16		1900-01-01		
+cn-ric	451203	Yizhou District	549359	16		1900-01-01		
+cn-ric	451302	Xingbin District	925377	16		1900-01-01		
+cn-ric	451402	Jiangzhou District	435438	16		1900-01-01		
+cn-ric	451481	Pingxiang	129843	16		1900-01-01		
+cn-ric	460105	Xiuying District	567108	31		1900-01-01		
+cn-ric	460107	Qiongshan District	655553	31		1900-01-01		
+cn-ric	460108	Meilan District	853013	31		1900-01-01		
+cn-ric	460203	Jiyang District	447322	31		1900-01-01		
+cn-ric	460400	Danzhou	954259	31		1900-01-01		
+cn-ric	469001	Wuzhishan City	112269	31		1900-01-01		
+cn-ric	469002	Qionghai	528238	31		1900-01-01		
+cn-ric	469005	Wenchang	568900	31		1900-01-01		
+cn-ric	469006	Wanning	578600	31		1900-01-01		
+cn-ric	469007	Dongfang	444458	31		1900-01-01		
+cn-ric	500114	Qianjiang District	487281	33		1900-01-01		
+cn-ric	500116	Jiangjin District	1359611	33		1900-01-01		
+cn-ric	500117	Hechuan District	1245294	33		1900-01-01		
+cn-ric	500157	Liangjiang New Area	3520000	33		1900-01-01		
+cn-ric	500237	Wushan County	462462	33		1900-01-01		
+cn-ric	510116	Shuangliu District	2659829	32		1900-01-01		
+cn-ric	510322	Fushun County	826195	32		1900-01-01		
+cn-ric	510402	Dongqu	411427	32		1900-01-01		
+cn-ric	510521	Lu County	840336	32		1900-01-01		
+cn-ric	510623	Zhongjiang County	1186762	32		1900-01-01		
+cn-ric	510703	Fucheng District	1298524	32		1900-01-01		
+cn-ric	510722	Santai County	1042064	32		1900-01-01		
+cn-ric	510802	Lizhou District	621978	32		1900-01-01		
+cn-ric	510981	Shehong City	924531	32		1900-01-01		
+cn-ric	511025	Zizhong County	1192060	32		1900-01-01		
+cn-ric	511102	Shizhong District	814597	32		1900-01-01		
+cn-ric	511303	Gaoping District	570415	32		1900-01-01		
+cn-ric	511324	Yilong County	930028	32		1900-01-01		
+cn-ric	511381	Langzhong	728935	32		1900-01-01		
+cn-ric	511421	Renshou County	1233074	32		1900-01-01		
+cn-ric	511504	Xuzhou District	938157	32		1900-01-01		
+cn-ric	511602	Guang'an District	858159	32		1900-01-01		
+cn-ric	511703	Dachuan District	1200000	32		1900-01-01		
+cn-ric	511802	Yucheng District	368909	32		1900-01-01		
+cn-ric	512021	Anyue County	1141347	32		1900-01-01		
+cn-ric	513201	Barkam	58437	32		1900-01-01		
+cn-ric	513301	Kangding	130142	32		1900-01-01		
+cn-ric	513401	Xichang	966000	32		1900-01-01		
+cn-ric	520103	Yunyan District	1056819	18		1900-01-01		
+cn-ric	520281	Panzhou City	1074073	18		1900-01-01		
+cn-ric	520302	Honghuagang District	971337	18		1900-01-01		
+cn-ric	520402	Xixiu District	870441	18		1900-01-01		
+cn-ric	520502	Qixingguan District	1305066	18		1900-01-01		
+cn-ric	520627	Yanhe Tujia Autonomous County	691900	18		1900-01-01		
+cn-ric	522301	Xingyi	1004132	18		1900-01-01		
+cn-ric	522601	Kaili City	723100	18		1900-01-01		
+cn-ric	522701	Duyun	529688	18		1900-01-01		
+cn-ric	522726	Dushan County	370800	18		1900-01-01		
+cn-ric	530111	Guandu District	1602279	29		1900-01-01		
+cn-ric	530381	Xuanwei	1189813	29		1900-01-01		
+cn-ric	530402	Hongta District	588738	29		1900-01-01		
+cn-ric	530502	Longyang District	903081	29		1900-01-01		
+cn-ric	530581	Tengchong City	642481	29		1900-01-01		
+cn-ric	530627	Zhenxiong County	1349795	29		1900-01-01		
+cn-ric	530722	Yongsheng County	336832	29		1900-01-01		
+cn-ric	530802	Simao District	416188	29		1900-01-01		
+cn-ric	530828	Lancang Lahu Autonomous County	441455	29		1900-01-01		
+cn-ric	530922	Yun County	389180	29		1900-01-01		
+cn-ric	532301	Chuxiong City	631530	29		1900-01-01		
+cn-ric	532501	Gejiu	419314	29		1900-01-01		
+cn-ric	532502	Kaiyuan	323031	29		1900-01-01		
+cn-ric	532503	Mengzi City	585976	29		1900-01-01		
+cn-ric	532625	Maguan County	318704	29		1900-01-01		
+cn-ric	532627	Guangnan County	771948	29		1900-01-01		
+cn-ric	532801	Jinghong	642737	29		1900-01-01		
+cn-ric	532901	Dali	771128	29		1900-01-01		
+cn-ric	532930	Eryuan County	248147	29		1900-01-01		
+cn-ric	533102	Ruili	267638	29		1900-01-01		
+cn-ric	533103	Mangshi City	439931	29		1900-01-01		
+cn-ric	533123	Yingjiang County	292508	29		1900-01-01		
+cn-ric	533301	Lushui	203977	29		1900-01-01		
+cn-ric	533401	Shangri-La City	186412	29		1900-01-01		
+cn-ric	540102	Lhasa District	473586	14		1900-01-01		
+cn-ric	540202	Samzhubzê District	158290	14		1900-01-01		
+cn-ric	540302	Karub District	148511	14		1900-01-01		
+cn-ric	540402	Bayi District	84254	14		1900-01-01		
+cn-ric	540502	Nedong District	81608	14		1900-01-01		
+cn-ric	540602	Seni District	108781	14		1900-01-01		
+cn-ric	542523	Gar County	31052	14		1900-01-01		
+cn-ric	610113	Yanta District	2046737	26		1900-01-01		
+cn-ric	610115	Lintong District	675961	26		1900-01-01		
+cn-ric	610204	Yaozhou District	357370	26		1900-01-01		
+cn-ric	610302	Weibin District	535833	26		1900-01-01		
+cn-ric	610402	Qindu District	834374	26		1900-01-01		
+cn-ric	610502	Linwei District	920044	26		1900-01-01		
+cn-ric	610581	Hancheng	383097	26		1900-01-01		
+cn-ric	610582	Huayin	205119	26		1900-01-01		
+cn-ric	610602	Baota District	640951	26		1900-01-01		
+cn-ric	610702	Hantai District	618204	26		1900-01-01		
+cn-ric	610802	Yuyang District	967639	26		1900-01-01		
+cn-ric	610902	Hanbin District	894853	26		1900-01-01		
+cn-ric	611002	Shangzhou District	472978	26		1900-01-01		
+cn-ric	620102	Chengguan District	1484016	15		1900-01-01		
+cn-ric	620200	Jiayuguan City	312663	15		1900-01-01		
+cn-ric	620302	Jinchuan District	260385	15		1900-01-01		
+cn-ric	620422	Huining County	401581	15		1900-01-01		
+cn-ric	620502	Qinzhou District	656689	15		1900-01-01		
+cn-ric	620522	Qin'an County	416337	15		1900-01-01		
+cn-ric	620602	Liangzhou District	885277	15		1900-01-01		
+cn-ric	620702	Ganzhou District	519096	15		1900-01-01		
+cn-ric	620802	Kongtong District	504265	15		1900-01-01		
+cn-ric	620902	Suzhou District	455611	15		1900-01-01		
+cn-ric	620982	Dunhuang	185231	15		1900-01-01		
+cn-ric	621002	Xifeng District	513856	15		1900-01-01		
+cn-ric	621124	Lintao County	480149	15		1900-01-01		
+cn-ric	621202	Wudu District	546616	15		1900-01-01		
+cn-ric	622901	Linxia City	355968	15		1900-01-01		
+cn-ric	623001	Hezuo	112173	15		1900-01-01		
+cn-ric	623021	Lintan County	127387	15		1900-01-01		
+cn-ric	630102	Chengdong District	489372	06		1900-01-01		
+cn-ric	630223	Huzhu Tu Autonomous County	356437	06		1900-01-01		
+cn-ric	632221	Menyuan Hui Autonomous County	147710	06		1900-01-01		
+cn-ric	632301	Tongren	101519	06		1900-01-01		
+cn-ric	632521	Gonghe County	133409	06		1900-01-01		
+cn-ric	632621	Maqên County	58117	06		1900-01-01		
+cn-ric	632701	Yushu City	141308	06		1900-01-01		
+cn-ric	632801	Golmud	221863	06		1900-01-01		
+cn-ric	640104	Xingqing District	808282	21		1900-01-01		
+cn-ric	640181	Lingwu	294156	21		1900-01-01		
+cn-ric	640202	Dawukou District	298292	21		1900-01-01		
+cn-ric	640302	Litong District	460790	21		1900-01-01		
+cn-ric	640402	Yuanzhou District	471329	21		1900-01-01		
+cn-ric	650104	Xinshi District	1011440	13		1900-01-01		
+cn-ric	650202	Dushanzi District	84395	13		1900-01-01		
+cn-ric	650203	Karamay District	337188	13		1900-01-01		
+cn-ric	650402	Gaochang District	317443	13		1900-01-01		
+cn-ric	650502	Yizhou District	569388	13		1900-01-01		
+cn-ric	652301	Changji	607441	13		1900-01-01		
+cn-ric	652701	Bole	246706	13		1900-01-01		
+cn-ric	652801	Korla	779352	13		1900-01-01		
+cn-ric	652901	Aksu	715319	13		1900-01-01		
+cn-ric	652922	Wensu County	266002	13		1900-01-01		
+cn-ric	653001	Artush	290936	13		1900-01-01		
+cn-ric	653101	Kashgar	782662	13		1900-01-01		
+cn-ric	653123	Yengisar County	276641	13		1900-01-01		
+cn-ric	653124	Poskam County	214543	13		1900-01-01		
+cn-ric	653125	Yarkant County	860800	13		1900-01-01		
+cn-ric	653201	Hotan	501028	13		1900-01-01		
+cn-ric	653222	Karakax County	571648	13		1900-01-01		
+cn-ric	653224	Lop County	286900	13		1900-01-01		
+cn-ric	654002	Yining	526745	13		1900-01-01		
+cn-ric	654004	Khorgos	85000	13		1900-01-01		
+cn-ric	654022	Qapqal Xibe Autonomous County	179744	13		1900-01-01		
+cn-ric	654025	Künes County	306525	13		1900-01-01		
+cn-ric	654201	Tacheng	161037	13		1900-01-01		
+cn-ric	654202	Wusu	298907	13		1900-01-01		
+cn-ric	654203	Shawan	365196	13		1900-01-01		
+cn-ric	654301	Altay City	221454	13		1900-01-01		
+cn-ric	654321	Burqin County	72894	13		1900-01-01		
+cn-ric	659002	Aral	328241	13		1900-01-01		
+cn-ric	659004	Wujiaqu	141065	13		1900-01-01		
+cn-ric	659005	Beitun	104811	13		1900-01-01		
+ec-cedula	01	Azuay	664830	02		1900-01-01		
+ec-cedula	02	Bolivar	34774	03		1900-01-01		
+ec-cedula	03	Canar	81130	04		1900-01-01		
+ec-cedula	04	Carchi	104968	05		1900-01-01		
+ec-cedula	05	Cotopaxi	252858	07		1900-01-01		
+ec-cedula	06	Chimborazo	291001	06		1900-01-01		
+ec-cedula	07	El Oro	529028	08		1900-01-01		
+ec-cedula	08	Esmeraldas	307009	09		1900-01-01		
+ec-cedula	09	Guayas	3824689	10		1900-01-01		
+ec-cedula	10	Imbabura	286581	11		1900-01-01		
+ec-cedula	11	Loja	338945	12		1900-01-01		
+ec-cedula	12	Los Rios	435589	13		1900-01-01		
+ec-cedula	13	Manabi	816793	14		1900-01-01		
+ec-cedula	14	Morona Santiago	42183	15		1900-01-01		
+ec-cedula	15	Napo	24481	23		1900-01-01		
+ec-cedula	16	Pastaza	24881	17		1900-01-01		
+ec-cedula	17	Pichincha	2875803	18		1900-01-01		
+ec-cedula	18	Tungurahua	420844	19		1900-01-01		
+ec-cedula	19	Zamora Chinchipe	25246	20		1900-01-01		
+ec-cedula	20	Galapagos	22186	01		1900-01-01		
+ec-cedula	21	Sucumbios	24211	22		1900-01-01		
+ec-cedula	22	Orellana	69114	24		1900-01-01		
+ec-cedula	23	Santo Domingo de los Tsachilas	458580	26		1900-01-01		
+ec-cedula	24	Santa Elena	86076	25		1900-01-01		
+ec-cedula	30	Abroad	0		*	2012-04-12		
+fr-nir	01053	Bourg-en-Bresse	45340	84		1900-01-01		
+fr-nir	01283	Oyonnax	25697	84		1900-01-01		
+fr-nir	02168	Château-Thierry	15938	32		1900-01-01		
+fr-nir	02408	Laon	28688	32		1900-01-01		
+fr-nir	02691	Saint-Quentin	55407	32		1900-01-01		
+fr-nir	02722	Soissons	31100	32		1900-01-01		
+fr-nir	02738	Tergnier	15475	32		1900-01-01		
+fr-nir	03185	Montluçon	44960	84		1900-01-01		
+fr-nir	03190	Moulins	23095	84		1900-01-01		
+fr-nir	03310	Vichy	27019	84		1900-01-01		
+fr-nir	04070	Digne-les-Bains	18986	93		1900-01-01		
+fr-nir	04112	Manosque	21351	93		1900-01-01		
+fr-nir	05061	Gap	42715	93		1900-01-01		
+fr-nir	06004	Antibes	76393	93		1900-01-01		
+fr-nir	06027	Cagnes-sur-Mer	46923	93		1900-01-01		
+fr-nir	06029	Cannes	74545	93		1900-01-01		
+fr-nir	06030	Le Cannet	43353	93		1900-01-01		
+fr-nir	06069	Grasse	47581	93		1900-01-01		
+fr-nir	06079	Mandelieu-la-Napoule	19292	93		1900-01-01		
+fr-nir	06083	Menton	29649	93		1900-01-01		
+fr-nir	06085	Mougins	18973	93		1900-01-01		
+fr-nir	06088	Nice	673513	93		1900-01-01		
+fr-nir	06123	Saint-Laurent-du-Var	29516	93		1900-01-01		
+fr-nir	06155	Vallauris	27286	93		1900-01-01		
+fr-nir	06157	Vence	18668	93		1900-01-01		
+fr-nir	07010	Annonay	18423	84		1900-01-01		
+fr-nir	08105	Charleville-Mézières	52415	44		1900-01-01		
+fr-nir	08409	Sedan	20620	44		1900-01-01		
+fr-nir	09225	Pamiers	16997	76		1900-01-01		
+fr-nir	10387	Troyes	60785	44		1900-01-01		
+fr-nir	11069	Carcassonne	49600	76		1900-01-01		
+fr-nir	11262	Narbonne	50776	76		1900-01-01		
+fr-nir	12145	Millau	23307	76		1900-01-01		
+fr-nir	12202	Rodez	28337	76		1900-01-01		
+fr-nir	13001	Aix-en-Provence	146821	93		1900-01-01		
+fr-nir	13002	Allauch	21406	93		1900-01-01		
+fr-nir	13004	Arles	53431	93		1900-01-01		
+fr-nir	13005	Aubagne	44844	93		1900-01-01		
+fr-nir	13028	La Ciotat	33113	93		1900-01-01		
+fr-nir	13039	Fos-sur-Mer	17317	93		1900-01-01		
+fr-nir	13041	Gardanne	21140	93		1900-01-01		
+fr-nir	13047	Istres	44373	93		1900-01-01		
+fr-nir	13054	Marignane	35873	93		1900-01-01		
+fr-nir	13056	Martigues	45749	93		1900-01-01		
+fr-nir	13063	Miramas	24173	93		1900-01-01		
+fr-nir	13071	Les Pennes-Mirabeau	19871	93		1900-01-01		
+fr-nir	13077	Port-de-Bouc	15934	93		1900-01-01		
+fr-nir	13103	Salon-de-Provence	41397	93		1900-01-01		
+fr-nir	13117	Vitrolles	38591	93		1900-01-01		
+fr-nir	13201	Marseille 1er Arrondissement	160560	93		1900-01-01		
+fr-nir	14047	Bayeux	15963	28		1900-01-01		
+fr-nir	14118	Caen	110624	28		1900-01-01		
+fr-nir	14327	Hérouville-Saint-Clair	24258	28		1900-01-01		
+fr-nir	14366	Lisieux	24473	28		1900-01-01		
+fr-nir	15014	Aurillac	34724	84		1900-01-01		
+fr-nir	16015	Angoulême	49468	75		1900-01-01		
+fr-nir	16102	Cognac	20868	75		1900-01-01		
+fr-nir	17299	Rochefort	29427	75		1900-01-01		
+fr-nir	17300	La Rochelle	76810	75		1900-01-01		
+fr-nir	17306	Royan	19017	75		1900-01-01		
+fr-nir	17415	Saintes	29512	75		1900-01-01		
+fr-nir	18033	Bourges	67987	24		1900-01-01		
+fr-nir	18279	Vierzon	29876	24		1900-01-01		
+fr-nir	19031	Brive-la-Gaillarde	53466	75		1900-01-01		
+fr-nir	19272	Tulle	16969	75		1900-01-01		
+fr-nir	21054	Beaune	24162	27		1900-01-01		
+fr-nir	21166	Chenôve	15791	27		1900-01-01		
+fr-nir	21231	Dijon	159941	27		1900-01-01		
+fr-nir	22113	Lannion	21473	53		1900-01-01		
+fr-nir	22278	Saint-Brieuc	52774	53		1900-01-01		
+fr-nir	23096	Guéret	15853	75		1900-01-01		
+fr-nir	24037	Bergerac	28317	75		1900-01-01		
+fr-nir	24322	Périgueux	34770	75		1900-01-01		
+fr-nir	25031	Audincourt	15577	27		1900-01-01		
+fr-nir	25056	Besançon	128426	27		1900-01-01		
+fr-nir	25388	Montbéliard	28865	27		1900-01-01		
+fr-nir	25462	Pontarlier	20313	27		1900-01-01		
+fr-nir	26058	Bourg-lès-Valence	19770	84		1900-01-01		
+fr-nir	26198	Montélimar	35637	84		1900-01-01		
+fr-nir	26281	Romans-sur-Isère	35002	84		1900-01-01		
+fr-nir	26362	Valence	63864	84		1900-01-01		
+fr-nir	27229	Évreux	57795	28		1900-01-01		
+fr-nir	27375	Louviers	19220	28		1900-01-01		
+fr-nir	27681	Vernon	26037	28		1900-01-01		
+fr-nir	28085	Chartres	43838	24		1900-01-01		
+fr-nir	28088	Châteaudun	16006	24		1900-01-01		
+fr-nir	28134	Dreux	31058	24		1900-01-01		
+fr-nir	28218	Lucé	17780	24		1900-01-01		
+fr-nir	29019	Brest	144899	53		1900-01-01		
+fr-nir	29039	Concarneau	21397	53		1900-01-01		
+fr-nir	29046	Douarnenez	16590	53		1900-01-01		
+fr-nir	29103	Landerneau	16052	53		1900-01-01		
+fr-nir	29151	Morlaix	17516	53		1900-01-01		
+fr-nir	29232	Quimper	63849	53		1900-01-01		
+fr-nir	2A004	Ajaccio	54364	94		1900-01-01		
+fr-nir	2B033	Bastia	41001	94		1900-01-01		
+fr-nir	30007	Alès	42410	76		1900-01-01		
+fr-nir	30028	Bagnols-sur-Cèze	19640	76		1900-01-01		
+fr-nir	30189	Nîmes	148236	76		1900-01-01		
+fr-nir	31044	Balma	15553	76		1900-01-01		
+fr-nir	31069	Blagnac	24263	76		1900-01-01		
+fr-nir	31149	Colomiers	31363	76		1900-01-01		
+fr-nir	31157	Cugnaux	15393	76		1900-01-01		
+fr-nir	31395	Muret	24313	76		1900-01-01		
+fr-nir	31424	Plaisance-du-Touch	18501	76		1900-01-01		
+fr-nir	31555	Toulouse	511684	76		1900-01-01		
+fr-nir	31557	Tournefeuille	29124	76		1900-01-01		
+fr-nir	32013	Auch	24494	76		1900-01-01		
+fr-nir	33039	Bègles	23504	75		1900-01-01		
+fr-nir	33056	Blanquefort	16636	75		1900-01-01		
+fr-nir	33063	Bordeaux	265328	75		1900-01-01		
+fr-nir	33069	Le Bouscat	24232	75		1900-01-01		
+fr-nir	33119	Cenon	22393	75		1900-01-01		
+fr-nir	33122	Cestas	18036	75		1900-01-01		
+fr-nir	33162	Eysines	21394	75		1900-01-01		
+fr-nir	33167	Floirac	16497	75		1900-01-01		
+fr-nir	33192	Gradignan	24385	75		1900-01-01		
+fr-nir	33199	Gujan-Mestras	19184	75		1900-01-01		
+fr-nir	33243	Libourne	24240	75		1900-01-01		
+fr-nir	33249	Lormont	22636	75		1900-01-01		
+fr-nir	33281	Mérignac	69791	75		1900-01-01		
+fr-nir	33318	Pessac	57944	75		1900-01-01		
+fr-nir	33449	Saint-Médard-en-Jalles	29742	75		1900-01-01		
+fr-nir	33522	Talence	42579	75		1900-01-01		
+fr-nir	33529	La Teste-de-Buch	27253	75		1900-01-01		
+fr-nir	33550	Villenave-d'Ornon	30347	75		1900-01-01		
+fr-nir	34003	Agde	27601	76		1900-01-01		
+fr-nir	34032	Béziers	74081	76		1900-01-01		
+fr-nir	34057	Castelnau-le-Lez	18011	76		1900-01-01		
+fr-nir	34108	Frontignan	22251	76		1900-01-01		
+fr-nir	34129	Lattes	17390	76		1900-01-01		
+fr-nir	34145	Lunel	26588	76		1900-01-01		
+fr-nir	34154	Mauguio	18320	76		1900-01-01		
+fr-nir	34172	Montpellier	248252	76		1900-01-01		
+fr-nir	34301	Sète	40736	76		1900-01-01		
+fr-nir	35051	Cesson-Sévigné	16222	53		1900-01-01		
+fr-nir	35115	Fougères	23719	53		1900-01-01		
+fr-nir	35238	Rennes	227830	53		1900-01-01		
+fr-nir	35288	Saint-Malo	50676	53		1900-01-01		
+fr-nir	35360	Vitré	17266	53		1900-01-01		
+fr-nir	36044	Châteauroux	53301	24		1900-01-01		
+fr-nir	37122	Joué-lès-Tours	37466	24		1900-01-01		
+fr-nir	37208	Saint-Avertin	16007	24		1900-01-01		
+fr-nir	37214	Saint-Cyr-sur-Loire	17337	24		1900-01-01		
+fr-nir	37233	Saint-Pierre-des-Corps	15284	24		1900-01-01		
+fr-nir	37261	Tours	141621	24		1900-01-01		
+fr-nir	38151	Échirolles	33088	84		1900-01-01		
+fr-nir	38169	Fontaine	24588	84		1900-01-01		
+fr-nir	38185	Grenoble	158552	84		1900-01-01		
+fr-nir	38229	Meylan	20267	84		1900-01-01		
+fr-nir	38382	Saint-Égrève	15904	84		1900-01-01		
+fr-nir	38421	Saint-Martin-d'Hères	35528	84		1900-01-01		
+fr-nir	38544	Vienne	32293	84		1900-01-01		
+fr-nir	38553	Villefontaine	19749	84		1900-01-01		
+fr-nir	38563	Voiron	22114	84		1900-01-01		
+fr-nir	39198	Dole	25878	27		1900-01-01		
+fr-nir	39300	Lons-le-Saunier	20678	27		1900-01-01		
+fr-nir	40088	Dax	22305	75		1900-01-01		
+fr-nir	40192	Mont-de-Marsan	36205	75		1900-01-01		
+fr-nir	41018	Blois	53660	24		1900-01-01		
+fr-nir	41194	Romorantin-Lanthenay	19953	24		1900-01-01		
+fr-nir	41269	Vendôme	19226	24		1900-01-01		
+fr-nir	42095	Firminy	17902	84		1900-01-01		
+fr-nir	42147	Montbrison	16164	84		1900-01-01		
+fr-nir	42187	Roanne	39840	84		1900-01-01		
+fr-nir	42207	Saint-Chamond	38014	84		1900-01-01		
+fr-nir	42218	Saint-Étienne	176280	84		1900-01-01		
+fr-nir	43157	Le Puy-en-Velay	22718	84		1900-01-01		
+fr-nir	44020	Bouguenais	16824	52		1900-01-01		
+fr-nir	44026	Carquefou	18056	52		1900-01-01		
+fr-nir	44035	La Chapelle-sur-Erdre	18481	52		1900-01-01		
+fr-nir	44047	Couëron	19466	52		1900-01-01		
+fr-nir	44055	La Baule-Escoublac	17775	52		1900-01-01		
+fr-nir	44069	Guérande	16523	52		1900-01-01		
+fr-nir	44109	Nantes	325070	52		1900-01-01		
+fr-nir	44114	Orvault	25338	52		1900-01-01		
+fr-nir	44143	Rezé	39248	52		1900-01-01		
+fr-nir	44162	Saint-Herblain	46898	52		1900-01-01		
+fr-nir	44184	Saint-Nazaire	67054	52		1900-01-01		
+fr-nir	44190	Saint-Sébastien-sur-Loire	29238	52		1900-01-01		
+fr-nir	44215	Vertou	22921	52		1900-01-01		
+fr-nir	45147	Fleury-les-Aubrais	21085	24		1900-01-01		
+fr-nir	45155	Gien	15966	24		1900-01-01		
+fr-nir	45208	Montargis	17457	24		1900-01-01		
+fr-nir	45232	Olivet	22604	24		1900-01-01		
+fr-nir	45234	Orléans	116344	24		1900-01-01		
+fr-nir	45284	Saint-Jean-de-Braye	19874	24		1900-01-01		
+fr-nir	45285	Saint-Jean-de-la-Ruelle	17522	24		1900-01-01		
+fr-nir	45302	Saran	16243	24		1900-01-01		
+fr-nir	46042	Cahors	23331	76		1900-01-01		
+fr-nir	47001	Agen	34367	75		1900-01-01		
+fr-nir	47157	Marmande	19069	75		1900-01-01		
+fr-nir	47323	Villeneuve-sur-Lot	25869	75		1900-01-01		
+fr-nir	49007	Angers	168279	52		1900-01-01		
+fr-nir	49099	Cholet	53160	52		1900-01-01		
+fr-nir	49328	Saumur	33229	52		1900-01-01		
+fr-nir	50129	Cherbourg-en-Cotentin	91528	28		1900-01-01		
+fr-nir	50502	Saint-Lô	21722	28		1900-01-01		
+fr-nir	51108	Châlons-en-Champagne	51257	44		1900-01-01		
+fr-nir	51230	Épernay	27082	44		1900-01-01		
+fr-nir	51454	Reims	196565	44		1900-01-01		
+fr-nir	51649	Vitry-le-François	17250	44		1900-01-01		
+fr-nir	52121	Chaumont	28981	44		1900-01-01		
+fr-nir	52448	Saint-Dizier	31918	44		1900-01-01		
+fr-nir	53130	Laval	50489	52		1900-01-01		
+fr-nir	53147	Mayenne	15583	52		1900-01-01		
+fr-nir	54304	Laxou	16323	44		1900-01-01		
+fr-nir	54329	Lunéville	21582	44		1900-01-01		
+fr-nir	54395	Nancy	105058	44		1900-01-01		
+fr-nir	54431	Pont-à-Mousson	15411	44		1900-01-01		
+fr-nir	54528	Toul	17680	44		1900-01-01		
+fr-nir	54547	Vandœuvre-lès-Nancy	31785	44		1900-01-01		
+fr-nir	54578	Villers-lès-Nancy	15899	44		1900-01-01		
+fr-nir	55029	Bar-le-Duc	18595	44		1900-01-01		
+fr-nir	55545	Verdun	21798	44		1900-01-01		
+fr-nir	56098	Lanester	24352	53		1900-01-01		
+fr-nir	56121	Lorient	58112	53		1900-01-01		
+fr-nir	56162	Ploemeur	20652	53		1900-01-01		
+fr-nir	56178	Pontivy	16752	53		1900-01-01		
+fr-nir	56260	Vannes	54020	53		1900-01-01		
+fr-nir	57227	Forbach	21358	44		1900-01-01		
+fr-nir	57306	Hayange	15501	44		1900-01-01		
+fr-nir	57463	Metz	123914	44		1900-01-01		
+fr-nir	57480	Montigny-lès-Metz	26369	44		1900-01-01		
+fr-nir	57606	Saint-Avold	18281	44		1900-01-01		
+fr-nir	57631	Sarreguemines	24446	44		1900-01-01		
+fr-nir	57672	Thionville	44311	44		1900-01-01		
+fr-nir	57757	Yutz	15659	44		1900-01-01		
+fr-nir	58194	Nevers	43988	27		1900-01-01		
+fr-nir	59009	Villeneuve-d'Ascq	62400	32		1900-01-01		
+fr-nir	59017	Armentières	26646	32		1900-01-01		
+fr-nir	59122	Cambrai	36492	32		1900-01-01		
+fr-nir	59155	Coudekerque-Branche	25201	32		1900-01-01		
+fr-nir	59163	Croix	21361	32		1900-01-01		
+fr-nir	59172	Denain	21412	32		1900-01-01		
+fr-nir	59178	Douai	46531	32		1900-01-01		
+fr-nir	59183	Dunkerque	98767	32		1900-01-01		
+fr-nir	59220	Faches-Thumesnil	16163	32		1900-01-01		
+fr-nir	59271	Grande-Synthe	23213	32		1900-01-01		
+fr-nir	59279	Halluin	20171	32		1900-01-01		
+fr-nir	59286	Haubourdin	15694	32		1900-01-01		
+fr-nir	59291	Hautmont	15540	32		1900-01-01		
+fr-nir	59295	Hazebrouck	23307	32		1900-01-01		
+fr-nir	59299	Hem	19699	32		1900-01-01		
+fr-nir	59328	Lambersart	28613	32		1900-01-01		
+fr-nir	59350	Lille	268587	32		1900-01-01		
+fr-nir	59360	Loos	22107	32		1900-01-01		
+fr-nir	59368	La Madeleine	23572	32		1900-01-01		
+fr-nir	59378	Marcq-en-Barœul	38629	32		1900-01-01		
+fr-nir	59392	Maubeuge	33684	32		1900-01-01		
+fr-nir	59410	Mons-en-Barœul	23006	32		1900-01-01		
+fr-nir	59507	Ronchin	18331	32		1900-01-01		
+fr-nir	59512	Roubaix	99507	32		1900-01-01		
+fr-nir	59526	Saint-Amand-les-Eaux	17808	32		1900-01-01		
+fr-nir	59569	Sin-le-Noble	17682	32		1900-01-01		
+fr-nir	59599	Tourcoing	99160	32		1900-01-01		
+fr-nir	59606	Valenciennes	44821	32		1900-01-01		
+fr-nir	59646	Wasquehal	19320	32		1900-01-01		
+fr-nir	59650	Wattrelos	42826	32		1900-01-01		
+fr-nir	60057	Beauvais	53393	32		1900-01-01		
+fr-nir	60159	Compiègne	44243	32		1900-01-01		
+fr-nir	60175	Creil	31863	32		1900-01-01		
+fr-nir	60176	Crépy-en-Valois	15694	32		1900-01-01		
+fr-nir	60463	Nogent-sur-Oise	19690	32		1900-01-01		
+fr-nir	60471	Noyon	15138	32		1900-01-01		
+fr-nir	60612	Senlis	19160	32		1900-01-01		
+fr-nir	61001	Alençon	30786	28		1900-01-01		
+fr-nir	61006	Argentan	18230	28		1900-01-01		
+fr-nir	61169	Flers	17430	28		1900-01-01		
+fr-nir	62041	Arras	47052	32		1900-01-01		
+fr-nir	62065	Avion	18470	32		1900-01-01		
+fr-nir	62108	Berck	31284	32		1900-01-01		
+fr-nir	62119	Béthune	31568	32		1900-01-01		
+fr-nir	62160	Boulogne-sur-Mer	47013	32		1900-01-01		
+fr-nir	62178	Bruay-la-Buissière	24474	32		1900-01-01		
+fr-nir	62193	Calais	74433	32		1900-01-01		
+fr-nir	62215	Carvin	19070	32		1900-01-01		
+fr-nir	62427	Hénin-Beaumont	25371	32		1900-01-01		
+fr-nir	62498	Lens	38265	32		1900-01-01		
+fr-nir	62510	Liévin	34370	32		1900-01-01		
+fr-nir	62643	Outreau	15648	32		1900-01-01		
+fr-nir	62765	Saint-Omer	18250	32		1900-01-01		
+fr-nir	63075	Chamalières	20298	84		1900-01-01		
+fr-nir	63113	Clermont-Ferrand	147865	84		1900-01-01		
+fr-nir	63124	Cournon-d'Auvergne	18848	84		1900-01-01		
+fr-nir	63178	Issoire	15984	84		1900-01-01		
+fr-nir	63300	Riom	20142	84		1900-01-01		
+fr-nir	64024	Anglet	40658	75		1900-01-01		
+fr-nir	64102	Bayonne	44396	75		1900-01-01		
+fr-nir	64122	Biarritz	33188	75		1900-01-01		
+fr-nir	64445	Pau	82697	75		1900-01-01		
+fr-nir	65286	Lourdes	15786	76		1900-01-01		
+fr-nir	65440	Tarbes	52106	76		1900-01-01		
+fr-nir	66136	Perpignan	110706	76		1900-01-01		
+fr-nir	67043	Bischheim	17434	44		1900-01-01		
+fr-nir	67180	Haguenau	38721	44		1900-01-01		
+fr-nir	67218	Illkirch-Graffenstaden	27261	44		1900-01-01		
+fr-nir	67267	Lingolsheim	17284	44		1900-01-01		
+fr-nir	67447	Schiltigheim	32289	44		1900-01-01		
+fr-nir	67462	Sélestat	18941	44		1900-01-01		
+fr-nir	67482	Strasbourg	274845	44		1900-01-01		
+fr-nir	68066	Colmar	65405	44		1900-01-01		
+fr-nir	68154	Illzach	15457	44		1900-01-01		
+fr-nir	68224	Mulhouse	111430	44		1900-01-01		
+fr-nir	68297	Saint-Louis	20871	44		1900-01-01		
+fr-nir	68376	Wittenheim	15747	44		1900-01-01		
+fr-nir	69029	Bron	37825	84		1900-01-01		
+fr-nir	69034	Caluire-et-Cuire	42763	84		1900-01-01		
+fr-nir	69081	Écully	19437	84		1900-01-01		
+fr-nir	69091	Givors	18198	84		1900-01-01		
+fr-nir	69149	Oullins-Pierre-Bénite	35563	84		1900-01-01		
+fr-nir	69199	Saint-Fons	16053	84		1900-01-01		
+fr-nir	69202	Sainte-Foy-lès-Lyon	21893	84		1900-01-01		
+fr-nir	69204	Saint-Genis-Laval	20883	84		1900-01-01		
+fr-nir	69256	Vaulx-en-Velin	37489	84		1900-01-01		
+fr-nir	69259	Vénissieux	57584	84		1900-01-01		
+fr-nir	69264	Villefranche-sur-Saône	32994	84		1900-01-01		
+fr-nir	69266	Villeurbanne	131445	84		1900-01-01		
+fr-nir	69275	Décines-Charpieu	24674	84		1900-01-01		
+fr-nir	69282	Meyzieu	28929	84		1900-01-01		
+fr-nir	69286	Rillieux-la-Pape	28076	84		1900-01-01		
+fr-nir	69290	Saint-Priest	41641	84		1900-01-01		
+fr-nir	69381	Lyon 1er Arrondissement	117851	84		1900-01-01		
+fr-nir	70550	Vesoul	19892	27		1900-01-01		
+fr-nir	71014	Autun	18283	27		1900-01-01		
+fr-nir	71076	Chalon-sur-Saône	47251	27		1900-01-01		
+fr-nir	71153	Le Creusot	25590	27		1900-01-01		
+fr-nir	71270	Mâcon	35484	27		1900-01-01		
+fr-nir	71306	Montceau-les-Mines	20221	27		1900-01-01		
+fr-nir	71436	Saint-Laurent-d'Andenay	29278	27		1900-01-01		
+fr-nir	72154	La Flèche	18536	52		1900-01-01		
+fr-nir	72181	Le Mans	144515	52		1900-01-01		
+fr-nir	73008	Aix-les-Bains	27651	84		1900-01-01		
+fr-nir	73011	Albertville	19113	84		1900-01-01		
+fr-nir	73065	Chambéry	61640	84		1900-01-01		
+fr-nir	74010	Annecy	120179	84		1900-01-01		
+fr-nir	74012	Annemasse	28275	84		1900-01-01		
+fr-nir	74081	Cluses	19789	84		1900-01-01		
+fr-nir	74256	Sallanches	16725	84		1900-01-01		
+fr-nir	74281	Thonon-les-Bains	31684	84		1900-01-01		
+fr-nir	75101	Paris 1er Arrondissement	265624	11		1900-01-01		
+fr-nir	76157	Canteleu	15742	28		1900-01-01		
+fr-nir	76217	Dieppe	35707	28		1900-01-01		
+fr-nir	76231	Elbeuf	17231	28		1900-01-01		
+fr-nir	76259	Fécamp	22003	28		1900-01-01		
+fr-nir	76322	Le Grand-Quevilly	26522	28		1900-01-01		
+fr-nir	76351	Le Havre	185972	28		1900-01-01		
+fr-nir	76447	Montivilliers	16706	28		1900-01-01		
+fr-nir	76451	Mont-Saint-Aignan	23078	28		1900-01-01		
+fr-nir	76498	Le Petit-Quevilly	22691	28		1900-01-01		
+fr-nir	76540	Rouen	116331	28		1900-01-01		
+fr-nir	76575	Saint-Étienne-du-Rouvray	28953	28		1900-01-01		
+fr-nir	76681	Sotteville-lès-Rouen	30619	28		1900-01-01		
+fr-nir	77014	Avon	15009	11		1900-01-01		
+fr-nir	77053	Brie-Comte-Robert	15892	11		1900-01-01		
+fr-nir	77083	Champs-sur-Marne	27776	11		1900-01-01		
+fr-nir	77108	Chelles	46947	11		1900-01-01		
+fr-nir	77122	Combs-la-Ville	22322	11		1900-01-01		
+fr-nir	77131	Coulommiers	15274	11		1900-01-01		
+fr-nir	77152	Dammarie-les-Lys	21066	11		1900-01-01		
+fr-nir	77186	Fontainebleau	19717	11		1900-01-01		
+fr-nir	77243	Lagny-sur-Marne	20649	11		1900-01-01		
+fr-nir	77258	Lognes	15519	11		1900-01-01		
+fr-nir	77284	Meaux	53811	11		1900-01-01		
+fr-nir	77285	Le Mée-sur-Seine	22058	11		1900-01-01		
+fr-nir	77288	Melun	38953	11		1900-01-01		
+fr-nir	77294	Mitry-Mory	18562	11		1900-01-01		
+fr-nir	77296	Moissy-Cramayel	16259	11		1900-01-01		
+fr-nir	77305	Montereau-Fault-Yonne	16993	11		1900-01-01		
+fr-nir	77337	Noisiel	15362	11		1900-01-01		
+fr-nir	77350	Ozoir-la-Ferrière	22530	11		1900-01-01		
+fr-nir	77373	Pontault-Combault	34798	11		1900-01-01		
+fr-nir	77390	Roissy-en-Brie	20933	11		1900-01-01		
+fr-nir	77445	Savigny-le-Temple	25925	11		1900-01-01		
+fr-nir	77468	Torcy	24386	11		1900-01-01		
+fr-nir	77514	Villeparisis	23931	11		1900-01-01		
+fr-nir	78005	Achères	26757	11		1900-01-01		
+fr-nir	78123	Carrières-sous-Poissy	15465	11		1900-01-01		
+fr-nir	78126	La Celle-Saint-Cloud	21539	11		1900-01-01		
+fr-nir	78146	Chatou	30091	11		1900-01-01		
+fr-nir	78158	Le Chesnay-Rocquencourt	32543	11		1900-01-01		
+fr-nir	78165	Les Clayes-sous-Bois	17776	11		1900-01-01		
+fr-nir	78172	Conflans-Sainte-Honorine	36358	11		1900-01-01		
+fr-nir	78208	Élancourt	30831	11		1900-01-01		
+fr-nir	78297	Guyancourt	31989	11		1900-01-01		
+fr-nir	78311	Houilles	31121	11		1900-01-01		
+fr-nir	78335	Limay	18559	11		1900-01-01		
+fr-nir	78358	Maisons-Laffitte	22772	11		1900-01-01		
+fr-nir	78361	Mantes-la-Jolie	44263	11		1900-01-01		
+fr-nir	78362	Mantes-la-Ville	19947	11		1900-01-01		
+fr-nir	78372	Marly-le-Roi	17404	11		1900-01-01		
+fr-nir	78383	Maurepas	19009	11		1900-01-01		
+fr-nir	78418	Montesson	15256	11		1900-01-01		
+fr-nir	78423	Montigny-le-Bretonneux	185661	11		1900-01-01		
+fr-nir	78440	Les Mureaux	32134	11		1900-01-01		
+fr-nir	78481	Le Pecq	16534	11		1900-01-01		
+fr-nir	78490	Plaisir	36121	11		1900-01-01		
+fr-nir	78498	Poissy	36431	11		1900-01-01		
+fr-nir	78517	Rambouillet	26674	11		1900-01-01		
+fr-nir	78545	Saint-Cyr-l'École	16365	11		1900-01-01		
+fr-nir	78551	Saint-Germain-en-Laye	45575	11		1900-01-01		
+fr-nir	78586	Sartrouville	53980	11		1900-01-01		
+fr-nir	78621	Trappes	28367	11		1900-01-01		
+fr-nir	78640	Vélizy-Villacoublay	21741	11		1900-01-01		
+fr-nir	78642	Verneuil-sur-Seine	16790	11		1900-01-01		
+fr-nir	78646	Versailles	85416	11		1900-01-01		
+fr-nir	78650	Le Vésinet	16740	11		1900-01-01		
+fr-nir	78686	Viroflay	16137	11		1900-01-01		
+fr-nir	79049	Bressuire	20743	75		1900-01-01		
+fr-nir	79191	Niort	54660	75		1900-01-01		
+fr-nir	80001	Abbeville	26461	32		1900-01-01		
+fr-nir	80021	Amiens	143086	32		1900-01-01		
+fr-nir	81004	Albi	52409	76		1900-01-01		
+fr-nir	81065	Castres	47275	76		1900-01-01		
+fr-nir	82121	Montauban	52434	76		1900-01-01		
+fr-nir	83023	Brignoles	15027	93		1900-01-01		
+fr-nir	83047	La Crau	17905	93		1900-01-01		
+fr-nir	83050	Draguignan	38573	93		1900-01-01		
+fr-nir	83061	Fréjus	53098	93		1900-01-01		
+fr-nir	83062	La Garde	28257	93		1900-01-01		
+fr-nir	83069	Hyères	50487	93		1900-01-01		
+fr-nir	83116	Saint-Maximin-la-Sainte-Baume	15225	93		1900-01-01		
+fr-nir	83118	Saint-Raphaël	34918	93		1900-01-01		
+fr-nir	83123	Sanary-sur-Mer	19166	93		1900-01-01		
+fr-nir	83126	La Seyne-sur-Mer	62330	93		1900-01-01		
+fr-nir	83129	Six-Fours-les-Plages	34779	93		1900-01-01		
+fr-nir	83137	Toulon	168701	93		1900-01-01		
+fr-nir	83144	La Valette-du-Var	23134	93		1900-01-01		
+fr-nir	84007	Avignon	103769	93		1900-01-01		
+fr-nir	84031	Carpentras	29709	93		1900-01-01		
+fr-nir	84035	Cavaillon	26689	93		1900-01-01		
+fr-nir	84054	L'Isle-sur-la-Sorgue	16968	93		1900-01-01		
+fr-nir	84087	Orange	30530	93		1900-01-01		
+fr-nir	84089	Pertuis	19926	93		1900-01-01		
+fr-nir	84092	Le Pontet	16182	93		1900-01-01		
+fr-nir	84129	Sorgues	18681	93		1900-01-01		
+fr-nir	85047	Challans	18947	52		1900-01-01		
+fr-nir	85092	Fontenay-le-Comte	16316	52		1900-01-01		
+fr-nir	85109	Les Herbiers	15664	52		1900-01-01		
+fr-nir	85191	La Roche-sur-Yon	59410	52		1900-01-01		
+fr-nir	85194	Les Sables-d'Olonne	40682	52		1900-01-01		
+fr-nir	86066	Châtellerault	37210	75		1900-01-01		
+fr-nir	86194	Poitiers	85960	75		1900-01-01		
+fr-nir	87085	Limoges	141176	75		1900-01-01		
+fr-nir	88160	Épinal	39518	44		1900-01-01		
+fr-nir	88413	Saint-Dié-des-Vosges	24628	44		1900-01-01		
+fr-nir	89024	Auxerre	41516	27		1900-01-01		
+fr-nir	89387	Sens	28700	27		1900-01-01		
+fr-nir	90010	Belfort	54562	27		1900-01-01		
+fr-nir	91027	Athis-Mons	31225	11		1900-01-01		
+fr-nir	91103	Brétigny-sur-Orge	24317	11		1900-01-01		
+fr-nir	91114	Brunoy	24096	11		1900-01-01		
+fr-nir	91161	Chilly-Mazarin	18870	11		1900-01-01		
+fr-nir	91174	Corbeil-Essonnes	40527	11		1900-01-01		
+fr-nir	91201	Draveil	29316	11		1900-01-01		
+fr-nir	91223	Étampes	23012	11		1900-01-01		
+fr-nir	91228	Évry-Courcouronnes	66756	11		1900-01-01		
+fr-nir	91272	Gif-sur-Yvette	23541	11		1900-01-01		
+fr-nir	91286	Grigny	24940	11		1900-01-01		
+fr-nir	91345	Longjumeau	20771	11		1900-01-01		
+fr-nir	91377	Massy	38768	11		1900-01-01		
+fr-nir	91421	Montgeron	22843	11		1900-01-01		
+fr-nir	91434	Morsang-sur-Orge	19917	11		1900-01-01		
+fr-nir	91471	Orsay	17817	11		1900-01-01		
+fr-nir	91477	Palaiseau	31987	11		1900-01-01		
+fr-nir	91521	Ris-Orangis	25082	11		1900-01-01		
+fr-nir	91549	Sainte-Geneviève-des-Bois	33689	11		1900-01-01		
+fr-nir	91570	Saint-Michel-sur-Orge	20824	11		1900-01-01		
+fr-nir	91589	Savigny-sur-Orge	39698	11		1900-01-01		
+fr-nir	91645	Verrières-le-Buisson	16789	11		1900-01-01		
+fr-nir	91657	Vigneux-sur-Seine	26692	11		1900-01-01		
+fr-nir	91687	Viry-Châtillon	31131	11		1900-01-01		
+fr-nir	91691	Yerres	28897	11		1900-01-01		
+fr-nir	91692	Les Ulis	25785	11		1900-01-01		
+fr-nir	92002	Antony	59845	11		1900-01-01		
+fr-nir	92004	Asnières-sur-Seine	86742	11		1900-01-01		
+fr-nir	92007	Bagneux	38900	11		1900-01-01		
+fr-nir	92009	Bois-Colombes	24300	11		1900-01-01		
+fr-nir	92012	Boulogne-Billancourt	108782	11		1900-01-01		
+fr-nir	92014	Bourg-la-Reine	18870	11		1900-01-01		
+fr-nir	92019	Châtenay-Malabry	32715	11		1900-01-01		
+fr-nir	92020	Châtillon	32383	11		1900-01-01		
+fr-nir	92022	Chaville	18735	11		1900-01-01		
+fr-nir	92023	Clamart	51400	11		1900-01-01		
+fr-nir	92024	Clichy	57467	11		1900-01-01		
+fr-nir	92025	Colombes	82300	11		1900-01-01		
+fr-nir	92026	Courbevoie	85158	11		1900-01-01		
+fr-nir	92032	Fontenay-aux-Roses	24680	11		1900-01-01		
+fr-nir	92033	Garches	18930	11		1900-01-01		
+fr-nir	92035	La Garenne-Colombes	26385	11		1900-01-01		
+fr-nir	92036	Gennevilliers	42294	11		1900-01-01		
+fr-nir	92040	Issy-les-Moulineaux	61447	11		1900-01-01		
+fr-nir	92044	Levallois-Perret	62178	11		1900-01-01		
+fr-nir	92046	Malakoff	29420	11		1900-01-01		
+fr-nir	92048	Meudon	48185	11		1900-01-01		
+fr-nir	92049	Montrouge	38708	11		1900-01-01		
+fr-nir	92050	Nanterre	86719	11		1900-01-01		
+fr-nir	92051	Neuilly-sur-Seine	61300	11		1900-01-01		
+fr-nir	92060	Le Plessis-Robinson	22510	11		1900-01-01		
+fr-nir	92062	Puteaux	60646	11		1900-01-01		
+fr-nir	92063	Rueil-Malmaison	76616	11		1900-01-01		
+fr-nir	92064	Saint-Cloud	28839	11		1900-01-01		
+fr-nir	92071	Sceaux	21511	11		1900-01-01		
+fr-nir	92072	Sèvres	23724	11		1900-01-01		
+fr-nir	92073	Suresnes	44697	11		1900-01-01		
+fr-nir	92075	Vanves	26068	11		1900-01-01		
+fr-nir	92078	Villeneuve-la-Garenne	22036	11		1900-01-01		
+fr-nir	93001	Aubervilliers	70914	11		1900-01-01		
+fr-nir	93005	Aulnay-sous-Bois	80615	11		1900-01-01		
+fr-nir	93006	Bagnolet	33504	11		1900-01-01		
+fr-nir	93007	Le Blanc-Mesnil	48077	11		1900-01-01		
+fr-nir	93008	Bobigny	44962	11		1900-01-01		
+fr-nir	93010	Bondy	48268	11		1900-01-01		
+fr-nir	93014	Clichy-sous-Bois	29062	11		1900-01-01		
+fr-nir	93027	La Courneuve	37287	11		1900-01-01		
+fr-nir	93029	Drancy	62488	11		1900-01-01		
+fr-nir	93031	Épinay-sur-Seine	46145	11		1900-01-01		
+fr-nir	93032	Gagny	38134	11		1900-01-01		
+fr-nir	93045	Les Lilas	21124	11		1900-01-01		
+fr-nir	93046	Livry-Gargan	39518	11		1900-01-01		
+fr-nir	93047	Montfermeil	23829	11		1900-01-01		
+fr-nir	93048	Montreuil	111240	11		1900-01-01		
+fr-nir	93049	Neuilly-Plaisance	18725	11		1900-01-01		
+fr-nir	93050	Neuilly-sur-Marne	34465	11		1900-01-01		
+fr-nir	93051	Noisy-le-Grand	62420	11		1900-01-01		
+fr-nir	93053	Noisy-le-Sec	38955	11		1900-01-01		
+fr-nir	93055	Pantin	52922	11		1900-01-01		
+fr-nir	93057	Les Pavillons-sous-Bois	19730	11		1900-01-01		
+fr-nir	93061	Le Pré-Saint-Gervais	17786	11		1900-01-01		
+fr-nir	93063	Romainville	24772	11		1900-01-01		
+fr-nir	93064	Rosny-sous-Bois	41627	11		1900-01-01		
+fr-nir	93066	Saint-Denis	150508	11		1900-01-01		
+fr-nir	93070	Saint-Ouen-sur-Seine	39353	11		1900-01-01		
+fr-nir	93071	Sevran	47334	11		1900-01-01		
+fr-nir	93072	Stains	32601	11		1900-01-01		
+fr-nir	93073	Tremblay-en-France	35591	11		1900-01-01		
+fr-nir	93077	Villemomble	28001	11		1900-01-01		
+fr-nir	93078	Villepinte	37114	11		1900-01-01		
+fr-nir	94002	Alfortville	37290	11		1900-01-01		
+fr-nir	94003	Arcueil	17308	11		1900-01-01		
+fr-nir	94004	Boissy-Saint-Léger	15877	11		1900-01-01		
+fr-nir	94011	Bonneuil-sur-Marne	18723	11		1900-01-01		
+fr-nir	94015	Bry-sur-Marne	16226	11		1900-01-01		
+fr-nir	94016	Cachan	26540	11		1900-01-01		
+fr-nir	94017	Champigny-sur-Marne	76726	11		1900-01-01		
+fr-nir	94018	Charenton-le-Pont	30910	11		1900-01-01		
+fr-nir	94019	Chennevières-sur-Marne	18314	11		1900-01-01		
+fr-nir	94021	Chevilly-Larue	20125	11		1900-01-01		
+fr-nir	94022	Choisy-le-Roi	35590	11		1900-01-01		
+fr-nir	94028	Créteil	84833	11		1900-01-01		
+fr-nir	94033	Fontenay-sous-Bois	52075	11		1900-01-01		
+fr-nir	94034	Fresnes	24803	11		1900-01-01		
+fr-nir	94037	Gentilly	15939	11		1900-01-01		
+fr-nir	94038	L'Haÿ-les-Roses	29703	11		1900-01-01		
+fr-nir	94041	Ivry-sur-Seine	57897	11		1900-01-01		
+fr-nir	94042	Joinville-le-Pont	18154	11		1900-01-01		
+fr-nir	94043	Le Kremlin-Bicêtre	47929	11		1900-01-01		
+fr-nir	94044	Limeil-Brévannes	19104	11		1900-01-01		
+fr-nir	94046	Maisons-Alfort	53964	11		1900-01-01		
+fr-nir	94052	Nogent-sur-Marne	31236	11		1900-01-01		
+fr-nir	94054	Orly	20528	11		1900-01-01		
+fr-nir	94058	Le Perreux-sur-Marne	32015	11		1900-01-01		
+fr-nir	94059	Le Plessis-Trévise	18618	11		1900-01-01		
+fr-nir	94067	Saint-Mandé	21261	11		1900-01-01		
+fr-nir	94068	Saint-Maur-des-Fossés	75402	11		1900-01-01		
+fr-nir	94071	Sucy-en-Brie	25014	11		1900-01-01		
+fr-nir	94073	Thiais	29724	11		1900-01-01		
+fr-nir	94076	Villejuif	48048	11		1900-01-01		
+fr-nir	94077	Villeneuve-le-Roi	17575	11		1900-01-01		
+fr-nir	94078	Villeneuve-Saint-Georges	30881	11		1900-01-01		
+fr-nir	94079	Villiers-sur-Marne	30252	11		1900-01-01		
+fr-nir	94080	Vincennes	45923	11		1900-01-01		
+fr-nir	94081	Vitry-sur-Seine	81001	11		1900-01-01		
+fr-nir	95018	Argenteuil	101475	11		1900-01-01		
+fr-nir	95063	Bezons	27570	11		1900-01-01		
+fr-nir	95127	Cergy	241006	11		1900-01-01		
+fr-nir	95176	Cormeilles-en-Parisis	21973	11		1900-01-01		
+fr-nir	95197	Deuil-la-Barre	21560	11		1900-01-01		
+fr-nir	95199	Domont	16684	11		1900-01-01		
+fr-nir	95203	Eaubonne	24096	11		1900-01-01		
+fr-nir	95218	Éragny	15385	11		1900-01-01		
+fr-nir	95219	Ermont	28117	11		1900-01-01		
+fr-nir	95252	Franconville	34284	11		1900-01-01		
+fr-nir	95268	Garges-lès-Gonesse	39847	11		1900-01-01		
+fr-nir	95277	Gonesse	26758	11		1900-01-01		
+fr-nir	95280	Goussainville	30047	11		1900-01-01		
+fr-nir	95306	Herblay-sur-Seine	25153	11		1900-01-01		
+fr-nir	95323	Jouy-le-Moutier	19087	11		1900-01-01		
+fr-nir	95424	Montigny-lès-Cormeilles	17910	11		1900-01-01		
+fr-nir	95428	Montmorency	21156	11		1900-01-01		
+fr-nir	95476	Osny	16545	11		1900-01-01		
+fr-nir	95500	Pontoise	30290	11		1900-01-01		
+fr-nir	95555	Saint-Gratien	19737	11		1900-01-01		
+fr-nir	95563	Saint-Leu-la-Forêt	16075	11		1900-01-01		
+fr-nir	95572	Saint-Ouen-l'Aumône	22977	11		1900-01-01		
+fr-nir	95582	Sannois	26869	11		1900-01-01		
+fr-nir	95585	Sarcelles	57979	11		1900-01-01		
+fr-nir	95598	Soisy-sous-Montmorency	17436	11		1900-01-01		
+fr-nir	95607	Taverny	27271	11		1900-01-01		
+fr-nir	95637	Vauréal	20699	11		1900-01-01		
+fr-nir	95680	Villiers-le-Bel	27028	11		1900-01-01		
+fr-nir	97101	Les Abymes	1			1900-01-01		
+fr-nir	99101	Danemark	0		DK	1900-01-01		
+fr-nir	99102	Islande	0		IS	1900-01-01		
+fr-nir	99103	Norvège	0		NO	1900-01-01		
+fr-nir	99104	Suède	0		SE	1900-01-01		
+fr-nir	99105	Finlande	0		FI	1900-01-01		
+fr-nir	99106	Estonie	0		EE	1900-01-01		
+fr-nir	99107	Lettonie	0		LV	1900-01-01		
+fr-nir	99108	Lituanie	0		LT	1900-01-01		
+fr-nir	99109	Allemagne	0		DE	1900-01-01		
+fr-nir	99110	Autriche	0		AT	1900-01-01		
+fr-nir	99111	Bulgarie	0		BG	1900-01-01		
+fr-nir	99112	Hongrie	0		HU	1900-01-01		
+fr-nir	99113	Liechtenstein	0		LI	1900-01-01		
+fr-nir	99114	Roumanie	0		RO	1900-01-01		
+fr-nir	99116	Tchéquie	0		CZ	1900-01-01		
+fr-nir	99117	Slovaquie	0		SK	1900-01-01		
+fr-nir	99118	Bosnie-Herzégovine	0		BA	1900-01-01		
+fr-nir	99119	Croatie	0		HR	1900-01-01		
+fr-nir	99120	Monténégro	0		ME	1900-01-01		
+fr-nir	99121	Serbie	0		RS	1900-01-01		
+fr-nir	99122	Pologne	0		PL	1900-01-01		
+fr-nir	99123	Russie	0		RU	1900-01-01		
+fr-nir	99125	Albanie	0		AL	1900-01-01		
+fr-nir	99126	Grèce	0		GR	1900-01-01		
+fr-nir	99127	Italie	0		IT	1900-01-01		
+fr-nir	99128	Saint-Marin	0		SM	1900-01-01		
+fr-nir	99129	Vatican	0		VA	1900-01-01		
+fr-nir	99130	Andorre	0		AD	1900-01-01		
+fr-nir	99131	Belgique	0		BE	1900-01-01		
+fr-nir	99132	Royaume-Uni	0		GB	1900-01-01		
+fr-nir	99133	Territoires britanniques en Méditerranée	0		GI	1900-01-01		
+fr-nir	99134	Espagne	0		ES	1900-01-01		
+fr-nir	99135	Pays-Bas	0		NL	1900-01-01		
+fr-nir	99136	Irlande	0		IE	1900-01-01		
+fr-nir	99137	Luxembourg	0		LU	1900-01-01		
+fr-nir	99138	Monaco	0		MC	1900-01-01		
+fr-nir	99139	Portugal	0		PT	1900-01-01		
+fr-nir	99140	Suisse	0		CH	1900-01-01		
+fr-nir	99144	Malte	0		MT	1900-01-01		
+fr-nir	99145	Slovénie	0		SI	1900-01-01		
+fr-nir	99148	Biélorussie	0		BY	1900-01-01		
+fr-nir	99151	Moldavie	0		MD	1900-01-01		
+fr-nir	99155	Ukraine	0		UA	1900-01-01		
+fr-nir	99156	Macédoine du Nord	0		MK	1900-01-01		
+fr-nir	99158	Féroé	0		FO	1900-01-01		
+fr-nir	99160	Åland	0		AX	1900-01-01		
+fr-nir	99201	Arabie saoudite	0		SA	1900-01-01		
+fr-nir	99203	Irak	0		IQ	1900-01-01		
+fr-nir	99204	Iran	0		IR	1900-01-01		
+fr-nir	99205	Liban	0		LB	1900-01-01		
+fr-nir	99206	Syrie	0		SY	1900-01-01		
+fr-nir	99207	Israël	0		IL	1900-01-01		
+fr-nir	99208	Turquie	0		TR	1900-01-01		
+fr-nir	99212	Afghanistan	0		AF	1900-01-01		
+fr-nir	99213	Pakistan	0		PK	1900-01-01		
+fr-nir	99214	Bhoutan	0		BT	1900-01-01		
+fr-nir	99215	Népal	0		NP	1900-01-01		
+fr-nir	99216	Chine	0		CN	1900-01-01		
+fr-nir	99217	Japon	0		JP	1900-01-01		
+fr-nir	99219	Thaïlande	0		TH	1900-01-01		
+fr-nir	99220	Philippines	0		PH	1900-01-01		
+fr-nir	99222	Jordanie	0		JO	1900-01-01		
+fr-nir	99223	Inde	0		IN	1900-01-01		
+fr-nir	99224	Birmanie	0		MM	1900-01-01		
+fr-nir	99225	Brunei	0		BN	1900-01-01		
+fr-nir	99226	Singapour	0		SG	1900-01-01		
+fr-nir	99227	Malaisie	0		MY	1900-01-01		
+fr-nir	99229	Maldives	0		MV	1900-01-01		
+fr-nir	99230	Hong Kong	0		HK	1900-01-01		
+fr-nir	99231	Indonésie	0		ID	1900-01-01		
+fr-nir	99232	Macao	0		MO	1900-01-01		
+fr-nir	99234	Cambodge	0		KH	1900-01-01		
+fr-nir	99235	Sri Lanka	0		LK	1900-01-01		
+fr-nir	99236	Taïwan	0		TW	1900-01-01		
+fr-nir	99238	Corée du Nord	0		KP	1900-01-01		
+fr-nir	99239	Corée du Sud	0		KR	1900-01-01		
+fr-nir	99240	Koweït	0		KW	1900-01-01		
+fr-nir	99241	Laos	0		LA	1900-01-01		
+fr-nir	99242	Mongolie	0		MN	1900-01-01		
+fr-nir	99243	Vietnam	0		VN	1900-01-01		
+fr-nir	99246	Bangladesh	0		BD	1900-01-01		
+fr-nir	99247	Émirats arabes unis	0		AE	1900-01-01		
+fr-nir	99248	Qatar	0		QA	1900-01-01		
+fr-nir	99249	Bahreïn	0		BH	1900-01-01		
+fr-nir	99250	Oman	0		OM	1900-01-01		
+fr-nir	99251	Yémen	0		YE	1900-01-01		
+fr-nir	99252	Arménie	0		AM	1900-01-01		
+fr-nir	99253	Azerbaïdjan	0		AZ	1900-01-01		
+fr-nir	99254	Chypre	0		CY	1900-01-01		
+fr-nir	99255	Géorgie	0		GE	1900-01-01		
+fr-nir	99256	Kazakhstan	0		KZ	1900-01-01		
+fr-nir	99257	Kirghizstan	0		KG	1900-01-01		
+fr-nir	99258	Ouzbékistan	0		UZ	1900-01-01		
+fr-nir	99259	Tadjikistan	0		TJ	1900-01-01		
+fr-nir	99260	Turkménistan	0		TM	1900-01-01		
+fr-nir	99261	Palestine	0		PS	1900-01-01		
+fr-nir	99262	Timor oriental	0		TL	1900-01-01		
+fr-nir	99301	Égypte	0		EG	1900-01-01		
+fr-nir	99302	Libéria	0		LR	1900-01-01		
+fr-nir	99303	Afrique du Sud	0		ZA	1900-01-01		
+fr-nir	99304	Gambie	0		GM	1900-01-01		
+fr-nir	99306	Territoires britanniques de l’océan Atlantique	0		SH	1900-01-01		
+fr-nir	99308	Territoire britannique de l’océan Indien	0		IO	1900-01-01		
+fr-nir	99309	Tanzanie	0		TZ	1900-01-01		
+fr-nir	99310	Zimbabwe	0		ZW	1900-01-01		
+fr-nir	99311	Namibie	0		NA	1900-01-01		
+fr-nir	99312	République démocratique du Congo	0		CD	1900-01-01		
+fr-nir	99313	Territoires espagnols en Afrique du Nord	0		ES	1900-01-01		
+fr-nir	99314	Guinée équatoriale	0		GQ	1900-01-01		
+fr-nir	99315	Éthiopie	0		ET	1900-01-01		
+fr-nir	99316	Libye	0		LY	1900-01-01		
+fr-nir	99317	Érythrée	0		ER	1900-01-01		
+fr-nir	99318	Somalie	0		SO	1900-01-01		
+fr-nir	99319	Territoires portugais de l’océan Atlantique	0		PT	1900-01-01		
+fr-nir	99321	Burundi	0		BI	1900-01-01		
+fr-nir	99322	Cameroun	0		CM	1900-01-01		
+fr-nir	99323	Centrafrique	0		CF	1900-01-01		
+fr-nir	99324	Congo	0		CG	1900-01-01		
+fr-nir	99326	Côte d’Ivoire	0		CI	1900-01-01		
+fr-nir	99327	Bénin	0		BJ	1900-01-01		
+fr-nir	99328	Gabon	0		GA	1900-01-01		
+fr-nir	99329	Ghana	0		GH	1900-01-01		
+fr-nir	99330	Guinée	0		GN	1900-01-01		
+fr-nir	99331	Burkina	0		BF	1900-01-01		
+fr-nir	99332	Kenya	0		KE	1900-01-01		
+fr-nir	99333	Madagascar	0		MG	1900-01-01		
+fr-nir	99334	Malawi	0		MW	1900-01-01		
+fr-nir	99335	Mali	0		ML	1900-01-01		
+fr-nir	99336	Mauritanie	0		MR	1900-01-01		
+fr-nir	99337	Niger	0		NE	1900-01-01		
+fr-nir	99338	Nigéria	0		NG	1900-01-01		
+fr-nir	99339	Ouganda	0		UG	1900-01-01		
+fr-nir	99340	Rwanda	0		RW	1900-01-01		
+fr-nir	99341	Sénégal	0		SN	1900-01-01		
+fr-nir	99342	Sierra Leone	0		SL	1900-01-01		
+fr-nir	99343	Soudan	0		SD	1900-01-01		
+fr-nir	99344	Tchad	0		TD	1900-01-01		
+fr-nir	99345	Togo	0		TG	1900-01-01		
+fr-nir	99346	Zambie	0		ZM	1900-01-01		
+fr-nir	99347	Botswana	0		BW	1900-01-01		
+fr-nir	99348	Lesotho	0		LS	1900-01-01		
+fr-nir	99349	Soudan du Sud	0		SS	1900-01-01		
+fr-nir	99350	Maroc	0		MA	1900-01-01		
+fr-nir	99351	Tunisie	0		TN	1900-01-01		
+fr-nir	99352	Algérie	0		DZ	1900-01-01		
+fr-nir	99389	Sahara occidental	0		EH	1900-01-01		
+fr-nir	99390	Maurice	0		MU	1900-01-01		
+fr-nir	99391	Swaziland	0		SZ	1900-01-01		
+fr-nir	99392	Guinée-Bissao	0		GW	1900-01-01		
+fr-nir	99393	Mozambique	0		MZ	1900-01-01		
+fr-nir	99394	Sao Tomé-et-Principe	0		ST	1900-01-01		
+fr-nir	99395	Angola	0		AO	1900-01-01		
+fr-nir	99396	Cap-Vert	0		CV	1900-01-01		
+fr-nir	99397	Comores	0		KM	1900-01-01		
+fr-nir	99398	Seychelles	0		SC	1900-01-01		
+fr-nir	99399	Djibouti	0		DJ	1900-01-01		
+fr-nir	99401	Canada	0		CA	1900-01-01		
+fr-nir	99404	États-Unis	0		US	1900-01-01		
+fr-nir	99405	Mexique	0		MX	1900-01-01		
+fr-nir	99406	Costa Rica	0		CR	1900-01-01		
+fr-nir	99407	Cuba	0		CU	1900-01-01		
+fr-nir	99408	République dominicaine	0		DO	1900-01-01		
+fr-nir	99409	Guatémala	0		GT	1900-01-01		
+fr-nir	99410	Haïti	0		HT	1900-01-01		
+fr-nir	99411	Honduras	0		HN	1900-01-01		
+fr-nir	99412	Nicaragua	0		NI	1900-01-01		
+fr-nir	99413	Panama	0		PA	1900-01-01		
+fr-nir	99414	Salvador	0		SV	1900-01-01		
+fr-nir	99415	Argentine	0		AR	1900-01-01		
+fr-nir	99416	Brésil	0		BR	1900-01-01		
+fr-nir	99417	Chili	0		CL	1900-01-01		
+fr-nir	99418	Bolivie	0		BO	1900-01-01		
+fr-nir	99419	Colombie	0		CO	1900-01-01		
+fr-nir	99420	Équateur	0		EC	1900-01-01		
+fr-nir	99421	Paraguay	0		PY	1900-01-01		
+fr-nir	99422	Pérou	0		PE	1900-01-01		
+fr-nir	99423	Uruguay	0		UY	1900-01-01		
+fr-nir	99424	Vénézuéla	0		VE	1900-01-01		
+fr-nir	99426	Jamaïque	0		JM	1900-01-01		
+fr-nir	99428	Guyana	0		GY	1900-01-01		
+fr-nir	99429	Bélize	0		BZ	1900-01-01		
+fr-nir	99430	Groenland	0		GL	1900-01-01		
+fr-nir	99431	Aruba	0		AW	1900-01-01		
+fr-nir	99433	Trinité-et-Tobago	0		TT	1900-01-01		
+fr-nir	99434	Barbade	0		BB	1900-01-01		
+fr-nir	99435	Grenade	0		GD	1900-01-01		
+fr-nir	99436	Bahamas	0		BS	1900-01-01		
+fr-nir	99437	Suriname	0		SR	1900-01-01		
+fr-nir	99438	Dominique	0		DM	1900-01-01		
+fr-nir	99439	Sainte-Lucie	0		LC	1900-01-01		
+fr-nir	99440	Saint-Vincent-et-les-Grenadines	0		VC	1900-01-01		
+fr-nir	99441	Antigua-et-Barbuda	0		AG	1900-01-01		
+fr-nir	99442	Saint-Christophe-et-Niévès	0		KN	1900-01-01		
+fr-nir	99443	Bonaire, Saint-Eustache, Saba	0		BQ	1900-01-01		
+fr-nir	99444	Curaçao	0		CW	1900-01-01		
+fr-nir	99445	Saint-Martin (partie néerlandaise)	0		SX	1900-01-01		
+fr-nir	99501	Australie	0		AU	1900-01-01		
+fr-nir	99502	Nouvelle-Zélande	0		NZ	1900-01-01		
+fr-nir	99503	Pitcairn	0		PN	1900-01-01		
+fr-nir	99506	Samoa	0		WS	1900-01-01		
+fr-nir	99507	Nauru	0		NR	1900-01-01		
+fr-nir	99508	Fidji	0		FJ	1900-01-01		
+fr-nir	99509	Tonga	0		TO	1900-01-01		
+fr-nir	99510	Papouasie-Nouvelle-Guinée	0		PG	1900-01-01		
+fr-nir	99511	Tuvalu	0		TV	1900-01-01		
+fr-nir	99512	Salomon	0		SB	1900-01-01		
+fr-nir	99513	Kiribati	0		KI	1900-01-01		
+fr-nir	99514	Vanuatu	0		VU	1900-01-01		
+fr-nir	99515	Marshall	0		MH	1900-01-01		
+fr-nir	99516	Micronésie	0		FM	1900-01-01		
+fr-nir	99517	Palaos	0		PW	1900-01-01		
+fr-nir	99520	Cook	0		CK	1900-01-01		
+fr-nir	99521	Niue	0		NU	1900-01-01		
+fr-nir	99699	Antarctique	0		AQ	1900-01-01		
+id-nik	110201	Lawe Alas	2925	01		1900-01-01		
+id-nik	110703	Batee	2811	01		1900-01-01		
+id-nik	110901	Simeulue Tengah	3250	01		1900-01-01		
+id-nik	111001	Pulau Banyak	4334	01		1900-01-01		
+id-nik	111201	Blangpidie	2676	01		1900-01-01		
+id-nik	111801	Meureudu	5049	01		1900-01-01		
+id-nik	117101	Baiturrahman	28337	01		1900-01-01		
+id-nik	117201	Sukakarya	14022	01		1900-01-01		
+id-nik	117301	Muara Dua	49017	01		1900-01-01		
+id-nik	117401	East Langsa	38946	01		1900-01-01		
+id-nik	117501	Simpang Kiri	18150	01		1900-01-01		
+id-nik	119901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	120405	Hiliduho	1835	26		1900-01-01		
+id-nik	120501	Bahorok	1717	26		1900-01-01		
+id-nik	120601	Kabanjahe	9462	26		1900-01-01		
+id-nik	120602	Berastagi	9462	26		1900-01-01		
+id-nik	120701	Gunung Meriah	21521	26		1900-01-01		
+id-nik	120722	Deli Tua	21521	26		1900-01-01		
+id-nik	120801	Siantar	4435	26		1900-01-01		
+id-nik	120908	Meranti	1600	26		1900-01-01		
+id-nik	121001	North Rantau	7415	26		1900-01-01		
+id-nik	121301	Panyabungan	3371	26		1900-01-01		
+id-nik	121401	Lolomatua	737	26		1900-01-01		
+id-nik	121802	Perbaungan	9246	26		1900-01-01		
+id-nik	122401	Lotu	2226	26		1900-01-01		
+id-nik	127101	Medan Kota	130740	26		1900-01-01		
+id-nik	127201	East Siantar	34355	26		1900-01-01		
+id-nik	127301	North Sibolga	22816	26		1900-01-01		
+id-nik	127401	South Tanjungbalai	54308	26		1900-01-01		
+id-nik	127404	Teluk Nibung	54308	26		1900-01-01		
+id-nik	127501	North Binjai	55860	26		1900-01-01		
+id-nik	127701	North Padangsidimpuan	39370	26		1900-01-01		
+id-nik	127801	Gunungsitoli	22784	26		1900-01-01		
+id-nik	129901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	130303	Tanjung Gadang	3473	24		1900-01-01		
+id-nik	137101	South Padang	82640	24		1900-01-01		
+id-nik	137201	Lubuk Sikarah	36719	24		1900-01-01		
+id-nik	137401	East Padang Panjang	29314	24		1900-01-01		
+id-nik	137501	Guguak Panjang	40343	24		1900-01-01		
+id-nik	137601	West Payakumbuh	27915	24		1900-01-01		
+id-nik	137701	Pariaman Tengah	23046	24		1900-01-01		
+id-nik	139901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	140801	Siak	4032	37		1900-01-01		
+id-nik	147101	Sukajadi	72333	37		1900-01-01		
+id-nik	147201	West Dumai	47405	37		1900-01-01		
+id-nik	149901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	150601	Tungkal Ulu	7148	05		1900-01-01		
+id-nik	150701	East Muara Sabak	3062	05		1900-01-01		
+id-nik	150901	Tebo Tengah	1770	05		1900-01-01		
+id-nik	157101	Telanaipura	55109	05		1900-01-01		
+id-nik	157201	Sungai Penuh	12404	05		1900-01-01		
+id-nik	159901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	160107	Sosoh Buay Rayap	10366	32		1900-01-01		
+id-nik	160301	Tanjung Agung	2309	32		1900-01-01		
+id-nik	160401	Tanjung Sakti Pumu	2746	32		1900-01-01		
+id-nik	161001	Muara Kuang	2833	32		1900-01-01		
+id-nik	167101	Ilir Barat II	92714	32		1900-01-01		
+id-nik	167201	North Pagar Alam	14077	32		1900-01-01		
+id-nik	167301	Lubuk Linggau Timur I	29271	32		1900-01-01		
+id-nik	167401	West Prabumulih	17245	32		1900-01-01		
+id-nik	169901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	170206	Kota Padang	3083	03		1900-01-01		
+id-nik	177101	Selebar	41510	03		1900-01-01		
+id-nik	179901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	180502	Menggala	3504	15		1900-01-01		
+id-nik	180601	Kota Agung	2118	15		1900-01-01		
+id-nik	187101	Kedaton	58303	15		1900-01-01		
+id-nik	187201	Metro Pusat	35676	15		1900-01-01		
+id-nik	189901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	190101	Sungailiat	12594	35		1900-01-01		
+id-nik	190201	Tanjungpandan	20612	35		1900-01-01		
+id-nik	190301	Toboali	3339	35		1900-01-01		
+id-nik	190601	Manggar	5591	35		1900-01-01		
+id-nik	197101	Bukit Intan	30985	35		1900-01-01		
+id-nik	199901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	210104	Gunung Kijang	4895	40		1900-01-01		
+id-nik	217101	Belakang Padang	97113	40		1900-01-01		
+id-nik	217201	West Tanjungpinang	56916	40		1900-01-01		
+id-nik	219901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	317101	Gambir	213503	04		1900-01-01		
+id-nik	317201	Penjaringan	289462	04		1900-01-01		
+id-nik	319901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	320101	Cibinong	32214	30		1900-01-01		
+id-nik	320201	Palabuhanratu	4223	30		1900-01-01		
+id-nik	320301	Cianjur	7886	30		1900-01-01		
+id-nik	320501	Garut Kota	3763	30		1900-01-01		
+id-nik	320601	Cipatujah	2275	30		1900-01-01		
+id-nik	320701	320701	4068	30		1900-01-01		
+id-nik	320801	Kadugede	3492	30		1900-01-01		
+id-nik	320901	Waled	22839	30		1900-01-01		
+id-nik	321001	Lemahsugih	5039	30		1900-01-01		
+id-nik	321101	Wado	11538	30		1900-01-01		
+id-nik	321201	Haurgeulis	7339	30		1900-01-01		
+id-nik	321301	Sagalaherang	8384	30		1900-01-01		
+id-nik	321401	Purwakarta	10543	30		1900-01-01		
+id-nik	321501	West Karawang	21832	30		1900-01-01		
+id-nik	321601	Tarumajaya	4630	30		1900-01-01		
+id-nik	321701	Lembang	22957	30		1900-01-01		
+id-nik	327101	South Bogor	187901	30		1900-01-01		
+id-nik	327201	Gunung Puyuh	51521	30		1900-01-01		
+id-nik	327301	Sukasari	81472	30		1900-01-01		
+id-nik	327401	Kejaksan	68396	30		1900-01-01		
+id-nik	327501	East Bekasi	213745	30		1900-01-01		
+id-nik	327601	Pancoran Mas	210094	30		1900-01-01		
+id-nik	327701	South Cimahi	196927	30		1900-01-01		
+id-nik	327801	Cihideung	79230	30		1900-01-01		
+id-nik	327901	Banjar	216762	30		1900-01-01		
+id-nik	329901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	330101	Kedungreja	14561	07		1900-01-01		
+id-nik	330201	Lumbir	15667	07		1900-01-01		
+id-nik	330301	Kemangkon	3161	07		1900-01-01		
+id-nik	330501	Ayah	1931	07		1900-01-01		
+id-nik	330601	Grabag	2095	07		1900-01-01		
+id-nik	330701	Wadaslintang	6199	07		1900-01-01		
+id-nik	330801	Salaman	5463	07		1900-01-01		
+id-nik	330901	Selo	6025	07		1900-01-01		
+id-nik	331001	Prambanan	17104	07		1900-01-01		
+id-nik	331010	Karangnongko	17104	07		1900-01-01		
+id-nik	331101	Weru	20704	07		1900-01-01		
+id-nik	331201	Pracimantoro	3210	07		1900-01-01		
+id-nik	331301	Jatipuro	3450	07		1900-01-01		
+id-nik	331401	Kalijambe	3576	07		1900-01-01		
+id-nik	331501	Kedungjati	7336	07		1900-01-01		
+id-nik	331601	Jati	6679	07		1900-01-01		
+id-nik	331701	Sumber	5213	07		1900-01-01		
+id-nik	331801	Sukolilo	8268	07		1900-01-01		
+id-nik	331901	Kaliwungu	25706	07		1900-01-01		
+id-nik	332001	Kedung	84531	07		1900-01-01		
+id-nik	332006	Jepara	84531	07		1900-01-01		
+id-nik	332007	Mlonggo	84531	07		1900-01-01		
+id-nik	332101	Mranggen	5817	07		1900-01-01		
+id-nik	332201	Getasan	12413	07		1900-01-01		
+id-nik	332401	Plantungan	2922	07		1900-01-01		
+id-nik	332501	Wonotunggal	9076	07		1900-01-01		
+id-nik	332601	Kandangserang	12308	07		1900-01-01		
+id-nik	332701	Moga	18841	07		1900-01-01		
+id-nik	332712	Comal	18841	07		1900-01-01		
+id-nik	332801	Margasari	25506	07		1900-01-01		
+id-nik	332811	Adiwerna	25506	07		1900-01-01		
+id-nik	332901	Salem	4215	07		1900-01-01		
+id-nik	337101	South Magelang	40509	07		1900-01-01		
+id-nik	337201	Laweyan	105374	07		1900-01-01		
+id-nik	337301	Sidorejo	50342	07		1900-01-01		
+id-nik	337401	Semarang Tengah	103345	07		1900-01-01		
+id-nik	337501	West Pekalongan	79381	07		1900-01-01		
+id-nik	337601	West Tegal	70695	07		1900-01-01		
+id-nik	339901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	340201	Srandakan	22267	10		1900-01-01		
+id-nik	340216	Kasihan	22267	10		1900-01-01		
+id-nik	340301	Wonosari	4859	10		1900-01-01		
+id-nik	340401	Gamping	21042	10		1900-01-01		
+id-nik	340402	Godean	21042	10		1900-01-01		
+id-nik	340407	Depok	21042	10		1900-01-01		
+id-nik	340413	Sleman	21042	10		1900-01-01		
+id-nik	347101	Tegalrejo	26685	10		1900-01-01		
+id-nik	349901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	350201	Slahung	3763	08		1900-01-01		
+id-nik	350301	Panggul	2077	08		1900-01-01		
+id-nik	350401	Tulungagung	10742	08		1900-01-01		
+id-nik	350601	Semen	4070	08		1900-01-01		
+id-nik	350701	Donomulyo	13826	08		1900-01-01		
+id-nik	350810	Lumajang	5887	08		1900-01-01		
+id-nik	350901	Jombang	11020	08		1900-01-01		
+id-nik	351001	Pesanggaran	15166	08		1900-01-01		
+id-nik	351101	Maesan	3034	08		1900-01-01		
+id-nik	351201	Jatibanteng	50741	08		1900-01-01		
+id-nik	351301	Sukapura	1177	08		1900-01-01		
+id-nik	351401	Purwodadi	7454	08		1900-01-01		
+id-nik	351414	Bangil	7454	08		1900-01-01		
+id-nik	351501	Tarik	22329	08		1900-01-01		
+id-nik	351601	Jatirejo	1416	08		1900-01-01		
+id-nik	351701	Perak	10219	08		1900-01-01		
+id-nik	351706	Mojoagung	10219	08		1900-01-01		
+id-nik	351708	Diwek	10219	08		1900-01-01		
+id-nik	351709	Jombang	10219	08		1900-01-01		
+id-nik	351801	Sawahan	6490	08		1900-01-01		
+id-nik	352101	Sine	1180	08		1900-01-01		
+id-nik	352215	Bojonegoro	3092	08		1900-01-01		
+id-nik	352301	Kenduruan	3812	08		1900-01-01		
+id-nik	352401	Sukorame	4198	08		1900-01-01		
+id-nik	352501	Dukun	12614	08		1900-01-01		
+id-nik	352601	Bangkalan	6042	08		1900-01-01		
+id-nik	352701	Sreseh	3805	08		1900-01-01		
+id-nik	352801	Tlanakan	7111	08		1900-01-01		
+id-nik	352901	Sumenep	4020	08		1900-01-01		
+id-nik	357101	Mojoroto	78381	08		1900-01-01		
+id-nik	357201	Kepanjenkidul	50124	08		1900-01-01		
+id-nik	357301	Blimbing	169436	08		1900-01-01		
+id-nik	357401	Kademangan	49396	08		1900-01-01		
+id-nik	357501	Gadingrejo	53116	08		1900-01-01		
+id-nik	357601	Prajuritkulon	47262	08		1900-01-01		
+id-nik	357701	Kartoharjo	67515	08		1900-01-01		
+id-nik	357801	Karang Pilang	92720	08		1900-01-01		
+id-nik	357901	Batu	73905	08		1900-01-01		
+id-nik	359901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	360101	Sumur	3597	33		1900-01-01		
+id-nik	360201	Malingping	4894	33		1900-01-01		
+id-nik	360301	Belaraja	24259	33		1900-01-01		
+id-nik	360306	Kresek	24259	33		1900-01-01		
+id-nik	360312	Pasar Kemis	24259	33		1900-01-01		
+id-nik	360313	Teluknaga	24259	33		1900-01-01		
+id-nik	367101	Tangerang	147129	33		1900-01-01		
+id-nik	367201	Cibeber	56284	33		1900-01-01		
+id-nik	367301	Serang	115350	33		1900-01-01		
+id-nik	367401	Serpong	237076	33		1900-01-01		
+id-nik	367406	Pamulang	237076	33		1900-01-01		
+id-nik	369901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	510101	Negara	6638	02		1900-01-01		
+id-nik	510201	Selemadeg	15914	02		1900-01-01		
+id-nik	510301	Kuta	7383	02		1900-01-01		
+id-nik	510401	Sukawati	10686	02		1900-01-01		
+id-nik	510501	Nusa Penida	6959	02		1900-01-01		
+id-nik	510701	Rendang	10886	02		1900-01-01		
+id-nik	510801	Gerokgak	29336	02		1900-01-01		
+id-nik	517101	South Denpasar	184986	02		1900-01-01		
+id-nik	519901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	520201	Praya	2932	17		1900-01-01		
+id-nik	520301	Keruak	4403	17		1900-01-01		
+id-nik	520402	Lunyuk	2823	17		1900-01-01		
+id-nik	520501	Dompu	6873	17		1900-01-01		
+id-nik	520701	Jereweh	6918	17		1900-01-01		
+id-nik	527101	Ampenan	71608	17		1900-01-01		
+id-nik	527201	West Rasanae	32272	17		1900-01-01		
+id-nik	529901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	530201	Kota Soe	1123	18		1900-01-01		
+id-nik	530401	Lamaknen	3349	18		1900-01-01		
+id-nik	530501	Teluk Mutiara	2678	18		1900-01-01		
+id-nik	530601	Wulanggitang	4326	18		1900-01-01		
+id-nik	530701	Paga	915	18		1900-01-01		
+id-nik	530801	Nangapanda	5591	18		1900-01-01		
+id-nik	531001	Wae Rii	7310	18		1900-01-01		
+id-nik	531301	Naga Wutung	4615	18		1900-01-01		
+id-nik	531501	Macang Pacar	15894	18		1900-01-01		
+id-nik	531701	Katikutana	5965	18		1900-01-01		
+id-nik	537101	Alak	73793	18		1900-01-01		
+id-nik	539901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	610101	Sambas	4807	11		1900-01-01		
+id-nik	610105	Pemangkat	4807	11		1900-01-01		
+id-nik	610201	Mempawah Hilir	5304	11		1900-01-01		
+id-nik	610501	Sintang	6071	11		1900-01-01		
+id-nik	610601	North Putussibau	821	11		1900-01-01		
+id-nik	610701	Sungai Raya	1964	11		1900-01-01		
+id-nik	617101	South Pontianak	109781	11		1900-01-01		
+id-nik	617201	Singkawang Tengah	49222	11		1900-01-01		
+id-nik	619901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	620101	Kumai	6343	13		1900-01-01		
+id-nik	620201	Kota Besi	9810	13		1900-01-01		
+id-nik	620301	Selat	2096	13		1900-01-01		
+id-nik	620501	Montallat	5184	13		1900-01-01		
+id-nik	627101	Pahandut	58700	13		1900-01-01		
+id-nik	629901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	630301	Aluh Aluh	6572	12		1900-01-01		
+id-nik	630706	Barabai	5062	12		1900-01-01		
+id-nik	630801	Danau Panggang	5556	12		1900-01-01		
+id-nik	630901	Banua Lawas	3108	12		1900-01-01		
+id-nik	637101	South Banjarmasin	131533	12		1900-01-01		
+id-nik	639901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	640203	Loa Janan	10641	14		1900-01-01		
+id-nik	647101	East Balikpapan	115881	14		1900-01-01		
+id-nik	647201	Palaran	83146	14		1900-01-01		
+id-nik	647401	North Bontang	63323	14		1900-01-01		
+id-nik	649901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	650201	Mentarang	5478	42		1900-01-01		
+id-nik	650301	Sebatik	3191	42		1900-01-01		
+id-nik	657101	West Tarakan	62490	42		1900-01-01		
+id-nik	659901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	710201	West Tondano	1333	31		1900-01-01		
+id-nik	710308	North Tabukan	2354	31		1900-01-01		
+id-nik	717101	Bunaken	41083	31		1900-01-01		
+id-nik	717201	South Lembeh	28142	31		1900-01-01		
+id-nik	717301	South Tomohon	5525	31		1900-01-01		
+id-nik	719901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	720201	Poso Kota	5013	21		1900-01-01		
+id-nik	720304	Rio Pakava	1592	21		1900-01-01		
+id-nik	727101	East Palu	46652	21		1900-01-01		
+id-nik	729901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	730501	Mappakasunggu	6921	38		1900-01-01		
+id-nik	730701	West Sinjai	4533	38		1900-01-01		
+id-nik	730901	Mandai	2143	38		1900-01-01		
+id-nik	731101	Tanete Riaja	21334	38		1900-01-01		
+id-nik	731301	Sabangparu	4252	38		1900-01-01		
+id-nik	732201	Malangke	2535	38		1900-01-01		
+id-nik	732601	Rantepao	1926	38		1900-01-01		
+id-nik	737101	Mariso	94925	38		1900-01-01		
+id-nik	737201	Bacukiki	40077	38		1900-01-01		
+id-nik	737301	Wara	21207	38		1900-01-01		
+id-nik	739901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	740201	Lambuya	3640	22		1900-01-01		
+id-nik	747101	Mandonga	31373	22		1900-01-01		
+id-nik	747201	Betoambari	20160	22		1900-01-01		
+id-nik	749901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	757101	West Kota	22060	34		1900-01-01		
+id-nik	759901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	760201	Mamuju	7345	41		1900-01-01		
+id-nik	760501	Banggae	9235	41		1900-01-01		
+id-nik	769901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	810101	Amahai	5441	28		1900-01-01		
+id-nik	810401	Namlea	3787	28		1900-01-01		
+id-nik	810501	Bula	3256	28		1900-01-01		
+id-nik	810901	Namrole	3586	28		1900-01-01		
+id-nik	817101	Nusaniwe	69458	28		1900-01-01		
+id-nik	817201	North Pulau Dullah	18001	28		1900-01-01		
+id-nik	819901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	820305	Tobelo	2524	29		1900-01-01		
+id-nik	820401	Pulau Makian	1224	29		1900-01-01		
+id-nik	820502	Sanana	2476	29		1900-01-01		
+id-nik	820701	South Morotai	3928	29		1900-01-01		
+id-nik	827101	Pulau Ternate	25615	29		1900-01-01		
+id-nik	827201	Tidore	4525	29		1900-01-01		
+id-nik	829901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	911101	Waris	1477	36		1900-01-01		
+id-nik	917101	North Jayapura	93250	36		1900-01-01		
+id-nik	919901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	920203	Warmare	7666	39		1900-01-01		
+id-nik	920301	Fakfak	1112	39		1900-01-01		
+id-nik	920601	Bintuni	1031	39		1900-01-01		
+id-nik	929901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	930101	Merauke	4710	PS		1900-01-01		
+id-nik	930401	Agats	955	PS		1900-01-01		
+id-nik	939901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	940101	Nabire	2927	PT		1900-01-01		
+id-nik	940201	Mulia	1609	PT		1900-01-01		
+id-nik	940301	East Paniai	1866	PT		1900-01-01		
+id-nik	949901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	950101	Wamena	1000	PE		1900-01-01		
+id-nik	959901	Unused regency (safe mode)	0			1900-01-01		1
+id-nik	960201	Teminabuan	1299	PD		1900-01-01		
+id-nik	967101	Sorong	25429	PD		1900-01-01		
+id-nik	969901	Unused regency (safe mode)	0			1900-01-01		1
+it-cf	A001	Abano Terme	18224	20		1900-01-01		
+it-cf	A010	Abbiategrasso	32784	09		1900-01-01		
+it-cf	A024	Acerra	60495	04		1900-01-01		
+it-cf	A026	Aci Castello	24134	15		1900-01-01		
+it-cf	A027	Aci Catena	24663	15		1900-01-01		
+it-cf	A028	Acireale	50620	15		1900-01-01		
+it-cf	A048	Acquaviva Delle Fonti	20536	13		1900-01-01		
+it-cf	A052	Acqui Terme	17828	12		1900-01-01		
+it-cf	A055	Adelfia	16756	13		1900-01-01		
+it-cf	A056	Adrano	34446	15		1900-01-01		
+it-cf	A064	Afragola	65051	04		1900-01-01		
+it-cf	A089	Agrigento	53046	15		1900-01-01		
+it-cf	A091	Agropoli	17897	04		1900-01-01		
+it-cf	A124	Alba	27563	12		1900-01-01		
+it-cf	A132	Albano Laziale	36772	07		1900-01-01		
+it-cf	A145	Albenga	20916	08		1900-01-01		
+it-cf	A161	Albignasego	22385	20		1900-01-01		
+it-cf	A176	Alcamo	44431	15		1900-01-01		
+it-cf	A182	Alessandria	110601	12		1900-01-01		
+it-cf	A192	Alghero	35227	14		1900-01-01		
+it-cf	A222	Alpignano	16598	12		1900-01-01		
+it-cf	A225	Altamura	70539	13		1900-01-01		
+it-cf	A271	Ancona	107853	10		1900-01-01		
+it-cf	A285	Andria	99784	13		1900-01-01		
+it-cf	A294	Angri	31632	04		1900-01-01		
+it-cf	A323	Anzio	59385	07		1900-01-01		
+it-cf	A326	Aosta	36342	19		1900-01-01		
+it-cf	A341	Aprilia	91978	07		1900-01-01		
+it-cf	A345	L'Aquila	58717	01		1900-01-01		
+it-cf	A376	Arcore	16690	09		1900-01-01		
+it-cf	A389	Arese	19138	09		1900-01-01		
+it-cf	A390	Arezzo	115941	16		1900-01-01		
+it-cf	A401	Ariccia	17487	07		1900-01-01		
+it-cf	A455	Arzano	34933	04		1900-01-01		
+it-cf	A459	Arzignano	22963	20		1900-01-01		
+it-cf	A462	Ascoli Piceno	44555	10		1900-01-01		
+it-cf	A474	Assemini	25257	14		1900-01-01		
+it-cf	A479	Asti	74348	12		1900-01-01		
+it-cf	A494	Augusta	31821	15		1900-01-01		
+it-cf	A509	Avellino	49066	04		1900-01-01		
+it-cf	A512	Aversa	52974	04		1900-01-01		
+it-cf	A515	Avezzano	39312	01		1900-01-01		
+it-cf	A522	Avola	29366	15		1900-01-01		
+it-cf	A535	Bacoli	25590	04		1900-01-01		
+it-cf	A546	Bagheria	53149	15		1900-01-01		
+it-cf	A561	Montecatini-Terme	17954	16		1900-01-01		
+it-cf	A638	Barcellona Pozzo Di Gotto	36740	15		1900-01-01		
+it-cf	A652	Bareggio	16546	09		1900-01-01		
+it-cf	A662	Bari	351570	13		1900-01-01		
+it-cf	A669	Barletta	93279	13		1900-01-01		
+it-cf	A703	Bassano Del Grappa	40404	20		1900-01-01		
+it-cf	A710	Bastia Umbra	20363	18		1900-01-01		
+it-cf	A717	Battipaglia	47104	04		1900-01-01		
+it-cf	A747	Bellaria-Igea Marina	17635	05		1900-01-01		
+it-cf	A757	Belluno	29939	20		1900-01-01		
+it-cf	A766	Belpasso	19907	15		1900-01-01		
+it-cf	A783	Benevento	58985	04		1900-01-01		
+it-cf	A794	Bergamo	121200	09		1900-01-01		
+it-cf	A841	Biancavilla	23188	15		1900-01-01		
+it-cf	A859	Biella	43030	12		1900-01-01		
+it-cf	A883	Bisceglie	55385	13		1900-01-01		
+it-cf	A893	Bitonto	55520	13		1900-01-01		
+it-cf	A940	Bollate	35235	09		1900-01-01		
+it-cf	A944	Bologna	394843	05		1900-01-01		
+it-cf	A952	Bolzano	107436	17		1900-01-01		
+it-cf	B019	Borgomanero	20430	12		1900-01-01		
+it-cf	B034	Fidenza	21952	05		1900-01-01		
+it-cf	B076	Boscoreale	26861	04		1900-01-01		
+it-cf	B105	Bovisio-Masciago	16542	09		1900-01-01		
+it-cf	B111	Bra	27029	12		1900-01-01		
+it-cf	B157	Brescia	207380	09		1900-01-01		
+it-cf	B160	Bressanone	17133	17		1900-01-01		
+it-cf	B162	Bresso	25712	09		1900-01-01		
+it-cf	B180	Brindisi	93989	13		1900-01-01		
+it-cf	B202	Bronte	19074	15		1900-01-01		
+it-cf	B212	Brugherio	33061	09		1900-01-01		
+it-cf	B227	Brusciano	15238	04		1900-01-01		
+it-cf	B240	Buccinasco	26242	09		1900-01-01		
+it-cf	B296	Bussolengo	17525	20		1900-01-01		
+it-cf	B300	Busto Arsizio	83405	09		1900-01-01		
+it-cf	B354	Cagliari	149257	14		1900-01-01		
+it-cf	B371	Caivano	37470	04		1900-01-01		
+it-cf	B428	Caltagirone	38391	15		1900-01-01		
+it-cf	B429	Caltanissetta	62797	15		1900-01-01		
+it-cf	B455	Camaiore	27259	16		1900-01-01		
+it-cf	B507	Campi Bisenzio	39350	16		1900-01-01		
+it-cf	B519	Campobasso	50153	11		1900-01-01		
+it-cf	B602	Canicattì	32918	15		1900-01-01		
+it-cf	B619	Canosa Di Puglia	29847	13		1900-01-01		
+it-cf	B639	Cantù	40799	09		1900-01-01		
+it-cf	B648	Capannori	41661	16		1900-01-01		
+it-cf	B715	Capua	18054	04		1900-01-01		
+it-cf	B729	Carate Brianza	17417	09		1900-01-01		
+it-cf	B745	Carbonia	26361	14		1900-01-01		
+it-cf	B759	Cardito	22239	04		1900-01-01		
+it-cf	B780	Carini	35082	15		1900-01-01		
+it-cf	B791	Carmagnola	25173	12		1900-01-01		
+it-cf	B805	Caronno Pertusella	16377	09		1900-01-01		
+it-cf	B819	Carpi	79781	05		1900-01-01		
+it-cf	B832	Carrara	86795	16		1900-01-01		
+it-cf	B850	Carugate	15368	09		1900-01-01		
+it-cf	B872	Casal Di Principe	20589	04		1900-01-01		
+it-cf	B880	Casalecchio Di Reno	33789	05		1900-01-01		
+it-cf	B885	Casale Monferrato	33213	12		1900-01-01		
+it-cf	B905	Casalnuovo Di Napoli	48344	04		1900-01-01		
+it-cf	B923	Casamassima	18969	13		1900-01-01		
+it-cf	B936	Casarano	19359	13		1900-01-01		
+it-cf	B946	Casavatore	18663	04		1900-01-01		
+it-cf	B950	Cascina	41287	16		1900-01-01		
+it-cf	B962	Scandicci	46226	16		1900-01-01		
+it-cf	B963	Caserta	74493	04		1900-01-01		
+it-cf	B990	Casoria	93906	04		1900-01-01		
+it-cf	C003	Cassano D'Adda	18188	09		1900-01-01		
+it-cf	C004	Cassano Magnago	21208	09		1900-01-01		
+it-cf	C034	Cassino	26495	07		1900-01-01		
+it-cf	C107	Castelfranco Emilia	25626	05		1900-01-01		
+it-cf	C111	Castelfranco Veneto	29416	20		1900-01-01		
+it-cf	C129	Castellammare Di Stabia	66164	04		1900-01-01		
+it-cf	C204	Castel Maggiore	31883	05		1900-01-01		
+it-cf	C286	Castelvetrano	34532	15		1900-01-01		
+it-cf	C291	Castel Volturno	21881	04		1900-01-01		
+it-cf	C312	Castiglione Delle Stiviere	19965	09		1900-01-01		
+it-cf	C342	Enna	23951	15		1900-01-01		
+it-cf	C349	Castrovillari	20334	03		1900-01-01		
+it-cf	C351	Catania	312466	15		1900-01-01		
+it-cf	C352	Catanzaro	87704	03		1900-01-01		
+it-cf	C357	Cattolica	16189	05		1900-01-01		
+it-cf	C361	Cava De' Tirreni	54214	04		1900-01-01		
+it-cf	C415	Cecina	25159	16		1900-01-01		
+it-cf	C424	Ceglie Messapica	16536	13		1900-01-01		
+it-cf	C469	Cento	27215	05		1900-01-01		
+it-cf	C495	Cercola	17821	04		1900-01-01		
+it-cf	C514	Cerignola	54056	13		1900-01-01		
+it-cf	C523	Cernusco Sul Naviglio	30193	09		1900-01-01		
+it-cf	C552	Cerveteri	27367	07		1900-01-01		
+it-cf	C553	Cervia	37568	05		1900-01-01		
+it-cf	C565	Cesano Boscone	23368	09		1900-01-01		
+it-cf	C566	Cesano Maderno	36986	09		1900-01-01		
+it-cf	C573	Cesena	99082	05		1900-01-01		
+it-cf	C574	Cesenatico	22681	05		1900-01-01		
+it-cf	C618	Chiari	15541	09		1900-01-01		
+it-cf	C621	Chiavari	26572	08		1900-01-01		
+it-cf	C627	Chieri	38067	12		1900-01-01		
+it-cf	C632	Chieti	44444	01		1900-01-01		
+it-cf	C638	Chioggia	46776	20		1900-01-01		
+it-cf	C665	Chivasso	23551	12		1900-01-01		
+it-cf	C707	Cinisello Balsamo	75943	09		1900-01-01		
+it-cf	C722	Ciriè	17439	12		1900-01-01		
+it-cf	C740	Cisterna Di Latina	27901	07		1900-01-01		
+it-cf	C745	Città Di Castello	29327	18		1900-01-01		
+it-cf	C770	Civitanova Marche	47899	10		1900-01-01		
+it-cf	C773	Civitavecchia	48791	07		1900-01-01		
+it-cf	C847	Colle Di Val D'Elsa	17554	16		1900-01-01		
+it-cf	C858	Colleferro	21491	07		1900-01-01		
+it-cf	C860	Collegno	62423	12		1900-01-01		
+it-cf	C895	Cologno Monzese	45786	09		1900-01-01		
+it-cf	C927	Comiso	28411	15		1900-01-01		
+it-cf	C933	Como	95258	09		1900-01-01		
+it-cf	C957	Conegliano	31987	20		1900-01-01		
+it-cf	C975	Conversano	23267	13		1900-01-01		
+it-cf	C978	Copertino	23489	13		1900-01-01		
+it-cf	C983	Corato	46505	13		1900-01-01		
+it-cf	C991	Cordenons	17712	06		1900-01-01		
+it-cf	D013	Cormano	20031	09		1900-01-01		
+it-cf	D018	Cornaredo	20098	09		1900-01-01		
+it-cf	D037	Correggio	20357	05		1900-01-01		
+it-cf	D045	Corsico	33669	09		1900-01-01		
+it-cf	D086	Cosenza	66294	03		1900-01-01		
+it-cf	D122	Crotone	68784	03		1900-01-01		
+it-cf	D142	Crema	32163	09		1900-01-01		
+it-cf	D150	Cremona	76841	09		1900-01-01		
+it-cf	D205	Cuneo	57796	12		1900-01-01		
+it-cf	D231	Cusano Milanino	18904	09		1900-01-01		
+it-cf	D245	Dalmine	22881	09		1900-01-01		
+it-cf	D284	Desenzano Del Garda	24366	09		1900-01-01		
+it-cf	D286	Desio	41960	09		1900-01-01		
+it-cf	D332	Domodossola	17778	12		1900-01-01		
+it-cf	D390	Eboli	28321	04		1900-01-01		
+it-cf	D403	Empoli	42481	16		1900-01-01		
+it-cf	D416	Erba	16431	09		1900-01-01		
+it-cf	D423	Erice	26933	15		1900-01-01		
+it-cf	D442	Este	17793	20		1900-01-01		
+it-cf	D451	Fabriano	23807	10		1900-01-01		
+it-cf	D458	Faenza	43833	05		1900-01-01		
+it-cf	D472	Falconara Marittima	25948	10		1900-01-01		
+it-cf	D488	Fano	79650	10		1900-01-01		
+it-cf	D508	Fasano	35557	13		1900-01-01		
+it-cf	D514	Favara	32110	15		1900-01-01		
+it-cf	D542	Fermo	29812	10		1900-01-01		
+it-cf	D548	Ferrara	153596	05		1900-01-01		
+it-cf	D607	Fiorano Modenese	16278	05		1900-01-01		
+it-cf	D612	Firenze	458631	16		1900-01-01		
+it-cf	D636	Floridia	22089	15		1900-01-01		
+it-cf	D643	Foggia	137690	13		1900-01-01		
+it-cf	D653	Foligno	58239	18		1900-01-01		
+it-cf	D656	Follonica	21163	16		1900-01-01		
+it-cf	D662	Fondi	39762	07		1900-01-01		
+it-cf	D702	Forio	15969	04		1900-01-01		
+it-cf	D704	Forlì	120905	05		1900-01-01		
+it-cf	D708	Formia	33476	07		1900-01-01		
+it-cf	D711	Formigine	39052	05		1900-01-01		
+it-cf	D742	Fossano	18773	12		1900-01-01		
+it-cf	D761	Francavilla Fontana	33415	13		1900-01-01		
+it-cf	D763	Francavilla Al Mare	21095	01		1900-01-01		
+it-cf	D773	Frascati	20036	07		1900-01-01		
+it-cf	D789	Frattamaggiore	29822	04		1900-01-01		
+it-cf	D790	Frattaminore	15487	04		1900-01-01		
+it-cf	D810	Frosinone	44505	07		1900-01-01		
+it-cf	D843	Gaeta	19936	07		1900-01-01		
+it-cf	D862	Galatina	24884	13		1900-01-01		
+it-cf	D869	Gallarate	50439	09		1900-01-01		
+it-cf	D872	Galliate	15699	12		1900-01-01		
+it-cf	D883	Gallipoli	19176	13		1900-01-01		
+it-cf	D912	Garbagnate Milanese	25974	09		1900-01-01		
+it-cf	D960	Gela	75001	15		1900-01-01		
+it-cf	D969	Genova	580097	08		1900-01-01		
+it-cf	D972	Genzano Di Roma	21962	07		1900-01-01		
+it-cf	D999	Ghedi	16351	09		1900-01-01		
+it-cf	E017	Giarre	27026	15		1900-01-01		
+it-cf	E036	Ginosa	21140	13		1900-01-01		
+it-cf	E038	Gioia Del Colle	24184	13		1900-01-01		
+it-cf	E041	Gioia Tauro	18769	03		1900-01-01		
+it-cf	E047	Giovinazzo	19186	13		1900-01-01		
+it-cf	E054	Giugliano In Campania	87077	04		1900-01-01		
+it-cf	E058	Giulianova	21922	01		1900-01-01		
+it-cf	E063	Giussano	25916	09		1900-01-01		
+it-cf	E094	Gorgonzola	18979	09		1900-01-01		
+it-cf	E098	Gorizia	34428	06		1900-01-01		
+it-cf	E131	Gragnano	29082	04		1900-01-01		
+it-cf	E155	Gravina In Puglia	42210	13		1900-01-01		
+it-cf	E156	Gravina Di Catania	26524	15		1900-01-01		
+it-cf	E202	Grosseto	68802	16		1900-01-01		
+it-cf	E204	Grottaferrata	18144	07		1900-01-01		
+it-cf	E205	Grottaglie	31320	13		1900-01-01		
+it-cf	E216	Grugliasco	40753	12		1900-01-01		
+it-cf	E224	Grumo Nevano	17879	04		1900-01-01		
+it-cf	E263	Guidonia Montecelio	145243	07		1900-01-01		
+it-cf	E281	Iglesias	23583	14		1900-01-01		
+it-cf	E289	Imola	73959	05		1900-01-01		
+it-cf	E290	Imperia	43695	08		1900-01-01		
+it-cf	E329	Ischia	36756	04		1900-01-01		
+it-cf	E335	Isernia	17460	11		1900-01-01		
+it-cf	E372	Vasto	43898	01		1900-01-01		
+it-cf	E379	Ivrea	23599	12		1900-01-01		
+it-cf	E388	Jesi	36985	10		1900-01-01		
+it-cf	E415	Lainate	25011	09		1900-01-01		
+it-cf	E435	Lanciano	35615	01		1900-01-01		
+it-cf	E463	La Spezia	94296	08		1900-01-01		
+it-cf	E472	Latina	98522	07		1900-01-01		
+it-cf	E506	Lecce	82122	13		1900-01-01		
+it-cf	E507	Lecco	49568	09		1900-01-01		
+it-cf	E512	Legnago	22150	20		1900-01-01		
+it-cf	E514	Legnano	57589	09		1900-01-01		
+it-cf	E532	Lentini	24102	15		1900-01-01		
+it-cf	E573	Licata	36537	15		1900-01-01		
+it-cf	E591	Limbiate	33539	09		1900-01-01		
+it-cf	E617	Lissone	42215	09		1900-01-01		
+it-cf	E625	Livorno	158056	16		1900-01-01		
+it-cf	E648	Lodi	40767	09		1900-01-01		
+it-cf	E715	Lucca	81748	16		1900-01-01		
+it-cf	E716	Lucera	32222	13		1900-01-01		
+it-cf	E730	Lugo	25477	05		1900-01-01		
+it-cf	E738	Lumezzane	46940	09		1900-01-01		
+it-cf	E783	Macerata	37404	10		1900-01-01		
+it-cf	E791	Maddaloni	36819	04		1900-01-01		
+it-cf	E801	Magenta	22566	09		1900-01-01		
+it-cf	E863	Malnate	15466	09		1900-01-01		
+it-cf	E882	Manduria	29822	13		1900-01-01		
+it-cf	E885	Manfredonia	56932	13		1900-01-01		
+it-cf	E897	Mantova	44008	09		1900-01-01		
+it-cf	E906	Marano Di Napoli	54022	04		1900-01-01		
+it-cf	E932	Marcianise	40239	04		1900-01-01		
+it-cf	E951	Mariano Comense	22643	09		1900-01-01		
+it-cf	E955	Marigliano	29901	04		1900-01-01		
+it-cf	E958	Marino	44142	07		1900-01-01		
+it-cf	E974	Marsala	79597	15		1900-01-01		
+it-cf	E986	Martina Franca	37685	13		1900-01-01		
+it-cf	F005	Mascalucia	32179	15		1900-01-01		
+it-cf	F023	Massa	85218	16		1900-01-01		
+it-cf	F027	Massafra	31401	13		1900-01-01		
+it-cf	F035	Massarosa	31566	16		1900-01-01		
+it-cf	F052	Matera	62291	02		1900-01-01		
+it-cf	F061	Mazara Del Vallo	52804	15		1900-01-01		
+it-cf	F078	Meda	22665	09		1900-01-01		
+it-cf	F100	Melegnano	16707	09		1900-01-01		
+it-cf	F111	Melito Di Napoli	36933	04		1900-01-01		
+it-cf	F119	Melzo	18031	09		1900-01-01		
+it-cf	F127	Mentana	18701	07		1900-01-01		
+it-cf	F132	Merano	43708	17		1900-01-01		
+it-cf	F152	Mesagne	26497	13		1900-01-01		
+it-cf	F158	Messina	233849	15		1900-01-01		
+it-cf	F205	Milano	1650750	09		1900-01-01		
+it-cf	F206	Milazzo	31771	15		1900-01-01		
+it-cf	F224	Minturno	17748	07		1900-01-01		
+it-cf	F229	Mira	35097	20		1900-01-01		
+it-cf	F240	Mirandola	19123	05		1900-01-01		
+it-cf	F241	Mirano	19293	20		1900-01-01		
+it-cf	F246	Misilmeri	24621	15		1900-01-01		
+it-cf	F250	Misterbianco	45542	15		1900-01-01		
+it-cf	F257	Modena	195574	05		1900-01-01		
+it-cf	F258	Modica	56988	15		1900-01-01		
+it-cf	F262	Modugno	36384	13		1900-01-01		
+it-cf	F269	Mogliano Veneto	24331	20		1900-01-01		
+it-cf	F280	Mola Di Bari	24682	13		1900-01-01		
+it-cf	F284	Molfetta	59557	13		1900-01-01		
+it-cf	F299	Porto Empedocle	16574	15		1900-01-01		
+it-cf	F335	Moncalieri	60488	12		1900-01-01		
+it-cf	F351	Mondovì	39095	12		1900-01-01		
+it-cf	F352	Mondragone	29264	04		1900-01-01		
+it-cf	F356	Monfalcone	31707	06		1900-01-01		
+it-cf	F376	Monopoli	42673	13		1900-01-01		
+it-cf	F377	Monreale	33388	15		1900-01-01		
+it-cf	F382	Monselice	18682	20		1900-01-01		
+it-cf	F383	Monserrato	20193	14		1900-01-01		
+it-cf	F443	Montebelluna	27224	20		1900-01-01		
+it-cf	F464	Montecchio Maggiore	20815	20		1900-01-01		
+it-cf	F471	Montichiari	20151	09		1900-01-01		
+it-cf	F537	Vibo Valentia	22140	03		1900-01-01		
+it-cf	F572	Montemurlo	34780	16		1900-01-01		
+it-cf	F585	Roseto Degli Abruzzi	22370	01		1900-01-01		
+it-cf	F611	Monterotondo	38159	07		1900-01-01		
+it-cf	F646	Montesilvano	53906	01		1900-01-01		
+it-cf	F656	Montevarchi	18682	16		1900-01-01		
+it-cf	F704	Monza	124398	09		1900-01-01		
+it-cf	F797	Muggiò	23193	09		1900-01-01		
+it-cf	F799	Mugnano Di Napoli	34231	04		1900-01-01		
+it-cf	F839	Napoli	1875764	04		1900-01-01		
+it-cf	F842	Nardò	29668	13		1900-01-01		
+it-cf	F874	Nerviano	17030	09		1900-01-01		
+it-cf	F880	Nettuno	49873	07		1900-01-01		
+it-cf	F889	Nichelino	47760	12		1900-01-01		
+it-cf	F899	Niscemi	26893	15		1900-01-01		
+it-cf	F912	Nocera Inferiore	45608	04		1900-01-01		
+it-cf	F913	Nocera Superiore	23452	04		1900-01-01		
+it-cf	F915	Noci	15383	13		1900-01-01		
+it-cf	F923	Noicattaro	25693	13		1900-01-01		
+it-cf	F924	Nola	29816	04		1900-01-01		
+it-cf	F943	Noto	19162	15		1900-01-01		
+it-cf	F944	Nova Milanese	22310	09		1900-01-01		
+it-cf	F952	Novara	108745	12		1900-01-01		
+it-cf	F955	Novate Milanese	19758	09		1900-01-01		
+it-cf	F965	Novi Ligure	25957	12		1900-01-01		
+it-cf	F979	Nuoro	35948	14		1900-01-01		
+it-cf	F999	Oderzo	17644	20		1900-01-01		
+it-cf	G015	Olbia	62728	14		1900-01-01		
+it-cf	G087	Orbassano	21813	12		1900-01-01		
+it-cf	G113	Oristano	36289	14		1900-01-01		
+it-cf	G130	Orta Di Atella	24750	04		1900-01-01		
+it-cf	G131	Orta Nova	16677	13		1900-01-01		
+it-cf	G157	Osimo	22763	10		1900-01-01		
+it-cf	G187	Ostuni	24157	13		1900-01-01		
+it-cf	G190	Ottaviano	23396	04		1900-01-01		
+it-cf	G211	Pachino	20493	15		1900-01-01		
+it-cf	G220	Paderno Dugnano	46235	09		1900-01-01		
+it-cf	G224	Padova	247725	20		1900-01-01		
+it-cf	G230	Pagani	32835	04		1900-01-01		
+it-cf	G252	Palagiano	15388	13		1900-01-01		
+it-cf	G253	Palagonia	16227	15		1900-01-01		
+it-cf	G264	Palazzolo Sull'Oglio	17973	09		1900-01-01		
+it-cf	G273	Palermo	663043	15		1900-01-01		
+it-cf	G282	Palma Di Montechiaro	22654	15		1900-01-01		
+it-cf	G288	Palmi	18556	03		1900-01-01		
+it-cf	G291	Palo Del Colle	21344	13		1900-01-01		
+it-cf	G309	Villaricca	29457	04		1900-01-01		
+it-cf	G324	Parabiago	26364	09		1900-01-01		
+it-cf	G337	Parma	215023	05		1900-01-01		
+it-cf	G348	Partinico	28708	15		1900-01-01		
+it-cf	G371	Paternò	46030	15		1900-01-01		
+it-cf	G388	Pavia	66277	09		1900-01-01		
+it-cf	G467	San Giovanni In Persiceto	21665	05		1900-01-01		
+it-cf	G478	Perugia	149474	18		1900-01-01		
+it-cf	G479	Pesaro	85756	10		1900-01-01		
+it-cf	G482	Pescara	119554	01		1900-01-01		
+it-cf	G535	Piacenza	105003	05		1900-01-01		
+it-cf	G580	Piazza Armerina	17736	15		1900-01-01		
+it-cf	G628	Pietrasanta	21619	16		1900-01-01		
+it-cf	G674	Pinerolo	36358	12		1900-01-01		
+it-cf	G686	Pioltello	34203	09		1900-01-01		
+it-cf	G687	Piombino	35486	16		1900-01-01		
+it-cf	G691	Piossasco	16904	12		1900-01-01		
+it-cf	G702	Pisa	124350	16		1900-01-01		
+it-cf	G713	Pistoia	75574	16		1900-01-01		
+it-cf	G752	Poggibonsi	25780	16		1900-01-01		
+it-cf	G762	Poggiomarino	20308	04		1900-01-01		
+it-cf	G811	Pomezia	48972	07		1900-01-01		
+it-cf	G812	Pomigliano D'Arco	38921	04		1900-01-01		
+it-cf	G813	Pompei	24649	04		1900-01-01		
+it-cf	G843	Pontedera	24987	16		1900-01-01		
+it-cf	G888	Pordenone	49878	06		1900-01-01		
+it-cf	G902	Portici	53801	04		1900-01-01		
+it-cf	G914	Portogruaro	21005	20		1900-01-01		
+it-cf	G920	Porto San Giorgio	15558	10		1900-01-01		
+it-cf	G921	Porto Sant'Elpidio	23179	10		1900-01-01		
+it-cf	G924	Porto Torres	21653	14		1900-01-01		
+it-cf	G942	Potenza	56433	02		1900-01-01		
+it-cf	G953	Pozzallo	18166	15		1900-01-01		
+it-cf	G964	Pozzuoli	110356	04		1900-01-01		
+it-cf	G999	Prato	195089	16		1900-01-01		
+it-cf	H096	Putignano	24387	13		1900-01-01		
+it-cf	H101	Qualiano	23752	04		1900-01-01		
+it-cf	H114	Quarto	37683	04		1900-01-01		
+it-cf	H118	Quartu Sant'Elena	66620	14		1900-01-01		
+it-cf	H163	Ragusa	77719	15		1900-01-01		
+it-cf	H183	Rapallo	26993	08		1900-01-01		
+it-cf	H199	Ravenna	129511	05		1900-01-01		
+it-cf	H223	Reggio Nell'Emilia	190990	05		1900-01-01		
+it-cf	H224	Reggio Di Calabria	200458	03		1900-01-01		
+it-cf	H235	Rende	29578	03		1900-01-01		
+it-cf	H243	Ercolano	53576	04		1900-01-01		
+it-cf	H264	Rho	49768	09		1900-01-01		
+it-cf	H269	Ribera	18367	15		1900-01-01		
+it-cf	H274	Riccione	33487	05		1900-01-01		
+it-cf	H282	Rieti	40564	07		1900-01-01		
+it-cf	H294	Rimini	153849	05		1900-01-01		
+it-cf	H330	Riva Del Garda	17331	17		1900-01-01		
+it-cf	H355	Rivoli	49988	12		1900-01-01		
+it-cf	H404	Rocca Di Papa	15036	07		1900-01-01		
+it-cf	H501	Roma	2873964	07		1900-01-01		
+it-cf	H509	Romano Di Lombardia	17549	09		1900-01-01		
+it-cf	H570	Rosignano Marittimo	28011	16		1900-01-01		
+it-cf	H574	Rosolini	19721	15		1900-01-01		
+it-cf	H612	Rovereto	36749	17		1900-01-01		
+it-cf	H620	Rovigo	57678	20		1900-01-01		
+it-cf	H623	Rozzano	39731	09		1900-01-01		
+it-cf	H643	Rutigliano	17674	13		1900-01-01		
+it-cf	H645	Ruvo Di Puglia	23938	13		1900-01-01		
+it-cf	H647	Sabaudia	23597	07		1900-01-01		
+it-cf	H657	Sacile	18680	06		1900-01-01		
+it-cf	H703	Salerno	129254	04		1900-01-01		
+it-cf	H720	Salsomaggiore Terme	16379	05		1900-01-01		
+it-cf	H727	Saluzzo	16639	12		1900-01-01		
+it-cf	H769	San Benedetto Del Tronto	45873	10		1900-01-01		
+it-cf	H783	San Bonifacio	19903	20		1900-01-01		
+it-cf	H792	San Cataldo	22079	15		1900-01-01		
+it-cf	H823	San Donà Di Piave	44488	20		1900-01-01		
+it-cf	H827	San Donato Milanese	30888	09		1900-01-01		
+it-cf	H834	San Felice A Cancello	16571	04		1900-01-01		
+it-cf	H892	San Giorgio A Cremano	45463	04		1900-01-01		
+it-cf	H901	San Giovanni Valdarno	16002	16		1900-01-01		
+it-cf	H919	San Giovanni In Fiore	18358	03		1900-01-01		
+it-cf	H922	San Giovanni La Punta	22046	15		1900-01-01		
+it-cf	H924	San Giovanni Lupatoto	23868	20		1900-01-01		
+it-cf	H926	San Giovanni Rotondo	27124	13		1900-01-01		
+it-cf	H930	San Giuliano Milanese	35599	09		1900-01-01		
+it-cf	H931	San Giuseppe Vesuviano	26888	04		1900-01-01		
+it-cf	H945	San Lazzaro Di Savena	28160	05		1900-01-01		
+it-cf	I030	San Mauro Torinese	18521	12		1900-01-01		
+it-cf	I046	San Miniato	50022	16		1900-01-01		
+it-cf	I054	San Nicandro Garganico	15815	13		1900-01-01		
+it-cf	I056	San Nicola La Strada	21147	04		1900-01-01		
+it-cf	I138	Sanremo	47043	08		1900-01-01		
+it-cf	I148	San Salvo	18848	01		1900-01-01		
+it-cf	I158	San Severo	51919	13		1900-01-01		
+it-cf	I234	Santa Maria Capua Vetere	31743	04		1900-01-01		
+it-cf	I262	Sant'Anastasia	24864	04		1900-01-01		
+it-cf	I293	Sant'Antimo	33561	04		1900-01-01		
+it-cf	I300	Sant'Antonio Abate	18859	04		1900-01-01		
+it-cf	I330	Santeramo In Colle	24922	13		1900-01-01		
+it-cf	I396	San Vito Dei Normanni	17617	13		1900-01-01		
+it-cf	I438	Sarno	29640	04		1900-01-01		
+it-cf	I441	Saronno	38099	09		1900-01-01		
+it-cf	I449	Sarzana	20435	08		1900-01-01		
+it-cf	I452	Sassari	149844	14		1900-01-01		
+it-cf	I462	Sassuolo	38575	05		1900-01-01		
+it-cf	I467	Sava	15898	13		1900-01-01		
+it-cf	I470	Savigliano	17353	12		1900-01-01		
+it-cf	I480	Savona	62253	08		1900-01-01		
+it-cf	I483	Scafati	48702	04		1900-01-01		
+it-cf	I496	Scandiano	36270	05		1900-01-01		
+it-cf	I531	Schio	35400	20		1900-01-01		
+it-cf	I533	Sciacca	40569	15		1900-01-01		
+it-cf	I535	Scicli	21613	15		1900-01-01		
+it-cf	I548	Scordia	16645	15		1900-01-01		
+it-cf	I577	Segrate	39022	09		1900-01-01		
+it-cf	I580	Selargius	27603	14		1900-01-01		
+it-cf	I602	Senago	20620	09		1900-01-01		
+it-cf	I608	Senigallia	36995	10		1900-01-01		
+it-cf	I625	Seregno	42760	09		1900-01-01		
+it-cf	I628	Seriate	23552	09		1900-01-01		
+it-cf	I684	Sesto Fiorentino	45656	16		1900-01-01		
+it-cf	I690	Sesto San Giovanni	81822	09		1900-01-01		
+it-cf	I693	Sestri Levante	16963	08		1900-01-01		
+it-cf	I695	Sestu	18870	14		1900-01-01		
+it-cf	I703	Settimo Torinese	48308	12		1900-01-01		
+it-cf	I709	Seveso	22733	09		1900-01-01		
+it-cf	I712	Sezze	19593	07		1900-01-01		
+it-cf	I725	Siderno	15651	03		1900-01-01		
+it-cf	I726	Siena	58168	16		1900-01-01		
+it-cf	I752	Sinnai	15791	14		1900-01-01		
+it-cf	I754	Siracusa	135912	15		1900-01-01		
+it-cf	I804	Sulmona	22465	01		1900-01-01		
+it-cf	I820	Somma Vesuviana	32484	04		1900-01-01		
+it-cf	I829	Sondrio	20469	09		1900-01-01		
+it-cf	I838	Sora	23758	07		1900-01-01		
+it-cf	I908	Spinea	26305	20		1900-01-01		
+it-cf	I921	Spoleto	23650	18		1900-01-01		
+it-cf	L020	Suzzara	17268	09		1900-01-01		
+it-cf	L049	Taranto	216553	13		1900-01-01		
+it-cf	L103	Teramo	67463	01		1900-01-01		
+it-cf	L109	Terlizzi	25811	13		1900-01-01		
+it-cf	L112	Termini Imerese	23762	15		1900-01-01		
+it-cf	L113	Termoli	31724	11		1900-01-01		
+it-cf	L117	Terni	112664	18		1900-01-01		
+it-cf	L120	Terracina	34835	07		1900-01-01		
+it-cf	L142	Terzigno	17138	04		1900-01-01		
+it-cf	L157	Thiene	22437	20		1900-01-01		
+it-cf	L182	Tivoli	49955	07		1900-01-01		
+it-cf	L188	Todi	18982	18		1900-01-01		
+it-cf	L191	Tolentino	16504	10		1900-01-01		
+it-cf	L219	Torino	2539864	12		1900-01-01		
+it-cf	L245	Torre Annunziata	43521	04		1900-01-01		
+it-cf	L259	Torre Del Greco	85332	04		1900-01-01		
+it-cf	L273	Torremaggiore	16955	13		1900-01-01		
+it-cf	L304	Tortona	22743	12		1900-01-01		
+it-cf	L319	Tradate	17154	09		1900-01-01		
+it-cf	L328	Trani	55075	13		1900-01-01		
+it-cf	L331	Trapani	74921	15		1900-01-01		
+it-cf	L356	Trecate	19430	12		1900-01-01		
+it-cf	L378	Trento	143494	17		1900-01-01		
+it-cf	L379	Trentola Ducenta	17056	04		1900-01-01		
+it-cf	L400	Treviglio	26973	09		1900-01-01		
+it-cf	L407	Treviso	85760	20		1900-01-01		
+it-cf	L409	Trezzano Sul Naviglio	20001	09		1900-01-01		
+it-cf	L424	Trieste	217586	06		1900-01-01		
+it-cf	L425	Triggiano	26811	13		1900-01-01		
+it-cf	L483	Udine	100170	06		1900-01-01		
+it-cf	L551	Valdagno	23701	20		1900-01-01		
+it-cf	L570	Valenza	17305	12		1900-01-01		
+it-cf	L571	Valenzano	17770	13		1900-01-01		
+it-cf	L682	Varese	82136	09		1900-01-01		
+it-cf	L719	Velletri	52911	07		1900-01-01		
+it-cf	L727	Venaria Reale	33531	12		1900-01-01		
+it-cf	L736	Venezia	289762	20		1900-01-01		
+it-cf	L741	Ventimiglia	24918	08		1900-01-01		
+it-cf	L746	Verbania	60614	12		1900-01-01		
+it-cf	L750	Vercelli	45875	12		1900-01-01		
+it-cf	L781	Verona	273926	20		1900-01-01		
+it-cf	L826	Viadana	21484	09		1900-01-01		
+it-cf	L833	Viareggio	73399	16		1900-01-01		
+it-cf	L840	Vicenza	111980	20		1900-01-01		
+it-cf	L872	Vigevano	57970	09		1900-01-01		
+it-cf	L885	Vignola	22397	05		1900-01-01		
+it-cf	L916	Villabate	19788	15		1900-01-01		
+it-cf	L949	Villafranca Di Verona	28515	20		1900-01-01		
+it-cf	M048	Villorba	16160	20		1900-01-01		
+it-cf	M052	Vimercate	24430	09		1900-01-01		
+it-cf	M053	Vimodrone	17072	09		1900-01-01		
+it-cf	M082	Viterbo	52276	07		1900-01-01		
+it-cf	M088	Vittoria	55660	15		1900-01-01		
+it-cf	M089	Vittorio Veneto	26501	20		1900-01-01		
+it-cf	M109	Voghera	38464	09		1900-01-01		
+it-cf	M115	Volla	22911	04		1900-01-01		
+it-cf	M185	Zola Predosa	20860	05		1900-01-01		
+it-cf	M208	Lamezia Terme	135990	03		1900-01-01		
+it-cf	M212	Ladispoli	35877	07		1900-01-01		
+it-cf	M213	Ardea	39053	07		1900-01-01		
+it-cf	M272	Ciampino	38277	07		1900-01-01		
+it-cf	M297	Fiumicino	56710	07		1900-01-01		
+it-cf	M309	Fonte Nuova	27896	07		1900-01-01		
+it-cf	M403	Corigliano-Rossano	64955	03		1900-01-01		
+it-cf	Z100	Albania	0		AL	1900-01-01		
+it-cf	Z101	Andorra	0		AD	1900-01-01		
+it-cf	Z102	Austria	0		AT	1900-01-01		
+it-cf	Z103	Belgium	0		BE	1900-01-01		
+it-cf	Z104	Bulgaria	0		BG	1900-01-01		
+it-cf	Z106	Vatican City State	0		VA	1900-01-01		
+it-cf	Z107	Denmark	0		DK	1900-01-01		
+it-cf	Z108	ISOLE FAER OER	0		FO	1900-01-01		
+it-cf	Z109	Finland	0		FI	1900-01-01		
+it-cf	Z110	France	0		FR	1900-01-01		
+it-cf	Z112	Germany	0		DE	1900-01-01		
+it-cf	Z114	United Kingdom	0		GB	1900-01-01		
+it-cf	Z115	Greece	0		GR	1900-01-01		
+it-cf	Z116	Ireland	0		IE	1900-01-01		
+it-cf	Z117	Iceland	0		IS	1900-01-01		
+it-cf	Z119	Liechtenstein	0		LI	1900-01-01		
+it-cf	Z120	Luxembourg	0		LU	1900-01-01		
+it-cf	Z121	Malta	0		MT	1900-01-01		
+it-cf	Z123	Monaco	0		MC	1900-01-01		
+it-cf	Z125	Norway	0		NO	1900-01-01		
+it-cf	Z126	Netherlands	0		NL	1900-01-01		
+it-cf	Z127	Poland	0		PL	1900-01-01		
+it-cf	Z128	Portugal	0		PT	1900-01-01		
+it-cf	Z129	Romania	0		RO	1900-01-01		
+it-cf	Z130	San Marino	0		SM	1900-01-01		
+it-cf	Z131	Spain	0		ES	1900-01-01		
+it-cf	Z132	Sweden	0		SE	1900-01-01		
+it-cf	Z133	Switzerland	0		CH	1900-01-01		
+it-cf	Z134	Hungary	0		HU	1900-01-01		
+it-cf	Z138	Ukraine	0		UA	1900-01-01		
+it-cf	Z139	Belarus	0		BY	1900-01-01		
+it-cf	Z140	Moldova, Republic of	0		MD	1900-01-01		
+it-cf	Z144	Estonia	0		EE	1900-01-01		
+it-cf	Z145	Latvia	0		LV	1900-01-01		
+it-cf	Z146	Lithuania	0		LT	1900-01-01		
+it-cf	Z148	Macedonia (FYROM)	0		MK	1900-01-01		
+it-cf	Z149	Croatia	0		HR	1900-01-01		
+it-cf	Z150	Slovenia	0		SI	1900-01-01		
+it-cf	Z153	Bosnia and Herzegovina	0		BA	1900-01-01		
+it-cf	Z154	Russian Federation	0		RU	1900-01-01		
+it-cf	Z155	Slovakia	0		SK	1900-01-01		
+it-cf	Z156	Czech Republic	0		CZ	1900-01-01		
+it-cf	Z158	Serbia	0		RS	1900-01-01		
+it-cf	Z159	Montenegro	0		ME	1900-01-01		
+it-cf	Z161	Palestinian Territory, Occupied	0		PS	1900-01-01		
+it-cf	Z200	Afghanistan	0		AF	1900-01-01		
+it-cf	Z203	Saudi Arabia	0		SA	1900-01-01		
+it-cf	Z204	Bahrain	0		BH	1900-01-01		
+it-cf	Z205	Bhutan	0		BT	1900-01-01		
+it-cf	Z206	Myanmar	0		MM	1900-01-01		
+it-cf	Z207	Brunei Darussalam	0		BN	1900-01-01		
+it-cf	Z208	Cambodia	0		KH	1900-01-01		
+it-cf	Z209	Sri Lanka	0		LK	1900-01-01		
+it-cf	Z210	China	0		CN	1900-01-01		
+it-cf	Z211	Cyprus	0		CY	1900-01-01		
+it-cf	Z213	Korea, Republic of	0		KR	1900-01-01		
+it-cf	Z214	Korea, Democratic People's Republic of	0		KP	1900-01-01		
+it-cf	Z215	United Arab Emirates	0		AE	1900-01-01		
+it-cf	Z216	Philippines	0		PH	1900-01-01		
+it-cf	Z217	Taiwan, Province of China	0		TW	1900-01-01		
+it-cf	Z219	Japan	0		JP	1900-01-01		
+it-cf	Z220	Jordan	0		JO	1900-01-01		
+it-cf	Z222	India	0		IN	1900-01-01		
+it-cf	Z223	Indonesia	0		ID	1900-01-01		
+it-cf	Z224	Iran, Islamic Republic of	0		IR	1900-01-01		
+it-cf	Z225	Iraq	0		IQ	1900-01-01		
+it-cf	Z226	Israel	0		IL	1900-01-01		
+it-cf	Z227	Kuwait	0		KW	1900-01-01		
+it-cf	Z228	Lao People's Democratic Republic	0		LA	1900-01-01		
+it-cf	Z229	Lebanon	0		LB	1900-01-01		
+it-cf	Z232	Maldives	0		MV	1900-01-01		
+it-cf	Z233	Mongolia	0		MN	1900-01-01		
+it-cf	Z234	Nepal	0		NP	1900-01-01		
+it-cf	Z235	Oman	0		OM	1900-01-01		
+it-cf	Z236	Pakistan	0		PK	1900-01-01		
+it-cf	Z237	Qatar	0		QA	1900-01-01		
+it-cf	Z240	Syrian Arab Republic	0		SY	1900-01-01		
+it-cf	Z241	Thailand	0		TH	1900-01-01		
+it-cf	Z242	East Timor	0		TL	1900-01-01		
+it-cf	Z243	Turkey	0		TR	1900-01-01		
+it-cf	Z246	Yemen	0		YE	1900-01-01		
+it-cf	Z247	Malaysia	0		MY	1900-01-01		
+it-cf	Z248	Singapore	0		SG	1900-01-01		
+it-cf	Z249	Bangladesh	0		BD	1900-01-01		
+it-cf	Z251	Viet Nam	0		VN	1900-01-01		
+it-cf	Z252	Armenia	0		AM	1900-01-01		
+it-cf	Z253	Azerbaijan	0		AZ	1900-01-01		
+it-cf	Z254	Georgia	0		GE	1900-01-01		
+it-cf	Z255	Kazakhstan	0		KZ	1900-01-01		
+it-cf	Z256	Kyrgyzstan	0		KG	1900-01-01		
+it-cf	Z257	Tajikistan	0		TJ	1900-01-01		
+it-cf	Z258	Turkmenistan	0		TM	1900-01-01		
+it-cf	Z259	Uzbekistan	0		UZ	1900-01-01		
+it-cf	Z300	Namibia	0		NA	1900-01-01		
+it-cf	Z301	Algeria	0		DZ	1900-01-01		
+it-cf	Z302	Angola	0		AO	1900-01-01		
+it-cf	Z305	Burundi	0		BI	1900-01-01		
+it-cf	Z306	Cameroon	0		CM	1900-01-01		
+it-cf	Z307	Cape Verde	0		CV	1900-01-01		
+it-cf	Z308	Central African Republic	0		CF	1900-01-01		
+it-cf	Z309	Chad	0		TD	1900-01-01		
+it-cf	Z310	Comoros	0		KM	1900-01-01		
+it-cf	Z311	Congo	0		CG	1900-01-01		
+it-cf	Z312	Congo, The Democratic Republic of The	0		CD	1900-01-01		
+it-cf	Z313	Côte D'Ivoire	0		CI	1900-01-01		
+it-cf	Z314	Benin	0		BJ	1900-01-01		
+it-cf	Z315	Ethiopia	0		ET	1900-01-01		
+it-cf	Z316	Gabon	0		GA	1900-01-01		
+it-cf	Z317	Gambia	0		GM	1900-01-01		
+it-cf	Z318	Ghana	0		GH	1900-01-01		
+it-cf	Z319	Guinea	0		GN	1900-01-01		
+it-cf	Z320	Guinea-Bissau	0		GW	1900-01-01		
+it-cf	Z321	Equatorial Guinea	0		GQ	1900-01-01		
+it-cf	Z322	Kenya	0		KE	1900-01-01		
+it-cf	Z325	Liberia	0		LR	1900-01-01		
+it-cf	Z326	Libyan Arab Jamahiriya	0		LY	1900-01-01		
+it-cf	Z327	Madagascar	0		MG	1900-01-01		
+it-cf	Z328	Malawi	0		MW	1900-01-01		
+it-cf	Z329	Mali	0		ML	1900-01-01		
+it-cf	Z330	Morocco	0		MA	1900-01-01		
+it-cf	Z331	Mauritania	0		MR	1900-01-01		
+it-cf	Z332	Mauritius	0		MU	1900-01-01		
+it-cf	Z333	Mozambique	0		MZ	1900-01-01		
+it-cf	Z334	Niger	0		NE	1900-01-01		
+it-cf	Z335	Nigeria	0		NG	1900-01-01		
+it-cf	Z336	Egypt	0		EG	1900-01-01		
+it-cf	Z337	Zimbabwe	0		ZW	1900-01-01		
+it-cf	Z338	Rwanda	0		RW	1900-01-01		
+it-cf	Z340	SANT'ELENA	0		SH	1900-01-01		
+it-cf	Z341	Sao Tome and Principe	0		ST	1900-01-01		
+it-cf	Z342	Seychelles	0		SC	1900-01-01		
+it-cf	Z343	Senegal	0		SN	1900-01-01		
+it-cf	Z344	Sierra Leone	0		SL	1900-01-01		
+it-cf	Z345	Somalia	0		SO	1900-01-01		
+it-cf	Z347	South Africa	0		ZA	1900-01-01		
+it-cf	Z348	Sudan	0		SD	1900-01-01		
+it-cf	Z349	Swaziland	0		SZ	1900-01-01		
+it-cf	Z351	Togo	0		TG	1900-01-01		
+it-cf	Z352	Tunisia	0		TN	1900-01-01		
+it-cf	Z353	Uganda	0		UG	1900-01-01		
+it-cf	Z354	Burkina Faso	0		BF	1900-01-01		
+it-cf	Z355	Zambia	0		ZM	1900-01-01		
+it-cf	Z357	Tanzania, United Republic of	0		TZ	1900-01-01		
+it-cf	Z358	Botswana	0		BW	1900-01-01		
+it-cf	Z359	Lesotho	0		LS	1900-01-01		
+it-cf	Z360	MAYOTTE	0		YT	1900-01-01		
+it-cf	Z361	Djibouti	0		DJ	1900-01-01		
+it-cf	Z368	Eritrea	0		ER	1900-01-01		
+it-cf	Z400	BERMUDA	0		BM	1900-01-01		
+it-cf	Z401	Canada	0		CA	1900-01-01		
+it-cf	Z403	SAINT PIERRE E MIQUELON	0		PM	1900-01-01		
+it-cf	Z404	United States	0		US	1900-01-01		
+it-cf	Z501	ARUBA	0		AW	1900-01-01		
+it-cf	Z502	Bahamas	0		BS	1900-01-01		
+it-cf	Z503	Costa Rica	0		CR	1900-01-01		
+it-cf	Z504	Cuba	0		CU	1900-01-01		
+it-cf	Z505	Dominican Republic	0		DO	1900-01-01		
+it-cf	Z506	El Salvador	0		SV	1900-01-01		
+it-cf	Z507	Jamaica	0		JM	1900-01-01		
+it-cf	Z509	Guatemala	0		GT	1900-01-01		
+it-cf	Z510	Haiti	0		HT	1900-01-01		
+it-cf	Z511	Honduras	0		HN	1900-01-01		
+it-cf	Z512	Belize	0		BZ	1900-01-01		
+it-cf	Z513	MARTINICA	0		MQ	1900-01-01		
+it-cf	Z514	Mexico	0		MX	1900-01-01		
+it-cf	Z515	Nicaragua	0		NI	1900-01-01		
+it-cf	Z516	Panama	0		PA	1900-01-01		
+it-cf	Z519	ISOLE TURKS E CAICOS	0		TC	1900-01-01		
+it-cf	Z522	Barbados	0		BB	1900-01-01		
+it-cf	Z524	Grenada	0		GD	1900-01-01		
+it-cf	Z525	ISOLE VERGINI BRITANNICHE	0		VG	1900-01-01		
+it-cf	Z526	Dominica	0		DM	1900-01-01		
+it-cf	Z527	Saint Lucia	0		LC	1900-01-01		
+it-cf	Z528	Saint Vincent and The Grenadines	0		VC	1900-01-01		
+it-cf	Z530	ISOLE CAYMAN	0		KY	1900-01-01		
+it-cf	Z532	Antigua and Barbuda	0		AG	1900-01-01		
+it-cf	Z533	Saint Kitts and Nevis	0		KN	1900-01-01		
+it-cf	Z600	Argentina	0		AR	1900-01-01		
+it-cf	Z601	Bolivia, Plurinational State of	0		BO	1900-01-01		
+it-cf	Z602	Brazil	0		BR	1900-01-01		
+it-cf	Z603	Chile	0		CL	1900-01-01		
+it-cf	Z604	Colombia	0		CO	1900-01-01		
+it-cf	Z605	Ecuador	0		EC	1900-01-01		
+it-cf	Z606	Guyana	0		GY	1900-01-01		
+it-cf	Z608	Suriname	0		SR	1900-01-01		
+it-cf	Z610	Paraguay	0		PY	1900-01-01		
+it-cf	Z611	Peru	0		PE	1900-01-01		
+it-cf	Z612	Trinidad and Tobago	0		TT	1900-01-01		
+it-cf	Z613	Uruguay	0		UY	1900-01-01		
+it-cf	Z614	Venezuela, Bolivarian Republic of	0		VE	1900-01-01		
+it-cf	Z700	Australia	0		AU	1900-01-01		
+it-cf	Z703	ISOLE COOK	0		CK	1900-01-01		
+it-cf	Z704	Fiji	0		FJ	1900-01-01		
+it-cf	Z711	Marshall Islands	0		MH	1900-01-01		
+it-cf	Z713	Nauru	0		NR	1900-01-01		
+it-cf	Z719	New Zealand	0		NZ	1900-01-01		
+it-cf	Z724	Solomon Islands	0		SB	1900-01-01		
+it-cf	Z726	Samoa	0		WS	1900-01-01		
+it-cf	Z728	Tonga	0		TO	1900-01-01		
+it-cf	Z729	ISOLE WALLIS E FUTUNA	0		WF	1900-01-01		
+it-cf	Z730	Papua New Guinea	0		PG	1900-01-01		
+it-cf	Z731	Kiribati	0		KI	1900-01-01		
+it-cf	Z732	Tuvalu	0		TV	1900-01-01		
+it-cf	Z733	Vanuatu	0		VU	1900-01-01		
+it-cf	Z734	Palau	0		PW	1900-01-01		
+it-cf	Z735	Micronesia, Federated States of	0		FM	1900-01-01		
+it-cf	Z907	South Sudan, Republic of	0		SS	1900-01-01		
+kr-rrn	00	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	01	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	02	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	03	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	04	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	05	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	06	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	07	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	08	Seoul	1165563	11		1900-01-01	2020-10-05	
+kr-rrn	09	Busan	880073	10		1900-01-01	2020-10-05	
+kr-rrn	10	Busan	880073	10		1900-01-01	2020-10-05	
+kr-rrn	11	Busan	880073	10		1900-01-01	2020-10-05	
+kr-rrn	12	Busan	880073	10		1900-01-01	2020-10-05	
+kr-rrn	13	Incheon	1023105	12		1900-01-01	2020-10-05	
+kr-rrn	14	Incheon	1023105	12		1900-01-01	2020-10-05	
+kr-rrn	15	Incheon	1023105	12		1900-01-01	2020-10-05	
+kr-rrn	16	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	17	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	18	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	19	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	20	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	21	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	22	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	23	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	24	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	25	Gyeonggi	949894	13		1900-01-01	2020-10-05	
+kr-rrn	26	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	27	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	28	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	29	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	30	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	31	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	32	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	33	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	34	Gangwon	153536	06		1900-01-01	2020-10-05	
+kr-rrn	35	North Chungcheong	261273	05		1900-01-01	2020-10-05	
+kr-rrn	36	North Chungcheong	261273	05		1900-01-01	2020-10-05	
+kr-rrn	37	North Chungcheong	261273	05		1900-01-01	2020-10-05	
+kr-rrn	38	North Chungcheong	261273	05		1900-01-01	2020-10-05	
+kr-rrn	39	North Chungcheong	261273	05		1900-01-01	2020-10-05	
+kr-rrn	40	Daejeon	747668	19		1900-01-01	2020-10-05	
+kr-rrn	41	Daejeon	747668	19		1900-01-01	2020-10-05	
+kr-rrn	42	South Chungcheong	273018	17		1900-01-01	2020-10-05	
+kr-rrn	43	South Chungcheong	273018	17		1900-01-01	2020-10-05	
+kr-rrn	44	Sejong	197315	22		1900-01-01	2020-10-05	
+kr-rrn	45	South Chungcheong	273018	17		1900-01-01	2020-10-05	
+kr-rrn	46	South Chungcheong	273018	17		1900-01-01	2020-10-05	
+kr-rrn	47	South Chungcheong	273018	17		1900-01-01	2020-10-05	
+kr-rrn	48	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	49	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	50	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	51	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	52	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	53	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	54	North Jeolla	250513	03		1900-01-01	2020-10-05	
+kr-rrn	55	Gwangju	458227	18		1900-01-01	2020-10-05	
+kr-rrn	56	Gwangju	458227	18		1900-01-01	2020-10-05	
+kr-rrn	57	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	58	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	59	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	60	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	61	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	62	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	63	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	64	South Jeolla	205043	16		1900-01-01	2020-10-05	
+kr-rrn	65	Gwangju	458227	18		1900-01-01	2020-10-05	
+kr-rrn	66	Gwangju	458227	18		1900-01-01	2020-10-05	
+kr-rrn	67	Daegu	607560	15		1900-01-01	2020-10-05	
+kr-rrn	68	Daegu	607560	15		1900-01-01	2020-10-05	
+kr-rrn	69	Daegu	607560	15		1900-01-01	2020-10-05	
+kr-rrn	70	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	71	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	72	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	73	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	74	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	75	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	76	Daegu	607560	15		1900-01-01	2020-10-05	
+kr-rrn	77	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	78	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	79	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	80	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	81	North Gyeongsang	209953	14		1900-01-01	2020-10-05	
+kr-rrn	82	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	83	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	84	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	85	Ulsan	547507	21		1900-01-01	2020-10-05	
+kr-rrn	86	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	87	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	88	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	89	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	90	Ulsan	547507	21		1900-01-01	2020-10-05	
+kr-rrn	91	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	92	South Gyeongsang	337885	20		1900-01-01	2020-10-05	
+kr-rrn	93	Jeju	302577	01		1900-01-01	2020-10-05	
+kr-rrn	94	Jeju	302577	01		1900-01-01	2020-10-05	
+kr-rrn	95	Jeju	302577	01		1900-01-01	2020-10-05	
+kr-rrn	96	Sejong	197315	22		1900-01-01	2020-10-05	
+me-jmbg	21	Podgorica, Danilovgrad, Kolasin	262207	16;07;09;24;25		1900-01-01		
+me-jmbg	22	Bar, Ulcinj	35412	02;20		1900-01-01		
+me-jmbg	23	Budva, Kotor, Tivat	43082	05;10;19		1900-01-01		
+me-jmbg	24	Herceg Novi	27060	08		1900-01-01		
+me-jmbg	25	Cetinje	15654	06		1900-01-01		
+me-jmbg	26	Niksic, Pluzine, Savnik	63073	12;15;18		1900-01-01		
+me-jmbg	27	Berane, Rozaje, Plav, Andrijevica	27520	03;17;13;01;22;23		1900-01-01		
+me-jmbg	28	Bijelo Polje, Mojkovac	20038	04;11		1900-01-01		
+me-jmbg	29	Pljevlja, Zabljak	22421	14;21		1900-01-01		
+mk-embg	41	Bitola	142153	06;86;D3;E1;D9		1900-01-01		
+mk-embg	42	Kumanovo	160873	D7;51;52;59;85;97		1900-01-01		
+mk-embg	43	Ohrid	248383	E2;D2;43;E6;F5;B3;18;80		1900-01-01		
+mk-embg	44	Prilep	127113	E3;54;D8;28;53		1900-01-01		
+mk-embg	45	Skopje	871784	F6;01;36;79;92;A2;C2;20		1900-01-01		
+mk-embg	46	Strumica	127836	E7;E9;84;11;A9;72;47		1900-01-01		
+mk-embg	47	Tetovo	362856	E8;D4;C7;12;D5;A5;B7;C3;E4		1900-01-01		
+mk-embg	48	Veles	186678	F1;33;D6;69;08;E5;25;35;87;C9;60		1900-01-01		
+mk-embg	49	Stip	196473	98;04;B4;22;46;83;A4;78;19;62;40;C6		1900-01-01		
+mx-curp	AS	Aguascalientes	1107245	01		1900-01-01		
+mx-curp	BC	Baja California	4121050	02		1900-01-01		
+mx-curp	BS	Baja California Sur	814394	03		1900-01-01		
+mx-curp	CC	Campeche	742863	04		1900-01-01		
+mx-curp	CH	Chihuahua	3509072	06		1900-01-01		
+mx-curp	CL	Coahuila	2877544	07		1900-01-01		
+mx-curp	CM	Colima	665900	08		1900-01-01		
+mx-curp	CS	Chiapas	3931264	05		1900-01-01		
+mx-curp	DF	Ciudad de Mexico	21882281	09		1900-01-01		
+mx-curp	DG	Durango	1370159	10		1900-01-01		
+mx-curp	GR	Guerrero	2769347	12		1900-01-01		
+mx-curp	GT	Guanajuato	5169030	11		1900-01-01		
+mx-curp	HG	Hidalgo	2127912	13		1900-01-01		
+mx-curp	JC	Jalisco	7250206	14		1900-01-01		
+mx-curp	MC	Estado de Mexico	14448418	15		1900-01-01		
+mx-curp	MN	Michoacan	4080753	16		1900-01-01		
+mx-curp	MS	Morelos	1796405	17		1900-01-01		
+mx-curp	NE	Born abroad	0		*	1900-01-01		
+mx-curp	NL	Nuevo Leon	4817406	19		1900-01-01		
+mx-curp	NT	Nayarit	955064	18		1900-01-01		
+mx-curp	OC	Oaxaca	2904606	20		1900-01-01		
+mx-curp	PL	Puebla	5828113	21		1900-01-01		
+mx-curp	QR	Quintana Roo	1533206	23		1900-01-01		
+mx-curp	QT	Queretaro	2563376	22		1900-01-01		
+mx-curp	SL	Sinaloa	2516658	25		1900-01-01		
+mx-curp	SP	San Luis Potosi	2135998	24		1900-01-01		
+mx-curp	SR	Sonora	2698045	26		1900-01-01		
+mx-curp	TC	Tabasco	1546813	27		1900-01-01		
+mx-curp	TL	Tlaxcala	1116100	29		1900-01-01		
+mx-curp	TS	Tamaulipas	3165741	28		1900-01-01		
+mx-curp	VZ	Veracruz	6019506	30		1900-01-01		
+mx-curp	YN	Yucatan	2309918	31		1900-01-01		
+mx-curp	ZS	Zacatecas	1237609	32		1900-01-01		
+my-mykad	00	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	01	Johor	1480525	01		1900-01-01		
+my-mykad	02	Kedah	721096	02		1900-01-01		
+my-mykad	03	Kelantan	436364	03		1900-01-01		
+my-mykad	04	Melaka	575718	04		1900-01-01		
+my-mykad	05	Negeri Sembilan	341104	05		1900-01-01		
+my-mykad	06	Pahang	411238	06		1900-01-01		
+my-mykad	07	Pulau Pinang	682377	09		1900-01-01		
+my-mykad	08	Perak	568599	07		1900-01-01		
+my-mykad	09	Perlis	66158	08		1900-01-01		
+my-mykad	10	Selangor	2125073	12		1900-01-01		
+my-mykad	11	Terengganu	253460	13		1900-01-01		
+my-mykad	12	Sabah	534334	16		1900-01-01		
+my-mykad	13	Sarawak	437736	11		1900-01-01		
+my-mykad	14	WP Kuala Lumpur	726890	14		1900-01-01		
+my-mykad	15	WP Labuan	47560	15		1900-01-01		
+my-mykad	16	WP Putrajaya	50000	17		1900-01-01		
+my-mykad	17	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	18	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	19	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	20	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	21	Johor	1480525	01		1900-01-01		
+my-mykad	22	Johor	1480525	01		1900-01-01		
+my-mykad	23	Johor	1480525	01		1900-01-01		
+my-mykad	24	Johor	1480525	01		1900-01-01		
+my-mykad	25	Kedah	721096	02		1900-01-01		
+my-mykad	26	Kedah	721096	02		1900-01-01		
+my-mykad	27	Kedah	721096	02		1900-01-01		
+my-mykad	28	Kelantan	436364	03		1900-01-01		
+my-mykad	29	Kelantan	436364	03		1900-01-01		
+my-mykad	30	Melaka	575718	04		1900-01-01		
+my-mykad	31	Negeri Sembilan	341104	05		1900-01-01		
+my-mykad	32	Pahang	411238	06		1900-01-01		
+my-mykad	33	Pahang	411238	06		1900-01-01		
+my-mykad	34	Pulau Pinang	682377	09		1900-01-01		
+my-mykad	35	Pulau Pinang	682377	09		1900-01-01		
+my-mykad	36	Perak	568599	07		1900-01-01		
+my-mykad	37	Perak	568599	07		1900-01-01		
+my-mykad	38	Perak	568599	07		1900-01-01		
+my-mykad	39	Perak	568599	07		1900-01-01		
+my-mykad	40	Perlis	66158	08		1900-01-01		
+my-mykad	41	Selangor	2125073	12		1900-01-01		
+my-mykad	42	Selangor	2125073	12		1900-01-01		
+my-mykad	43	Selangor	2125073	12		1900-01-01		
+my-mykad	44	Selangor	2125073	12		1900-01-01		
+my-mykad	45	Terengganu	253460	13		1900-01-01		
+my-mykad	46	Terengganu	253460	13		1900-01-01		
+my-mykad	47	Sabah	534334	16		1900-01-01		
+my-mykad	48	Sabah	534334	16		1900-01-01		
+my-mykad	49	Sabah	534334	16		1900-01-01		
+my-mykad	50	Sarawak	437736	11		1900-01-01		
+my-mykad	51	Sarawak	437736	11		1900-01-01		
+my-mykad	52	Sarawak	437736	11		1900-01-01		
+my-mykad	53	Sarawak	437736	11		1900-01-01		
+my-mykad	54	WP Kuala Lumpur	726890	14		1900-01-01		
+my-mykad	55	WP Kuala Lumpur	726890	14		1900-01-01		
+my-mykad	56	WP Kuala Lumpur	726890	14		1900-01-01		
+my-mykad	57	WP Kuala Lumpur	726890	14		1900-01-01		
+my-mykad	58	WP Labuan	47560	15		1900-01-01		
+my-mykad	59	Negeri Sembilan	341104	05		1900-01-01		
+my-mykad	60	Brunei	0		BN	1900-01-01		
+my-mykad	61	Indonesia	0		ID	1900-01-01		
+my-mykad	62	Cambodia	0		KH	1900-01-01		
+my-mykad	63	Laos	0		LA	1900-01-01		
+my-mykad	64	Myanmar	0		MM	1900-01-01		
+my-mykad	65	Philippines	0		PH	1900-01-01		
+my-mykad	66	Singapore	0		SG	1900-01-01		
+my-mykad	67	Thailand	0		TH	1900-01-01		
+my-mykad	68	Vietnam	0		VN	1900-01-01		
+my-mykad	69	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	70	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	71	Abroad	0		*	1900-01-01		
+my-mykad	72	Abroad	0		*	1900-01-01		
+my-mykad	73	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	74	China	0		CN	1900-01-01		
+my-mykad	75	India	0		IN	1900-01-01		
+my-mykad	76	Pakistan	0		PK	1900-01-01		
+my-mykad	77	Saudi Arabia	0		SA	1900-01-01		
+my-mykad	78	Sri Lanka	0		LK	1900-01-01		
+my-mykad	79	Bangladesh	0		BD	1900-01-01		
+my-mykad	80	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	81	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	82	State unknown	0			1900-01-01		
+my-mykad	83	Asia-Pacific and Oceania	0			1900-01-01		
+my-mykad	84	South America	0			1900-01-01		
+my-mykad	85	Africa	0			1900-01-01		
+my-mykad	86	Europe	0			1900-01-01		
+my-mykad	87	Britain and Ireland	0			1900-01-01		
+my-mykad	88	Middle East	0			1900-01-01		
+my-mykad	89	Far East	0			1900-01-01		
+my-mykad	90	Caribbean and Central America	0			1900-01-01		
+my-mykad	91	North America	0			1900-01-01		
+my-mykad	92	Eastern Europe	0			1900-01-01		
+my-mykad	93	Others	0			1900-01-01		
+my-mykad	94	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	95	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	96	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	97	Unassigned (safe mode)	0			1900-01-01		1
+my-mykad	98	Stateless	0			1900-01-01		
+my-mykad	99	Refugee or unspecified	0			1900-01-01		
+pk-cnic	0	Unassigned (safe mode)	0			1900-01-01		1
+pk-cnic	1	Khyber Pakhtunkhwa	5225606	03		1900-01-01		
+pk-cnic	2	FATA (merged into Khyber Pakhtunkhwa in 2018)	5225606	03		1900-01-01		
+pk-cnic	3	Punjab	43036856	04		1900-01-01		
+pk-cnic	4	Sindh	20247705	05		1900-01-01		
+pk-cnic	5	Balochistan	2899079	02		1900-01-01		
+pk-cnic	6	Islamabad	631166	08		1900-01-01		
+pk-cnic	7	Gilgit-Baltistan	521765	07		1900-01-01		
+pk-cnic	8	Azad Kashmir	1232238	06		1900-01-01		
+pk-cnic	9	Unassigned (safe mode)	0			1900-01-01		1
+ro-cnp	01	Alba	441328	01		1900-01-01		
+ro-cnp	02	Arad	524067	02		1900-01-01		
+ro-cnp	03	Arges	732463	03		1900-01-01		
+ro-cnp	04	Bacau	779382	04		1900-01-01		
+ro-cnp	05	Bihor	671055	05		1900-01-01		
+ro-cnp	06	Bistrita-Nasaud	380746	06		1900-01-01		
+ro-cnp	07	Botosani	546404	07		1900-01-01		
+ro-cnp	08	Brasov	610191	09		1900-01-01		
+ro-cnp	09	Braila	350681	08		1900-01-01		
+ro-cnp	10	Buzau	578817	11		1900-01-01		
+ro-cnp	11	Caras-Severin	383426	12		1900-01-01		
+ro-cnp	12	Cluj	709127	13		1900-01-01		
+ro-cnp	13	Constanta	786401	14		1900-01-01		
+ro-cnp	14	Covasna	247047	15		1900-01-01		
+ro-cnp	15	Dambovita	684960	16		1900-01-01		
+ro-cnp	16	Dolj	732273	17		1900-01-01		
+ro-cnp	17	Galati	602693	18		1900-01-01		
+ro-cnp	18	Gorj	430582	19		1900-01-01		
+ro-cnp	19	Harghita	371963	20		1900-01-01		
+ro-cnp	20	Hunedoara	509336	21		1900-01-01		
+ro-cnp	21	Ialomita	351198	22		1900-01-01		
+ro-cnp	22	Iasi	1040630	23		1900-01-01		
+ro-cnp	23	Ilfov	365641	43		1900-01-01		
+ro-cnp	24	Maramures	546406	25		1900-01-01		
+ro-cnp	25	Mehedinti	331594	26		1900-01-01		
+ro-cnp	26	Mures	717344	27		1900-01-01		
+ro-cnp	27	Neamt	677835	28		1900-01-01		
+ro-cnp	28	Olt	575098	29		1900-01-01		
+ro-cnp	29	Prahova	985654	30		1900-01-01		
+ro-cnp	30	Satu Mare	428395	32		1900-01-01		
+ro-cnp	31	Salaj	271775	31		1900-01-01		
+ro-cnp	32	Sibiu	432798	33		1900-01-01		
+ro-cnp	33	Suceava	824530	34		1900-01-01		
+ro-cnp	34	Teleorman	515897	35		1900-01-01		
+ro-cnp	35	Timis	705707	36		1900-01-01		
+ro-cnp	36	Tulcea	267573	37		1900-01-01		
+ro-cnp	37	Vaslui	533876	38		1900-01-01		
+ro-cnp	38	Valcea	485929	39		1900-01-01		
+ro-cnp	39	Vrancea	437439	40		1900-01-01		
+ro-cnp	40	Bucuresti	530103	10		1900-01-01		
+ro-cnp	41	Bucuresti sector 1	530103	10		1900-01-01		
+ro-cnp	42	Bucuresti sector 2	530103	10		1900-01-01		
+ro-cnp	43	Bucuresti sector 3	530103	10		1900-01-01		
+ro-cnp	44	Bucuresti sector 4	530103	10		1900-01-01		
+ro-cnp	45	Bucuresti sector 5	530103	10		1900-01-01		
+ro-cnp	46	Bucuresti sector 6	530103	10		1900-01-01		
+ro-cnp	47	Bucuresti sector 7 (abolished)	0			1900-01-01		
+ro-cnp	48	Bucuresti sector 8 (abolished)	0			1900-01-01		
+ro-cnp	51	Calarasi	315157	41		1900-01-01		
+ro-cnp	52	Giurgiu	377752	42		1900-01-01		
+ro-cnp	70	Any place (numbers generated from 2024-05-08)	0			2024-05-08		
+rs-jmbg	70	Abroad (consular post)	0		*	1900-01-01		
+rs-jmbg	71	Beograd	1628737	SE		1900-01-01		
+rs-jmbg	72	Sumadija, Pomoravlje	241378	SE		1900-01-01		
+rs-jmbg	73	Nis area	322940	SE		1900-01-01		
+rs-jmbg	74	South Morava	172132	SE		1900-01-01		
+rs-jmbg	75	Zajecar, Bor	144817	SE		1900-01-01		
+rs-jmbg	76	Podunavlje, Branicevo	143157	SE		1900-01-01		
+rs-jmbg	77	Podrinje, Kolubara	261781	SE		1900-01-01		
+rs-jmbg	78	Kraljevo, Rasina, Raska	305432	SE		1900-01-01		
+rs-jmbg	79	Uzice, Moravica	237942	SE		1900-01-01		
+rs-jmbg	80	Novi Sad	238783	VO		1900-01-01		
+rs-jmbg	81	Sombor	115896	VO		1900-01-01		
+rs-jmbg	82	Subotica	133099	VO		1900-01-01		
+rs-jmbg	83	Becej, Srbobran	238783	VO		1900-01-01		
+rs-jmbg	84	Kikinda	136891	VO		1900-01-01		
+rs-jmbg	85	Zrenjanin	212312	VO		1900-01-01		
+rs-jmbg	86	Pancevo	127792	VO		1900-01-01		
+rs-jmbg	87	Vrsac	127792	VO		1900-01-01		
+rs-jmbg	88	Ruma, Indjija	112841	VO		1900-01-01		
+rs-jmbg	89	Sremska Mitrovica	112841	VO		1900-01-01		
+rs-jmbg	91	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	92	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	93	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	94	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	95	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	96	Kosovo and Metohija	0			1900-01-01		
+rs-jmbg	97	Kosovo and Metohija	0			1900-01-01		
+ru-inn	01	Adygea	306693	01		1900-01-01		
+ru-inn	02	Bashkortostan	2980321	08		1900-01-01		
+ru-inn	03	Buryatia	696480	11		1900-01-01		
+ru-inn	04	Altai Republic	141922	03		1900-01-01		
+ru-inn	05	Dagestan	1846252	17		1900-01-01		
+ru-inn	06	Ingushetia	544825	19		1900-01-01		
+ru-inn	07	Kabardino-Balkaria	720087	22		1900-01-01		
+ru-inn	08	Kalmykia	204028	24		1900-01-01		
+ru-inn	09	Karachay-Cherkessia	326644	27		1900-01-01		
+ru-inn	10	Karelia	594449	28		1900-01-01		
+ru-inn	11	Komi	845534	34		1900-01-01		
+ru-inn	12	Mari El	486800	45		1900-01-01		
+ru-inn	13	Mordovia	572347	46		1900-01-01		
+ru-inn	14	Sakha	706425	63		1900-01-01		
+ru-inn	15	North Ossetia	553629	68		1900-01-01		
+ru-inn	16	Tatarstan	3052878	73		1900-01-01		
+ru-inn	17	Tyva	223237	79		1900-01-01		
+ru-inn	18	Udmurtia	1178342	80		1900-01-01		
+ru-inn	19	Khakassia	430194	31		1900-01-01		
+ru-inn	20	Chechnya	930722	12		1900-01-01		
+ru-inn	21	Chuvashia	889999	16		1900-01-01		
+ru-inn	22	Altai Krai	1867668	04		1900-01-01		
+ru-inn	23	Krasnodar	4557175	38		1900-01-01		
+ru-inn	24	Krasnoyarsk	2527160	91		1900-01-01		
+ru-inn	25	Primorye	1811668	59		1900-01-01		
+ru-inn	26	Stavropol	2269381	70		1900-01-01		
+ru-inn	27	Khabarovsk	1827676	30		1900-01-01		
+ru-inn	28	Amur	665841	05		1900-01-01		
+ru-inn	29	Arkhangelsk	1062055	06		1900-01-01		
+ru-inn	30	Astrakhan	804969	07		1900-01-01		
+ru-inn	31	Belgorod	1096279	09		1900-01-01		
+ru-inn	32	Bryansk	962786	10		1900-01-01		
+ru-inn	33	Vladimir	1248942	83		1900-01-01		
+ru-inn	34	Volgograd	2065439	84		1900-01-01		
+ru-inn	35	Vologda	948295	85		1900-01-01		
+ru-inn	36	Voronezh	1912791	86		1900-01-01		
+ru-inn	37	Ivanovo	917885	21		1900-01-01		
+ru-inn	38	Irkutsk	2158239	20		1900-01-01		
+ru-inn	39	Kaliningrad	816619	23		1900-01-01		
+ru-inn	40	Kaluga	850463	25		1900-01-01		
+ru-inn	41	Kamchatka	294233	92		1900-01-01		
+ru-inn	42	Kemerovo	2636026	29		1900-01-01		
+ru-inn	43	Kirov	1103718	33		1900-01-01		
+ru-inn	44	Kostroma	522779	37		1900-01-01		
+ru-inn	45	Kurgan	597913	40		1900-01-01		
+ru-inn	46	Kursk	797689	41		1900-01-01		
+ru-inn	47	Leningrad	1985762	42		1900-01-01		
+ru-inn	48	Lipetsk	856242	43		1900-01-01		
+ru-inn	49	Magadan	151985	44		1900-01-01		
+ru-inn	50	Moscow Oblast	7019621	47		1900-01-01		
+ru-inn	51	Murmansk	792493	49		1900-01-01		
+ru-inn	52	Nizhny Novgorod	2745924	51		1900-01-01		
+ru-inn	53	Novgorod	500716	52		1900-01-01		
+ru-inn	54	Novosibirsk	2363202	53		1900-01-01		
+ru-inn	55	Omsk	1515724	54		1900-01-01		
+ru-inn	56	Orenburg	1560898	55		1900-01-01		
+ru-inn	57	Oryol	519414	56		1900-01-01		
+ru-inn	58	Penza	1092994	57		1900-01-01		
+ru-inn	59	Perm	2174967	90		1900-01-01		
+ru-inn	60	Pskov	505592	60		1900-01-01		
+ru-inn	61	Rostov	3470299	61		1900-01-01		
+ru-inn	62	Ryazan	871193	62		1900-01-01		
+ru-inn	63	Samara	2776278	65		1900-01-01		
+ru-inn	64	Saratov	1986087	67		1900-01-01		
+ru-inn	65	Sakhalin	488468	64		1900-01-01		
+ru-inn	66	Sverdlovsk	4163551	71		1900-01-01		
+ru-inn	67	Smolensk	754927	69		1900-01-01		
+ru-inn	68	Tambov	707547	72		1900-01-01		
+ru-inn	69	Tver	1106736	77		1900-01-01		
+ru-inn	70	Tomsk	920065	75		1900-01-01		
+ru-inn	71	Tula	1308079	76		1900-01-01		
+ru-inn	72	Tyumen	1209146	78		1900-01-01		
+ru-inn	73	Ulyanovsk	1009800	81		1900-01-01		
+ru-inn	74	Chelyabinsk	3161957	13		1900-01-01		
+ru-inn	75	Zabaykalsky	830507	93		1900-01-01		
+ru-inn	76	Yaroslavl	1120729	88		1900-01-01		
+ru-inn	77	Moscow	17652670	48		1900-01-01		
+ru-inn	78	Saint Petersburg	8362384	66		1900-01-01		
+ru-inn	79	Jewish Autonomous Oblast	128772	89		1900-01-01		
+ru-inn	83	Nenets	27302	50		1900-01-01		
+ru-inn	86	Khanty-Mansi	1445627	32		1900-01-01		
+ru-inn	87	Chukotka	36944	15		1900-01-01		
+ru-inn	89	Yamalo-Nenets	475650	87		1900-01-01		
+th-pin	10	Bangkok	12327699	40		1900-01-01		
+th-pin	11	Samut Prakan	644578	42		1900-01-01		
+th-pin	12	Nonthaburi	602756	38		1900-01-01		
+th-pin	13	Pathum Thani	231709	39		1900-01-01		
+th-pin	14	Phra Nakhon Si Ayutthaya	157277	36		1900-01-01		
+th-pin	15	Ang Thong	72752	35		1900-01-01		
+th-pin	16	Lopburi	82957	34		1900-01-01		
+th-pin	17	Sing Buri	43945	33		1900-01-01		
+th-pin	18	Chai Nat	15469	32		1900-01-01		
+th-pin	19	Saraburi	212129	37		1900-01-01		
+th-pin	20	Chon Buri	747870	46		1900-01-01		
+th-pin	21	Rayong	207974	47		1900-01-01		
+th-pin	22	Chanthaburi	167987	48		1900-01-01		
+th-pin	23	Trat	153264	49		1900-01-01		
+th-pin	24	Chachoengsao	117291	44		1900-01-01		
+th-pin	25	Prachin Buri	580428	74		1900-01-01		
+th-pin	26	Nakhon Nayok	34647	43		1900-01-01		
+th-pin	27	Sa Kaeo	65032	80		1900-01-01		
+th-pin	30	Nakhon Ratchasima	376731	27		1900-01-01		
+th-pin	31	Buriram	90881	28		1900-01-01		
+th-pin	32	Surin	46673	29		1900-01-01		
+th-pin	33	Si Sa Ket	92866	30		1900-01-01		
+th-pin	34	Ubon Ratchathani	228960	75		1900-01-01		
+th-pin	35	Yasothon	21643	72		1900-01-01		
+th-pin	36	Chaiyaphum	136414	26		1900-01-01		
+th-pin	37	Amnat Charoen	34769	77		1900-01-01		
+th-pin	38	Bueng Kan	26205	81		1900-01-01		
+th-pin	39	Nong Bua Lamphu	90086	79		1900-01-01		
+th-pin	40	Khon Kaen	228916	22		1900-01-01		
+th-pin	41	Udon Thani	252466	76		1900-01-01		
+th-pin	42	Loei	82236	18		1900-01-01		
+th-pin	43	Nong Khai	132023	17		1900-01-01		
+th-pin	44	Maha Sarakham	82666	24		1900-01-01		
+th-pin	45	Roi Et	120127	25		1900-01-01		
+th-pin	46	Kalasin	156924	23		1900-01-01		
+th-pin	47	Sakon Nakhon	116868	20		1900-01-01		
+th-pin	48	Nakhon Phanom	62008	73		1900-01-01		
+th-pin	49	Mukdahan	40480	78		1900-01-01		
+th-pin	50	Chiang Mai	242524	02		1900-01-01		
+th-pin	51	Lamphun	68851	05		1900-01-01		
+th-pin	52	Lampang	174598	06		1900-01-01		
+th-pin	53	Uttaradit	58313	10		1900-01-01		
+th-pin	54	Phrae	79446	07		1900-01-01		
+th-pin	55	Nan	46402	04		1900-01-01		
+th-pin	56	Phayao	82334	41		1900-01-01		
+th-pin	57	Chiang Rai	183424	03		1900-01-01		
+th-pin	58	Mae Hong Son	9109	01		1900-01-01		
+th-pin	60	Nakhon Sawan	144318	16		1900-01-01		
+th-pin	61	Uthai Thani	60765	15		1900-01-01		
+th-pin	62	Kamphaeng Phet	88309	11		1900-01-01		
+th-pin	63	Tak	104412	08		1900-01-01		
+th-pin	64	Sukhothai	139984	09		1900-01-01		
+th-pin	65	Phitsanulok	145760	12		1900-01-01		
+th-pin	66	Phichit	102646	13		1900-01-01		
+th-pin	67	Phetchabun	161798	14		1900-01-01		
+th-pin	70	Ratchaburi	374100	52		1900-01-01		
+th-pin	71	Kanchanaburi	200238	50		1900-01-01		
+th-pin	72	Suphan Buri	81508	51		1900-01-01		
+th-pin	73	Nakhon Pathom	172956	53		1900-01-01		
+th-pin	74	Samut Sakhon	178221	55		1900-01-01		
+th-pin	75	Samut Songkhram	35065	54		1900-01-01		
+th-pin	76	Phetchaburi	157084	56		1900-01-01		
+th-pin	77	Prachuap Khiri Khan	261058	57		1900-01-01		
+th-pin	80	Nakhon Si Thammarat	200052	64		1900-01-01		
+th-pin	81	Krabi	76100	63		1900-01-01		
+th-pin	82	Phang Nga	17089	61		1900-01-01		
+th-pin	83	Phuket	434020	62		1900-01-01		
+th-pin	84	Surat Thani	292982	60		1900-01-01		
+th-pin	85	Ranong	24561	59		1900-01-01		
+th-pin	86	Chumphon	97996	58		1900-01-01		
+th-pin	90	Songkhla	413906	68		1900-01-01		
+th-pin	91	Satun	37877	67		1900-01-01		
+th-pin	92	Trang	97455	65		1900-01-01		
+th-pin	93	Phatthalung	43522	66		1900-01-01		
+th-pin	94	Pattani	100542	69		1900-01-01		
+th-pin	95	Yala	123162	70		1900-01-01		
+th-pin	96	Narathiwat	138924	31		1900-01-01		
+tw-nid	A	Taipei City	8146438	04		1900-01-01		
+tw-nid	B	Taichung City	2984916	04		1900-01-01		
+tw-nid	C	Keelung City	362487	04		1900-01-01		
+tw-nid	D	Tainan City	2181941	04		1900-01-01		
+tw-nid	E	Kaohsiung City	3094123	02		1900-01-01		
+tw-nid	F	New Taipei City	5391879	03		1900-01-01		
+tw-nid	G	Yilan County	94188	04		1900-01-01		
+tw-nid	H	Taoyuan	1300727	04		1900-01-01		
+tw-nid	I	Chiayi City	268188	04		1982-07-01		
+tw-nid	J	Hsinchu County	309213	04		1900-01-01		
+tw-nid	K	Miaoli County	192637	04		1900-01-01		
+tw-nid	L	Taichung County (before the 2010 merger)	2984916	04		1900-01-01	2010-12-25	
+tw-nid	M	Nantou County	376304	04		1900-01-01		
+tw-nid	N	Changhua County	894785	04		1900-01-01		
+tw-nid	O	Hsinchu City	453536	04		1982-07-01		
+tw-nid	P	Yunlin County	220259	04		1900-01-01		
+tw-nid	Q	Chiayi County	103475	04		1900-01-01		
+tw-nid	R	Tainan County (before the 2010 merger)	2181941	04		1900-01-01	2010-12-25	
+tw-nid	S	Kaohsiung County (before the 2010 merger)	3094123	02		1900-01-01	2010-12-25	
+tw-nid	T	Pingtung County	130786	04		1900-01-01		
+tw-nid	U	Hualien County	116526	04		1900-01-01		
+tw-nid	V	Taitung County	119398	04		1900-01-01		
+tw-nid	W	Kinmen County	79249	01		1900-01-01		
+tw-nid	X	Penghu County	63745	04		1900-01-01		
+tw-nid	Y	Yangmingshan (until 1974)	0			1900-01-01	1974-01-01	
+tw-nid	Z	Lienchiang County	15472	01		1900-01-01		
+us-ssn	001	NH	393388	NH		1900-01-01		
+us-ssn	002	NH	393388	NH		1900-01-01		
+us-ssn	003	NH	393388	NH		1900-01-01		
+us-ssn	004	ME	275426	ME		1900-01-01		
+us-ssn	005	ME	275426	ME		1900-01-01		
+us-ssn	006	ME	275426	ME		1900-01-01		
+us-ssn	007	ME	275426	ME		1900-01-01		
+us-ssn	008	VT	173434	VT		1900-01-01		
+us-ssn	009	VT	173434	VT		1900-01-01		
+us-ssn	010	MA	322244	MA		1900-01-01		
+us-ssn	011	MA	322244	MA		1900-01-01		
+us-ssn	012	MA	322244	MA		1900-01-01		
+us-ssn	013	MA	322244	MA		1900-01-01		
+us-ssn	014	MA	322244	MA		1900-01-01		
+us-ssn	015	MA	322244	MA		1900-01-01		
+us-ssn	016	MA	322244	MA		1900-01-01		
+us-ssn	017	MA	322244	MA		1900-01-01		
+us-ssn	018	MA	322244	MA		1900-01-01		
+us-ssn	019	MA	322244	MA		1900-01-01		
+us-ssn	020	MA	322244	MA		1900-01-01		
+us-ssn	021	MA	322244	MA		1900-01-01		
+us-ssn	022	MA	322244	MA		1900-01-01		
+us-ssn	023	MA	322244	MA		1900-01-01		
+us-ssn	024	MA	322244	MA		1900-01-01		
+us-ssn	025	MA	322244	MA		1900-01-01		
+us-ssn	026	MA	322244	MA		1900-01-01		
+us-ssn	027	MA	322244	MA		1900-01-01		
+us-ssn	028	MA	322244	MA		1900-01-01		
+us-ssn	029	MA	322244	MA		1900-01-01		
+us-ssn	030	MA	322244	MA		1900-01-01		
+us-ssn	031	MA	322244	MA		1900-01-01		
+us-ssn	032	MA	322244	MA		1900-01-01		
+us-ssn	033	MA	322244	MA		1900-01-01		
+us-ssn	034	MA	322244	MA		1900-01-01		
+us-ssn	035	RI	220579	RI		1900-01-01		
+us-ssn	036	RI	220579	RI		1900-01-01		
+us-ssn	037	RI	220579	RI		1900-01-01		
+us-ssn	038	RI	220579	RI		1900-01-01		
+us-ssn	039	RI	220579	RI		1900-01-01		
+us-ssn	040	CT	343532	CT		1900-01-01		
+us-ssn	041	CT	343532	CT		1900-01-01		
+us-ssn	042	CT	343532	CT		1900-01-01		
+us-ssn	043	CT	343532	CT		1900-01-01		
+us-ssn	044	CT	343532	CT		1900-01-01		
+us-ssn	045	CT	343532	CT		1900-01-01		
+us-ssn	046	CT	343532	CT		1900-01-01		
+us-ssn	047	CT	343532	CT		1900-01-01		
+us-ssn	048	CT	343532	CT		1900-01-01		
+us-ssn	049	CT	343532	CT		1900-01-01		
+us-ssn	050	NY	369621	NY		1900-01-01		
+us-ssn	051	NY	369621	NY		1900-01-01		
+us-ssn	052	NY	369621	NY		1900-01-01		
+us-ssn	053	NY	369621	NY		1900-01-01		
+us-ssn	054	NY	369621	NY		1900-01-01		
+us-ssn	055	NY	369621	NY		1900-01-01		
+us-ssn	056	NY	369621	NY		1900-01-01		
+us-ssn	057	NY	369621	NY		1900-01-01		
+us-ssn	058	NY	369621	NY		1900-01-01		
+us-ssn	059	NY	369621	NY		1900-01-01		
+us-ssn	060	NY	369621	NY		1900-01-01		
+us-ssn	061	NY	369621	NY		1900-01-01		
+us-ssn	062	NY	369621	NY		1900-01-01		
+us-ssn	063	NY	369621	NY		1900-01-01		
+us-ssn	064	NY	369621	NY		1900-01-01		
+us-ssn	065	NY	369621	NY		1900-01-01		
+us-ssn	066	NY	369621	NY		1900-01-01		
+us-ssn	067	NY	369621	NY		1900-01-01		
+us-ssn	068	NY	369621	NY		1900-01-01		
+us-ssn	069	NY	369621	NY		1900-01-01		
+us-ssn	070	NY	369621	NY		1900-01-01		
+us-ssn	071	NY	369621	NY		1900-01-01		
+us-ssn	072	NY	369621	NY		1900-01-01		
+us-ssn	073	NY	369621	NY		1900-01-01		
+us-ssn	074	NY	369621	NY		1900-01-01		
+us-ssn	075	NY	369621	NY		1900-01-01		
+us-ssn	076	NY	369621	NY		1900-01-01		
+us-ssn	077	NY	369621	NY		1900-01-01		
+us-ssn	078	NY	369621	NY		1900-01-01		
+us-ssn	079	NY	369621	NY		1900-01-01		
+us-ssn	080	NY	369621	NY		1900-01-01		
+us-ssn	081	NY	369621	NY		1900-01-01		
+us-ssn	082	NY	369621	NY		1900-01-01		
+us-ssn	083	NY	369621	NY		1900-01-01		
+us-ssn	084	NY	369621	NY		1900-01-01		
+us-ssn	085	NY	369621	NY		1900-01-01		
+us-ssn	086	NY	369621	NY		1900-01-01		
+us-ssn	087	NY	369621	NY		1900-01-01		
+us-ssn	088	NY	369621	NY		1900-01-01		
+us-ssn	089	NY	369621	NY		1900-01-01		
+us-ssn	090	NY	369621	NY		1900-01-01		
+us-ssn	091	NY	369621	NY		1900-01-01		
+us-ssn	092	NY	369621	NY		1900-01-01		
+us-ssn	093	NY	369621	NY		1900-01-01		
+us-ssn	094	NY	369621	NY		1900-01-01		
+us-ssn	095	NY	369621	NY		1900-01-01		
+us-ssn	096	NY	369621	NY		1900-01-01		
+us-ssn	097	NY	369621	NY		1900-01-01		
+us-ssn	098	NY	369621	NY		1900-01-01		
+us-ssn	099	NY	369621	NY		1900-01-01		
+us-ssn	100	NY	369621	NY		1900-01-01		
+us-ssn	101	NY	369621	NY		1900-01-01		
+us-ssn	102	NY	369621	NY		1900-01-01		
+us-ssn	103	NY	369621	NY		1900-01-01		
+us-ssn	104	NY	369621	NY		1900-01-01		
+us-ssn	105	NY	369621	NY		1900-01-01		
+us-ssn	106	NY	369621	NY		1900-01-01		
+us-ssn	107	NY	369621	NY		1900-01-01		
+us-ssn	108	NY	369621	NY		1900-01-01		
+us-ssn	109	NY	369621	NY		1900-01-01		
+us-ssn	110	NY	369621	NY		1900-01-01		
+us-ssn	111	NY	369621	NY		1900-01-01		
+us-ssn	112	NY	369621	NY		1900-01-01		
+us-ssn	113	NY	369621	NY		1900-01-01		
+us-ssn	114	NY	369621	NY		1900-01-01		
+us-ssn	115	NY	369621	NY		1900-01-01		
+us-ssn	116	NY	369621	NY		1900-01-01		
+us-ssn	117	NY	369621	NY		1900-01-01		
+us-ssn	118	NY	369621	NY		1900-01-01		
+us-ssn	119	NY	369621	NY		1900-01-01		
+us-ssn	120	NY	369621	NY		1900-01-01		
+us-ssn	121	NY	369621	NY		1900-01-01		
+us-ssn	122	NY	369621	NY		1900-01-01		
+us-ssn	123	NY	369621	NY		1900-01-01		
+us-ssn	124	NY	369621	NY		1900-01-01		
+us-ssn	125	NY	369621	NY		1900-01-01		
+us-ssn	126	NY	369621	NY		1900-01-01		
+us-ssn	127	NY	369621	NY		1900-01-01		
+us-ssn	128	NY	369621	NY		1900-01-01		
+us-ssn	129	NY	369621	NY		1900-01-01		
+us-ssn	130	NY	369621	NY		1900-01-01		
+us-ssn	131	NY	369621	NY		1900-01-01		
+us-ssn	132	NY	369621	NY		1900-01-01		
+us-ssn	133	NY	369621	NY		1900-01-01		
+us-ssn	134	NY	369621	NY		1900-01-01		
+us-ssn	135	NJ	321333	NJ		1900-01-01		
+us-ssn	136	NJ	321333	NJ		1900-01-01		
+us-ssn	137	NJ	321333	NJ		1900-01-01		
+us-ssn	138	NJ	321333	NJ		1900-01-01		
+us-ssn	139	NJ	321333	NJ		1900-01-01		
+us-ssn	140	NJ	321333	NJ		1900-01-01		
+us-ssn	141	NJ	321333	NJ		1900-01-01		
+us-ssn	142	NJ	321333	NJ		1900-01-01		
+us-ssn	143	NJ	321333	NJ		1900-01-01		
+us-ssn	144	NJ	321333	NJ		1900-01-01		
+us-ssn	145	NJ	321333	NJ		1900-01-01		
+us-ssn	146	NJ	321333	NJ		1900-01-01		
+us-ssn	147	NJ	321333	NJ		1900-01-01		
+us-ssn	148	NJ	321333	NJ		1900-01-01		
+us-ssn	149	NJ	321333	NJ		1900-01-01		
+us-ssn	150	NJ	321333	NJ		1900-01-01		
+us-ssn	151	NJ	321333	NJ		1900-01-01		
+us-ssn	152	NJ	321333	NJ		1900-01-01		
+us-ssn	153	NJ	321333	NJ		1900-01-01		
+us-ssn	154	NJ	321333	NJ		1900-01-01		
+us-ssn	155	NJ	321333	NJ		1900-01-01		
+us-ssn	156	NJ	321333	NJ		1900-01-01		
+us-ssn	157	NJ	321333	NJ		1900-01-01		
+us-ssn	158	NJ	321333	NJ		1900-01-01		
+us-ssn	159	PA	170476	PA		1900-01-01		
+us-ssn	160	PA	170476	PA		1900-01-01		
+us-ssn	161	PA	170476	PA		1900-01-01		
+us-ssn	162	PA	170476	PA		1900-01-01		
+us-ssn	163	PA	170476	PA		1900-01-01		
+us-ssn	164	PA	170476	PA		1900-01-01		
+us-ssn	165	PA	170476	PA		1900-01-01		
+us-ssn	166	PA	170476	PA		1900-01-01		
+us-ssn	167	PA	170476	PA		1900-01-01		
+us-ssn	168	PA	170476	PA		1900-01-01		
+us-ssn	169	PA	170476	PA		1900-01-01		
+us-ssn	170	PA	170476	PA		1900-01-01		
+us-ssn	171	PA	170476	PA		1900-01-01		
+us-ssn	172	PA	170476	PA		1900-01-01		
+us-ssn	173	PA	170476	PA		1900-01-01		
+us-ssn	174	PA	170476	PA		1900-01-01		
+us-ssn	175	PA	170476	PA		1900-01-01		
+us-ssn	176	PA	170476	PA		1900-01-01		
+us-ssn	177	PA	170476	PA		1900-01-01		
+us-ssn	178	PA	170476	PA		1900-01-01		
+us-ssn	179	PA	170476	PA		1900-01-01		
+us-ssn	180	PA	170476	PA		1900-01-01		
+us-ssn	181	PA	170476	PA		1900-01-01		
+us-ssn	182	PA	170476	PA		1900-01-01		
+us-ssn	183	PA	170476	PA		1900-01-01		
+us-ssn	184	PA	170476	PA		1900-01-01		
+us-ssn	185	PA	170476	PA		1900-01-01		
+us-ssn	186	PA	170476	PA		1900-01-01		
+us-ssn	187	PA	170476	PA		1900-01-01		
+us-ssn	188	PA	170476	PA		1900-01-01		
+us-ssn	189	PA	170476	PA		1900-01-01		
+us-ssn	190	PA	170476	PA		1900-01-01		
+us-ssn	191	PA	170476	PA		1900-01-01		
+us-ssn	192	PA	170476	PA		1900-01-01		
+us-ssn	193	PA	170476	PA		1900-01-01		
+us-ssn	194	PA	170476	PA		1900-01-01		
+us-ssn	195	PA	170476	PA		1900-01-01		
+us-ssn	196	PA	170476	PA		1900-01-01		
+us-ssn	197	PA	170476	PA		1900-01-01		
+us-ssn	198	PA	170476	PA		1900-01-01		
+us-ssn	199	PA	170476	PA		1900-01-01		
+us-ssn	200	PA	170476	PA		1900-01-01		
+us-ssn	201	PA	170476	PA		1900-01-01		
+us-ssn	202	PA	170476	PA		1900-01-01		
+us-ssn	203	PA	170476	PA		1900-01-01		
+us-ssn	204	PA	170476	PA		1900-01-01		
+us-ssn	205	PA	170476	PA		1900-01-01		
+us-ssn	206	PA	170476	PA		1900-01-01		
+us-ssn	207	PA	170476	PA		1900-01-01		
+us-ssn	208	PA	170476	PA		1900-01-01		
+us-ssn	209	PA	170476	PA		1900-01-01		
+us-ssn	210	PA	170476	PA		1900-01-01		
+us-ssn	211	PA	170476	PA		1900-01-01		
+us-ssn	212	MD	645999	MD		1900-01-01		
+us-ssn	213	MD	645999	MD		1900-01-01		
+us-ssn	214	MD	645999	MD		1900-01-01		
+us-ssn	215	MD	645999	MD		1900-01-01		
+us-ssn	216	MD	645999	MD		1900-01-01		
+us-ssn	217	MD	645999	MD		1900-01-01		
+us-ssn	218	MD	645999	MD		1900-01-01		
+us-ssn	219	MD	645999	MD		1900-01-01		
+us-ssn	220	MD	645999	MD		1900-01-01		
+us-ssn	221	DE	200358	DE		1900-01-01		
+us-ssn	222	DE	200358	DE		1900-01-01		
+us-ssn	223	VA	317898	VA		1900-01-01		
+us-ssn	224	VA	317898	VA		1900-01-01		
+us-ssn	225	VA	317898	VA		1900-01-01		
+us-ssn	226	VA	317898	VA		1900-01-01		
+us-ssn	227	VA	317898	VA		1900-01-01		
+us-ssn	228	VA	317898	VA		1900-01-01		
+us-ssn	229	VA	317898	VA		1900-01-01		
+us-ssn	230	VA	317898	VA		1900-01-01		
+us-ssn	231	VA	317898	VA		1900-01-01		
+us-ssn	232	NC WV	466845	NC;WV		1900-01-01		
+us-ssn	233	WV	156365	WV		1900-01-01		
+us-ssn	234	WV	156365	WV		1900-01-01		
+us-ssn	235	WV	156365	WV		1900-01-01		
+us-ssn	236	WV	156365	WV		1900-01-01		
+us-ssn	237	NC	310480	NC		1900-01-01		
+us-ssn	238	NC	310480	NC		1900-01-01		
+us-ssn	239	NC	310480	NC		1900-01-01		
+us-ssn	240	NC	310480	NC		1900-01-01		
+us-ssn	241	NC	310480	NC		1900-01-01		
+us-ssn	242	NC	310480	NC		1900-01-01		
+us-ssn	243	NC	310480	NC		1900-01-01		
+us-ssn	244	NC	310480	NC		1900-01-01		
+us-ssn	245	NC	310480	NC		1900-01-01		
+us-ssn	246	NC	310480	NC		1900-01-01		
+us-ssn	247	SC	232318	SC		1900-01-01		
+us-ssn	248	SC	232318	SC		1900-01-01		
+us-ssn	249	SC	232318	SC		1900-01-01		
+us-ssn	250	SC	232318	SC		1900-01-01		
+us-ssn	251	SC	232318	SC		1900-01-01		
+us-ssn	252	GA	268645	GA		1900-01-01		
+us-ssn	253	GA	268645	GA		1900-01-01		
+us-ssn	254	GA	268645	GA		1900-01-01		
+us-ssn	255	GA	268645	GA		1900-01-01		
+us-ssn	256	GA	268645	GA		1900-01-01		
+us-ssn	257	GA	268645	GA		1900-01-01		
+us-ssn	258	GA	268645	GA		1900-01-01		
+us-ssn	259	GA	268645	GA		1900-01-01		
+us-ssn	260	GA	268645	GA		1900-01-01		
+us-ssn	261	FL	780150	FL		1900-01-01		
+us-ssn	262	FL	780150	FL		1900-01-01		
+us-ssn	263	FL	780150	FL		1900-01-01		
+us-ssn	264	FL	780150	FL		1900-01-01		
+us-ssn	265	FL	780150	FL		1900-01-01		
+us-ssn	266	FL	780150	FL		1900-01-01		
+us-ssn	267	FL	780150	FL		1900-01-01		
+us-ssn	268	OH	238045	OH		1900-01-01		
+us-ssn	269	OH	238045	OH		1900-01-01		
+us-ssn	270	OH	238045	OH		1900-01-01		
+us-ssn	271	OH	238045	OH		1900-01-01		
+us-ssn	272	OH	238045	OH		1900-01-01		
+us-ssn	273	OH	238045	OH		1900-01-01		
+us-ssn	274	OH	238045	OH		1900-01-01		
+us-ssn	275	OH	238045	OH		1900-01-01		
+us-ssn	276	OH	238045	OH		1900-01-01		
+us-ssn	277	OH	238045	OH		1900-01-01		
+us-ssn	278	OH	238045	OH		1900-01-01		
+us-ssn	279	OH	238045	OH		1900-01-01		
+us-ssn	280	OH	238045	OH		1900-01-01		
+us-ssn	281	OH	238045	OH		1900-01-01		
+us-ssn	282	OH	238045	OH		1900-01-01		
+us-ssn	283	OH	238045	OH		1900-01-01		
+us-ssn	284	OH	238045	OH		1900-01-01		
+us-ssn	285	OH	238045	OH		1900-01-01		
+us-ssn	286	OH	238045	OH		1900-01-01		
+us-ssn	287	OH	238045	OH		1900-01-01		
+us-ssn	288	OH	238045	OH		1900-01-01		
+us-ssn	289	OH	238045	OH		1900-01-01		
+us-ssn	290	OH	238045	OH		1900-01-01		
+us-ssn	291	OH	238045	OH		1900-01-01		
+us-ssn	292	OH	238045	OH		1900-01-01		
+us-ssn	293	OH	238045	OH		1900-01-01		
+us-ssn	294	OH	238045	OH		1900-01-01		
+us-ssn	295	OH	238045	OH		1900-01-01		
+us-ssn	296	OH	238045	OH		1900-01-01		
+us-ssn	297	OH	238045	OH		1900-01-01		
+us-ssn	298	OH	238045	OH		1900-01-01		
+us-ssn	299	OH	238045	OH		1900-01-01		
+us-ssn	300	OH	238045	OH		1900-01-01		
+us-ssn	301	OH	238045	OH		1900-01-01		
+us-ssn	302	OH	238045	OH		1900-01-01		
+us-ssn	303	IN	308640	IN		1900-01-01		
+us-ssn	304	IN	308640	IN		1900-01-01		
+us-ssn	305	IN	308640	IN		1900-01-01		
+us-ssn	306	IN	308640	IN		1900-01-01		
+us-ssn	307	IN	308640	IN		1900-01-01		
+us-ssn	308	IN	308640	IN		1900-01-01		
+us-ssn	309	IN	308640	IN		1900-01-01		
+us-ssn	310	IN	308640	IN		1900-01-01		
+us-ssn	311	IN	308640	IN		1900-01-01		
+us-ssn	312	IN	308640	IN		1900-01-01		
+us-ssn	313	IN	308640	IN		1900-01-01		
+us-ssn	314	IN	308640	IN		1900-01-01		
+us-ssn	315	IN	308640	IN		1900-01-01		
+us-ssn	316	IN	308640	IN		1900-01-01		
+us-ssn	317	IN	308640	IN		1900-01-01		
+us-ssn	318	IL	301000	IL		1900-01-01		
+us-ssn	319	IL	301000	IL		1900-01-01		
+us-ssn	320	IL	301000	IL		1900-01-01		
+us-ssn	321	IL	301000	IL		1900-01-01		
+us-ssn	322	IL	301000	IL		1900-01-01		
+us-ssn	323	IL	301000	IL		1900-01-01		
+us-ssn	324	IL	301000	IL		1900-01-01		
+us-ssn	325	IL	301000	IL		1900-01-01		
+us-ssn	326	IL	301000	IL		1900-01-01		
+us-ssn	327	IL	301000	IL		1900-01-01		
+us-ssn	328	IL	301000	IL		1900-01-01		
+us-ssn	329	IL	301000	IL		1900-01-01		
+us-ssn	330	IL	301000	IL		1900-01-01		
+us-ssn	331	IL	301000	IL		1900-01-01		
+us-ssn	332	IL	301000	IL		1900-01-01		
+us-ssn	333	IL	301000	IL		1900-01-01		
+us-ssn	334	IL	301000	IL		1900-01-01		
+us-ssn	335	IL	301000	IL		1900-01-01		
+us-ssn	336	IL	301000	IL		1900-01-01		
+us-ssn	337	IL	301000	IL		1900-01-01		
+us-ssn	338	IL	301000	IL		1900-01-01		
+us-ssn	339	IL	301000	IL		1900-01-01		
+us-ssn	340	IL	301000	IL		1900-01-01		
+us-ssn	341	IL	301000	IL		1900-01-01		
+us-ssn	342	IL	301000	IL		1900-01-01		
+us-ssn	343	IL	301000	IL		1900-01-01		
+us-ssn	344	IL	301000	IL		1900-01-01		
+us-ssn	345	IL	301000	IL		1900-01-01		
+us-ssn	346	IL	301000	IL		1900-01-01		
+us-ssn	347	IL	301000	IL		1900-01-01		
+us-ssn	348	IL	301000	IL		1900-01-01		
+us-ssn	349	IL	301000	IL		1900-01-01		
+us-ssn	350	IL	301000	IL		1900-01-01		
+us-ssn	351	IL	301000	IL		1900-01-01		
+us-ssn	352	IL	301000	IL		1900-01-01		
+us-ssn	353	IL	301000	IL		1900-01-01		
+us-ssn	354	IL	301000	IL		1900-01-01		
+us-ssn	355	IL	301000	IL		1900-01-01		
+us-ssn	356	IL	301000	IL		1900-01-01		
+us-ssn	357	IL	301000	IL		1900-01-01		
+us-ssn	358	IL	301000	IL		1900-01-01		
+us-ssn	359	IL	301000	IL		1900-01-01		
+us-ssn	360	IL	301000	IL		1900-01-01		
+us-ssn	361	IL	301000	IL		1900-01-01		
+us-ssn	362	MI	237512	MI		1900-01-01		
+us-ssn	363	MI	237512	MI		1900-01-01		
+us-ssn	364	MI	237512	MI		1900-01-01		
+us-ssn	365	MI	237512	MI		1900-01-01		
+us-ssn	366	MI	237512	MI		1900-01-01		
+us-ssn	367	MI	237512	MI		1900-01-01		
+us-ssn	368	MI	237512	MI		1900-01-01		
+us-ssn	369	MI	237512	MI		1900-01-01		
+us-ssn	370	MI	237512	MI		1900-01-01		
+us-ssn	371	MI	237512	MI		1900-01-01		
+us-ssn	372	MI	237512	MI		1900-01-01		
+us-ssn	373	MI	237512	MI		1900-01-01		
+us-ssn	374	MI	237512	MI		1900-01-01		
+us-ssn	375	MI	237512	MI		1900-01-01		
+us-ssn	376	MI	237512	MI		1900-01-01		
+us-ssn	377	MI	237512	MI		1900-01-01		
+us-ssn	378	MI	237512	MI		1900-01-01		
+us-ssn	379	MI	237512	MI		1900-01-01		
+us-ssn	380	MI	237512	MI		1900-01-01		
+us-ssn	381	MI	237512	MI		1900-01-01		
+us-ssn	382	MI	237512	MI		1900-01-01		
+us-ssn	383	MI	237512	MI		1900-01-01		
+us-ssn	384	MI	237512	MI		1900-01-01		
+us-ssn	385	MI	237512	MI		1900-01-01		
+us-ssn	386	MI	237512	MI		1900-01-01		
+us-ssn	387	WI	329800	WI		1900-01-01		
+us-ssn	388	WI	329800	WI		1900-01-01		
+us-ssn	389	WI	329800	WI		1900-01-01		
+us-ssn	390	WI	329800	WI		1900-01-01		
+us-ssn	391	WI	329800	WI		1900-01-01		
+us-ssn	392	WI	329800	WI		1900-01-01		
+us-ssn	393	WI	329800	WI		1900-01-01		
+us-ssn	394	WI	329800	WI		1900-01-01		
+us-ssn	395	WI	329800	WI		1900-01-01		
+us-ssn	396	WI	329800	WI		1900-01-01		
+us-ssn	397	WI	329800	WI		1900-01-01		
+us-ssn	398	WI	329800	WI		1900-01-01		
+us-ssn	399	WI	329800	WI		1900-01-01		
+us-ssn	400	KY	417902	KY		1900-01-01		
+us-ssn	401	KY	417902	KY		1900-01-01		
+us-ssn	402	KY	417902	KY		1900-01-01		
+us-ssn	403	KY	417902	KY		1900-01-01		
+us-ssn	404	KY	417902	KY		1900-01-01		
+us-ssn	405	KY	417902	KY		1900-01-01		
+us-ssn	406	KY	417902	KY		1900-01-01		
+us-ssn	407	KY	417902	KY		1900-01-01		
+us-ssn	408	TN	325953	TN		1900-01-01		
+us-ssn	409	TN	325953	TN		1900-01-01		
+us-ssn	410	TN	325953	TN		1900-01-01		
+us-ssn	411	TN	325953	TN		1900-01-01		
+us-ssn	412	TN	325953	TN		1900-01-01		
+us-ssn	413	TN	325953	TN		1900-01-01		
+us-ssn	414	TN	325953	TN		1900-01-01		
+us-ssn	415	TN	325953	TN		1900-01-01		
+us-ssn	416	AL	358489	AL		1900-01-01		
+us-ssn	417	AL	358489	AL		1900-01-01		
+us-ssn	418	AL	358489	AL		1900-01-01		
+us-ssn	419	AL	358489	AL		1900-01-01		
+us-ssn	420	AL	358489	AL		1900-01-01		
+us-ssn	421	AL	358489	AL		1900-01-01		
+us-ssn	422	AL	358489	AL		1900-01-01		
+us-ssn	423	AL	358489	AL		1900-01-01		
+us-ssn	424	AL	358489	AL		1900-01-01		
+us-ssn	425	MS	169211	MS		1900-01-01		
+us-ssn	426	MS	169211	MS		1900-01-01		
+us-ssn	427	MS	169211	MS		1900-01-01		
+us-ssn	428	MS	169211	MS		1900-01-01		
+us-ssn	429	AR	248750	AR		1900-01-01		
+us-ssn	430	AR	248750	AR		1900-01-01		
+us-ssn	431	AR	248750	AR		1900-01-01		
+us-ssn	432	AR	248750	AR		1900-01-01		
+us-ssn	433	LA	224582	LA		1900-01-01		
+us-ssn	434	LA	224582	LA		1900-01-01		
+us-ssn	435	LA	224582	LA		1900-01-01		
+us-ssn	436	LA	224582	LA		1900-01-01		
+us-ssn	437	LA	224582	LA		1900-01-01		
+us-ssn	438	LA	224582	LA		1900-01-01		
+us-ssn	439	LA	224582	LA		1900-01-01		
+us-ssn	440	OK	340522	OK		1900-01-01		
+us-ssn	441	OK	340522	OK		1900-01-01		
+us-ssn	442	OK	340522	OK		1900-01-01		
+us-ssn	443	OK	340522	OK		1900-01-01		
+us-ssn	444	OK	340522	OK		1900-01-01		
+us-ssn	445	OK	340522	OK		1900-01-01		
+us-ssn	446	OK	340522	OK		1900-01-01		
+us-ssn	447	OK	340522	OK		1900-01-01		
+us-ssn	448	OK	340522	OK		1900-01-01		
+us-ssn	449	TX	584466	TX		1900-01-01		
+us-ssn	450	TX	584466	TX		1900-01-01		
+us-ssn	451	TX	584466	TX		1900-01-01		
+us-ssn	452	TX	584466	TX		1900-01-01		
+us-ssn	453	TX	584466	TX		1900-01-01		
+us-ssn	454	TX	584466	TX		1900-01-01		
+us-ssn	455	TX	584466	TX		1900-01-01		
+us-ssn	456	TX	584466	TX		1900-01-01		
+us-ssn	457	TX	584466	TX		1900-01-01		
+us-ssn	458	TX	584466	TX		1900-01-01		
+us-ssn	459	TX	584466	TX		1900-01-01		
+us-ssn	460	TX	584466	TX		1900-01-01		
+us-ssn	461	TX	584466	TX		1900-01-01		
+us-ssn	462	TX	584466	TX		1900-01-01		
+us-ssn	463	TX	584466	TX		1900-01-01		
+us-ssn	464	TX	584466	TX		1900-01-01		
+us-ssn	465	TX	584466	TX		1900-01-01		
+us-ssn	466	TX	584466	TX		1900-01-01		
+us-ssn	467	TX	584466	TX		1900-01-01		
+us-ssn	468	MN	461406	MN		1900-01-01		
+us-ssn	469	MN	461406	MN		1900-01-01		
+us-ssn	470	MN	461406	MN		1900-01-01		
+us-ssn	471	MN	461406	MN		1900-01-01		
+us-ssn	472	MN	461406	MN		1900-01-01		
+us-ssn	473	MN	461406	MN		1900-01-01		
+us-ssn	474	MN	461406	MN		1900-01-01		
+us-ssn	475	MN	461406	MN		1900-01-01		
+us-ssn	476	MN	461406	MN		1900-01-01		
+us-ssn	477	MN	461406	MN		1900-01-01		
+us-ssn	478	IA	299989	IA		1900-01-01		
+us-ssn	479	IA	299989	IA		1900-01-01		
+us-ssn	480	IA	299989	IA		1900-01-01		
+us-ssn	481	IA	299989	IA		1900-01-01		
+us-ssn	482	IA	299989	IA		1900-01-01		
+us-ssn	483	IA	299989	IA		1900-01-01		
+us-ssn	484	IA	299989	IA		1900-01-01		
+us-ssn	485	IA	299989	IA		1900-01-01		
+us-ssn	486	MO	284313	MO		1900-01-01		
+us-ssn	487	MO	284313	MO		1900-01-01		
+us-ssn	488	MO	284313	MO		1900-01-01		
+us-ssn	489	MO	284313	MO		1900-01-01		
+us-ssn	490	MO	284313	MO		1900-01-01		
+us-ssn	491	MO	284313	MO		1900-01-01		
+us-ssn	492	MO	284313	MO		1900-01-01		
+us-ssn	493	MO	284313	MO		1900-01-01		
+us-ssn	494	MO	284313	MO		1900-01-01		
+us-ssn	495	MO	284313	MO		1900-01-01		
+us-ssn	496	MO	284313	MO		1900-01-01		
+us-ssn	497	MO	284313	MO		1900-01-01		
+us-ssn	498	MO	284313	MO		1900-01-01		
+us-ssn	499	MO	284313	MO		1900-01-01		
+us-ssn	500	MO	284313	MO		1900-01-01		
+us-ssn	501	ND	285285	ND		1900-01-01		
+us-ssn	502	ND	285285	ND		1900-01-01		
+us-ssn	503	SD	309900	SD		1900-01-01		
+us-ssn	504	SD	309900	SD		1900-01-01		
+us-ssn	505	NE	372249	NE		1900-01-01		
+us-ssn	506	NE	372249	NE		1900-01-01		
+us-ssn	507	NE	372249	NE		1900-01-01		
+us-ssn	508	NE	372249	NE		1900-01-01		
+us-ssn	509	KS	339038	KS		1900-01-01		
+us-ssn	510	KS	339038	KS		1900-01-01		
+us-ssn	511	KS	339038	KS		1900-01-01		
+us-ssn	512	KS	339038	KS		1900-01-01		
+us-ssn	513	KS	339038	KS		1900-01-01		
+us-ssn	514	KS	339038	KS		1900-01-01		
+us-ssn	515	KS	339038	KS		1900-01-01		
+us-ssn	516	MT	342762	MT		1900-01-01		
+us-ssn	517	MT	342762	MT		1900-01-01		
+us-ssn	518	ID	608074	ID		1900-01-01		
+us-ssn	519	ID	608074	ID		1900-01-01		
+us-ssn	520	WY	432824	WY		1900-01-01		
+us-ssn	521	CO	596587	CO		1900-01-01		
+us-ssn	522	CO	596587	CO		1900-01-01		
+us-ssn	523	CO	596587	CO		1900-01-01		
+us-ssn	524	CO	596587	CO		1900-01-01		
+us-ssn	525	NM	447114	NM		1900-01-01		
+us-ssn	526	AZ	1212131	AZ		1900-01-01		
+us-ssn	527	AZ	1212131	AZ		1900-01-01		
+us-ssn	528	UT	756876	UT		1900-01-01		
+us-ssn	529	UT	756876	UT		1900-01-01		
+us-ssn	530	NV	1346250	NV		1900-01-01		
+us-ssn	531	WA	727166	WA		1900-01-01		
+us-ssn	532	WA	727166	WA		1900-01-01		
+us-ssn	533	WA	727166	WA		1900-01-01		
+us-ssn	534	WA	727166	WA		1900-01-01		
+us-ssn	535	WA	727166	WA		1900-01-01		
+us-ssn	536	WA	727166	WA		1900-01-01		
+us-ssn	537	WA	727166	WA		1900-01-01		
+us-ssn	538	WA	727166	WA		1900-01-01		
+us-ssn	539	WA	727166	WA		1900-01-01		
+us-ssn	540	OR	652498	OR		1900-01-01		
+us-ssn	541	OR	652498	OR		1900-01-01		
+us-ssn	542	OR	652498	OR		1900-01-01		
+us-ssn	543	OR	652498	OR		1900-01-01		
+us-ssn	544	OR	652498	OR		1900-01-01		
+us-ssn	545	CA	732983	CA		1900-01-01		
+us-ssn	546	CA	732983	CA		1900-01-01		
+us-ssn	547	CA	732983	CA		1900-01-01		
+us-ssn	548	CA	732983	CA		1900-01-01		
+us-ssn	549	CA	732983	CA		1900-01-01		
+us-ssn	550	CA	732983	CA		1900-01-01		
+us-ssn	551	CA	732983	CA		1900-01-01		
+us-ssn	552	CA	732983	CA		1900-01-01		
+us-ssn	553	CA	732983	CA		1900-01-01		
+us-ssn	554	CA	732983	CA		1900-01-01		
+us-ssn	555	CA	732983	CA		1900-01-01		
+us-ssn	556	CA	732983	CA		1900-01-01		
+us-ssn	557	CA	732983	CA		1900-01-01		
+us-ssn	558	CA	732983	CA		1900-01-01		
+us-ssn	559	CA	732983	CA		1900-01-01		
+us-ssn	560	CA	732983	CA		1900-01-01		
+us-ssn	561	CA	732983	CA		1900-01-01		
+us-ssn	562	CA	732983	CA		1900-01-01		
+us-ssn	563	CA	732983	CA		1900-01-01		
+us-ssn	564	CA	732983	CA		1900-01-01		
+us-ssn	565	CA	732983	CA		1900-01-01		
+us-ssn	566	CA	732983	CA		1900-01-01		
+us-ssn	567	CA	732983	CA		1900-01-01		
+us-ssn	568	CA	732983	CA		1900-01-01		
+us-ssn	569	CA	732983	CA		1900-01-01		
+us-ssn	570	CA	732983	CA		1900-01-01		
+us-ssn	571	CA	732983	CA		1900-01-01		
+us-ssn	572	CA	732983	CA		1900-01-01		
+us-ssn	573	CA	732983	CA		1900-01-01		
+us-ssn	574	AK	680836	AK		1900-01-01		
+us-ssn	575	HI	551684	HI		1900-01-01		
+us-ssn	576	HI	551684	HI		1900-01-01		
+us-ssn	577	DC	487744	DC		1900-01-01		
+us-ssn	578	DC	487744	DC		1900-01-01		
+us-ssn	579	DC	487744	DC		1900-01-01		
+us-ssn	580	Puerto Rico Virgin Islands	0			1900-01-01		
+us-ssn	581	Puerto Rico	0			1900-01-01		
+us-ssn	582	Puerto Rico	0			1900-01-01		
+us-ssn	583	Puerto Rico	0			1900-01-01		
+us-ssn	584	Puerto Rico	0			1900-01-01		
+us-ssn	585	NM	447114	NM		1900-01-01		
+us-ssn	586	Guam, American Samoa, Philippines	0			1900-01-01		
+us-ssn	587	MS	169211	MS		1900-01-01		
+us-ssn	588	MS	169211	MS		1900-01-01		
+us-ssn	589	FL	780150	FL		1900-01-01		
+us-ssn	590	FL	780150	FL		1900-01-01		
+us-ssn	591	FL	780150	FL		1900-01-01		
+us-ssn	592	FL	780150	FL		1900-01-01		
+us-ssn	593	FL	780150	FL		1900-01-01		
+us-ssn	594	FL	780150	FL		1900-01-01		
+us-ssn	595	FL	780150	FL		1900-01-01		
+us-ssn	596	Puerto Rico	0			1900-01-01		
+us-ssn	597	Puerto Rico	0			1900-01-01		
+us-ssn	598	Puerto Rico	0			1900-01-01		
+us-ssn	599	Puerto Rico	0			1900-01-01		
+us-ssn	600	AZ	1212131	AZ		1900-01-01		
+us-ssn	601	AZ	1212131	AZ		1900-01-01		
+us-ssn	602	CA	732983	CA		1900-01-01		
+us-ssn	603	CA	732983	CA		1900-01-01		
+us-ssn	604	CA	732983	CA		1900-01-01		
+us-ssn	605	CA	732983	CA		1900-01-01		
+us-ssn	606	CA	732983	CA		1900-01-01		
+us-ssn	607	CA	732983	CA		1900-01-01		
+us-ssn	608	CA	732983	CA		1900-01-01		
+us-ssn	609	CA	732983	CA		1900-01-01		
+us-ssn	610	CA	732983	CA		1900-01-01		
+us-ssn	611	CA	732983	CA		1900-01-01		
+us-ssn	612	CA	732983	CA		1900-01-01		
+us-ssn	613	CA	732983	CA		1900-01-01		
+us-ssn	614	CA	732983	CA		1900-01-01		
+us-ssn	615	CA	732983	CA		1900-01-01		
+us-ssn	616	CA	732983	CA		1900-01-01		
+us-ssn	617	CA	732983	CA		1900-01-01		
+us-ssn	618	CA	732983	CA		1900-01-01		
+us-ssn	619	CA	732983	CA		1900-01-01		
+us-ssn	620	CA	732983	CA		1900-01-01		
+us-ssn	621	CA	732983	CA		1900-01-01		
+us-ssn	622	CA	732983	CA		1900-01-01		
+us-ssn	623	CA	732983	CA		1900-01-01		
+us-ssn	624	CA	732983	CA		1900-01-01		
+us-ssn	625	CA	732983	CA		1900-01-01		
+us-ssn	626	CA	732983	CA		1900-01-01		
+us-ssn	627	TX	584466	TX		1900-01-01		
+us-ssn	628	TX	584466	TX		1900-01-01		
+us-ssn	629	TX	584466	TX		1900-01-01		
+us-ssn	630	TX	584466	TX		1900-01-01		
+us-ssn	631	TX	584466	TX		1900-01-01		
+us-ssn	632	TX	584466	TX		1900-01-01		
+us-ssn	633	TX	584466	TX		1900-01-01		
+us-ssn	634	TX	584466	TX		1900-01-01		
+us-ssn	635	TX	584466	TX		1900-01-01		
+us-ssn	636	TX	584466	TX		1900-01-01		
+us-ssn	637	TX	584466	TX		1900-01-01		
+us-ssn	638	TX	584466	TX		1900-01-01		
+us-ssn	639	TX	584466	TX		1900-01-01		
+us-ssn	640	TX	584466	TX		1900-01-01		
+us-ssn	641	TX	584466	TX		1900-01-01		
+us-ssn	642	TX	584466	TX		1900-01-01		
+us-ssn	643	TX	584466	TX		1900-01-01		
+us-ssn	644	TX	584466	TX		1900-01-01		
+us-ssn	645	TX	584466	TX		1900-01-01		
+us-ssn	646	UT	756876	UT		1900-01-01		
+us-ssn	647	UT	756876	UT		1900-01-01		
+us-ssn	648	NM	447114	NM		1900-01-01		
+us-ssn	649	NM	447114	NM		1900-01-01		
+us-ssn	650	CO	596587	CO		1900-01-01		
+us-ssn	651	CO	596587	CO		1900-01-01		
+us-ssn	652	CO	596587	CO		1900-01-01		
+us-ssn	653	CO	596587	CO		1900-01-01		
+us-ssn	654	SC	232318	SC		1900-01-01		
+us-ssn	655	SC	232318	SC		1900-01-01		
+us-ssn	656	SC	232318	SC		1900-01-01		
+us-ssn	657	SC	232318	SC		1900-01-01		
+us-ssn	658	SC	232318	SC		1900-01-01		
+us-ssn	659	LA	224582	LA		1900-01-01		
+us-ssn	660	LA	224582	LA		1900-01-01		
+us-ssn	661	LA	224582	LA		1900-01-01		
+us-ssn	662	LA	224582	LA		1900-01-01		
+us-ssn	663	LA	224582	LA		1900-01-01		
+us-ssn	664	LA	224582	LA		1900-01-01		
+us-ssn	665	LA	224582	LA		1900-01-01		
+us-ssn	667	GA	268645	GA		1900-01-01		
+us-ssn	668	GA	268645	GA		1900-01-01		
+us-ssn	669	GA	268645	GA		1900-01-01		
+us-ssn	670	GA	268645	GA		1900-01-01		
+us-ssn	671	GA	268645	GA		1900-01-01		
+us-ssn	672	GA	268645	GA		1900-01-01		
+us-ssn	673	GA	268645	GA		1900-01-01		
+us-ssn	674	GA	268645	GA		1900-01-01		
+us-ssn	675	GA	268645	GA		1900-01-01		
+us-ssn	676	AR	248750	AR		1900-01-01		
+us-ssn	677	AR	248750	AR		1900-01-01		
+us-ssn	678	AR	248750	AR		1900-01-01		
+us-ssn	679	AR	248750	AR		1900-01-01		
+us-ssn	680	NV	1346250	NV		1900-01-01		
+us-ssn	681	NC	310480	NC		1900-01-01		
+us-ssn	682	NC	310480	NC		1900-01-01		
+us-ssn	683	NC	310480	NC		1900-01-01		
+us-ssn	684	NC	310480	NC		1900-01-01		
+us-ssn	685	NC	310480	NC		1900-01-01		
+us-ssn	686	NC	310480	NC		1900-01-01		
+us-ssn	687	NC	310480	NC		1900-01-01		
+us-ssn	688	NC	310480	NC		1900-01-01		
+us-ssn	689	NC	310480	NC		1900-01-01		
+us-ssn	690	NC	310480	NC		1900-01-01		
+us-ssn	691	VA	317898	VA		1900-01-01		
+us-ssn	692	VA	317898	VA		1900-01-01		
+us-ssn	693	VA	317898	VA		1900-01-01		
+us-ssn	694	VA	317898	VA		1900-01-01		
+us-ssn	695	VA	317898	VA		1900-01-01		
+us-ssn	696	VA	317898	VA		1900-01-01		
+us-ssn	697	VA	317898	VA		1900-01-01		
+us-ssn	698	VA	317898	VA		1900-01-01		
+us-ssn	699	VA	317898	VA		1900-01-01		
+us-ssn	700	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	701	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	702	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	703	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	704	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	705	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	706	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	707	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	708	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	709	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	710	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	711	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	712	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	713	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	714	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	715	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	716	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	717	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	718	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	719	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	720	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	721	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	722	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	723	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	724	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	725	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	726	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	727	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	728	Railroad Board	0			1900-01-01	1963-07-01	
+us-ssn	729	Enumeration at Entry	0			1900-01-01		
+us-ssn	730	Enumeration at Entry	0			1900-01-01		
+us-ssn	731	Enumeration at Entry	0			1900-01-01		
+us-ssn	732	Enumeration at Entry	0			1900-01-01		
+us-ssn	733	Enumeration at Entry	0			1900-01-01		
+us-ssn	750	HI	551684	HI		1900-01-01		
+us-ssn	751	HI	551684	HI		1900-01-01		
+us-ssn	752	MS	169211	MS		1900-01-01		
+us-ssn	753	MS	169211	MS		1900-01-01		
+us-ssn	754	MS	169211	MS		1900-01-01		
+us-ssn	755	MS	169211	MS		1900-01-01		
+us-ssn	756	TN	325953	TN		1900-01-01		
+us-ssn	757	TN	325953	TN		1900-01-01		
+us-ssn	758	TN	325953	TN		1900-01-01		
+us-ssn	759	TN	325953	TN		1900-01-01		
+us-ssn	760	TN	325953	TN		1900-01-01		
+us-ssn	761	TN	325953	TN		1900-01-01		
+us-ssn	762	TN	325953	TN		1900-01-01		
+us-ssn	763	TN	325953	TN		1900-01-01		
+us-ssn	764	AZ	1212131	AZ		1900-01-01		
+us-ssn	765	AZ	1212131	AZ		1900-01-01		
+us-ssn	766	FL	780150	FL		1900-01-01		
+us-ssn	767	FL	780150	FL		1900-01-01		
+us-ssn	768	FL	780150	FL		1900-01-01		
+us-ssn	769	FL	780150	FL		1900-01-01		
+us-ssn	770	FL	780150	FL		1900-01-01		
+us-ssn	771	FL	780150	FL		1900-01-01		
+us-ssn	772	FL	780150	FL		1900-01-01		
+vn-cccd	001	Ha Noi	13111428	01		1900-01-01		
+vn-cccd	002	Ha Giang	159844	08		1900-01-01		
+vn-cccd	004	Cao Bang	124098	04		1900-01-01		
+vn-cccd	006	Bac Kan	519757	19		1900-01-01		
+vn-cccd	008	Tuyen Quang	159844	08		1900-01-01		
+vn-cccd	010	Lao Cai	193836	15		1900-01-01		
+vn-cccd	011	Dien Bien	171150	11		1900-01-01		
+vn-cccd	012	Lai Chau	54076	12		1900-01-01		
+vn-cccd	014	Son La	278997	14		1900-01-01		
+vn-cccd	015	Yen Bai	193836	15		1900-01-01		
+vn-cccd	017	Hoa Binh	328970	25		1900-01-01		
+vn-cccd	019	Thai Nguyen	519757	19		1900-01-01		
+vn-cccd	020	Lang Son	285749	20		1900-01-01		
+vn-cccd	022	Quang Ninh	1182559	22		1900-01-01		
+vn-cccd	024	Bac Giang	693925	24		1900-01-01		
+vn-cccd	025	Phu Tho	328970	25		1900-01-01		
+vn-cccd	026	Vinh Phuc	328970	25		1900-01-01		
+vn-cccd	027	Bac Ninh	693925	24		1900-01-01		
+vn-cccd	030	Hai Duong	1646010	31		1900-01-01		
+vn-cccd	031	Hai Phong	1646010	31		1900-01-01		
+vn-cccd	033	Hung Yen	175872	33		1900-01-01		
+vn-cccd	034	Thai Binh	175872	33		1900-01-01		
+vn-cccd	035	Ha Nam	211461	37		1900-01-01		
+vn-cccd	036	Nam Dinh	211461	37		1900-01-01		
+vn-cccd	037	Ninh Binh	211461	37		1900-01-01		
+vn-cccd	038	Thanh Hoa	1368882	38		1900-01-01		
+vn-cccd	040	Nghe An	1152838	40		1900-01-01		
+vn-cccd	042	Ha Tinh	820471	42		1900-01-01		
+vn-cccd	044	Quang Binh	305810	44		1900-01-01		
+vn-cccd	045	Quang Tri	305810	44		1900-01-01		
+vn-cccd	046	Thua Thien Hue	1709834	46		1900-01-01		
+vn-cccd	048	Da Nang	1286552	48		1900-01-01		
+vn-cccd	049	Quang Nam	1286552	48		1900-01-01		
+vn-cccd	051	Quang Ngai	356732	51		1900-01-01		
+vn-cccd	052	Binh Dinh	535244	52		1900-01-01		
+vn-cccd	054	Phu Yen	470744	66		1900-01-01		
+vn-cccd	056	Khanh Hoa	599281	56		1900-01-01		
+vn-cccd	058	Ninh Thuan	599281	56		1900-01-01		
+vn-cccd	060	Binh Thuan	434029	68		1900-01-01		
+vn-cccd	062	Kon Tum	356732	51		1900-01-01		
+vn-cccd	064	Gia Lai	535244	52		1900-01-01		
+vn-cccd	066	Dak Lak	470744	66		1900-01-01		
+vn-cccd	067	Dak Nong	434029	68		1900-01-01		
+vn-cccd	068	Lam Dong	434029	68		1900-01-01		
+vn-cccd	070	Binh Phuoc	1050398	75		1900-01-01		
+vn-cccd	072	Tay Ninh	475834	80		1900-01-01		
+vn-cccd	074	Binh Duong	6906505	79		1900-01-01		
+vn-cccd	075	Dong Nai	1050398	75		1900-01-01		
+vn-cccd	077	Ba Ria Vung Tau	6906505	79		1900-01-01		
+vn-cccd	079	Ho Chi Minh City	6906505	79		1900-01-01		
+vn-cccd	080	Long An	475834	80		1900-01-01		
+vn-cccd	082	Tien Giang	584218	82		1900-01-01		
+vn-cccd	083	Ben Tre	199822	86		1900-01-01		
+vn-cccd	084	Tra Vinh	199822	86		1900-01-01		
+vn-cccd	086	Vinh Long	199822	86		1900-01-01		
+vn-cccd	087	Dong Thap	584218	82		1900-01-01		
+vn-cccd	089	An Giang	1006440	91		1900-01-01		
+vn-cccd	091	Kien Giang	1006440	91		1900-01-01		
+vn-cccd	092	Can Tho	1037391	92		1900-01-01		
+vn-cccd	093	Hau Giang	1037391	92		1900-01-01		
+vn-cccd	094	Soc Trang	1037391	92		1900-01-01		
+vn-cccd	095	Bac Lieu	465902	96		1900-01-01		
+vn-cccd	096	Ca Mau	465902	96		1900-01-01		

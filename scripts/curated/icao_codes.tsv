@@ -1,0 +1,6 @@
+# ICAO Doc 9303 Part 3 codes that differ from ISO alpha-3. HK and MO: the survey's specimens show CHN as the issuing state. XK: RKS on the survey's specimens.
+country_code	icao_code
+DE	D
+HK	CHN
+MO	CHN
+XK	RKS
