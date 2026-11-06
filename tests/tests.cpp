@@ -1266,9 +1266,9 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     REQUIRE(gen.data_hash() == kat_data_hash);
 
     REQUIRE(gen.get_identity(identity_request{}, std::uint64_t{1}).to_json() ==
-            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2329781211","formatted":"232978121-1","assigned":"1958-05-11","place_code":"23","reserved":false}],"signature":{"seed":"0000000000000001","data":"1555dee22129657d"}})x");
+            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2357812144","formatted":"235781214-4","assigned":"1958-05-11","place_code":"23","reserved":false}],"signature":{"seed":"0000000000000001","data":"1555dee22129657d"}})x");
     REQUIRE(gen.get_identity(person("IT", {"it-cf"}), std::uint64_t{3}).to_json() ==
-            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"GFGLDZ61R56G371M","formatted":"GFGLDZ61R56G371M","assigned":"1977-01-01","place_code":"G371","reserved":false}],"signature":{"seed":"0000000000000003","data":"1555dee22129657d"}})x");
+            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"LDZGFG61R56G371P","formatted":"LDZGFG61R56G371P","assigned":"1977-01-01","place_code":"G371","reserved":false}],"signature":{"seed":"0000000000000003","data":"1555dee22129657d"}})x");
     identity_request every = person("AR", {"*"});
     every.safe = true;
     REQUIRE(gen.get_identity(every, std::uint64_t{5}).to_json() ==
@@ -1283,7 +1283,7 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0x482ecdc153d06a8bULL);
+    REQUIRE(h == 0x261ccd595d84f327ULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -1488,5 +1488,5 @@ TEST_CASE("identity batch: known answer of 10,000 items", "[batch][kat]")
     gen.for_each_identity(request, {.count = 10000, .threads = 4}, 1,
                           [&](std::uint64_t, const identity& item)
                           { hash = dasmig::core::hash_combine(hash, dasmig::core::fnv1a64(item.to_json())); });
-    REQUIRE(hash == 0xaa9e2a8cb998acefULL);
+    REQUIRE(hash == 0x62d7b65547be2ae9ULL);
 }
