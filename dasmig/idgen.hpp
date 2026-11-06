@@ -549,6 +549,8 @@ struct valid_ctx
 
 // -- Builder helpers -----------------------------------------------------------
 
+// Two draws never share an expression: the order of operands is unspecified, so
+// the same seed would give different numbers on different toolchains.
 [[nodiscard]] inline std::string rand_digits(core::rng& r, std::size_t n)
 {
     std::string s(n, '0');
@@ -1099,7 +1101,8 @@ inline bool valid_cl_run(const valid_ctx& /*v*/, std::string_view t)
 
 inline bool build_cn_ric(build_ctx& b, std::string& out)
 {
-    const std::string seq = rand_digits(b.r, 2) + parity_digit(b.r, b.male());
+    std::string seq = rand_digits(b.r, 2);
+    seq += parity_digit(b.r, b.male());
     if (seq == "000") return false;
     out = b.place + num(static_cast<std::uint64_t>(b.date.y), 4) + two(b.date.m) + two(b.date.d) + seq;
     const char c = core::mod11_2_digit(out);
@@ -1266,7 +1269,8 @@ inline bool valid_dk_cpr(const valid_ctx& v, std::string_view t)
 
 inline bool build_ec_cedula(build_ctx& b, std::string& out)
 {
-    out = b.place + rand_range(b.r, 0, 5, 1) + rand_digits(b.r, 6);
+    out = b.place + rand_range(b.r, 0, 5, 1);
+    out += rand_digits(b.r, 6);
     const char c = core::luhn_digit(out);
     put_check(b, out, c);
     return true;
@@ -1528,7 +1532,9 @@ inline bool valid_is_kennitala(const valid_ctx& v, std::string_view t)
 inline bool build_it_cf(build_ctx& b, std::string& out)
 {
     static constexpr std::string_view months = "ABCDEHLMPRST";
-    out = it_name_code(b.surname, false, b.r) + it_name_code(b.given, true, b.r) + two(b.date.y);
+    out = it_name_code(b.surname, false, b.r);
+    out += it_name_code(b.given, true, b.r);
+    out += two(b.date.y);
     out += months[static_cast<std::size_t>(b.date.m - 1)];
     out += two(b.date.d + (b.male() ? 0 : 40)) + b.place;
     const char c = it_check(out);
@@ -1608,7 +1614,8 @@ inline bool build_kr_rrn(build_ctx& b, std::string& out)
         b.place.clear();
         return true;
     }
-    out += b.place + rand_digits(b.r, 2) + rand_range(b.r, 1, 9, 1);
+    out += b.place + rand_digits(b.r, 2);
+    out += rand_range(b.r, 1, 9, 1);
     out += kr_check(out);
     return true;
 }
@@ -1800,7 +1807,8 @@ inline bool valid_mx_curp(const valid_ctx& v, std::string_view t)
 
 inline bool build_my_mykad(build_ctx& b, std::string& out)
 {
-    out = two(b.date.y) + two(b.date.m) + two(b.date.d) + b.place + rand_digits(b.r, 3) + parity_digit(b.r, b.male());
+    out = two(b.date.y) + two(b.date.m) + two(b.date.d) + b.place + rand_digits(b.r, 3);
+    out += parity_digit(b.r, b.male());
     return true;
 }
 
@@ -1957,7 +1965,8 @@ inline bool valid_pe_dni(const valid_ctx& /*v*/, std::string_view t)
 inline bool build_pk_cnic(build_ctx& b, std::string& out)
 {
     // Odd for men, even for women; validators do not take 0 for either.
-    out = b.place + rand_digits(b.r, 11) + pick_char(b.r, b.male() ? "13579" : "2468");
+    out = b.place + rand_digits(b.r, 11);
+    out += pick_char(b.r, b.male() ? "13579" : "2468");
     return true;
 }
 
@@ -1970,7 +1979,8 @@ inline bool build_pl_pesel(build_ctx& b, std::string& out)
     static constexpr std::array<unsigned, 10> w{1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
     const int y = b.date.y;
     const int offset = y < 1900 ? 80 : ((y - 1900) / 100) * 20;
-    out = two(y) + two(b.date.m + offset) + two(b.date.d) + rand_digits(b.r, 3) + parity_digit(b.r, b.male());
+    out = two(y) + two(b.date.m + offset) + two(b.date.d) + rand_digits(b.r, 3);
+    out += parity_digit(b.r, b.male());
     const unsigned rem = sum_mod(out, w, 10);
     put_check(b, out, dig((10U - rem) % 10U));
     return true;
@@ -2057,7 +2067,8 @@ inline bool valid_ro_cnp(const valid_ctx& v, std::string_view t)
 inline bool build_ru_inn(build_ctx& b, std::string& out)
 {
     // The two office digits have no public list here; a plausible low number.
-    out = b.place + rand_range(b.r, 1, 49, 2) + rand_digits(b.r, 6);
+    out = b.place + rand_range(b.r, 1, 49, 2);
+    out += rand_digits(b.r, 6);
     const auto [c1, c2] = ru_inn_checks(out);
     out += c1;
     put_check(b, out, c2);
@@ -2102,7 +2113,8 @@ inline bool valid_ru_snils(const valid_ctx& /*v*/, std::string_view t)
 
 inline bool build_se_personnummer(build_ctx& b, std::string& out)
 {
-    const std::string serial = rand_digits(b.r, 2) + parity_digit(b.r, b.male());
+    std::string serial = rand_digits(b.r, 2);
+    serial += parity_digit(b.r, b.male());
     if (serial == "000") return false;
     const std::string nine = two(b.date.y) + two(b.date.m) + two(b.date.d) + serial;
     out = two(b.date.y / 100) + nine;
@@ -2156,7 +2168,8 @@ inline bool build_th_pin(build_ctx& b, std::string& out)
 {
     // Type 1 for births registered on time since 1984, 3 for people registered before.
     const char type = to_day(b.date) >= b.s.from ? '1' : '3';
-    out = std::string{type} + b.place + rand_range(b.r, 1, 49, 2) + rand_digits(b.r, 7);
+    out = std::string{type} + b.place + rand_range(b.r, 1, 49, 2);
+    out += rand_digits(b.r, 7);
     const char c = th_check(out);
     put_check(b, out, c);
     return true;
@@ -2207,7 +2220,8 @@ inline bool valid_tr_tckn(const valid_ctx& v, std::string_view t)
 
 inline bool build_tw_nid(build_ctx& b, std::string& out)
 {
-    out = b.place + (b.male() ? "1" : "2") + rand_range(b.r, 0, 5, 1) + rand_digits(b.r, 6);
+    out = b.place + (b.male() ? "1" : "2") + rand_range(b.r, 0, 5, 1);
+    out += rand_digits(b.r, 6);
     const char c = tw_check(out);
     put_check(b, out, c);
     return true;
@@ -2231,7 +2245,8 @@ inline bool valid_tw_nid(const valid_ctx& v, std::string_view t)
 inline bool build_ua_rnokpp(build_ctx& b, std::string& out)
 {
     const int count = to_day(b.date) - to_day(civil{.y = 1899, .m = 12, .d = 31});
-    out = num(static_cast<std::uint64_t>(count), 5) + rand_digits(b.r, 3) + parity_digit(b.r, b.male());
+    out = num(static_cast<std::uint64_t>(count), 5) + rand_digits(b.r, 3);
+    out += parity_digit(b.r, b.male());
     const char c = ua_check(out);
     put_check(b, out, c);
     return true;

@@ -932,12 +932,14 @@ TEST_CASE("safe numbers use the reserved ranges and lists", "[safe]")
     };
     std::set<std::string> se_list;
     std::set<std::string> is_list;
-    for (const auto& row : dasmig::core::tsv_document::load(resource_dir("lite") / "test_numbers.tsv").rows())
+    const auto test_list_doc = dasmig::core::tsv_document::load(resource_dir("lite") / "test_numbers.tsv");
+    for (const auto& row : test_list_doc.rows())
     {
         (row["scheme"] == "se-personnummer" ? se_list : is_list).emplace(row["value"]);
     }
     std::set<std::pair<std::string, std::string>> reserved_places;
-    for (const auto& row : dasmig::core::tsv_document::load(resource_dir("lite") / "places.tsv").rows())
+    const auto places_doc = dasmig::core::tsv_document::load(resource_dir("lite") / "places.tsv");
+    for (const auto& row : places_doc.rows())
     {
         if (row["reserved"] == "1") reserved_places.emplace(row["scheme"], row["code"]);
     }
@@ -1179,7 +1181,8 @@ TEST_CASE("countries, sexes, ages and places follow their distributions", "[stat
     std::map<std::string, double> population;
     std::set<std::string> served;
     for (const auto& c : gen.number_countries()) served.insert(c);
-    for (const auto& row : dasmig::core::tsv_document::load(resource_dir("lite") / "countries.tsv").rows())
+    const auto countries_doc = dasmig::core::tsv_document::load(resource_dir("lite") / "countries.tsv");
+    for (const auto& row : countries_doc.rows())
     {
         const std::string code{row["country_code"]};
         if (!served.contains(code)) continue;
