@@ -2,8 +2,6 @@
 
 The data in `resources/` and how id-generator uses it (rule 6 of the dasmig standard).
 
-**Status.** The library generates national numbers from these tables. It loads and checks `documents.tsv` and `validity.tsv`, but does not generate documents from them yet.
-
 ## Tiers
 
 | Table | `lite` rows | `full` rows |
@@ -30,12 +28,12 @@ Every table is TSV, with a first-line `#` comment naming its source.
 
 | Table | Key | Columns |
 | --- | --- | --- |
-| `countries.tsv` | `country_code` | `population`, `icao_code`, `primary_scheme`, `translit` (empty so far: no sourced variants) |
+| `countries.tsv` | `country_code` | `population`, `icao_code`, `primary_scheme`, `translit` (national MRZ rules: `Г=H;^Є=YE`, where `^` means only as a word's first letter; a rule's letter must be outside ASCII) |
 | `schemes.tsv` | `key` | `country`, `label`, `native_label`, `builder`, `display`, `assigned`, `safe_method`, `pattern`, `check`, `place_source`, `from`, `until`, `safe_pattern`, `params`, `source` |
 | `places.tsv` | `scheme`, `code`, `from` | `label`, `weight`, `admin1` (GeoNames codes, `;`-separated), `country` (alpha-2, or `*` for any foreign country, on codes for births abroad), `until`, `reserved` (`1`: unassigned, for safe mode) |
 | `place_cities.tsv` | `scheme`, `geonameid` | `code` |
 | `series.tsv` | `scheme`, `segment`, `date` | `value`, `note` |
-| `documents.tsv` | `key` | `country`, `kind`, `pattern`, `from`, `until`, `mrz`, `evidence`, `prefix_places`, `mrz_code`, `mrz_optional`, `min_age`, `weight` |
+| `documents.tsv` | `key` | `country`, `kind`, `pattern`, `from`, `until`, `mrz`, `evidence`, `prefix_places`, `mrz_code`, `mrz_optional`, `min_age`, `weight`, `year_at` (where the year of issue sits in the number), `number_scheme` (the scheme whose number the document shows) |
 | `validity.tsv` | `document`, `from_age`, `from` | `years` (`5\|10`: the holder's choice), `until_age`, `until`, `expiry_rule` |
 | `name_rules.tsv` | `scheme`, `kind`, `word` | `replacement` |
 | `test_numbers.tsv` | `scheme`, `value` | |
@@ -82,8 +80,8 @@ The design is `designs/id-generator.md` in the meta repository.
 - **Sequential numbers** interpolate between a series' anchors in integer arithmetic, with up to 7 days of noise either way, and carry the last two anchors' rate past the end. Anchors one day apart are a jump. The US keys its series on the assignment date, by area. Argentina, Chile and Peru key theirs on the birth date, because that is how their anchors are known.
 - **Names.** Names are folded from the Latin-1 Supplement and Latin Extended-A to ASCII. A name in another script counts as missing, and missing letters are drawn in the scheme's shape.
 - **Portugal's first digit.** No source gives the switch from 1 to 2. Before 3 starts in 2019, the library draws 1 for a quarter of people and 2 for the rest.
-- **Documents** are not generated yet. Each country and document's formats cover all dates, so the format will come from the issue date alone.
-- **Safe mode** uses each scheme's method below.
+- **Documents** are described under [Documents](#documents).
+- **Safe mode** uses each scheme's method below, and for documents the method under [Documents](#documents).
 - **Checking.** `is_valid` tests structure, check digit and encoded date, and looks nothing up. Place codes are not checked, because the tiers hold different lists. Published test numbers and reserved ranges count as valid. Wrong-check numbers do not, nor do impossible-date numbers when a reference date is given.
 
 ## Number Schemes
@@ -180,6 +178,31 @@ The design is `designs/id-generator.md` in the meta repository.
 - **Bangladesh:** the 13- and 17-digit forms have no check digit, and the smart card's checksum is unpublished.
 - **The Philippines:** 12 random digits with no published check.
 
+## Documents
+
+**Issue date.** A person renews when a document runs out, so the document in force on the reference date was issued uniformly over the days whose document still runs that day. The library draws a day, works out the format and expiry for it, and draws again if the document has expired by the reference date or the person was under the format's minimum age. If 1,024 draws find nothing, it tries the reference date itself. If that fails too, the person has no document. Someone whose rule runs to an age and whose reference date is the last day before that age is one such case.
+
+**Format and validity.** A country's formats cover all dates, so the format comes from the issue date, with `weight` deciding between formats that overlap. The validity comes from the age at issue, and `years` of `5|10` draws the holder's choice. A `from_age` band with `years` of 0 has no expiry. Each `expiry_rule` works as follows: `day_before` is the day before the anniversary, `same_day` the anniversary, `birthday` the holder's birthday after that many years, and `application` counts from a day up to 30 days before issue.
+
+**Numbers.** A number is drawn from the format's pattern, with three exceptions:
+
+- `prefix_places` puts a code of that scheme's places in front.
+- `year_at` writes the two-digit year of issue at that position. Only Russia's internal passport uses it.
+- `number_scheme` shows the person's own number in that scheme, in the card's form. It covers the 18 cards whose survey row says the card's number is the national number: AR BR CN HK ID IL IN IR JP KR MY PE PK SA SG TH TW VN. The issue date is then kept on or after the day the number was assigned. Peru's card leaves the check digit apart, so it shows the first eight digits. Older numbers that the card's pattern does not foresee, such as a 7-digit DNI, stay as they are.
+
+**The machine-readable zone** follows ICAO Doc 9303, read from the current PDFs:
+
+- **Layout.** Part 4 for TD3 passports and Part 5 for TD1 cards, with every check digit by Part 3, including the composite.
+- **Letters.** Part 3, section 6's tables for Latin and Cyrillic, taking the first alternative where the table gives several (`Ä` is `AE`, `Ñ` is `N`).
+- **National rules.** Part 3 gives exceptions for Belarus, Bulgaria, North Macedonia, Serbia and Ukraine, and these are in `countries.tsv`.
+- **Shortening.** By Part 4's examples.
+- **The name is the caller's.** The library draws no names, so a document without them has no zone. A name it cannot write leaves the zone out.
+- **`mrz_optional`** carries the person's number in that scheme, when they held it on the issue date.
+
+**Safe documents.** The number is changed to fall outside every format of that country and document: its first character becomes `X`, or `0` if that still fits, and otherwise it is shortened until no format matches. This takes no draws, and the zone's check digits are computed on the changed number, so the zone is valid. The result has `reserved` set. A card that shows a national number shows the safe number of that scheme, made by the scheme's own method. The design's "unissued passport series" is not used, because there is no passport series data.
+
+**How much a safe document promises.** Outside the known formats is the best that can be shown without a list of what was issued. It says nothing where the format is `generic`, since the real format of those documents is unknown. It also says less where the `evidence` is `specimen` or `placeholder`, since one sample shows the shape of a number and not all its forms.
+
 ## Generic Documents
 
 A document with no surveyed format has a nine-digit number (`#{9}`) and `evidence = "generic"`. Today, that is:
@@ -216,6 +239,8 @@ It cannot show that a hand mapping is right, so these were also checked once, by
 
 `scripts/validate_numbers.py` checks the library's output against implementations it does not share. It draws 2,000 identities per served country at three dates, half of them at any age, plus a safe sample. It checks each number with python-stdnum, or with code written in the script from the national rules where stdnum has no such scheme. python-stdnum is LGPL and used only by this script, from a virtual environment; it is not shipped.
 
+For documents it draws 500 people per country at the same dates, in all 199 countries, and reads every zone back with ICAO 9303 code written in the script: line lengths, each check digit, each field against the result, and the name against forms written by hand from Part 3. It also checks the number against its format, and the dates against the reference date. If the `mrz` package is installed, its check digits are compared too. That package does not read the overflow of a long number, so there the comparison leaves out the number's own digit; the composite digit still covers that field.
+
 The script corrects stdnum in four schemes, and each correction is explained in the script:
 
 - `cn-ric`: stdnum compares a county's first listing with the birth year. Its table starts around 1980, so it rejects most people born earlier, although the code follows the registration, not the birth.
@@ -249,3 +274,12 @@ The script corrects stdnum in four schemes, and each correction is explained in 
 - **Russian INN:** the codes 91 and 92 are left out.
 - **Peru's geographic series** (above) are unmapped.
 - **MRZ codes** for document models after the reference date are not all modelled.
+
+**Documents:**
+
+- **Scripts.** Doc 9303 Part 3 has Latin, Cyrillic and Arabic tables and no Greek one. The Arabic table is not implemented. Names in Greek, Arabic and other scripts need a Latin form from the caller.
+- **Letters beyond the tables.** The library's own choice for `Ș`, `Ț`, `Ơ`, `Ư` and the Vietnamese letters from U+1EA0 to U+1EF9 is the base letter, and for `Ћ` it is `C` and for `Ѓ` it is `G`. Part 3 does not settle these, so a country's documents may write them differently.
+- **Serbian `Г`.** Part 3's table says `H` for Serbian. That looks like an error in the table, since Serbian `Г` is `G` in Serbian's own Latin alphabet, so the library leaves that one rule out. The other Serbian rules are in.
+- **A long number in a passport.** Part 4 gives TD3 no overflow for a number over nine characters, so the library uses Part 5's form in the optional field, as Part 5 does for TD1.
+- **Very old dates.** A zone is written for any reference date, including years before machine-readable documents existed.
+- **Generic formats** are stand-ins, as above.

@@ -1,6 +1,9 @@
 // Draws identities for scripts/validate_numbers.py and writes one row per number.
 //
-//   sample_identities <resource dir> <identities per country and date> <output.tsv>
+//   sample_identities <resource dir> <identities per country and date> <numbers.tsv> <documents.tsv>
+//
+// Numbers cover the served countries. Documents cover all countries, a quarter as
+// many people each, with names from the list the validator knows.
 //
 // Half the people take the library's own ages (18 to 80); the others are born at
 // any time in the hundred years before the date, so children and the newest
@@ -8,6 +11,7 @@
 
 #include "../dasmig/idgen.hpp"
 
+#include <array>
 #include <chrono>
 #include <cstdint>
 #include <cstdlib>
@@ -64,13 +68,73 @@ void sample(const dasmig::idg& gen, int count, bool safe, const auto& dates, std
     }
 }
 
+struct sample_name
+{
+    const char* surname;
+    const char* second;
+    const char* given;
+};
+
+// scripts/validate_numbers.py holds these names' MRZ forms, written by hand.
+constexpr std::array<sample_name, 8> names{{{"Rossi", "", "Anna Maria"},
+                                            {"Müller", "", "Jürgen"},
+                                            {"García", "López", "María José"},
+                                            {"O'Connor-Smith", "", "Séan"},
+                                            {"Åström", "", "Märta"},
+                                            {"Nilavadhanananda", "", "Chayapa Dejthamrong Krasuang"},
+                                            {"Иванова", "", "Юлия"},
+                                            {"Nguyễn", "", "Thị Hương"}}};
+
+void sample_documents(const dasmig::idg& gen, int count, bool safe, const auto& dates, std::ofstream& out)
+{
+    for (const year_month_day reference : dates)
+    {
+        for (const auto& country : gen.countries())
+        {
+            dasmig::identity_request q;
+            q.country = country;
+            q.schemes = std::vector<std::string>{"*"};
+            q.documents = {dasmig::id_document_kind::passport, dasmig::id_document_kind::id_card};
+            q.reference_date = reference;
+            q.safe = safe;
+            dasmig::core::rng ages{0xD0C5ULL + static_cast<std::uint64_t>(country[0]) + (static_cast<std::uint64_t>(country[1]) << 8U)};
+            for (int i = 0; i < count; ++i)
+            {
+                q.birth_date = std::nullopt;
+                if (i % 2 == 1)
+                {
+                    const auto to = sys_days{reference};
+                    const auto from = std::max(sys_days{year{1900} / January / day{1}}, to - days{36525});
+                    q.birth_date = year_month_day{from + days{dasmig::core::uniform_int(ages, 0, static_cast<int>((to - from).count()))}};
+                }
+                const auto& name = names.at(static_cast<std::size_t>(i) % names.size());
+                q.surname = name.surname;
+                q.second_surname = name.second[0] != '\0' ? std::optional<std::string>{name.second} : std::nullopt;
+                q.given_names = name.given;
+                const auto v = gen.get_identity(q, (static_cast<std::uint64_t>(i) * 0x9E3779B97F4A7C15ULL) + 2U);
+                std::string held;
+                for (const auto& n : v.numbers) held += n.scheme + "=" + n.value + "=" + iso(n.assigned) + ";";
+                for (const auto& d : v.documents)
+                {
+                    std::string mrz;
+                    for (const auto& line : d.mrz) mrz += (mrz.empty() ? "" : "|") + line;
+                    out << (safe ? "1" : "0") << '\t' << country << '\t' << (d.kind == dasmig::id_document_kind::passport ? "passport" : "id_card") << '\t'
+                        << d.format << '\t' << d.number << '\t' << d.issuing_state << '\t' << iso(v.birth_date) << '\t' << dasmig::core::sex_name(v.bio_sex) << '\t'
+                        << iso(d.issued) << '\t' << (d.expires ? iso(*d.expires) : "") << '\t' << iso(reference) << '\t' << mrz << '\t'
+                        << (static_cast<std::size_t>(i) % names.size()) << '\t' << held << '\n';
+                }
+            }
+        }
+    }
+}
+
 } // namespace
 
 int main(int argc, char** argv)
 {
-    if (argc != 4)
+    if (argc != 5)
     {
-        std::cerr << "usage: sample_identities <resource dir> <count> <output.tsv>\n";
+        std::cerr << "usage: sample_identities <resource dir> <count> <numbers.tsv> <documents.tsv>\n";
         return 2;
     }
     dasmig::idg gen;
@@ -85,5 +149,10 @@ int main(int argc, char** argv)
     const int count = std::atoi(argv[2]);
     sample(gen, count, false, realistic_dates, out);
     sample(gen, count, true, safe_dates, out);
-    return out.good() ? 0 : 1;
+    std::ofstream documents{argv[4], std::ios::binary};
+    documents << "safe\tcountry\tkind\tformat\tnumber\tstate\tbirth\tsex\tissued\texpires\treference\tmrz\tname\tnumbers\n";
+    const int document_count = std::max(1, count / 4);
+    sample_documents(gen, document_count, false, realistic_dates, documents);
+    sample_documents(gen, document_count, true, safe_dates, documents);
+    return out.good() && documents.good() ? 0 : 1;
 }

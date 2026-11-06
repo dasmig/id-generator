@@ -13,6 +13,12 @@ python-stdnum is LGPL and is for this script only; it is never shipped or vendor
 Target: every realistic number valid, and each safe number rejected or accepted as
 its scheme's method declares (SAFE_REJECTED below). A hit on CURP's word list is
 reported, not failed, while the library ships no list (doc/data.md).
+
+Documents, for all 199 countries, are read back by the ICAO 9303 code in this script:
+line lengths, every check digit, each field against the result, the name as written
+by hand in NAMES, and the number against its format. If the `mrz` package is installed
+(pip install mrz), its check digits are compared too. It does not read the overflow of
+a long number, so there the number's own digit is left out of the comparison.
 """
 import argparse
 import csv
@@ -237,6 +243,190 @@ def curp_word_hit(value):
     return value[:4] in curp._name_blacklist  # noqa: SLF001, the module has no public list
 
 
+# ICAO 9303 Part 3, 4.9: weights 7, 3, 1; letters count from 10, the filler 0.
+def icao_digit(text):
+    total = 0
+    for i, c in enumerate(text):
+        value = 0 if c == "<" else (int(c) if c.isdigit() else ord(c) - ord("A") + 10)
+        total += value * (7, 3, 1)[i % 3]
+    return str(total % 10)
+
+
+# The sample's names in the MRZ, by hand from Doc 9303 Part 3's tables and Part 4's
+# examples, in the order of sample_identities.cpp. A long name is checked up to its cut.
+NAMES = [
+    "ROSSI<<ANNA<MARIA",
+    "MUELLER<<JUERGEN",
+    "GARCIA<LOPEZ<<MARIA<JOSE",
+    "OCONNOR<SMITH<<SEAN",
+    "AASTROEM<<MAERTA",
+    "NILAVADHANANANDA<<CHAYAPA<DEJTHAMRONG<KRASUANG",
+    "IVANOVA<<IULIIA",
+    "NGUYEN<<THI<HUONG",
+]
+# Doc 9303 Part 3's table has one national rule that changes the Cyrillic sample name:
+# Ukrainian И is Y, and Ю opens a name as YU. The others do not touch its letters.
+NATIONAL_NAME = {("UA", 6): "YVANOVA<<YULYIA"}
+
+
+def yymmdd(iso):
+    return iso[2:4] + iso[5:7] + iso[8:10] if iso else "<<<<<<"
+
+
+def expected_name(country, index, width):
+    name = NATIONAL_NAME.get((country, index), NAMES[index])
+    return name[:width] + "<" * (width - len(name))
+
+
+def read_number(field, check, optional, problems):
+    """The number in a zone: the nine in the field and any overflow, each digit checked."""
+    if check != "<":
+        if check != icao_digit(field):
+            problems.append("number check digit")
+        return field.rstrip("<")
+    end = optional.find("<")
+    if end < 2:
+        problems.append("overflow without its digit")
+        return field
+    rest = optional[:end - 1]
+    if optional[end - 1] != icao_digit(field + rest):
+        problems.append("long number check digit")
+    return field + rest
+
+
+def check_zone(row, format_row, problems):
+    """Everything a zone says, against the fields beside it."""
+    lines = row["mrz"].split("|") if row["mrz"] else []
+    letter = "M" if row["sex"] == "male" else "F"
+    if format_row["mrz"] == "none":
+        if lines:
+            problems.append("a zone on a document without one")
+        return
+    if row["country"] == "" or not lines:
+        problems.append("no zone")
+        return
+    state = (row["state"] + "<<<")[:3]
+    code = format_row["mrz_code"] or ("P<" if row["kind"] == "passport" else "ID")
+    number = re.sub("[^A-Z0-9]", "", row["number"])
+    birth, expires = yymmdd(row["birth"]), yymmdd(row["expires"])
+    if format_row["mrz"] == "td3":
+        if [len(l) for l in lines] != [44, 44]:
+            problems.append("TD3 line lengths")
+            return
+        l1, l2 = lines
+        name, width = l1[5:], 39
+        read = read_number(l2[0:9], l2[9], l2[28:42], problems)
+        optional = l2[28:42]
+        fields = [(l2[10:13], state, "nationality"), (l2[13:19], birth, "birth"), (l2[20], letter, "sex"), (l2[21:27], expires, "expiry"),
+                  (l2[19], icao_digit(l2[13:19]), "birth digit"), (l2[27], icao_digit(l2[21:27]), "expiry digit"),
+                  (l2[42], icao_digit(l2[28:42]), "optional digit"), (l2[43], icao_digit(l2[0:10] + l2[13:20] + l2[21:43]), "composite")]
+    else:
+        if [len(l) for l in lines] != [30, 30, 30]:
+            problems.append("TD1 line lengths")
+            return
+        l1, l2, l3 = lines
+        name, width = l3, 30
+        read = read_number(l1[5:14], l1[14], l1[15:30], problems)
+        optional = l1[15:30] + l2[18:29]
+        fields = [(l2[15:18], state, "nationality"), (l2[0:6], birth, "birth"), (l2[7], letter, "sex"), (l2[8:14], expires, "expiry"),
+                  (l2[6], icao_digit(l2[0:6]), "birth digit"), (l2[14], icao_digit(l2[8:14]), "expiry digit"),
+                  (l2[29], icao_digit(l1[5:30] + l2[0:7] + l2[8:15] + l2[18:29]), "composite")]
+    if l1[0:2] != code:
+        problems.append(f"code {l1[0:2]} for {code}")
+    if l1[2:5] != state:
+        problems.append("issuing state")
+    if read != number:
+        problems.append(f"number {read}")
+    for got, want, what in fields:
+        if got != want:
+            problems.append(f"{what}: {got} for {want}")
+    want_name = expected_name(row["country"], int(row["name"]), width)
+    if name != want_name:
+        problems.append(f"name {name} for {want_name}")
+    carried = format_row["mrz_optional"]
+    if carried:
+        for held in row["numbers"].split(";"):
+            if held.startswith(carried + "="):
+                _, value, assigned = held.split("=")
+                on_it = re.sub("[^A-Z0-9]", "", value.upper())
+                if assigned <= row["issued"] and on_it not in optional:
+                    problems.append(f"{carried} {on_it} not in the optional field")
+
+
+def check_with_mrz_package(lines):
+    """The optional second opinion; None when the package is not installed.
+
+    The number's `<` on an overflow reads to it as a wrong digit; the composite still
+    covers that field, so an overflow is not left unchecked.
+    """
+    try:
+        from mrz.checker.td1 import TD1CodeChecker
+        from mrz.checker.td3 import TD3CodeChecker
+    except ImportError:
+        return None
+    checker = TD3CodeChecker("\n".join(lines), check_expiry=False) if len(lines) == 2 else TD1CodeChecker("\n".join(lines), check_expiry=False)
+    # Its record of each check, without its other opinions (it warns on national codes).
+    overflow = lines[0][14] == "<" if len(lines) == 3 else lines[1][9] == "<"
+    hashes = checker.birth_date_hash, checker.expiry_date_hash, checker.final_hash
+    return all(hashes) and (overflow or checker.document_number_hash)
+
+
+def check_documents(sample, tier):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from check_schemes import pattern_to_regex
+
+    table = ROOT / "resources" / tier / "documents.tsv"
+    formats = {r["key"]: r for r in csv.DictReader((l for l in open(table, encoding="utf-8") if not l.startswith("#")), delimiter="\t", quoting=csv.QUOTE_NONE)}
+    regex = {k: re.compile(pattern_to_regex(r["pattern"])) for k, r in formats.items()}
+    of_document = defaultdict(list)
+    for key, r in formats.items():
+        of_document[r["country"], r["kind"]].append(regex[key])
+
+    failures = 0
+    totals = Counter()
+    shown = Counter()
+    second = Counter()
+    with open(sample, encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE):
+            problems = []
+            format_row = formats[row["format"]]
+            safe = row["safe"] == "1"
+            totals["safe" if safe else "realistic"] += 1
+            if row["issued"] > row["reference"] or row["issued"] < row["birth"]:
+                problems.append("issued out of range")
+            if row["expires"] and row["expires"] <= row["reference"]:
+                problems.append("expired")
+            own = format_row["number_scheme"]
+            if own:
+                totals["national number on the card"] += 1
+                held = {h.split("=")[0]: h.split("=")[1] for h in row["numbers"].split(";") if h}
+                if own in held and not held[own].startswith(re.sub("[^A-Z0-9]", "", row["number"])):
+                    problems.append(f"{own} {held[own]} is not the card's number")
+            elif safe:
+                if any(r.fullmatch(row["number"]) for r in of_document[row["country"], row["kind"]]):
+                    problems.append("a safe number inside a format")
+            elif not regex[row["format"]].fullmatch(row["number"]):
+                problems.append("number outside its format")
+            check_zone(row, format_row, problems)
+            if row["mrz"]:
+                totals["with a zone"] += 1
+                opinion = check_with_mrz_package(row["mrz"].split("|"))
+                if opinion is not None:
+                    second["agree" if opinion else "disagree"] += 1
+                    if not opinion:
+                        problems.append("the mrz package disagrees")
+            if problems:
+                failures += 1
+                shown[row["format"]] += 1
+                if shown[row["format"]] <= 3:
+                    print(f"document {row['format']} {row['number']} born {row['birth']} issued {row['issued']} to {row['expires']} at {row['reference']}: {problems} {row['mrz']}")
+    print(f"\ndocuments: {totals['realistic']} realistic, {totals['safe']} safe, {totals['with a zone']} with a zone, "
+          f"{totals['national number on the card']} showing the national number; {failures} unexpected")
+    if second:
+        print(f"the mrz package's check digits: {second['agree']} agree, {second['disagree']} disagree")
+    return failures
+
+
 def build(args, build_dir):
     binary = build_dir / "sample_identities.exe"
     command = [args.cxx, "-std=c++23", "-O2", "-I.", "scripts/sample_identities.cpp", "-o", str(binary)]
@@ -255,7 +445,8 @@ def main():
     build_dir.mkdir(exist_ok=True)
     binary = build(args, build_dir)
     sample = build_dir / "sample_identities.tsv"
-    subprocess.run([str(binary), str(ROOT / "resources" / args.tier), str(args.count), str(sample)], check=True)
+    document_sample = build_dir / "sample_documents.tsv"
+    subprocess.run([str(binary), str(ROOT / "resources" / args.tier), str(args.count), str(sample), str(document_sample)], check=True)
 
     counts = defaultdict(Counter)
     shown = Counter()
@@ -307,6 +498,7 @@ def main():
     if curp_words:
         print(f"\nCURP word-list hits, reported only: {counts['mx-curp']['realistic word']} numbers, {len(curp_words)} words: {sorted(curp_words)[:20]}")
     print("\nstdnum*: stdnum with the corrections described at cn_ric, id_nik, kr_rrn and pk_cnic.")
+    failures += check_documents(document_sample, args.tier)
     print(f"\n{failures} unexpected results")
     return 1 if failures else 0
 

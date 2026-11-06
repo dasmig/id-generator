@@ -16,7 +16,7 @@ from collections import Counter
 from idgen_data import CURATED, read_tsv, write_all_tiers
 
 DOC_COLUMNS = ["key", "country", "kind", "pattern", "from", "until", "mrz", "evidence",
-               "prefix_places", "mrz_code", "mrz_optional", "min_age", "weight"]
+               "prefix_places", "mrz_code", "mrz_optional", "min_age", "weight", "year_at", "number_scheme"]
 ALWAYS = "1900-01-01"  # `from` is part of the validity key, which cannot be empty
 VALIDITY_COLUMNS = ["document", "from_age", "years", "until_age", "from", "until", "expiry_rule"]
 
@@ -66,6 +66,19 @@ MRZ_OPTIONAL = {
     ("RS", "passport"): "rs-jmbg", ("SE", "id_card"): "se-personnummer", ("SE", "passport"): "se-personnummer",
     ("SI", "passport"): "si-emso", ("SK", "passport"): "sk-rc", ("TR", "id_card"): "tr-tckn",
     ("TW", "passport"): "tw-nid", ("UY", "passport"): "uy-cedula", ("VN", "passport"): "vn-cccd",
+}
+
+# Where the number holds the two-digit year of issue: Russia's internal passport
+# series is the region code plus that year (design 5.1).
+YEAR_AT = {("RU", "id_card"): "2"}
+
+# Cards whose number is the person's national number, as the survey's notes say:
+# "no separate card number", "card number = NIK" and so on.
+NUMBER_SCHEME = {
+    "AR": "ar-dni", "BR": "br-cpf", "CN": "cn-ric", "HK": "hk-hkid", "ID": "id-nik", "IL": "il-idnr",
+    "IN": "in-aadhaar", "IR": "ir-codemeli", "JP": "jp-mynumber", "KR": "kr-rrn", "MY": "my-mykad",
+    "PE": "pe-dni", "PK": "pk-cnic", "SA": "sa-nid", "SG": "sg-nric", "TH": "th-pin", "TW": "tw-nid",
+    "VN": "vn-cccd",
 }
 
 # Survey values overridden by what its own notes say. Russia's internal passport
@@ -167,7 +180,7 @@ def main():
             min_age = str(first_age)
 
         base = {"country": cc, "kind": kind, "mrz": mrz, "min_age": min_age, "weight": "",
-                "prefix_places": "", "mrz_optional": MRZ_OPTIONAL.get((cc, kind), "")}
+                "prefix_places": "", "mrz_optional": MRZ_OPTIONAL.get((cc, kind), ""), "year_at": "", "number_scheme": ""}
         code = MRZ_CODE.get((cc, kind), "")
         code_old = MRZ_CODE_OLDER.get((cc, kind), code)
 
@@ -177,7 +190,8 @@ def main():
         if surveyed:
             start = FROM_DATE.get((cc, kind)) or (f"{row['format_since']}-01-01" if row["format_since"] else EARLIEST)
             formats.append({**base, "pattern": pattern, "from": start, "until": "",
-                            "evidence": row["evidence"], "mrz_code": code})
+                            "evidence": row["evidence"], "mrz_code": code, "year_at": YEAR_AT.get((cc, kind), ""),
+                            "number_scheme": NUMBER_SCHEME.get(cc, "") if kind == "id_card" else ""})
             for old in older.get((cc, kind), []):
                 formats.append({**base, "pattern": old["pattern"], "from": old["from"], "until": old["until"],
                                 "evidence": old["evidence"], "mrz_code": code_old})

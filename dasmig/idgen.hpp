@@ -48,6 +48,13 @@ namespace dasmig
 // out without -Wmissing-designated-field-initializers warnings.
 // NOLINTBEGIN(readability-redundant-member-init)
 
+/// @brief The documents a request can ask for.
+enum class id_document_kind : std::uint8_t
+{
+    passport, ///< A passport; every country has one.
+    id_card   ///< A national identity card, where the country issues one.
+};
+
 /// @brief A place as city-generator gives it; every field is optional except
 ///        the country.
 struct id_place
@@ -95,9 +102,12 @@ struct identity_request
     /// Scheme keys ("br-cpf"). Unset: the primary scheme; empty: none;
     /// containing "*": every scheme of the country.
     std::optional<std::vector<std::string>> schemes{};
+    /// The documents to generate. Empty: none. A document the person cannot
+    /// hold is left out.
+    std::vector<id_document_kind> documents{};
     /// The date the result is true on, from 1900-01-01 to 2090-12-31.
     std::chrono::year_month_day reference_date{default_reference_date};
-    /// Numbers nobody holds, by each scheme's documented method.
+    /// Numbers and documents nobody holds, by the methods in doc/data.md.
     bool safe{false};
     /// Draw countries and places by population; false draws them uniformly.
     bool weighted{true};
@@ -114,6 +124,27 @@ struct id_number
     std::chrono::year_month_day assigned{}; ///< When the person got it.
     std::string place_code{};   ///< The encoded place; empty when none.
     bool reserved{false};       ///< Made by the scheme's safe method.
+};
+
+/// @brief One document held by a person on the reference date.
+struct id_document
+{
+    id_document_kind kind{id_document_kind::passport}; ///< Passport or identity card.
+    std::string format{};        ///< `documents.tsv` key, "de-passport-2007".
+    std::string number{};        ///< As printed, "C01X00T47".
+    std::string issuing_state{}; ///< ICAO code, "D", "FRA", "GBR".
+    std::chrono::year_month_day issued{}; ///< On or before the reference date.
+    /// After the reference date. Unset: the document does not expire.
+    std::optional<std::chrono::year_month_day> expires{};
+    /// 2 lines of 44 (TD3) or 3 of 30 (TD1). Empty when the document has no
+    /// machine-readable zone or the request gives no surname in a script the
+    /// zone can write.
+    std::vector<std::string> mrz{};
+    /// The number format's source: "issuer", "reference", "specimen",
+    /// "placeholder" or "generic" (nothing surveyed; the number is invented).
+    std::string evidence{};
+    bool generic_validity{false}; ///< No surveyed validity: the generic rule applied.
+    bool reserved{false};         ///< Outside the country's formats, for safe mode.
 };
 
 // NOLINTEND(readability-redundant-member-init)
@@ -703,6 +734,23 @@ inline bool valid_generic(const valid_ctx& v, std::string_view t)
 
 // -- Names ----------------------------------------------------------------------
 
+// The code point at name[i], moving i past it; empty for malformed UTF-8.
+[[nodiscard]] inline std::optional<std::uint32_t> next_code_point(std::string_view name, std::size_t& i)
+{
+    const auto b0 = static_cast<std::uint8_t>(name[i]);
+    std::size_t len = 1;
+    std::uint32_t cp = b0;
+    if ((b0 & 0x80U) == 0U) { len = 1; }
+    else if ((b0 & 0xE0U) == 0xC0U) { len = 2; cp = b0 & 0x1FU; }
+    else if ((b0 & 0xF0U) == 0xE0U) { len = 3; cp = b0 & 0x0FU; }
+    else if ((b0 & 0xF8U) == 0xF0U) { len = 4; cp = b0 & 0x07U; }
+    else return std::nullopt;
+    if (i + len > name.size()) return std::nullopt;
+    for (std::size_t k = 1; k < len; ++k) cp = (cp << 6U) | (static_cast<std::uint8_t>(name[i + k]) & 0x3FU);
+    i += len;
+    return cp;
+}
+
 // One Latin letter from the Latin-1 Supplement or Latin Extended-A as its
 // ASCII base, upper case; empty for anything else.
 [[nodiscard]] inline std::string_view fold_latin(std::uint32_t cp)
@@ -757,14 +805,9 @@ inline bool valid_generic(const valid_ctx& v, std::string_view t)
             }
             continue;
         }
-        std::size_t len = 1;
-        std::uint32_t cp = 0;
-        if ((b0 & 0xE0U) == 0xC0U) { len = 2; cp = b0 & 0x1FU; }
-        else if ((b0 & 0xF0U) == 0xE0U) { len = 3; cp = b0 & 0x0FU; }
-        else if ((b0 & 0xF8U) == 0xF0U) { len = 4; cp = b0 & 0x07U; }
-        else return {};
-        if (i + len > name.size()) return {};
-        for (std::size_t k = 1; k < len; ++k) cp = (cp << 6U) | (static_cast<std::uint8_t>(name[i + k]) & 0x3FU);
+        const auto decoded = next_code_point(name, i);
+        if (!decoded) return {};
+        const std::uint32_t cp = *decoded;
         // The upper-case Latin-1 form is 0x20 below the lower-case one, except U+00F7 and U+00FF.
         const std::uint32_t upper_cp = cp >= 0xE0U && cp <= 0xFEU && cp != 0xF7U ? cp - 0x20U : cp;
         const std::string as_written{static_cast<char>(0xC0U | (upper_cp >> 6U)), static_cast<char>(0x80U | (upper_cp & 0x3FU))};
@@ -784,7 +827,6 @@ inline bool valid_generic(const valid_ctx& v, std::string_view t)
             if (folded.empty()) return {};
             words.back() += folded;
         }
-        i += len;
     }
     if (words.back().empty()) words.pop_back();
     return words;
@@ -2145,7 +2187,11 @@ inline bool build_sg_nric(build_ctx& b, std::string& out)
     const char prefix = to_day(b.date) >= b.s.param_day("t_prefix_from_birth") ? 'T' : 'S';
     out = std::string{prefix};
     if (to_day(b.date) >= b.s.param_day("year_digits_from_birth")) out += two(b.date.y) + rand_digits(b.r, 5);
-    else out += std::string{pick_char(b.r, "01")} + rand_digits(b.r, 6);
+    else
+    {
+        out += pick_char(b.r, "01");
+        out += rand_digits(b.r, 6);
+    }
     const char c = sg_letter(out);
     put_check(b, out, c, "JZIHGFEDCBA");
     return true;
@@ -2454,6 +2500,356 @@ inline constexpr std::array<builder_entry, 50> builders{{
     return out;
 }
 
+// -- Documents ------------------------------------------------------------------
+
+enum class expiry_rule : std::uint8_t { day_before, same_day, birthday, application };
+enum class mrz_type : std::uint8_t { none, td1, td3 };
+
+// One row of validity.tsv: how long a document issued at this age lasts.
+struct validity_rule
+{
+    int from_age{0};
+    std::vector<int> years{}; // the holder's choice when several; {0}: no expiry
+    int until_age{-1};      // set instead of years
+    day_t from{no_start};
+    day_t until{no_end};
+    expiry_rule rule{expiry_rule::same_day};
+};
+
+// One row of documents.tsv: a number format and the issue dates it covers.
+struct document_format
+{
+    std::string key;
+    core::pattern pattern;
+    day_t from{no_start};
+    day_t until{no_end};
+    mrz_type mrz{mrz_type::none};
+    std::string evidence;
+    std::string prefix_scheme;  // the scheme whose place codes start the number
+    std::string mrz_code;
+    std::string optional_scheme; // the scheme whose number fills the MRZ's optional field
+    int min_age{0};
+    double weight{1.0};
+    int year_at{-1};            // where the two-digit year of issue sits in the number
+    std::string number_scheme;  // the scheme whose number is the document's number
+};
+
+// A country's document of one kind.
+struct document_book
+{
+    std::vector<document_format> formats; // by `from`
+    std::vector<validity_rule> rules;     // by `from_age`
+    bool generic_validity{false};
+    int min_age{0};
+    int window_years{0};  // no document in force was issued longer ago than this
+    bool permanent{false}; // some rule has no expiry, so the window has no start
+};
+
+// A country's variant of the ICAO tables: `first` applies to a name's first letter only.
+struct translit_rule
+{
+    std::uint32_t cp{0};
+    bool first{false};
+    std::string to;
+};
+
+// The upper case of a Latin-1 or Cyrillic letter, as translit rules name it.
+[[nodiscard]] inline std::uint32_t letter_upper(std::uint32_t cp)
+{
+    if (cp >= 0x430U && cp <= 0x44FU) return cp - 0x20U;
+    if (cp >= 0x450U && cp <= 0x45FU) return cp - 0x50U;
+    if (cp == 0x46BU || cp == 0x475U || cp == 0x491U || cp == 0x493U || cp == 0x4BBU) return cp - 1U;
+    if (cp >= 0xE0U && cp <= 0xFEU && cp != 0xF7U) return cp - 0x20U;
+    return cp;
+}
+
+// A letter as ICAO 9303 Part 3 section 6 writes it in the MRZ, for the upper or
+// lower case. Where the table offers alternatives (Ä: AE or A) this is the first.
+// Empty: the character has no form. The table omits the soft sign, which is
+// written as nothing, hence the optional.
+[[nodiscard]] inline std::optional<std::string_view> icao_letter(std::uint32_t cp)
+{
+    switch (cp)
+    {
+    case 0xC4U: case 0xE4U: case 0xC6U: case 0xE6U: return "AE";
+    case 0xC5U: case 0xE5U: return "AA";
+    case 0xD6U: case 0xF6U: case 0xD8U: case 0xF8U: case 0x152U: case 0x153U: return "OE";
+    case 0xDCU: case 0xFCU: return "UE";
+    case 0x132U: case 0x133U: return "IJ";
+    case 0x1E9EU: return "SS";
+    // Not in the table: Romanian's comma letters and Vietnamese's horned ones.
+    case 0x218U: case 0x219U: return "S";
+    case 0x21AU: case 0x21BU: return "T";
+    case 0x1A0U: case 0x1A1U: return "O";
+    case 0x1AFU: case 0x1B0U: return "U";
+    default: break;
+    }
+    if (cp >= 0xC0U && cp <= 0x17FU)
+    {
+        const std::string_view base = fold_latin(cp);
+        if (!base.empty()) return base;
+        return std::nullopt;
+    }
+    // Vietnamese, by runs of U+1EA0-U+1EF9; not in the table either.
+    if (cp >= 0x1EA0U && cp <= 0x1EF9U)
+    {
+        if (cp <= 0x1EB7U) return "A";
+        if (cp <= 0x1EC7U) return "E";
+        if (cp <= 0x1ECBU) return "I";
+        if (cp <= 0x1EE3U) return "O";
+        if (cp <= 0x1EF1U) return "U";
+        return "Y";
+    }
+    cp = letter_upper(cp); // Cyrillic from here on
+    static constexpr std::array<std::string_view, 32> basic{
+        "A", "B", "V", "G", "D", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P",
+        "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
+    if (cp >= 0x410U && cp <= 0x42FU) return basic.at(cp - 0x410U);
+    switch (cp)
+    {
+    case 0x401U: return "E";
+    case 0x402U: return "D";
+    case 0x403U: return "G"; // the table's row at U+0492, whose exception is Macedonian
+    case 0x404U: return "IE";
+    case 0x405U: return "DZ";
+    case 0x406U: case 0x407U: return "I";
+    case 0x408U: return "J";
+    case 0x409U: return "LJ";
+    case 0x40AU: return "NJ";
+    case 0x40BU: return "C"; // not in the table; the same as Serbian Ч
+    case 0x40CU: return "K";
+    case 0x40EU: case 0x46AU: return "U";
+    case 0x40FU: return "DZ";
+    case 0x474U: return "Y";
+    case 0x490U: case 0x492U: return "G";
+    case 0x4BAU: return "C";
+    default: return std::nullopt;
+    }
+}
+
+// A name in the MRZ's alphabet: words joined by '<'. Spaces and hyphens separate;
+// apostrophes, periods, numerals and other ASCII marks are left out (Part 3, 4.6
+// and Part 4, 4.2.3.1). Empty when a character has no form or nothing is left.
+[[nodiscard]] inline std::optional<std::string> mrz_words(std::string_view name, const std::vector<translit_rule>& rules)
+{
+    std::string out;
+    bool first = true;
+    std::size_t i = 0;
+    while (i < name.size())
+    {
+        const auto cp_opt = next_code_point(name, i);
+        if (!cp_opt) return std::nullopt;
+        const std::uint32_t cp = *cp_opt;
+        if (cp < 0x80U)
+        {
+            const char c = static_cast<char>(cp);
+            if (c == ' ' || c == '\t' || c == '-')
+            {
+                if (!out.empty() && out.back() != '<') out += '<';
+                first = true;
+            }
+            else if (c >= 'A' && c <= 'Z') { out += c; first = false; }
+            else if (c >= 'a' && c <= 'z') { out += static_cast<char>(c - 'a' + 'A'); first = false; }
+            continue;
+        }
+        if (cp == 0x2019U || cp == 0x2BBU || cp == 0x2BCU) continue; // typographic apostrophes
+        const std::uint32_t up = letter_upper(cp);
+        const auto rule = std::ranges::find_if(rules, [&](const translit_rule& t) { return t.cp == up && (!t.first || first); });
+        if (rule != rules.end())
+        {
+            out += rule->to;
+        }
+        else
+        {
+            const auto letter = icao_letter(cp);
+            if (!letter) return std::nullopt;
+            out += *letter;
+        }
+        first = false;
+    }
+    while (!out.empty() && out.back() == '<') out.pop_back();
+    if (out.empty()) return std::nullopt;
+    return out;
+}
+
+// The last character of a shortened name must be a letter (Part 4, 4.2.3). When
+// the cut lands on a filler, the next word's initial takes that place and the
+// word before gives up a letter, so the words stay apart.
+[[nodiscard]] inline std::string cut_words(std::string_view words, std::size_t width)
+{
+    std::string out{words.substr(0, width)};
+    if (out.size() >= 2 && out.back() == '<' && width < words.size())
+    {
+        out[out.size() - 2] = '<';
+        out.back() = words[width];
+    }
+    return out;
+}
+
+// The name field: primary<<secondary, shortened as Part 4, 4.2.3.2 and 4.2.3.3 show,
+// and filled. The primary identifier gives way only as far as it must, and leaves
+// two letters of the secondary one.
+[[nodiscard]] inline std::string mrz_name(std::string_view primary, std::string_view secondary, std::size_t width)
+{
+    std::string out;
+    if (secondary.empty())
+    {
+        out = cut_words(primary, width);
+    }
+    else if (primary.size() + 2U + secondary.size() <= width)
+    {
+        out = std::string{primary} + "<<" + std::string{secondary};
+    }
+    else
+    {
+        const std::size_t leave = 2U + std::min<std::size_t>(2U, secondary.size());
+        std::string head = primary.size() + leave > width ? cut_words(primary, width - leave) : std::string{primary};
+        const std::size_t room = width - head.size() - 2U;
+        out = head + "<<" + cut_words(secondary, room);
+    }
+    out.resize(width, '<');
+    return out;
+}
+
+// What goes into a machine-readable zone. Dates are YYMMDD; a missing expiry is
+// six fillers. `name` is the fitted name field.
+struct mrz_fields
+{
+    std::string code;
+    std::string state;
+    std::string name;
+    std::string number; // letters and digits; over nine, the rest overflows
+    std::string birth;
+    char sex{'<'};
+    std::string expiry;
+    std::string optional;
+};
+
+[[nodiscard]] inline std::string filled(std::string_view text, std::size_t width)
+{
+    std::string out{text};
+    out.resize(width, '<');
+    return out;
+}
+
+// The number's field and check digit, and what overflows: the rest of the number,
+// the digit over all of it, and a filler (Part 5, 4.2.2, note j).
+struct mrz_number
+{
+    std::string field;
+    char check{'<'};
+    std::string overflow;
+};
+
+[[nodiscard]] inline mrz_number mrz_number_of(std::string_view number)
+{
+    if (number.size() <= 9U)
+    {
+        std::string field = filled(number, 9U);
+        const char check = core::icao9303_digit(field);
+        return {.field = std::move(field), .check = check, .overflow = {}};
+    }
+    std::string overflow{number.substr(9)};
+    overflow += core::icao9303_digit(number);
+    overflow += '<';
+    return {.field = std::string{number.substr(0, 9)}, .check = '<', .overflow = std::move(overflow)};
+}
+
+// TD3, ICAO 9303 Part 4: 2 lines of 44. The optional field has no room for an
+// overflow in the standard, so one takes the front of it, as in TD1.
+[[nodiscard]] inline std::vector<std::string> mrz_td3(const mrz_fields& f)
+{
+    constexpr std::size_t optional_width = 14;
+    const mrz_number n = mrz_number_of(f.number);
+    std::string optional = n.overflow;
+    if (optional.size() + f.optional.size() <= optional_width) optional += f.optional;
+    optional = filled(optional, optional_width);
+
+    std::string line1 = filled(f.code, 2U) + filled(f.state, 3U) + f.name;
+    std::string line2 = n.field;
+    line2 += n.check;
+    line2 += filled(f.state, 3U);
+    line2 += f.birth;
+    line2 += core::icao9303_digit(f.birth);
+    line2 += f.sex;
+    line2 += f.expiry;
+    line2 += core::icao9303_digit(f.expiry);
+    line2 += optional;
+    line2 += core::icao9303_digit(optional);
+    const std::string composite = line2.substr(0, 10) + line2.substr(13, 7) + line2.substr(21, 22);
+    line2 += core::icao9303_digit(composite);
+    return {std::move(line1), std::move(line2)};
+}
+
+// TD1, ICAO 9303 Part 5: 3 lines of 30. The optional number takes the upper line's
+// field after any overflow, and the middle line's when it does not fit there.
+[[nodiscard]] inline std::vector<std::string> mrz_td1(const mrz_fields& f)
+{
+    constexpr std::size_t upper_width = 15;
+    constexpr std::size_t middle_width = 11;
+    const mrz_number n = mrz_number_of(f.number);
+    std::string upper_optional = n.overflow;
+    std::string middle_optional;
+    if (upper_optional.size() + f.optional.size() <= upper_width) upper_optional += f.optional;
+    else if (f.optional.size() <= middle_width) middle_optional = f.optional;
+
+    std::string upper = filled(f.code, 2U) + filled(f.state, 3U) + n.field;
+    upper += n.check;
+    upper += filled(upper_optional, upper_width);
+    std::string middle = f.birth;
+    middle += core::icao9303_digit(f.birth);
+    middle += f.sex;
+    middle += f.expiry;
+    middle += core::icao9303_digit(f.expiry);
+    middle += filled(f.state, 3U);
+    middle += filled(middle_optional, middle_width);
+    const std::string composite = upper.substr(5) + middle.substr(0, 7) + middle.substr(8, 7) + middle.substr(18, 11);
+    middle += core::icao9303_digit(composite);
+    return {std::move(upper), std::move(middle), f.name};
+}
+
+// Letters and digits only, for the MRZ.
+[[nodiscard]] inline std::string alphanumeric(std::string_view text)
+{
+    std::string out;
+    out.reserve(text.size());
+    for (const char c : text)
+    {
+        if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) out += c;
+        else if (c >= 'a' && c <= 'z') out += static_cast<char>(c - 'a' + 'A');
+    }
+    return out;
+}
+
+// A national number as a document prints it: the form the format's pattern takes,
+// or its first characters where the card leaves the check digit apart (Peru). A
+// number the pattern does not foresee, such as an old 7-digit DNI, stays as it is.
+[[nodiscard]] inline std::string printed_number(const core::pattern& pattern, const std::string& value, const std::string& formatted)
+{
+    if (pattern.matches(formatted)) return formatted;
+    if (pattern.matches(value)) return value;
+    const std::string head = value.substr(0, pattern.lengths().second);
+    return pattern.matches(head) ? head : value;
+}
+
+// A number outside every format of the country's document, for safe mode: the
+// first character changed, else the number shortened where the formats take any
+// character there. Draws nothing.
+[[nodiscard]] inline std::string outside_formats(const document_book& book, std::string number)
+{
+    const auto fits = [&](std::string_view text) {
+        return std::ranges::any_of(book.formats, [&](const document_format& f) { return f.pattern.matches(text); });
+    };
+    for (const char c : {'X', '0'})
+    {
+        std::string changed = number;
+        changed.front() = c;
+        if (!fits(changed)) return changed;
+    }
+    while (number.size() > 1U && fits(number)) number.pop_back();
+    return number;
+}
+
 } // namespace idgen_detail
 /// @endcond
 
@@ -2468,6 +2864,7 @@ class identity
     std::chrono::year_month_day birth_date{}; ///< Echoed, given or drawn.
     sex bio_sex{sex::male};                ///< Echoed, given or drawn.
     std::vector<id_number> numbers;        ///< The numbers held, primary first.
+    std::vector<id_document> documents;    ///< The documents held, as requested.
 
     /// @brief Retrieve the random seed used to generate this identity.
     /// @return The call seed; pass it to get_identity(request, seed) with
@@ -2483,11 +2880,18 @@ class identity
     }
 
     /// @brief Human-readable summary string.
-    /// @return For example `BR, Individual Taxpayer Registry number 111.444.777-35`.
+    /// @return For example `BR, Individual Taxpayer Registry number 111.444.777-35,
+    ///         passport GA123456 (valid to 2031-05-03)`.
     [[nodiscard]] std::string to_string() const
     {
         std::string out = country_code;
         for (const auto& n : numbers) out += ", " + n.label + " " + n.formatted;
+        for (const auto& d : documents)
+        {
+            out += d.kind == id_document_kind::passport ? ", passport " : ", identity card ";
+            out += d.number;
+            out += d.expires ? " (valid to " + idgen_detail::iso_date(idgen_detail::to_day(*d.expires)) + ")" : " (no expiry)";
+        }
         return out;
     }
 
@@ -2512,6 +2916,26 @@ class identity
                 .field("assigned", idgen_detail::iso_date(idgen_detail::to_day(n.assigned)))
                 .field("place_code", n.place_code)
                 .field("reserved", n.reserved)
+                .end_object();
+        }
+        w.end_array().key("documents").begin_array();
+        for (const auto& d : documents)
+        {
+            w.begin_object()
+                .field("kind", d.kind == id_document_kind::passport ? "passport" : "id_card")
+                .field("format", d.format)
+                .field("number", d.number)
+                .field("issuing_state", d.issuing_state)
+                .field("issued", idgen_detail::iso_date(idgen_detail::to_day(d.issued)))
+                .key("expires");
+            if (d.expires) w.value(idgen_detail::iso_date(idgen_detail::to_day(*d.expires)));
+            else w.value(nullptr);
+            w.key("mrz").begin_array();
+            for (const auto& line : d.mrz) w.value(line);
+            w.end_array()
+                .field("evidence", d.evidence)
+                .field("generic_validity", d.generic_validity)
+                .field("reserved", d.reserved)
                 .end_object();
         }
         w.end_array().key("signature");
@@ -2604,7 +3028,8 @@ class idg
     /// @brief Generate a deterministic identity.
     ///
     /// A number the person cannot hold yet (assigned after the reference date)
-    /// is left out, as is the primary number of a country without one.
+    /// is left out, as is the primary number of a country without one, a card
+    /// below its minimum age, and a card where none is issued.
     ///
     /// @param request What to generate.
     /// @param call_seed Seed; the same request, seed and data give the same
@@ -2634,6 +3059,12 @@ class idg
         {
             auto number = make_number_(_model.schemes[index], request, birth, bio_sex, reference, call);
             if (number) v.numbers.push_back(std::move(*number));
+        }
+        for (auto kind = request.documents.begin(); kind != request.documents.end(); ++kind)
+        {
+            if (std::find(request.documents.begin(), kind, *kind) != kind) continue; // asked for twice
+            auto document = make_document_(*kind, _model.countries[selection.country], request, birth, bio_sex, reference, call);
+            if (document) v.documents.push_back(std::move(*document));
         }
         return v;
     }
@@ -2961,7 +3392,7 @@ class idg
         case table::documents:
             return {.key = {"key"},
                     .required = {"country", "kind", "pattern", "from", "mrz", "evidence"},
-                    .optional = {"until", "prefix_places", "mrz_code", "mrz_optional", "min_age", "weight"}};
+                    .optional = {"until", "prefix_places", "mrz_code", "mrz_optional", "min_age", "weight", "year_at", "number_scheme"}};
         case table::validity:
             return {.key = {"document", "from_age", "from"},
                     .required = {},
@@ -2990,6 +3421,8 @@ class idg
         double population{0.0};
         std::vector<std::uint32_t> schemes; // primary first
         bool has_primary{false};
+        std::array<std::optional<idgen_detail::document_book>, 2> documents; // by id_document_kind
+        std::vector<idgen_detail::translit_rule> translit;
     };
 
     struct model
@@ -3286,22 +3719,8 @@ class idg
             (void)row.get<std::string>("code");
             break;
         case table::series: (void)parse_anchor_(row); break;
-        case table::documents:
-            try
-            {
-                (void)core::pattern::parse(row["pattern"]);
-            }
-            catch (const std::invalid_argument& e)
-            {
-                throw row.error("pattern", e.what());
-            }
-            (void)date_cell_(row, "from", idgen_detail::no_start);
-            (void)date_cell_(row, "until", idgen_detail::no_end);
-            break;
-        case table::validity:
-            (void)date_cell_(row, "from", idgen_detail::no_start);
-            (void)date_cell_(row, "until", idgen_detail::no_end);
-            break;
+        case table::documents: (void)parse_format_(row); break;
+        case table::validity: (void)parse_validity_(row); break;
         case table::name_rules:
         {
             const std::string_view kind = row["kind"];
@@ -3312,6 +3731,198 @@ class idg
             break;
         }
         case table::test_numbers: break;
+        }
+    }
+
+    static int small_cell_(const core::tsv_row& row, std::string_view column, std::string_view text)
+    {
+        const int value = row_int_(row, column, text);
+        if (value < 0 || value > 200) throw row.error(column, "expected 0 to 200, got '" + std::string{text} + "'");
+        return value;
+    }
+
+    static idgen_detail::document_format parse_format_(const core::tsv_row& row)
+    {
+        using namespace idgen_detail;
+        document_format f;
+        f.key = std::string{row["key"]};
+        const std::string_view kind = row["kind"];
+        if (kind != "passport" && kind != "id_card") throw row.error("kind", "unknown kind '" + std::string{kind} + "'");
+        try
+        {
+            f.pattern = core::pattern::parse(row["pattern"]);
+        }
+        catch (const std::invalid_argument& e)
+        {
+            throw row.error("pattern", e.what());
+        }
+        f.from = date_cell_(row, "from", no_start);
+        f.until = date_cell_(row, "until", no_end);
+        if (f.until <= f.from) throw row.error("until", "must be after from");
+        const std::string_view mrz = row["mrz"];
+        if (mrz == "td1") f.mrz = mrz_type::td1;
+        else if (mrz == "td3") f.mrz = mrz_type::td3;
+        else if (mrz != "none") throw row.error("mrz", "unknown type '" + std::string{mrz} + "'");
+        f.evidence = std::string{row["evidence"]};
+        if (f.evidence != "issuer" && f.evidence != "reference" && f.evidence != "specimen" && f.evidence != "placeholder" && f.evidence != "generic")
+        {
+            throw row.error("evidence", "unknown evidence '" + f.evidence + "'");
+        }
+        f.prefix_scheme = std::string{cell_(row, "prefix_places")};
+        f.mrz_code = std::string{cell_(row, "mrz_code")};
+        if (f.mrz_code.size() > 2U || !std::ranges::all_of(f.mrz_code, [](char c) { return is_letter(c) || c == '<'; }))
+        {
+            throw row.error("mrz_code", "expected up to two capitals or fillers");
+        }
+        f.optional_scheme = std::string{cell_(row, "mrz_optional")};
+        f.number_scheme = std::string{cell_(row, "number_scheme")};
+        if (const auto text = cell_(row, "min_age"); !text.empty()) f.min_age = small_cell_(row, "min_age", text);
+        if (const auto text = cell_(row, "weight"); !text.empty())
+        {
+            f.weight = row.get<double>("weight");
+            if (!(f.weight >= 0.0)) throw row.error("weight", "must not be negative");
+        }
+        if (const auto text = cell_(row, "year_at"); !text.empty())
+        {
+            f.year_at = small_cell_(row, "year_at", text);
+            if (static_cast<std::size_t>(f.year_at) + 2U > f.pattern.lengths().first) throw row.error("year_at", "past the end of the number");
+        }
+        return f;
+    }
+
+    static idgen_detail::validity_rule parse_validity_(const core::tsv_row& row)
+    {
+        using namespace idgen_detail;
+        validity_rule v;
+        v.from_age = small_cell_(row, "from_age", row["from_age"]);
+        v.from = date_cell_(row, "from", no_start);
+        v.until = date_cell_(row, "until", no_end);
+        if (v.until <= v.from) throw row.error("until", "must be after from");
+        std::string_view years = cell_(row, "years");
+        const std::string_view until_age = cell_(row, "until_age");
+        if (years.empty() == until_age.empty()) throw row.error("years", "needs years or until_age, not both");
+        if (!until_age.empty())
+        {
+            v.until_age = small_cell_(row, "until_age", until_age);
+            if (v.until_age <= v.from_age) throw row.error("until_age", "must be above from_age");
+        }
+        while (!years.empty())
+        {
+            const auto bar = years.find('|');
+            v.years.push_back(small_cell_(row, "years", years.substr(0, bar)));
+            years = bar == std::string_view::npos ? std::string_view{} : years.substr(bar + 1);
+        }
+        const std::string_view rule = cell_(row, "expiry_rule");
+        if (rule == "day_before") v.rule = expiry_rule::day_before;
+        else if (rule == "birthday") v.rule = expiry_rule::birthday;
+        else if (rule == "application") v.rule = expiry_rule::application;
+        else if (!rule.empty() && rule != "same_day") throw row.error("expiry_rule", "unknown rule '" + std::string{rule} + "'");
+        return v;
+    }
+
+    // `Г=H;^Є=YE`: this letter is written so, or at a name's start only with `^`.
+    static std::vector<idgen_detail::translit_rule> parse_translit_(const core::tsv_row& row)
+    {
+        using namespace idgen_detail;
+        std::vector<translit_rule> rules;
+        std::string_view list = cell_(row, "translit");
+        while (!list.empty())
+        {
+            const auto sep = list.find(';');
+            std::string_view item = list.substr(0, sep);
+            list = sep == std::string_view::npos ? std::string_view{} : list.substr(sep + 1);
+            translit_rule t;
+            if (item.starts_with('^'))
+            {
+                t.first = true;
+                item.remove_prefix(1);
+            }
+            std::size_t i = 0;
+            const auto cp = item.empty() ? std::nullopt : next_code_point(item, i);
+            if (!cp || i >= item.size() || item[i] != '=') throw row.error("translit", "expected LETTER=LATIN, got '" + std::string{item} + "'");
+            t.cp = letter_upper(*cp);
+            t.to = std::string{item.substr(i + 1)};
+            if (!std::ranges::all_of(t.to, is_letter)) throw row.error("translit", "the Latin form must be capitals");
+            rules.push_back(std::move(t));
+        }
+        return rules;
+    }
+
+    static std::size_t kind_index_(std::string_view kind) { return kind == "passport" ? 0U : 1U; }
+
+    // documents.tsv and validity.tsv into each country's books.
+    static void build_documents_(model& m, const tables& t)
+    {
+        using namespace idgen_detail;
+        const auto where = [](const core::tsv_row& row) { return row.source() + ":" + std::to_string(row.line()) + ": "; };
+        std::unordered_map<std::string, document_book*> by_name; // "de-id-card"
+        for (const auto& row : t.at(index_(table::documents)).rows())
+        {
+            const auto it = m.country_index.find(upper(row["country"]));
+            if (it == m.country_index.end()) throw std::invalid_argument(where(row) + "no country '" + std::string{row["country"]} + "'");
+            auto& country = m.countries[it->second];
+            auto f = parse_format_(row);
+            for (const auto& key : {f.prefix_scheme, f.optional_scheme, f.number_scheme})
+            {
+                if (key.empty()) continue;
+                const auto scheme = m.scheme_index.find(key);
+                if (scheme == m.scheme_index.end() || m.schemes[scheme->second].country != country.code)
+                {
+                    throw std::invalid_argument(where(row) + "no scheme '" + key + "' in " + country.code);
+                }
+            }
+            if (f.weight <= 0.0) continue;
+            const std::size_t kind = kind_index_(row["kind"]);
+            auto& book = country.documents.at(kind);
+            if (!book)
+            {
+                book.emplace();
+                std::string name = country.code;
+                std::ranges::transform(name, name.begin(), [](char c) { return static_cast<char>(c - 'A' + 'a'); });
+                by_name.emplace(name + (kind == 0U ? "-passport" : "-id-card"), &*book);
+            }
+            book->formats.push_back(std::move(f));
+        }
+        for (const auto& row : t.at(index_(table::validity)).rows())
+        {
+            const auto it = by_name.find(std::string{row["document"]});
+            if (it == by_name.end()) throw std::invalid_argument(where(row) + "no document '" + std::string{row["document"]} + "'");
+            it->second->rules.push_back(parse_validity_(row));
+        }
+        for (auto& country : m.countries)
+        {
+            for (std::size_t kind = 0; kind < country.documents.size(); ++kind)
+            {
+                auto& book = country.documents.at(kind);
+                if (!book) continue;
+                std::ranges::stable_sort(book->formats, {}, &document_format::from);
+                book->min_age = book->formats.front().min_age;
+                day_t covered = to_day(civil{.y = 1900, .m = 1, .d = 1});
+                for (const auto& f : book->formats)
+                {
+                    if (f.from > covered) throw std::invalid_argument("document " + f.key + ": no format covers the dates before it");
+                    covered = std::max(covered, f.until);
+                    book->min_age = std::min(book->min_age, f.min_age);
+                }
+                if (covered != no_end) throw std::invalid_argument("document " + book->formats.back().key + ": no format covers the dates after it");
+                if (book->rules.empty())
+                {
+                    book->generic_validity = true;
+                    if (kind == 0U) book->rules = {{.from_age = 0, .years = {5}}, {.from_age = 16, .years = {10}}};
+                    else book->rules = {{.from_age = 0, .years = {10}}};
+                }
+                std::ranges::stable_sort(book->rules, {}, &validity_rule::from_age);
+                for (const auto& rule : book->rules)
+                {
+                    int longest = rule.until_age >= 0 ? rule.until_age - rule.from_age : 0;
+                    for (const int years : rule.years)
+                    {
+                        if (years == 0) book->permanent = true;
+                        longest = std::max(longest, years);
+                    }
+                    book->window_years = std::max(book->window_years, longest + 1); // a birthday or application rule may add up to a year
+                }
+            }
         }
     }
 
@@ -3443,6 +4054,7 @@ class idg
             c.code = upper(row["country_code"]);
             c.icao = std::string{row["icao_code"]};
             c.population = row.get<double>("population");
+            c.translit = parse_translit_(row);
             const auto index = static_cast<std::uint32_t>(m.countries.size());
             const std::string_view primary = row["primary_scheme"];
             if (!primary.empty())
@@ -3476,6 +4088,7 @@ class idg
                 if (other.builder == "ar_dni" && other.country == s.country) s.companion = &other;
             }
         }
+        build_documents_(m, t);
         return m;
     }
 
@@ -3799,6 +4412,196 @@ class idg
         n.formatted = apply_display(s, n.value);
         n.place_code = std::move(b.place);
         return n;
+    }
+
+    // -- Documents ----------------------------------------------------------------
+
+    [[nodiscard]] static int age_on_(const idgen_detail::civil& born, idgen_detail::day_t day)
+    {
+        const idgen_detail::civil c = idgen_detail::civil_of(day);
+        const bool before_birthday = c.m < born.m || (c.m == born.m && c.d < born.d);
+        return c.y - born.y - (before_birthday ? 1 : 0);
+    }
+
+    // When a document issued on this day expires: no_end when it does not, empty
+    // when no rule covers that date and age. May draw a choice of years or an
+    // application date.
+    [[nodiscard]] static std::optional<idgen_detail::day_t> expiry_of_(const idgen_detail::document_book& book, const idgen_detail::civil& born, idgen_detail::day_t issued, core::rng& r)
+    {
+        using namespace idgen_detail;
+        const int age = age_on_(born, issued);
+        const validity_rule* rule = nullptr;
+        for (const auto& candidate : book.rules)
+        {
+            if (candidate.from_age <= age && candidate.from <= issued && issued < candidate.until) rule = &candidate;
+        }
+        if (rule == nullptr) return std::nullopt;
+        day_t end = 0;
+        if (rule->until_age >= 0)
+        {
+            end = anniversary_(born, rule->until_age);
+        }
+        else
+        {
+            const int years = rule->years.size() == 1U ? rule->years.front() : rule->years[core::bounded(r, rule->years.size())];
+            if (years == 0) return no_end;
+            const day_t counted_from = rule->rule == expiry_rule::application ? issued - static_cast<day_t>(core::bounded(r, 31)) : issued;
+            end = anniversary_(civil_of(counted_from), years);
+            if (rule->rule == expiry_rule::birthday)
+            {
+                const int year = civil_of(end).y;
+                const day_t birthday = anniversary_(born, year - born.y);
+                end = birthday >= end ? birthday : anniversary_(born, year + 1 - born.y);
+            }
+        }
+        if (rule->rule == expiry_rule::day_before) --end;
+        return end;
+    }
+
+    // The format in force on a day; several draw by weight.
+    [[nodiscard]] static const idgen_detail::document_format* format_on_(const idgen_detail::document_book& book, idgen_detail::day_t day, core::rng& r)
+    {
+        const idgen_detail::document_format* only = nullptr;
+        double total = 0.0;
+        for (const auto& f : book.formats)
+        {
+            if (f.from <= day && day < f.until)
+            {
+                only = &f;
+                total += f.weight;
+            }
+        }
+        if (only == nullptr || total == only->weight) return only;
+        double target = core::uniform01(r) * total;
+        for (const auto& f : book.formats)
+        {
+            if (!(f.from <= day && day < f.until)) continue;
+            target -= f.weight;
+            if (target < 0.0) return &f;
+        }
+        return only;
+    }
+
+    // The person's number in a scheme a document names. Empty when not held, or for
+    // a birthplace the scheme has no code for: nobody asked for this number itself.
+    [[nodiscard]] std::optional<id_number> number_on_document_(const std::string& key, const identity_request& request, idgen_detail::day_t birth, sex bio_sex, idgen_detail::day_t reference, const core::rng& call) const
+    {
+        try
+        {
+            return make_number_(_model.schemes[_model.scheme_index.at(key)], request, birth, bio_sex, reference, call);
+        }
+        catch (const std::invalid_argument&)
+        {
+            return std::nullopt;
+        }
+    }
+
+    [[nodiscard]] std::optional<id_document> make_document_(id_document_kind kind, const country_entry& country, const identity_request& request, idgen_detail::day_t birth, sex bio_sex, idgen_detail::day_t reference, const core::rng& call) const
+    {
+        using namespace idgen_detail;
+        const auto& held = country.documents.at(static_cast<std::size_t>(kind));
+        if (!held) return std::nullopt;
+        const document_book& book = *held;
+        const civil born = civil_of(birth);
+        const day_t earliest = anniversary_(born, book.min_age);
+        if (earliest > reference) return std::nullopt;
+
+        // A person renews when a document runs out, so the one in force was issued
+        // uniformly over the days whose document still runs on the reference date.
+        core::rng r = call.split(kind == id_document_kind::passport ? "passport" : "id_card");
+        const day_t lo = book.permanent ? earliest : std::max(earliest, anniversary_(civil_of(reference), -book.window_years));
+        constexpr int max_attempts = 1024;
+        day_t issued = 0;
+        day_t expires = 0;
+        const document_format* format = nullptr;
+        std::optional<id_number> own; // the national number, for a format that prints one
+        const std::string* own_key = nullptr;
+        const auto try_day = [&](day_t day) {
+            const auto end = expiry_of_(book, born, day, r);
+            if (!end || *end <= reference) return false;
+            const document_format* f = format_on_(book, day, r);
+            if (f == nullptr || age_on_(born, day) < f->min_age) return false;
+            if (!f->number_scheme.empty())
+            {
+                if (own_key == nullptr || *own_key != f->number_scheme)
+                {
+                    own = number_on_document_(f->number_scheme, request, birth, bio_sex, reference, call);
+                    own_key = &f->number_scheme;
+                }
+                if (own && to_day(own->assigned) > day) return false; // no card shows a number from its future
+            }
+            issued = day;
+            expires = *end;
+            format = f;
+            return true;
+        };
+        bool found = false;
+        for (int attempt = 0; attempt < max_attempts && !found; ++attempt) found = try_day(core::uniform_int(r, lo, reference));
+        if (!found && !try_day(reference)) return std::nullopt;
+
+        id_document d;
+        d.kind = kind;
+        d.format = format->key;
+        d.issuing_state = country.icao;
+        d.issued = ymd_of(issued);
+        if (expires != no_end) d.expires = ymd_of(expires);
+        d.evidence = format->evidence;
+        d.generic_validity = book.generic_validity;
+        d.reserved = request.safe;
+        if (!format->prefix_scheme.empty())
+        {
+            d.number = draw_place_(_model.schemes[_model.scheme_index.at(format->prefix_scheme)].places, issued, request.weighted, r);
+        }
+        const bool prints_own = !format->number_scheme.empty() && own.has_value();
+        if (prints_own)
+        {
+            d.number = printed_number(format->pattern, own->value, own->formatted); // made safe by the scheme's own method
+        }
+        else
+        {
+            d.number += format->pattern.draw(r);
+            if (format->year_at >= 0)
+            {
+                d.number.replace(d.number.size() - format->pattern.lengths().first + static_cast<std::size_t>(format->year_at), 2U, two(civil_of(issued).y));
+            }
+            if (request.safe) d.number = outside_formats(book, std::move(d.number));
+        }
+
+        // The zone needs a name it can write, and an issuing state (design 5.3).
+        if (format->mrz == mrz_type::none || !request.surname || country.icao.empty()) return d;
+        auto primary = mrz_words(*request.surname, country.translit);
+        if (!primary) return d;
+        // A name the caller gave and the zone cannot write leaves the zone out: one
+        // that silently lost part of the name would be wrong.
+        const auto given = [](const std::optional<std::string>& name) { return name && !name->empty(); };
+        if (given(request.second_surname))
+        {
+            const auto second = mrz_words(*request.second_surname, country.translit);
+            if (!second) return d;
+            *primary += "<" + *second;
+        }
+        const auto secondary = given(request.given_names) ? mrz_words(*request.given_names, country.translit) : std::nullopt;
+        if (given(request.given_names) && !secondary) return d;
+        const std::size_t name_width = format->mrz == mrz_type::td3 ? 39U : 30U;
+        mrz_fields f;
+        f.code = format->mrz_code.empty() ? (kind == id_document_kind::passport ? "P<" : "ID") : format->mrz_code;
+        f.state = country.icao;
+        f.name = mrz_name(*primary, secondary ? std::string_view{*secondary} : std::string_view{}, name_width);
+        f.number = alphanumeric(d.number);
+        const auto yymmdd = [](day_t day) {
+            const civil c = civil_of(day);
+            return two(c.y) + two(c.m) + two(c.d);
+        };
+        f.birth = yymmdd(birth);
+        f.sex = bio_sex == sex::male ? 'M' : 'F';
+        f.expiry = expires == no_end ? std::string(6, '<') : yymmdd(expires);
+        if (!format->optional_scheme.empty())
+        {
+            const auto carried = number_on_document_(format->optional_scheme, request, birth, bio_sex, reference, call);
+            if (carried && to_day(carried->assigned) <= issued) f.optional = alphanumeric(carried->value);
+        }
+        d.mrz = format->mrz == mrz_type::td3 ? mrz_td3(f) : mrz_td1(f);
+        return d;
     }
 
     // -- State ------------------------------------------------------------

@@ -2,8 +2,10 @@
 #include "../dasmig/idgen.hpp"
 
 #include <algorithm>
+#include <array>
 #include <chrono>
 #include <filesystem>
+#include <format>
 #include <fstream>
 #include <map>
 #include <optional>
@@ -1151,6 +1153,973 @@ TEST_CASE("invalid requests are rejected", "[requests][errors]")
 }
 
 // ---------------------------------------------------------------------------
+// Documents
+// ---------------------------------------------------------------------------
+
+using dasmig::id_document;
+using dasmig::id_document_kind;
+namespace idd = dasmig::idgen_detail;
+
+namespace
+{
+
+// Dates and tables read here, not through the library's code.
+year_month_day years_later(const year_month_day& d, int n)
+{
+    const year_month_day y{d.year() + std::chrono::years{n}, d.month(), d.day()};
+    return y.ok() ? y : year_month_day{y.year(), y.month(), std::chrono::day{28}};
+}
+
+int age_at(const year_month_day& born, const year_month_day& on)
+{
+    const int years = static_cast<int>(on.year()) - static_cast<int>(born.year());
+    const bool before = std::pair{static_cast<unsigned>(on.month()), static_cast<unsigned>(on.day())} <
+                        std::pair{static_cast<unsigned>(born.month()), static_cast<unsigned>(born.day())};
+    return years - (before ? 1 : 0);
+}
+
+year_month_day read_date(std::string_view text)
+{
+    const auto number = [&](std::size_t at, std::size_t len) {
+        int v = 0;
+        for (const char c : text.substr(at, len)) v = (v * 10) + (c - '0');
+        return v;
+    };
+    return year_month_day{std::chrono::year{number(0, 4)}, std::chrono::month{static_cast<unsigned>(number(5, 2))},
+                          std::chrono::day{static_cast<unsigned>(number(8, 2))}};
+}
+
+struct format_row
+{
+    std::string key;
+    std::string country;
+    std::string kind;
+    dasmig::core::pattern pattern;
+    year_month_day from;
+    std::optional<year_month_day> until;
+    std::string mrz;
+    std::string evidence;
+    std::string mrz_code;
+    std::string optional_scheme;
+    int min_age{0};
+    std::string number_scheme{};
+};
+
+struct validity_row
+{
+    int from_age{0};
+    std::string years;
+    int until_age{-1};
+    year_month_day from;
+    std::optional<year_month_day> until;
+    std::string rule;
+};
+
+struct document_tables
+{
+    std::map<std::string, format_row> formats;
+    std::map<std::pair<std::string, std::string>, std::vector<std::string>> by_country; // (country, kind) -> keys
+    std::map<std::string, std::vector<validity_row>> validity;                          // "de-id-card" -> rows
+};
+
+const document_tables& tables_on_disk()
+{
+    static const document_tables tables = [] {
+        document_tables t;
+        const auto docs = dasmig::core::tsv_document::load(resource_dir("lite") / "documents.tsv");
+        for (const auto& row : docs.rows())
+        {
+            format_row f{.key = std::string{row["key"]},
+                         .country = std::string{row["country"]},
+                         .kind = std::string{row["kind"]},
+                         .pattern = dasmig::core::pattern::parse(row["pattern"]),
+                         .from = read_date(row["from"]),
+                         .until = row["until"].empty() ? std::nullopt : std::optional{read_date(row["until"])},
+                         .mrz = std::string{row["mrz"]},
+                         .evidence = std::string{row["evidence"]},
+                         .mrz_code = std::string{row["mrz_code"]},
+                         .optional_scheme = std::string{row["mrz_optional"]},
+                         .min_age = row["min_age"].empty() ? 0 : row.get<int>("min_age"),
+                         .number_scheme = std::string{row["number_scheme"]}};
+            t.by_country[{f.country, f.kind}].push_back(f.key);
+            const std::string key = f.key;
+            t.formats.emplace(key, std::move(f));
+        }
+        const auto rules = dasmig::core::tsv_document::load(resource_dir("lite") / "validity.tsv");
+        for (const auto& row : rules.rows())
+        {
+            t.validity[std::string{row["document"]}].push_back(
+                {.from_age = row.get<int>("from_age"),
+                 .years = std::string{row["years"]},
+                 .until_age = row["until_age"].empty() ? -1 : row.get<int>("until_age"),
+                 .from = read_date(row["from"]),
+                 .until = row["until"].empty() ? std::nullopt : std::optional{read_date(row["until"])},
+                 .rule = std::string{row["expiry_rule"]}});
+        }
+        return t;
+    }();
+    return tables;
+}
+
+std::string yymmdd(const year_month_day& d)
+{
+    return std::format("{:02}{:02}{:02}", static_cast<int>(d.year()) % 100, static_cast<unsigned>(d.month()), static_cast<unsigned>(d.day()));
+}
+
+std::string document_name(std::string country, id_document_kind kind)
+{
+    for (char& c : country) c = static_cast<char>(c - 'A' + 'a');
+    return country + (kind == id_document_kind::passport ? "-passport" : "-id-card");
+}
+
+std::string strip_fillers(std::string_view text)
+{
+    std::string out{text};
+    while (!out.empty() && out.back() == '<') out.pop_back();
+    return out;
+}
+
+std::string letters_and_digits(std::string_view text)
+{
+    std::string out;
+    for (const char c : text)
+    {
+        if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) out += c;
+    }
+    return out;
+}
+
+// The zone read back field by field, each check digit recomputed.
+void check_mrz(const id_document& d, const year_month_day& born, dasmig::sex bio_sex, const format_row& format)
+{
+    using dasmig::core::icao9303_digit;
+    const std::string expires = d.expires ? yymmdd(*d.expires) : "<<<<<<";
+    const std::string state = d.issuing_state + std::string(3 - d.issuing_state.size(), '<');
+    const std::string code = !format.mrz_code.empty() ? format.mrz_code : (d.kind == id_document_kind::passport ? "P<" : "ID");
+    const char sex_letter = bio_sex == dasmig::sex::male ? 'M' : 'F';
+    const std::string number = letters_and_digits(d.number);
+    std::string number_field;
+    std::string overflow;
+    const auto read_number = [&](std::string_view field, char check, std::string_view optional) {
+        number_field = strip_fillers(field);
+        overflow.clear();
+        if (check == '<')
+        {
+            // The rest of the number, then its digit over all of it, then a filler.
+            const auto end = optional.find('<');
+            REQUIRE(end != std::string_view::npos);
+            REQUIRE(end >= 2);
+            overflow = std::string{optional.substr(0, end - 1)};
+            REQUIRE(optional[end - 1] == icao9303_digit(std::string{field} + overflow));
+        }
+        else
+        {
+            REQUIRE(check == icao9303_digit(field));
+        }
+        REQUIRE(number_field + overflow == number);
+    };
+    if (format.mrz == "td3")
+    {
+        REQUIRE(d.mrz.size() == 2);
+        const std::string& l1 = d.mrz[0];
+        const std::string& l2 = d.mrz[1];
+        REQUIRE(l1.size() == 44);
+        REQUIRE(l2.size() == 44);
+        REQUIRE(l1.substr(0, 2) == code);
+        REQUIRE(l1.substr(2, 3) == state);
+        read_number(std::string_view{l2}.substr(0, 9), l2[9], std::string_view{l2}.substr(28, 14));
+        REQUIRE(l2.substr(10, 3) == state);
+        REQUIRE(l2.substr(13, 6) == yymmdd(born));
+        REQUIRE(l2[19] == icao9303_digit(l2.substr(13, 6)));
+        REQUIRE(l2[20] == sex_letter);
+        REQUIRE(l2.substr(21, 6) == expires);
+        REQUIRE(l2[27] == icao9303_digit(l2.substr(21, 6)));
+        REQUIRE(l2[42] == icao9303_digit(l2.substr(28, 14)));
+        REQUIRE(l2[43] == icao9303_digit(l2.substr(0, 10) + l2.substr(13, 7) + l2.substr(21, 22)));
+    }
+    else
+    {
+        REQUIRE(format.mrz == "td1");
+        REQUIRE(d.mrz.size() == 3);
+        const std::string& l1 = d.mrz[0];
+        const std::string& l2 = d.mrz[1];
+        REQUIRE(l1.size() == 30);
+        REQUIRE(l2.size() == 30);
+        REQUIRE(d.mrz[2].size() == 30);
+        REQUIRE(l1.substr(0, 2) == code);
+        REQUIRE(l1.substr(2, 3) == state);
+        read_number(std::string_view{l1}.substr(5, 9), l1[14], std::string_view{l1}.substr(15, 15));
+        REQUIRE(l2.substr(0, 6) == yymmdd(born));
+        REQUIRE(l2[6] == icao9303_digit(l2.substr(0, 6)));
+        REQUIRE(l2[7] == sex_letter);
+        REQUIRE(l2.substr(8, 6) == expires);
+        REQUIRE(l2[14] == icao9303_digit(l2.substr(8, 6)));
+        REQUIRE(l2.substr(15, 3) == state);
+        REQUIRE(l2[29] == icao9303_digit(l1.substr(5, 25) + l2.substr(0, 7) + l2.substr(8, 7) + l2.substr(18, 11)));
+    }
+}
+
+// The dates of a document against validity.tsv, or the generic rule.
+void check_dates(const id_document& d, const year_month_day& born, const year_month_day& reference, const format_row& format, const std::string& country)
+{
+    REQUIRE(sys_days{d.issued} <= sys_days{reference});
+    REQUIRE(sys_days{d.issued} >= sys_days{born});
+    if (d.expires) REQUIRE(sys_days{*d.expires} > sys_days{reference});
+    REQUIRE(age_at(born, d.issued) >= format.min_age);
+    REQUIRE(sys_days{d.issued} >= sys_days{format.from});
+    if (format.until) REQUIRE(sys_days{d.issued} < sys_days{*format.until});
+
+    const auto& tables = tables_on_disk();
+    const auto rows = tables.validity.find(document_name(country, d.kind));
+    REQUIRE(d.generic_validity == (rows == tables.validity.end()));
+    const int age = age_at(born, d.issued);
+    if (d.generic_validity)
+    {
+        REQUIRE(d.expires);
+        const int years = d.kind == id_document_kind::id_card ? 10 : (age < 16 ? 5 : 10);
+        REQUIRE(*d.expires == years_later(d.issued, years));
+        return;
+    }
+    const validity_row* rule = nullptr;
+    for (const auto& row : rows->second)
+    {
+        const bool in_force = sys_days{row.from} <= sys_days{d.issued} && (!row.until || sys_days{d.issued} < sys_days{*row.until});
+        if (in_force && row.from_age <= age && (rule == nullptr || row.from_age > rule->from_age)) rule = &row;
+    }
+    REQUIRE(rule != nullptr);
+    const int minus = rule->rule == "day_before" ? 1 : 0;
+    if (rule->until_age >= 0)
+    {
+        REQUIRE(d.expires);
+        REQUIRE(sys_days{*d.expires} == sys_days{years_later(born, rule->until_age)} - days{minus});
+        return;
+    }
+    bool matches = false;
+    std::string_view choices = rule->years;
+    while (!choices.empty())
+    {
+        const auto bar = choices.find('|');
+        int years = 0;
+        for (const char c : choices.substr(0, bar)) years = (years * 10) + (c - '0');
+        choices = bar == std::string_view::npos ? std::string_view{} : choices.substr(bar + 1);
+        if (years == 0)
+        {
+            matches = matches || !d.expires;
+        }
+        else if (d.expires && rule->rule == "birthday")
+        {
+            const auto on_time = sys_days{years_later(d.issued, years)};
+            matches = matches || (sys_days{*d.expires} >= on_time && sys_days{*d.expires} < on_time + days{367} &&
+                                  (d.expires->month() == born.month()) && (d.expires->day() == born.day() || born.day() == std::chrono::day{29}));
+        }
+        else if (d.expires && rule->rule == "application")
+        {
+            for (int back = 0; back <= 30; ++back)
+            {
+                matches = matches || *d.expires == years_later(year_month_day{sys_days{d.issued} - days{back}}, years);
+            }
+        }
+        else if (d.expires)
+        {
+            matches = matches || sys_days{*d.expires} == sys_days{years_later(d.issued, years)} - days{minus};
+        }
+    }
+    CAPTURE(d.format, age, idd::iso_date(idd::to_day(d.issued)));
+    REQUIRE(matches);
+}
+
+identity_request named_person(std::string_view country)
+{
+    identity_request q;
+    q.country = std::string{country};
+    q.schemes = std::vector<std::string>{};
+    q.documents = {id_document_kind::passport, id_document_kind::id_card};
+    q.surname = "Garcia Lopez";
+    q.given_names = "Maria Jose";
+    return q;
+}
+
+const id_document* find_document(const dasmig::identity& v, id_document_kind kind)
+{
+    for (const auto& d : v.documents)
+    {
+        if (d.kind == kind) return &d;
+    }
+    return nullptr;
+}
+
+} // namespace
+
+TEST_CASE("the MRZ reproduces ICAO's worked examples", "[documents][mrz]")
+{
+    // Doc 9303 Part 4, Appendix: the specimen passport of Utopia.
+    idd::mrz_fields td3{.code = "PP",
+                        .state = "UTO",
+                        .name = idd::mrz_name("ERIKSSON", "ANNA<MARIA", 39),
+                        .number = "L898902C3",
+                        .birth = "740812",
+                        .sex = 'F',
+                        .expiry = "340415",
+                        .optional = "ZE184226B"};
+    REQUIRE(idd::mrz_td3(td3) == std::vector<std::string>{"PPUTOERIKSSON<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<", "L898902C36UTO7408122F3404159ZE184226B<<<<<16"});
+
+    // Doc 9303 Part 5: the specimen card of Utopia.
+    idd::mrz_fields td1{.code = "I<",
+                        .state = "UTO",
+                        .name = idd::mrz_name("ERIKSSON", "ANNA<MARIA", 30),
+                        .number = "D23145890",
+                        .birth = "740812",
+                        .sex = 'F',
+                        .expiry = "120415",
+                        .optional = ""};
+    REQUIRE(idd::mrz_td1(td1) == std::vector<std::string>{"I<UTOD231458907<<<<<<<<<<<<<<<", "7408122F1204159UTO<<<<<<<<<<<6", "ERIKSSON<<ANNA<MARIA<<<<<<<<<<"});
+
+    // A long number overflows: nine in the field, a filler for the check digit,
+    // the rest and a digit over all twelve characters in the optional field.
+    td1.number = "D23145890734";
+    const auto long_card = idd::mrz_td1(td1);
+    REQUIRE(long_card[0].substr(0, 20) == "I<UTOD23145890<7349<");
+    REQUIRE(long_card[0].size() == 30);
+    REQUIRE(long_card[1].size() == 30);
+
+    // A personal number takes the upper line, and the middle one after an overflow leaves no room.
+    td1.number = "D23145890";
+    td1.optional = "12345678901";
+    REQUIRE(idd::mrz_td1(td1)[0].substr(15) == "12345678901<<<<");
+    td1.number = "D23145890734";
+    const auto both = idd::mrz_td1(td1);
+    REQUIRE(both[0].substr(15, 5) == "7349<");
+    REQUIRE(both[1].substr(18, 11) == "12345678901");
+}
+
+TEST_CASE("long names are shortened as ICAO's examples show", "[documents][mrz]")
+{
+    const auto line = [](std::string_view primary, std::string_view secondary) { return "PPUTO" + idd::mrz_name(primary, secondary, 39); };
+    // Doc 9303 Part 4, 4.2.3.
+    REQUIRE(line("NILAVADHANANANDA", "CHAYAPA<DEJTHAMRONG<KRASUANG") == "PPUTONILAVADHANANANDA<<CHAYAPA<DEJTHAMRONG<K");
+    REQUIRE(line("NILAVADHANANANDA", "ARNPOL<PETCH<CHARONGUANG") == "PPUTONILAVADHANANANDA<<ARNPOL<PETCH<CHARONGU");
+    REQUIRE(line("BENNELONG<WOOLOOMOOLOO<WARRANDYTE<WARNAMBOOL", "DINGO<POTOROO") == "PPUTOBENNELONG<WOOLOOMOOLOO<WARRANDYTE<W<<DI");
+    REQUIRE(line("PAPANDROPOULOUS", "JONATHON<WARREN<TREVOR") == "PPUTOPAPANDROPOULOUS<<JONATHON<WARREN<TREVOR");
+    REQUIRE(line("ARKFREITH", "") == "PPUTOARKFREITH<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+    // The last character of a shortened name is a letter.
+    const std::string cut = idd::mrz_name("AAAAAAAAAAAAAAAAAAAAAAAA", "BBBBBBBBBBBB<CCCC", 39);
+    REQUIRE(cut.size() == 39);
+    REQUIRE(cut == "AAAAAAAAAAAAAAAAAAAAAAAA<<BBBBBBBBBBB<C");
+}
+
+TEST_CASE("names are written in the MRZ's alphabet", "[documents][mrz]")
+{
+    const std::vector<idd::translit_rule> none;
+    const auto word = [&](std::string_view name) { return idd::mrz_words(name, none).value_or("(none)"); };
+    // Doc 9303 Part 4, 4.2.3.1 and Part 3, section 6.A.
+    REQUIRE(word("Smith-Jones") == "SMITH<JONES");
+    REQUIRE(word("O'Connor") == "OCONNOR");
+    REQUIRE(word("O’Connor") == "OCONNOR");
+    REQUIRE(word("van der Muellen") == "VAN<DER<MUELLEN");
+    REQUIRE(word("Müller") == "MUELLER");
+    REQUIRE(word("Åström") == "AASTROEM");
+    REQUIRE(word("Muñoz") == "MUNOZ");
+    REQUIRE(word("Søren") == "SOEREN");
+    REQUIRE(word("Þór") == "THOR");
+    REQUIRE(word("Straße") == "STRASSE");
+    REQUIRE(word("Œuvre") == "OEUVRE");
+    REQUIRE(word("Łukasz") == "LUKASZ");
+    REQUIRE(word("Çelik") == "CELIK");
+    REQUIRE(word("Ștefan") == "STEFAN");
+    REQUIRE(word("Nguyễn") == "NGUYEN");
+    // Section 6.B; the soft sign is not in the table and is written as nothing.
+    REQUIRE(word("Щербаков") == "SHCHERBAKOV");
+    REQUIRE(word("Юрий") == "IURII");
+    REQUIRE(word("ИЛЬЯ") == "ILIA");
+    REQUIRE(word("Хрущёв") == "KHRUSHCHEV");
+    // No form: Greek has no table, Han and Arabic need a Latin form from the caller.
+    REQUIRE(word("Γιώργος") == "(none)");
+    REQUIRE(word("王伟") == "(none)");
+    REQUIRE(word("محمد") == "(none)");
+    REQUIRE(word("...") == "(none)");
+    REQUIRE(word("Ann\xC3") == "(none)"); // malformed UTF-8
+}
+
+TEST_CASE("national transliteration rules apply to the issuing country", "[documents][mrz]")
+{
+    const auto& gen = shared_generator();
+    const auto name_line = [&](std::string_view country, const std::string& surname) {
+        identity_request q;
+        q.country = std::string{country};
+        q.schemes = std::vector<std::string>{};
+        q.documents = {id_document_kind::passport};
+        q.surname = surname;
+        q.given_names = "Ann";
+        q.birth_date = date(1980, 1, 1);
+        return gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front();
+    };
+    // Doc 9303 Part 3, section 6.B's exceptions.
+    REQUIRE(name_line("RU", "Григорьев").substr(5).starts_with("GRIGOREV<<ANN"));
+    REQUIRE(name_line("UA", "Григор").substr(5).starts_with("HRYHOR<<ANN"));
+    REQUIRE(name_line("UA", "Яремчук").substr(5).starts_with("YAREMCHUK<<ANN"));
+    REQUIRE(name_line("UA", "Коляда").substr(5).starts_with("KOLIADA<<ANN")); // not the first letter
+    REQUIRE(name_line("BG", "Щерев").substr(5).starts_with("SHTEREV<<ANN"));
+    REQUIRE(name_line("BY", "Гёра").substr(5).starts_with("HIORA<<ANN"));
+    REQUIRE(name_line("RS", "Жарков").substr(5).starts_with("ZARKOV<<ANN"));
+    REQUIRE(name_line("RS", "Горан").substr(5).starts_with("GORAN<<ANN")); // the table's H is left out
+    REQUIRE(name_line("MK", "Ќосе").substr(5).starts_with("KJOSE<<ANN"));
+}
+
+TEST_CASE("every country's documents fit its tables", "[documents][coherence]")
+{
+    const auto& gen = shared_generator();
+    const auto& tables = tables_on_disk();
+    const auto reference_dates = {date(2005, 6, 1), date(2015, 6, 1), date(2023, 7, 1)};
+    const auto countries = gen.countries();
+    REQUIRE(countries.size() == 199);
+    std::map<std::pair<std::string, std::string>, int> seen;
+    int checked = 0;
+    for (const auto& country : countries)
+    {
+        CAPTURE(country);
+        dasmig::core::rng ages{0xD0C5ULL + static_cast<std::uint64_t>(country[0]) + (static_cast<std::uint64_t>(country[1]) << 8U)};
+        for (const auto& reference : reference_dates)
+        {
+            for (std::uint64_t seed = 0; seed < 40; ++seed)
+            {
+                identity_request q = named_person(country);
+                q.reference_date = reference;
+                // Half the people at the library's own ages, half at any age up to a hundred.
+                if (seed % 2 == 1)
+                {
+                    q.birth_date = year_month_day{sys_days{reference} - days{dasmig::core::uniform_int(ages, 0, 36524)}};
+                }
+                const auto v = gen.get_identity(q, seed);
+                for (const auto& d : v.documents)
+                {
+                    const auto kind_name = d.kind == id_document_kind::passport ? "passport" : "id_card";
+                    CAPTURE(d.format, d.number);
+                    const auto format = tables.formats.find(d.format);
+                    REQUIRE(format != tables.formats.end());
+                    REQUIRE(format->second.country == country);
+                    REQUIRE(format->second.kind == kind_name);
+                    if (format->second.number_scheme.empty()) REQUIRE(format->second.pattern.matches(d.number));
+                    REQUIRE(d.evidence == format->second.evidence);
+                    REQUIRE((d.evidence == "generic") == d.format.contains("generic"));
+                    REQUIRE_FALSE(d.reserved);
+                    check_dates(d, v.birth_date, reference, format->second, country);
+                    if (format->second.mrz == "none")
+                    {
+                        REQUIRE(d.mrz.empty());
+                    }
+                    else
+                    {
+                        check_mrz(d, v.birth_date, v.bio_sex, format->second);
+                    }
+                    ++seen[{country, kind_name}];
+                    ++checked;
+                }
+                // A document exists exactly where the tables have one and the person is old enough.
+                for (const auto kind : {id_document_kind::passport, id_document_kind::id_card})
+                {
+                    const auto keys = tables.by_country.find({country, kind == id_document_kind::passport ? "passport" : "id_card"});
+                    const bool held = find_document(v, kind) != nullptr;
+                    if (keys == tables.by_country.end())
+                    {
+                        REQUIRE_FALSE(held);
+                    }
+                    else
+                    {
+                        int min_age = 200;
+                        for (const auto& key : keys->second) min_age = std::min(min_age, tables.formats.at(key).min_age);
+                        CAPTURE(min_age, idd::iso_date(idd::to_day(v.birth_date)));
+                        REQUIRE(held == (age_at(v.birth_date, reference) >= min_age));
+                    }
+                }
+            }
+        }
+        REQUIRE(seen[{country, "passport"}] > 0);
+    }
+    // The survey's counts: every country has a passport, and 182 issue a card.
+    int with_card = 0;
+    for (const auto& country : countries) with_card += seen.contains({country, "id_card"}) ? 1 : 0;
+    REQUIRE(with_card == 182);
+    REQUIRE(checked > 35000);
+}
+
+TEST_CASE("documents follow the rules the survey found", "[documents]")
+{
+    const auto& gen = shared_generator();
+    const auto document = [&](std::string_view country, id_document_kind kind, const year_month_day& born, std::uint64_t seed, const year_month_day& reference = date(2023, 7, 1)) {
+        identity_request q = named_person(country);
+        q.documents = {kind};
+        q.birth_date = born;
+        q.reference_date = reference;
+        return gen.get_identity(q, seed);
+    };
+
+    SECTION("no card where none is issued, or below the minimum age")
+    {
+        REQUIRE(document("DK", id_document_kind::id_card, date(1980, 1, 1), 1).documents.empty());
+        REQUIRE(document("IE", id_document_kind::id_card, date(1980, 1, 1), 1).documents.empty());
+        REQUIRE(document("RU", id_document_kind::id_card, date(2010, 1, 1), 1).documents.empty());
+        REQUIRE(document("RU", id_document_kind::id_card, date(2005, 1, 1), 1).documents.size() == 1);
+        REQUIRE(document("DK", id_document_kind::passport, date(1980, 1, 1), 1).documents.size() == 1);
+    }
+    SECTION("Spain's card is permanent from 70, and the zone shows no expiry")
+    {
+        int permanent = 0;
+        for (std::uint64_t seed = 0; seed < 200; ++seed)
+        {
+            const auto v = document("ES", id_document_kind::id_card, date(1935, 3, 3), seed);
+            const auto& d = v.documents.front();
+            if (d.expires) continue;
+            ++permanent;
+            REQUIRE(age_at(v.birth_date, d.issued) >= 70);
+            REQUIRE(d.mrz.size() == 3);
+            REQUIRE(d.mrz[1].substr(8, 7) == "<<<<<<0");
+        }
+        REQUIRE(permanent > 100);
+    }
+    SECTION("Russia's series holds the year of issue, and the card runs to the next age")
+    {
+        for (std::uint64_t seed = 0; seed < 300; ++seed)
+        {
+            const auto v = document("RU", id_document_kind::id_card, date(1990, 6, 15), seed);
+            const auto& d = v.documents.front();
+            REQUIRE(d.number.substr(2, 2) == std::format("{:02}", static_cast<int>(d.issued.year()) % 100));
+            REQUIRE(d.mrz.empty());
+            REQUIRE(age_at(v.birth_date, d.issued) >= 20);
+            REQUIRE(*d.expires == date(2035, 6, 15));
+        }
+    }
+    SECTION("Hungary's card ends on a birthday")
+    {
+        for (std::uint64_t seed = 0; seed < 100; ++seed)
+        {
+            const auto v = document("HU", id_document_kind::id_card, date(1980, 4, 9), seed);
+            const auto expires = *v.documents.front().expires;
+            REQUIRE(expires.month() == std::chrono::April);
+            REQUIRE(expires.day() == std::chrono::day{9});
+        }
+    }
+    SECTION("the format follows the date of issue")
+    {
+        std::set<std::string> formats;
+        for (std::uint64_t seed = 0; seed < 300; ++seed)
+        {
+            const auto v = document("DE", id_document_kind::passport, date(1970, 1, 1), seed, date(2012, 1, 1));
+            const auto& d = v.documents.front();
+            formats.insert(d.format);
+            REQUIRE(d.format == (sys_days{d.issued} >= sys_days{date(2007, 11, 1)} ? "de-passport-2007" : "de-passport-current"));
+        }
+        REQUIRE(formats.size() == 2);
+    }
+    SECTION("the document in force is uniform over its validity")
+    {
+        // A 40-year-old German holds a ten-year passport issued in the last ten years.
+        std::array<int, 10> by_year{};
+        constexpr int draws = 5000;
+        for (std::uint64_t seed = 0; seed < draws; ++seed)
+        {
+            const auto v = document("DE", id_document_kind::passport, date(1983, 1, 1), seed);
+            const int age = (sys_days{date(2023, 7, 1)} - sys_days{v.documents.front().issued}).count() / 366;
+            REQUIRE(age < 10);
+            ++by_year.at(static_cast<std::size_t>(age));
+        }
+        for (const int count : by_year) REQUIRE(count == Catch::Approx(draws / 10.0).margin(draws * 0.02));
+    }
+    SECTION("a newborn's passport starts at birth")
+    {
+        const auto v = document("DE", id_document_kind::passport, date(2023, 7, 1), 1);
+        REQUIRE(v.documents.front().issued == date(2023, 7, 1));
+    }
+}
+
+TEST_CASE("the zone needs a name it can write", "[documents][mrz]")
+{
+    const auto& gen = shared_generator();
+    identity_request q = named_person("FR");
+    q.documents = {id_document_kind::passport};
+    q.birth_date = date(1980, 1, 1);
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.size() == 2);
+
+    SECTION("no names")
+    {
+        q.surname = std::nullopt;
+        q.given_names = std::nullopt;
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    }
+    SECTION("a given name alone is not enough")
+    {
+        q.surname = std::nullopt;
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    }
+    SECTION("a script without a table")
+    {
+        q.surname = "王";
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    }
+    SECTION("a surname alone is a mononym")
+    {
+        q.given_names = std::nullopt;
+        q.surname = "Arkfreith";
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().substr(5, 12) == "ARKFREITH<<<");
+    }
+    SECTION("a given name without a form leaves the zone out")
+    {
+        q.given_names = "王";
+        q.surname = "Arkfreith";
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    }
+    SECTION("the second surname follows the first")
+    {
+        q.surname = "García";
+        q.second_surname = "López";
+        q.given_names = "María José";
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().starts_with("P<FRAGARCIA<LOPEZ<<MARIA<JOSE<<"));
+    }
+    SECTION("the number and the dates do not depend on the name")
+    {
+        const auto named = gen.get_identity(q, std::uint64_t{7}).documents.front();
+        q.surname = std::nullopt;
+        q.given_names = std::nullopt;
+        const auto bare = gen.get_identity(q, std::uint64_t{7}).documents.front();
+        REQUIRE(named.number == bare.number);
+        REQUIRE(named.issued == bare.issued);
+        REQUIRE(named.expires == bare.expires);
+    }
+}
+
+TEST_CASE("the optional field carries the person's own number", "[documents][mrz]")
+{
+    const auto& gen = shared_generator();
+    identity_request q;
+    q.country = "SE";
+    q.schemes = std::vector<std::string>{"se-personnummer"};
+    q.documents = {id_document_kind::passport};
+    q.surname = "Andersson";
+    q.given_names = "Karl";
+    q.birth_date = date(1980, 1, 1);
+    const auto v = gen.get_identity(q, std::uint64_t{3});
+    const std::string& line = v.documents.front().mrz[1];
+    REQUIRE(strip_fillers(line.substr(28, 14)) == letters_and_digits(v.numbers.front().value));
+
+    // Whether the number was asked for changes nothing.
+    q.schemes = std::vector<std::string>{};
+    REQUIRE(gen.get_identity(q, std::uint64_t{3}).documents.front().mrz == v.documents.front().mrz);
+
+    // A number assigned after the document was issued is not on it. An Argentine
+    // child gets the DNI some time after birth and may hold a passport first.
+    identity_request child;
+    child.country = "AR";
+    child.schemes = std::vector<std::string>{"ar-dni"};
+    child.documents = {id_document_kind::passport};
+    child.surname = "Perez";
+    child.given_names = "Ana";
+    child.birth_date = date(1966, 5, 29);
+    child.reference_date = date(1969, 1, 1);
+    int without_number = 0;
+    int with_number = 0;
+    for (std::uint64_t seed = 0; seed < 300; ++seed)
+    {
+        const auto a = gen.get_identity(child, seed);
+        const auto& passport = a.documents.front();
+        const std::string carried = strip_fillers(passport.mrz[1].substr(28, 14));
+        if (sys_days{a.numbers.front().assigned} > sys_days{passport.issued})
+        {
+            REQUIRE(carried.empty());
+            ++without_number;
+        }
+        else
+        {
+            REQUIRE(carried == a.numbers.front().value);
+            ++with_number;
+        }
+    }
+    REQUIRE(without_number > 0);
+    REQUIRE(with_number > 0);
+
+    // A safe number goes in the zone too.
+    q.schemes = std::vector<std::string>{"se-personnummer"};
+    q.safe = true;
+    const auto safe = gen.get_identity(q, std::uint64_t{3});
+    REQUIRE(strip_fillers(safe.documents.front().mrz[1].substr(28, 14)) == letters_and_digits(safe.numbers.front().value));
+}
+
+TEST_CASE("a zone never leaves out a name it was given", "[documents]")
+{
+    const auto& gen = shared_generator();
+    identity_request q;
+    q.country = "FR";
+    q.schemes = std::vector<std::string>{};
+    q.documents = {id_document_kind::passport};
+    q.surname = "Martin";
+    q.given_names = "Anne";
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().starts_with("P<FRAMARTIN<<ANNE<"));
+    q.given_names = "Αννα"; // Doc 9303 Part 3 has no table for Greek
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    q.given_names = "";     // an empty name is no name: one identifier
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().starts_with("P<FRAMARTIN<<<"));
+    q.given_names = "Anne";
+    q.second_surname = "Παπα";
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.empty());
+    q.second_surname = "";
+    REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().starts_with("P<FRAMARTIN<<ANNE<"));
+}
+
+TEST_CASE("a card whose number is the national number shows the person's", "[documents][coherence]")
+{
+    const auto& gen = shared_generator();
+    const auto& tables = tables_on_disk();
+    std::set<std::string> cards;
+    for (const auto& [key, format] : tables.formats)
+    {
+        if (!format.number_scheme.empty()) cards.insert(format.country);
+    }
+    REQUIRE(cards.size() == 18);
+    for (const auto& country : cards)
+    {
+        CAPTURE(country);
+        int shown = 0;
+        for (std::uint64_t seed = 0; seed < 200; ++seed)
+        {
+            identity_request q;
+            q.country = country;
+            q.schemes = std::vector<std::string>{"*"};
+            q.documents = {id_document_kind::id_card};
+            q.safe = seed % 4 == 3;
+            const auto v = gen.get_identity(q, seed);
+            if (v.documents.empty()) continue;
+            const auto& d = v.documents.front();
+            const auto& format = tables.formats.at(d.format);
+            if (format.number_scheme.empty()) continue;
+            for (const auto& n : v.numbers)
+            {
+                if (n.scheme != format.number_scheme) continue;
+                CAPTURE(n.scheme, n.value, n.formatted, d.number);
+                const std::string digits = letters_and_digits(d.number);
+                REQUIRE(letters_and_digits(n.value).starts_with(digits));
+                REQUIRE(digits.size() + 1 >= letters_and_digits(n.value).size()); // whole, or without Peru's check digit
+                REQUIRE(sys_days{n.assigned} <= sys_days{d.issued});
+                ++shown;
+            }
+        }
+        REQUIRE(shown > 0);
+    }
+    // Asking for the number or not changes nothing on the card.
+    identity_request with;
+    with.country = "CN";
+    with.documents = {id_document_kind::id_card};
+    identity_request without = with;
+    without.schemes = std::vector<std::string>{};
+    const auto a = gen.get_identity(with, std::uint64_t{5});
+    const auto b = gen.get_identity(without, std::uint64_t{5});
+    REQUIRE(a.documents.front().number == b.documents.front().number);
+    REQUIRE(a.documents.front().number == a.numbers.front().value);
+}
+
+TEST_CASE("safe documents fall outside every format of the country", "[documents][safe]")
+{
+    const auto& gen = shared_generator();
+    const auto& tables = tables_on_disk();
+    for (const auto& country : gen.countries())
+    {
+        CAPTURE(country);
+        for (std::uint64_t seed = 0; seed < 25; ++seed)
+        {
+            identity_request q = named_person(country);
+            q.safe = true;
+            q.birth_date = date(1980, 1, 1);
+            const auto v = gen.get_identity(q, seed);
+            for (const auto& d : v.documents)
+            {
+                CAPTURE(d.format, d.number);
+                REQUIRE(d.reserved);
+                const auto& format = tables.formats.at(d.format);
+                if (!format.number_scheme.empty()) continue; // the national number, made safe by its own method
+                for (const auto& key : tables.by_country.at({country, format.kind}))
+                {
+                    REQUIRE_FALSE(tables.formats.at(key).pattern.matches(d.number));
+                }
+                if (format.mrz != "none") check_mrz(d, v.birth_date, v.bio_sex, format);
+            }
+        }
+    }
+}
+
+TEST_CASE("documents move no other stream", "[documents][requests]")
+{
+    const auto& gen = shared_generator();
+    identity_request q;
+    q.country = "BR";
+    q.birth_date = date(1985, 2, 3);
+    const auto without = gen.get_identity(q, std::uint64_t{11});
+    q.documents = {id_document_kind::passport};
+    const auto with = gen.get_identity(q, std::uint64_t{11});
+    REQUIRE(with.numbers.front().value == without.numbers.front().value);
+    REQUIRE(with.birth_date == without.birth_date);
+    REQUIRE(with.bio_sex == without.bio_sex);
+    REQUIRE(with.documents.size() == 1);
+
+    q.documents = {id_document_kind::id_card, id_document_kind::passport};
+    const auto both = gen.get_identity(q, std::uint64_t{11});
+    REQUIRE(both.documents.size() == 2);
+    REQUIRE(both.documents[0].kind == id_document_kind::id_card); // in the order asked
+    REQUIRE(both.documents[1].number == with.documents.front().number);
+    REQUIRE(both.documents[1].issued == with.documents.front().issued);
+
+    q.documents = {id_document_kind::passport, id_document_kind::passport};
+    REQUIRE(gen.get_identity(q, std::uint64_t{11}).documents.size() == 1);
+
+    q.documents = {id_document_kind::passport};
+    q.schemes = std::vector<std::string>{}; // a country is drawn among all 199 without a number
+    q.country = std::nullopt;
+    std::set<std::string> countries;
+    for (std::uint64_t seed = 0; seed < 3000; ++seed)
+    {
+        const auto v = gen.get_identity(q, seed);
+        countries.insert(v.country_code);
+        REQUIRE(v.documents.size() == 1);
+    }
+    REQUIRE(countries.size() > 63);
+}
+
+TEST_CASE("documents in JSON and in the summary", "[documents][json]")
+{
+    const auto& gen = shared_generator();
+    identity_request q = named_person("ES");
+    q.birth_date = date(1935, 3, 3);
+    q.schemes = std::vector<std::string>{"es-dni"};
+    std::uint64_t permanent_seed = 0;
+    while (gen.get_identity(q, permanent_seed).documents.back().expires) ++permanent_seed;
+    const auto v = gen.get_identity(q, permanent_seed);
+    const std::string json = v.to_json();
+    REQUIRE(json.contains(R"("documents":[{"kind":"passport","format":")"));
+    REQUIRE(json.contains(R"("kind":"id_card")"));
+    REQUIRE(json.contains(R"("expires":null)"));
+    REQUIRE(json.contains(R"("mrz":[")"));
+    REQUIRE(json.contains(R"("generic_validity":false)"));
+    REQUIRE(json.ends_with(R"x(}})x"));
+    REQUIRE(v.to_string().contains("passport " + v.documents[0].number + " (valid to "));
+    REQUIRE(v.to_string().contains("identity card " + v.documents[1].number + " (no expiry)"));
+
+    identity_request none;
+    none.country = "BR";
+    REQUIRE(gen.get_identity(none, std::uint64_t{1}).to_json().contains(R"("documents":[])"));
+}
+
+TEST_CASE("document tables can be layered", "[documents][layers]")
+{
+    idg gen;
+    gen.load(resource_dir("lite"));
+    identity_request q;
+    q.country = "AD"; // one generic format and two validity rows, 0 and 20
+    q.schemes = std::vector<std::string>{};
+    q.documents = {id_document_kind::passport};
+    q.birth_date = date(1985, 2, 3);
+    const std::string header = "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\n";
+    const std::string validity_columns = "document\tfrom_age\tfrom\tyears\tuntil_age\tuntil\texpiry_rule\n";
+
+    SECTION("a format replaces the row with its key")
+    {
+        gen.extend_from_string(dasmig::id_table::documents, header + "ad-passport-generic\tAD\tpassport\tZZ#{6}\t1900-01-01\ttd3\tissuer\n", "mine");
+        const auto after = gen.get_identity(q, std::uint64_t{1}).documents.front();
+        REQUIRE(after.number.starts_with("ZZ"));
+        REQUIRE(after.number.size() == 8);
+        REQUIRE(after.evidence == "issuer");
+    }
+    SECTION("a validity rule decides the expiry")
+    {
+        gen.extend_from_string(dasmig::id_table::validity, validity_columns + "ad-passport\t20\t1900-01-01\t1\t\t\tsame_day\n", "mine");
+        const auto d = gen.get_identity(q, std::uint64_t{1}).documents.front();
+        REQUIRE(*d.expires == years_later(d.issued, 1));
+    }
+    SECTION("the holder's choice of years")
+    {
+        gen.extend_from_string(dasmig::id_table::validity, validity_columns + "ad-passport\t20\t1900-01-01\t2|4\t\t\tsame_day\n", "mine");
+        std::set<int> lengths;
+        for (std::uint64_t seed = 0; seed < 200; ++seed)
+        {
+            const auto d = gen.get_identity(q, seed).documents.front();
+            lengths.insert(static_cast<int>(d.expires->year()) - static_cast<int>(d.issued.year()));
+        }
+        REQUIRE(lengths == std::set<int>{2, 4});
+    }
+    SECTION("a rule can run to an age")
+    {
+        gen.extend_from_string(dasmig::id_table::validity, validity_columns + "ad-passport\t20\t1900-01-01\t\t60\t\tday_before\n", "mine");
+        const auto d = gen.get_identity(q, std::uint64_t{1}).documents.front();
+        REQUIRE(sys_days{*d.expires} == sys_days{date(2045, 2, 3)} - days{1});
+    }
+    SECTION("the prefix comes from a scheme's place codes")
+    {
+        q.country = "EC";
+        gen.extend_from_string(dasmig::id_table::documents,
+                               "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tprefix_places\n"
+                               "ec-passport-generic\tEC\tpassport\t#{6}\t1900-01-01\ttd3\tissuer\tec-cedula\n",
+                               "mine");
+        const auto d = gen.get_identity(q, std::uint64_t{1}).documents.front();
+        REQUIRE(d.number.size() == 8); // two for the province
+    }
+    SECTION("two formats on one date draw by weight")
+    {
+        gen.extend_from_string(dasmig::id_table::documents,
+                               "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tweight\n"
+                               "ad-passport-a\tAD\tpassport\tAA#{7}\t1900-01-01\ttd3\tissuer\t3\n",
+                               "mine");
+        int added = 0;
+        constexpr int draws = 2000;
+        for (std::uint64_t seed = 0; seed < draws; ++seed) added += gen.get_identity(q, seed).documents.front().format == "ad-passport-a" ? 1 : 0;
+        REQUIRE(added == Catch::Approx(draws * 0.75).margin(draws * 0.05));
+    }
+    SECTION("a format of weight 0 is never drawn")
+    {
+        gen.extend_from_string(dasmig::id_table::documents,
+                               "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tweight\n"
+                               "ad-passport-a\tAD\tpassport\tAA#{7}\t1900-01-01\ttd3\tissuer\t0\n",
+                               "mine");
+        for (std::uint64_t seed = 0; seed < 100; ++seed) REQUIRE(gen.get_identity(q, seed).documents.front().format == "ad-passport-generic");
+    }
+    SECTION("translit rules are read from the countries table")
+    {
+        gen.extend_from_string(dasmig::id_table::countries, "country_code\tpopulation\ticao_code\tprimary_scheme\ttranslit\nAD\t88406\tAND\t\tÃ=XX\n", "mine");
+        q.surname = "Bastião";
+        q.given_names = "Bob";
+        REQUIRE(gen.get_identity(q, std::uint64_t{1}).documents.front().mrz.front().substr(5, 14) == "BASTIXXO<<BOB<");
+    }
+
+    const auto data = gen.data_hash();
+    SECTION("bad rows change nothing")
+    {
+        const auto rejected_tsv = [&](dasmig::id_table table, const std::string& text) {
+            REQUIRE_THROWS_AS(gen.extend_from_string(table, text, "bad"), dasmig::core::tsv_error);
+            REQUIRE(gen.data_hash() == data);
+        };
+        rejected_tsv(dasmig::id_table::documents, header + "x\tBR\tcar\t#{9}\t1900-01-01\ttd3\tissuer\n");
+        rejected_tsv(dasmig::id_table::documents, header + "x\tBR\tpassport\t#{\t1900-01-01\ttd3\tissuer\n");
+        rejected_tsv(dasmig::id_table::documents, header + "x\tBR\tpassport\t#{9}\t1900-01-01\ttd9\tissuer\n");
+        rejected_tsv(dasmig::id_table::documents, header + "x\tBR\tpassport\t#{9}\t1900-01-01\ttd3\trumour\n");
+        rejected_tsv(dasmig::id_table::documents, "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tyear_at\nx\tBR\tpassport\t#{3}\t1900-01-01\ttd3\tissuer\t2\n");
+        rejected_tsv(dasmig::id_table::documents, "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tmrz_code\nx\tBR\tpassport\t#{3}\t1900-01-01\ttd3\tissuer\tPPP\n");
+        const std::string& validity_header = validity_columns;
+        rejected_tsv(dasmig::id_table::validity, validity_header + "br-passport\t0\t1900-01-01\t5\t18\t\tsame_day\n");
+        rejected_tsv(dasmig::id_table::validity, validity_header + "br-passport\t0\t1900-01-01\t\t\t\tsame_day\n");
+        rejected_tsv(dasmig::id_table::validity, validity_header + "br-passport\t0\t1900-01-01\tfive\t\t\tsame_day\n");
+        rejected_tsv(dasmig::id_table::validity, validity_header + "br-passport\t0\t1900-01-01\t5\t\t\tsoon\n");
+        rejected_tsv(dasmig::id_table::validity, validity_header + "br-passport\t20\t1900-01-01\t\t10\t\tsame_day\n");
+        rejected_tsv(dasmig::id_table::countries, "country_code\tpopulation\ticao_code\tprimary_scheme\ttranslit\nBR\t1\tBRA\tbr-cpf\tnonsense\n");
+    }
+    SECTION("tables that no longer fit together change nothing")
+    {
+        const auto rejected = [&](dasmig::id_table table, const std::string& text) {
+            REQUIRE_THROWS_AS(gen.extend_from_string(table, text, "bad"), std::invalid_argument);
+            REQUIRE(gen.data_hash() == data);
+        };
+        rejected(dasmig::id_table::documents, header + "x\tZZ\tpassport\t#{9}\t1900-01-01\ttd3\tissuer\n");     // no such country
+        rejected(dasmig::id_table::documents, header + "x\tDK\tid_card\t#{9}\t2000-01-01\ttd1\tissuer\n");      // a gap before it
+        rejected(dasmig::id_table::documents, "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tuntil\nx\tDK\tid_card\t#{9}\t1900-01-01\ttd1\tissuer\t2000-01-01\n"); // a gap after it
+        rejected(dasmig::id_table::documents, "key\tcountry\tkind\tpattern\tfrom\tmrz\tevidence\tmrz_optional\nx\tDK\tpassport\t#{9}\t1900-01-01\ttd3\tissuer\tbr-cpf\n"); // another country's scheme
+        rejected(dasmig::id_table::validity, "document\tfrom_age\tfrom\tyears\nzz-passport\t0\t1900-01-01\t5\n"); // no such document
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Statistics
 // ---------------------------------------------------------------------------
 
@@ -1257,7 +2226,18 @@ TEST_CASE("to_json and signature", "[json]")
 // a major version.
 // ---------------------------------------------------------------------------
 
-static const std::uint64_t kat_data_hash = 0x1555dee22129657dULL;
+static const std::uint64_t kat_data_hash = 0x66cc134c6484ade6ULL;
+
+// A person who holds both documents, on a fixed date.
+static identity_request kat_holder()
+{
+    identity_request q;
+    q.documents = {id_document_kind::passport, id_document_kind::id_card};
+    q.surname = "Rossi";
+    q.given_names = "Anna Maria";
+    q.reference_date = date(2024, 1, 15);
+    return q;
+}
 
 TEST_CASE("known answers for fixed seeds", "[kat]")
 {
@@ -1266,13 +2246,13 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
     REQUIRE(gen.data_hash() == kat_data_hash);
 
     REQUIRE(gen.get_identity(identity_request{}, std::uint64_t{1}).to_json() ==
-            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2357812144","formatted":"235781214-4","assigned":"1958-05-11","place_code":"23","reserved":false}],"signature":{"seed":"0000000000000001","data":"1555dee22129657d"}})x");
+            R"x({"country_code":"EC","birth_date":"1958-05-06","sex":"female","numbers":[{"scheme":"ec-cedula","label":"Identity card number","native_label":"Número de cédula de identidad","value":"2357812144","formatted":"235781214-4","assigned":"1958-05-11","place_code":"23","reserved":false}],"documents":[],"signature":{"seed":"0000000000000001","data":"66cc134c6484ade6"}})x");
     REQUIRE(gen.get_identity(person("IT", {"it-cf"}), std::uint64_t{3}).to_json() ==
-            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"LDZGFG61R56G371P","formatted":"LDZGFG61R56G371P","assigned":"1977-01-01","place_code":"G371","reserved":false}],"signature":{"seed":"0000000000000003","data":"1555dee22129657d"}})x");
+            R"x({"country_code":"IT","birth_date":"1961-10-16","sex":"female","numbers":[{"scheme":"it-cf","label":"Tax code","native_label":"codice fiscale","value":"LDZGFG61R56G371P","formatted":"LDZGFG61R56G371P","assigned":"1977-01-01","place_code":"G371","reserved":false}],"documents":[],"signature":{"seed":"0000000000000003","data":"66cc134c6484ade6"}})x");
     identity_request every = person("AR", {"*"});
     every.safe = true;
     REQUIRE(gen.get_identity(every, std::uint64_t{5}).to_json() ==
-            R"x({"country_code":"AR","birth_date":"1966-05-29","sex":"male","numbers":[{"scheme":"ar-dni","label":"National Identity Document number","native_label":"Documento Nacional de Identidad (DNI)","value":"75438212","formatted":"75.438.212","assigned":"1968-01-01","place_code":"","reserved":true},{"scheme":"ar-cuil","label":"Unique Labour Identification Code","native_label":"Código Único de Identificación Laboral (CUIL)","value":"20754382122","formatted":"20-75438212-2","assigned":"1998-01-02","place_code":"","reserved":true}],"signature":{"seed":"0000000000000005","data":"1555dee22129657d"}})x");
+            R"x({"country_code":"AR","birth_date":"1966-05-29","sex":"male","numbers":[{"scheme":"ar-dni","label":"National Identity Document number","native_label":"Documento Nacional de Identidad (DNI)","value":"75438212","formatted":"75.438.212","assigned":"1968-01-01","place_code":"","reserved":true},{"scheme":"ar-cuil","label":"Unique Labour Identification Code","native_label":"Código Único de Identificación Laboral (CUIL)","value":"20754382122","formatted":"20-75438212-2","assigned":"1998-01-02","place_code":"","reserved":true}],"documents":[],"signature":{"seed":"0000000000000005","data":"66cc134c6484ade6"}})x");
 
     std::uint64_t h = 0xcbf29ce484222325ULL;
     for (std::uint64_t s = 0; s < 10000; ++s)
@@ -1283,7 +2263,38 @@ TEST_CASE("known answers for fixed seeds", "[kat]")
             h *= 0x100000001b3ULL;
         }
     }
-    REQUIRE(h == 0x261ccd595d84f327ULL);
+    REQUIRE(h == 0xeae80057d1eafe83ULL);
+}
+
+TEST_CASE("known answers for documents", "[kat][documents]")
+{
+    idg gen;
+    gen.load(resource_dir("lite"));
+    REQUIRE(gen.data_hash() == kat_data_hash);
+
+    identity_request germany = kat_holder();
+    germany.country = "DE";
+    germany.schemes = std::vector<std::string>{};
+    REQUIRE(gen.get_identity(germany, std::uint64_t{7}).to_json() ==
+            R"x({"country_code":"DE","birth_date":"1959-02-10","sex":"female","numbers":[],"documents":[{"kind":"passport","format":"de-passport-2007","number":"JHM7XW56H","issuing_state":"D","issued":"2023-08-30","expires":"2033-08-30","mrz":["P<D<<ROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","JHM7XW56H6D<<5902109F3308305<<<<<<<<<<<<<<04"],"evidence":"reference","generic_validity":false,"reserved":false},{"kind":"id_card","format":"de-id-card-2010","number":"PZ19W6JPY","issuing_state":"D","issued":"2023-07-12","expires":"2033-07-12","mrz":["IDD<<PZ19W6JPY8<<<<<<<<<<<<<<<","5902109F3307124D<<<<<<<<<<<<<0","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":false}],"signature":{"seed":"0000000000000007","data":"66cc134c6484ade6"}})x");
+    identity_request belgium = kat_holder();
+    belgium.country = "BE";
+    belgium.schemes = std::vector<std::string>{"be-nn"};
+    belgium.safe = true;
+    REQUIRE(gen.get_identity(belgium, std::uint64_t{9}).to_json() ==
+            R"x({"country_code":"BE","birth_date":"1984-11-18","sex":"male","numbers":[{"scheme":"be-nn","label":"National Register number (identification number)","native_label":"numéro de registre national / rijksregisternummer (numéro d'identification)","value":"84111895754","formatted":"84.11.18-957.54","assigned":"1984-11-19","place_code":"","reserved":true}],"documents":[{"kind":"passport","format":"be-passport-current","number":"0N533763","issuing_state":"BEL","issued":"2021-04-04","expires":"2028-04-03","mrz":["P<BELROSSI<<ANNA<MARIA<<<<<<<<<<<<<<<<<<<<<<","0N533763<2BEL8411187M2804039<<<<<<<<<<<<<<02"],"evidence":"specimen","generic_validity":false,"reserved":true},{"kind":"id_card","format":"be-id-card-2020","number":"X46967047359","issuing_state":"BEL","issued":"2022-02-21","expires":"2032-02-21","mrz":["IDBELX46967047<3591<<<<<<<<<<<","8411187M3202218BEL841118957545","ROSSI<<ANNA<MARIA<<<<<<<<<<<<<"],"evidence":"reference","generic_validity":false,"reserved":true}],"signature":{"seed":"0000000000000009","data":"66cc134c6484ade6"}})x");
+
+    const identity_request holder = kat_holder();
+    std::uint64_t h = 0xcbf29ce484222325ULL;
+    for (std::uint64_t s = 0; s < 10000; ++s)
+    {
+        for (const char c : gen.get_identity(holder, s).to_json())
+        {
+            h ^= static_cast<unsigned char>(c);
+            h *= 0x100000001b3ULL;
+        }
+    }
+    REQUIRE(h == 0xf53997b1715a4f7eULL);
 }
 
 // ---------------------------------------------------------------------------
@@ -1488,5 +2499,5 @@ TEST_CASE("identity batch: known answer of 10,000 items", "[batch][kat]")
     gen.for_each_identity(request, {.count = 10000, .threads = 4}, 1,
                           [&](std::uint64_t, const identity& item)
                           { hash = dasmig::core::hash_combine(hash, dasmig::core::fnv1a64(item.to_json())); });
-    REQUIRE(hash == 0x62d7b65547be2ae9ULL);
+    REQUIRE(hash == 0x483b67e8e07129f2ULL);
 }

@@ -43,6 +43,19 @@ int main()
     argentine.safe = true;
     std::cout << "  " << gen.get_identity(argentine, std::uint64_t{7}) << '\n';
 
+    std::cout << "\nA passport and an identity card, with their machine-readable zones:\n";
+    dasmig::identity_request traveller;
+    traveller.country = "DE";
+    traveller.surname = "Müller";
+    traveller.given_names = "Jürgen Karl";
+    traveller.documents = {dasmig::id_document_kind::passport, dasmig::id_document_kind::id_card};
+    const auto held = gen.get_identity(traveller, std::uint64_t{11});
+    std::cout << "  " << held << '\n';
+    for (const auto& document : held.documents)
+    {
+        for (const auto& line : document.mrz) std::cout << "    " << line << '\n';
+    }
+
     std::cout << "\nChecking text against a scheme:\n";
     std::cout << "  111.444.777-35: " << gen.is_valid("br-cpf", "111.444.777-35") << '\n';
     std::cout << "  111.444.777-36: " << gen.is_valid("br-cpf", "111.444.777-36") << '\n';

@@ -1,8 +1,8 @@
 # Usage Guide
 
-This guide covers every feature of the id-generator library. Documents (passports, identity cards) are not generated yet; national numbers are.
+This guide covers every feature of the id-generator library: national numbers, and passports and identity cards with their machine-readable zones.
 
-Generated numbers are test data. Realistic numbers are structurally valid and may coincide with a real person's number, because many national number spaces are densely assigned. Never use them to identify anyone, to open accounts or to pass identity checks. The library looks nothing up.
+Generated numbers and documents are test data. Realistic numbers are structurally valid and may coincide with a real person's number, because many national number spaces are densely assigned. Never use them to identify anyone, to open accounts or to pass identity checks. The library looks nothing up. Documents are data, not images: it draws no document likeness.
 
 For a quick overview, see the [README](../README.md). For the full API reference, run `doxygen Doxyfile` from the repository root and open `doc/api/html/index.html`.
 
@@ -15,6 +15,7 @@ For a quick overview, see the [README](../README.md). For the full API reference
 <li><a href="#loading-resources">Loading Resources</a></li>
 <li><a href="#generating">Generating</a></li>
 <li><a href="#safe-numbers">Safe Numbers</a></li>
+<li><a href="#documents">Documents</a></li>
 <li><a href="#checking-text">Checking Text</a></li>
 <li><a href="#seeding-and-deterministic-generation">Seeding and Deterministic Generation</a></li>
 <li><a href="#extending-data">Extending Data</a></li>
@@ -89,6 +90,7 @@ Everything in the request is optional, and `identity_request{}` draws a whole pe
 | `birthplace` | The residence if it is in the same country, else drawn | A city (`geonameid`), a region (`admin1_code`) or only a country |
 | `residence` | The birthplace if it is in the same country, else drawn | Where the person lived when a number was issued |
 | `schemes` | The primary scheme | `{}` asks for none, and `{"*"}` for every scheme of the country |
+| `documents` | None | Any of `id_document_kind::passport` and `id_card`, in the order wanted |
 | `reference_date` | 2023-07-01 | The date the result is true on, from 1900-01-01 to 2090-12-31 |
 | `safe` | `false` | See below |
 | `weighted` | `true` | `false` draws countries and places uniformly |
@@ -107,6 +109,42 @@ A number the person cannot hold yet is left out, not an error: a child without a
 | `test_numbers` | `is-kennitala`, `se-personnummer` | From the authority's list | True |
 | `unissued_series` | `ar-dni` | Above the series at the reference date | True |
 | `unassigned_place` | `id-nik`, `my-mykad`, `pk-cnic` | A place code nobody is given | True |
+
+Safe documents are described under [Documents](#documents).
+
+## Documents
+
+```cpp
+dasmig::identity_request request;
+request.country = "DE";
+request.surname = "Müller";
+request.given_names = "Jürgen Karl";
+request.documents = {dasmig::id_document_kind::passport, dasmig::id_document_kind::id_card};
+
+const auto v = gen.get_identity(request, 11);
+const auto& passport = v.documents.front();
+passport.number;        // "HL9KM58HC"
+passport.format;        // "de-passport-2007", the row in documents.tsv
+passport.issuing_state; // "D", the ICAO code
+passport.issued;        // on or before the reference date
+passport.expires;       // after it; empty when the document does not expire
+passport.mrz;           // {"P<D<<MUELLER<<JUERGEN<KARL<<<...", "HL9KM58HC1D<<8911252M2404026<<<...00"}
+```
+
+Each document is the one the person holds on the reference date, valid that day. A person who renews on time holds a document issued some time in its validity, so the issue date is drawn from the dates whose document still runs. The format is the one in use on the issue date, and the expiry follows the rule for the age at issue.
+
+- **Not everyone holds one.** A document is left out, not an error, for a country without that document (Denmark and Ireland have no identity card) and for a person under its minimum age. Asking for one document never moves another, or a number.
+- **`evidence` and `generic_validity`.** `evidence` says how the number's format is known: `issuer`, `reference`, `specimen`, `placeholder` or `generic`, a nine-digit stand-in for a country whose format was not found. `generic_validity` says the validity is a general rule, not the country's own.
+- **The national number on a card.** In 18 countries the card's number is the person's national number (`cn-ric`, `in-aadhaar`, `kr-rrn` and others; `number_scheme` in `doc/data.md`). The card then shows the same number as `numbers`, whether or not you asked for that scheme.
+
+**The zone.** `mrz` holds 2 lines of 44 characters for a passport and 3 lines of 30 for a card, or nothing for a document without a zone. The zone is the only part of a document that needs a name, and it follows ICAO Doc 9303:
+
+- It needs a `surname`. With only a `surname` the name field has one identifier, as for a person with a single name. With only `given_names`, or no names, there is no zone.
+- A `second_surname` joins the surname.
+- Letters are written by Part 3's tables for Latin and Cyrillic, with the national rules of Belarus, Bulgaria, North Macedonia, Serbia and Ukraine. A name in another script needs a Latin form from you: if any name you give cannot be written, there is no zone rather than a zone with part of the name missing.
+- Long names are shortened as Part 4 shows.
+
+**Safe documents.** With `request.safe`, a document's number is changed to fall outside every format of that country and document, and `reserved` is set. Its check digits are still right, so the zone stays valid. A card that shows the national number shows the safe number made by the scheme's method instead. The other fields are as usual. For a `generic` format the real format is unknown, so a number outside the stand-in is no guarantee; see `doc/data.md`.
 
 ## Checking Text
 

@@ -438,6 +438,11 @@ def check_documents(tier, rows, schemes, survey):
             fail(f"documents: {k}: bad dates")
         elif r["until"] and r["from"] >= r["until"]:
             fail(f"documents: {k}: from {r['from']} not before until {r['until']}")
+        own = r["number_scheme"]
+        if own and (own not in keys or keys[own]["country"] != r["country"]):
+            fail(f"documents: {k}: number_scheme {own}")
+        if r["year_at"] and not r["year_at"].isdigit():
+            fail(f"documents: {k}: year_at {r['year_at']!r}")
         if r["min_age"] and not r["min_age"].isdigit():
             fail(f"documents: {k}: min_age {r['min_age']!r}")
         opt = r["mrz_optional"]

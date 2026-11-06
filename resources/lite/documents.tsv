@@ -1,538 +1,538 @@
 # document survey 2026-11-04 (issuers' pages, Purview CC BY 4.0, Wikipedia, Commons specimens read only); generic = no surveyed format
-key	country	kind	pattern	from	until	mrz	evidence	prefix_places	mrz_code	mrz_optional	min_age	weight
-ad-passport-generic	AD	passport	#{9}	1900-01-01		td3	generic					
-ae-id-card-generic	AE	id_card	#{9}	1900-01-01		td1	generic			ae-eid	0	
-ae-passport-generic	AE	passport	#{9}	1900-01-01		td3	generic					
-af-id-card-2018	AF	id_card	#{4}-#{4}-#{5}	2018-01-01		td1	reference				0	
-af-id-card-generic	AF	id_card	#{9}	1900-01-01	2018-01-01	td1	generic				0	
-af-passport-generic	AF	passport	#{9}	1900-01-01		td3	generic					
-ag-id-card-generic	AG	id_card	#{9}	1900-01-01		none	generic					
-ag-passport-generic	AG	passport	#{9}	1900-01-01		td3	generic					
-al-id-card-2009	AL	id_card	#{9}	2009-01-01		td1	specimen		I<		16	
-al-id-card-generic	AL	id_card	#{9}	1900-01-01	2009-01-01	td1	generic		I<		16	
-al-passport-generic	AL	passport	#{9}	1900-01-01		td3	generic					
-am-id-card-2026	AM	id_card	#{9}	2026-01-01		td1	placeholder		I<		16	
-am-id-card-generic	AM	id_card	#{9}	1900-01-01	2026-01-01	td1	generic		I<		16	
-am-passport-2026	AM	passport	*{9}	2026-01-01		td3	placeholder					
-am-passport-generic	AM	passport	#{9}	1900-01-01	2026-01-01	td3	generic					
-ao-id-card-2018	AO	id_card	#{9}@{2}#{3}	2018-01-01		none	reference				0	
-ao-id-card-generic	AO	id_card	#{9}	1900-01-01	2018-01-01	none	generic				0	
-ao-passport-current	AO	passport	N#{7}	1900-01-01		td3	specimen					
-ar-id-card-2009	AR	id_card	#{8}	2009-01-01		td1	reference				0	
-ar-id-card-generic	AR	id_card	#{9}	1900-01-01	2009-01-01	td1	generic				0	
-ar-passport-current	AR	passport	@{3}#{6}	1900-01-01		td3	issuer			ar-dni		
-at-id-card-2021	AT	id_card	@{2}#{7}	2021-01-01		td1	placeholder				0	
-at-id-card-generic	AT	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0	
-at-passport-2023	AT	passport	@{2}#{7}	2023-01-01		td3	placeholder		PP			
-at-passport-generic	AT	passport	#{9}	1900-01-01	2023-01-01	td3	generic					
-au-passport-2014	AU	passport	P@#{7}	2014-01-01	2022-01-01	td3	reference					
-au-passport-2022	AU	passport	R@#{7}	2022-01-01		td3	placeholder					
-au-passport-current	AU	passport	[NEDFACUX]#{7}	1900-01-01	2014-01-01	td3	reference					
-az-id-card-generic	AZ	id_card	#{9}	1900-01-01		td1	generic				15	
-az-passport-2013	AZ	passport	@#{8}	2013-01-01		td3	specimen		PC			
-az-passport-generic	AZ	passport	#{9}	1900-01-01	2013-01-01	td3	generic		PC			
-ba-id-card-2013	BA	id_card	@{2}#{7}	2013-01-01		td1	specimen				15	
-ba-id-card-generic	BA	id_card	#{9}	1900-01-01	2013-01-01	td1	generic				15	
-ba-passport-2009	BA	passport	@#{7}	2009-01-01		td3	specimen			ba-jmb		
-ba-passport-generic	BA	passport	#{9}	1900-01-01	2009-01-01	td3	generic			ba-jmb		
-bb-id-card-generic	BB	id_card	#{9}	1900-01-01		none	generic					
-bb-passport-generic	BB	passport	#{9}	1900-01-01		td3	generic				5	
-bd-id-card-generic	BD	id_card	#{9}	1900-01-01		none	generic				18	
-bd-passport-generic	BD	passport	#{9}	1900-01-01		td3	generic					
-be-id-card-2020	BE	id_card	#{12}	2020-01-01		td1	reference			be-nn	12	
-be-id-card-generic	BE	id_card	#{9}	1900-01-01	2020-01-01	td1	generic			be-nn	12	
-be-passport-2022	BE	passport	@{2}#{7}	2022-01-01		td3	specimen					
-be-passport-current	BE	passport	@{2}#{6}	1900-01-01	2022-01-01	td3	specimen					
-bf-id-card-generic	BF	id_card	#{9}	1900-01-01		none	generic				5	
-bf-passport-generic	BF	passport	#{9}	1900-01-01		td3	generic					
-bg-id-card-2024	BG	id_card	@{2}#{7}	2024-06-17		td1	placeholder			bg-egn	14	
-bg-id-card-current	BG	id_card	#{9}	1900-01-01	2024-06-17	td1	reference			bg-egn	14	
-bg-passport-2010	BG	passport	#{9}	2010-01-01		td3	reference			bg-egn		
-bg-passport-generic	BG	passport	#{9}	1900-01-01	2010-01-01	td3	generic			bg-egn		
-bh-id-card-current	BH	id_card	#{9}	1900-01-01		none	placeholder				0	
-bh-passport-2022	BH	passport	@#{7}	2022-01-01		td3	placeholder		PB			
-bh-passport-generic	BH	passport	#{9}	1900-01-01	2022-01-01	td3	generic		PB			
-bi-id-card-generic	BI	id_card	#{9}	1900-01-01		none	generic					
-bi-passport-generic	BI	passport	#{9}	1900-01-01		td3	generic					
-bj-id-card-generic	BJ	id_card	#{9}	1900-01-01		none	generic				18	
-bj-passport-generic	BJ	passport	#{9}	1900-01-01		td3	generic					
-bn-id-card-generic	BN	id_card	#{9}	1900-01-01		none	generic				12	
-bn-passport-generic	BN	passport	#{9}	1900-01-01		td3	generic					
-bo-id-card-generic	BO	id_card	#{9}	1900-01-01		none	generic				0	
-bo-passport-2018	BO	passport	@{2}#{5}	2018-01-01		td3	specimen					
-bo-passport-generic	BO	passport	#{9}	1900-01-01	2018-01-01	td3	generic					
-br-id-card-2022	BR	id_card	#{3}.#{3}.#{3}-#{2}	2022-01-01		td1	issuer				0	
-br-id-card-generic	BR	id_card	#{9}	1900-01-01	2022-01-01	td1	generic				0	
-br-passport-current	BR	passport	@{2}#{6}	1900-01-01		td3	specimen					
-bs-passport-generic	BS	passport	#{9}	1900-01-01		td3	generic		PA			
-bt-id-card-generic	BT	id_card	#{9}	1900-01-01		none	generic				15	
-bt-passport-generic	BT	passport	#{9}	1900-01-01		td3	generic					
-bw-id-card-generic	BW	id_card	#{9}	1900-01-01		none	generic				16	
-bw-passport-generic	BW	passport	#{9}	1900-01-01		td3	generic					
-by-id-card-2021	BY	id_card	@{2}#{7}	2021-01-01		td1	specimen				14	
-by-id-card-generic	BY	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				14	
-by-passport-2021	BY	passport	@{2}#{7}	2021-01-01		td3	issuer					
-by-passport-generic	BY	passport	#{9}	1900-01-01	2021-01-01	td3	generic					
-bz-id-card-generic	BZ	id_card	#{9}	1900-01-01		none	generic					
-bz-passport-generic	BZ	passport	#{9}	1900-01-01		td3	generic					
-ca-passport-2023	CA	passport	@#{6}@{2}	2023-01-01		td3	specimen					
-ca-passport-current	CA	passport	@{2}#{6}	1900-01-01	2023-01-01	td3	reference					
-cd-passport-2015	CD	passport	OP#{7}	2015-01-01		td3	reference					
-cd-passport-current	CD	passport	OB#{7}	1900-01-01	2015-01-01	td3	reference					
-cf-id-card-generic	CF	id_card	#{9}	1900-01-01		none	generic					
-cf-passport-generic	CF	passport	#{9}	1900-01-01		td3	generic					
-cg-id-card-generic	CG	id_card	#{9}	1900-01-01		none	generic				18	
-cg-passport-generic	CG	passport	#{9}	1900-01-01		td3	generic					
-ch-id-card-2023	CH	id_card	[A-HJ-NP-Z0-9]{8}	2023-01-01		td1	specimen				0	
-ch-id-card-generic	CH	id_card	#{9}	1900-01-01	2023-01-01	td1	generic				0	
-ch-passport-2022	CH	passport	[A-HJ-NP-Z0-9]{8}	2022-10-31		td3	reference		PM			
-ch-passport-generic	CH	passport	#{9}	1900-01-01	2022-10-31	td3	generic		PM			
-ci-id-card-generic	CI	id_card	#{9}	1900-01-01		none	generic				5	
-ci-passport-generic	CI	passport	#{9}	1900-01-01		td3	generic					
-cl-id-card-2013	CL	id_card	#{9}	2013-01-01	2024-01-01	td1	specimen		IN	cl-run	0	
-cl-id-card-2024	CL	id_card	@{2}#{7}	2024-01-01		td1	issuer		IN	cl-run	0	
-cl-id-card-generic	CL	id_card	#{9}	1900-01-01	2013-01-01	td1	generic		IN	cl-run	0	
-cl-passport-2024	CL	passport	*{9}	2024-01-01		td3	issuer			cl-run		
-cl-passport-generic	CL	passport	#{9}	1900-01-01	2024-01-01	td3	generic			cl-run		
-cm-id-card-generic	CM	id_card	#{9}	1900-01-01		none	generic					
-cm-passport-generic	CM	passport	#{9}	1900-01-01		td3	generic					
-cn-id-card-1999	CN	id_card	#{17}[0-9X]	1999-01-01		none	issuer				0	
-cn-id-card-generic	CN	id_card	#{9}	1900-01-01	1999-01-01	none	generic				0	
-cn-passport-2012	CN	passport	E#{8}	2012-01-01	2017-01-01	td3	reference					
-cn-passport-2017	CN	passport	E[A-HJ-NP-Z]#{7}	2017-01-01		td3	issuer					
-cn-passport-current	CN	passport	G#{8}	1900-01-01	2012-01-01	td3	specimen					
-co-id-card-2004	CO	id_card	1#{9}	2004-01-01		td1	reference				18	
-co-id-card-generic	CO	id_card	#{9}	1900-01-01	2004-01-01	td1	generic				18	
-co-passport-current	CO	passport	@{2}#{6}	1900-01-01		td3	specimen					
-cr-id-card-2025	CR	id_card	#{9}	2025-01-01		none	specimen				18	
-cr-id-card-generic	CR	id_card	#{9}	1900-01-01	2025-01-01	none	generic				18	
-cr-passport-generic	CR	passport	#{9}	1900-01-01		td3	generic					
-cu-id-card-generic	CU	id_card	#{9}	1900-01-01		none	generic				16	
-cu-passport-generic	CU	passport	#{9}	1900-01-01		td3	generic					
-cv-id-card-generic	CV	id_card	#{9}	1900-01-01		td1	generic				0	
-cv-passport-generic	CV	passport	#{9}	1900-01-01		td3	generic					
-cy-id-card-2020	CY	id_card	@{2}#{7}	2020-01-01		td1	placeholder				0	
-cy-id-card-generic	CY	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				0	
-cy-passport-2020	CY	passport	@#{8}	2020-01-01		td3	reference					
-cy-passport-generic	CY	passport	#{9}	1900-01-01	2020-01-01	td3	generic					
-cz-id-card-2012	CZ	id_card	#{9}	2012-01-01		td1	specimen				0	
-cz-id-card-generic	CZ	id_card	#{9}	1900-01-01	2012-01-01	td1	generic				0	
-cz-passport-2006	CZ	passport	#{8}	2006-01-01		td3	specimen			cz-rc		
-cz-passport-generic	CZ	passport	#{9}	1900-01-01	2006-01-01	td3	generic			cz-rc		
-de-id-card-2010	DE	id_card	[LMNPRTVWXY][CFGHJKLMNPRTVWXYZ1-9]{8}	2010-01-01		td1	reference				0	
-de-id-card-generic	DE	id_card	#{9}	1900-01-01	2010-01-01	td1	generic				0	
-de-passport-2007	DE	passport	[CFGHJK][CFGHJKLMNPRTVWXYZ1-9]{8}	2007-11-01		td3	reference					
-de-passport-current	DE	passport	#{9}	1900-01-01	2007-11-01	td3	reference					
-dj-id-card-generic	DJ	id_card	#{9}	1900-01-01		none	generic					
-dj-passport-generic	DJ	passport	#{9}	1900-01-01		td3	generic					
-dk-passport-current	DK	passport	#{9}	1900-01-01		td3	placeholder			dk-cpr		
-dm-id-card-generic	DM	id_card	#{9}	1900-01-01		none	generic					
-dm-passport-generic	DM	passport	#{9}	1900-01-01		td3	generic					
-do-id-card-2026	DO	id_card	#{3}-#{7}-#	2026-01-01		td1	specimen				16	
-do-id-card-generic	DO	id_card	#{9}	1900-01-01	2026-01-01	td1	generic				16	
-do-passport-2026	DO	passport	@#{8}	2026-01-01		td3	placeholder		PP			
-do-passport-generic	DO	passport	#{9}	1900-01-01	2026-01-01	td3	generic					
-dz-id-card-generic	DZ	id_card	#{9}	1900-01-01		td1	generic					
-dz-passport-generic	DZ	passport	#{9}	1900-01-01		td3	generic					
-ec-id-card-2020	EC	id_card	#{9}	2020-01-01		td1	specimen				0	
-ec-id-card-generic	EC	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				0	
-ec-passport-generic	EC	passport	#{9}	1900-01-01		td3	generic			ec-cedula		
-ee-id-card-2021	EE	id_card	@{2}#{7}	2021-01-01		td1	specimen			ee-isikukood	0	
-ee-id-card-generic	EE	id_card	#{9}	1900-01-01	2021-01-01	td1	generic			ee-isikukood	0	
-ee-passport-2021	EE	passport	@{2}#{7}	2021-01-01		td3	placeholder			ee-isikukood		
-ee-passport-current	EE	passport	@#{7}	1900-01-01	2021-01-01	td3	reference			ee-isikukood		
-eg-id-card-current	EG	id_card	[23]#{13}	1900-01-01		none	reference				15	
-eg-passport-2008	EG	passport	A#{8}	2008-01-01		td3	specimen					
-eg-passport-generic	EG	passport	#{9}	1900-01-01	2008-01-01	td3	generic					
-er-id-card-generic	ER	id_card	#{9}	1900-01-01		none	generic					
-er-passport-generic	ER	passport	#{9}	1900-01-01		td3	generic					
-es-id-card-2006	ES	id_card	@{3}#{6}	2006-01-01		td1	issuer				0	
-es-id-card-generic	ES	id_card	#{9}	1900-01-01	2006-01-01	td1	generic				0	
-es-passport-current	ES	passport	@{3}#{6}	1900-01-01		td3	reference					
-et-id-card-2023	ET	id_card	#{12}	2023-01-01		none	specimen					
-et-id-card-generic	ET	id_card	#{9}	1900-01-01	2023-01-01	none	generic					
-et-passport-generic	ET	passport	#{9}	1900-01-01		td3	generic					
-fi-id-card-2021	FI	id_card	#{9}	2021-01-01		td1	placeholder				0	
-fi-id-card-generic	FI	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0	
-fi-passport-2023	FI	passport	@{2}#{7}	2023-01-01		td3	reference			fi-hetu		
-fi-passport-generic	FI	passport	#{9}	1900-01-01	2023-01-01	td3	generic			fi-hetu		
-fj-passport-generic	FJ	passport	#{9}	1900-01-01		td3	generic					
-fm-id-card-generic	FM	id_card	#{9}	1900-01-01		none	generic					
-fm-passport-generic	FM	passport	#{9}	1900-01-01		td3	generic					
-fr-id-card-2021	FR	id_card	*{9}	2021-01-01		td1	specimen				0	
-fr-id-card-generic	FR	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0	
-fr-passport-current	FR	passport	#{2}@{2}#{5}	1900-01-01		td3	specimen					
-ga-id-card-generic	GA	id_card	#{9}	1900-01-01		none	generic				16	
-ga-passport-generic	GA	passport	#{9}	1900-01-01		td3	generic					
-gb-passport-1988	GB	passport	#{9}	1988-01-01		td3	issuer					
-gb-passport-generic	GB	passport	#{9}	1900-01-01	1988-01-01	td3	generic					
-gd-id-card-generic	GD	id_card	#{9}	1900-01-01		none	generic					
-gd-passport-generic	GD	passport	#{9}	1900-01-01		td3	generic					
-ge-id-card-generic	GE	id_card	#{9}	1900-01-01		td1	generic				14	
-ge-passport-generic	GE	passport	#{9}	1900-01-01		td3	generic					
-gh-id-card-generic	GH	id_card	#{9}	1900-01-01		td1	generic				15	
-gh-passport-2010	GH	passport	@#{7}	2010-01-01		td3	specimen					
-gh-passport-generic	GH	passport	#{9}	1900-01-01	2010-01-01	td3	generic					
-gm-id-card-generic	GM	id_card	#{9}	1900-01-01		none	generic				18	
-gm-passport-generic	GM	passport	#{9}	1900-01-01		td3	generic					
-gn-id-card-generic	GN	id_card	#{9}	1900-01-01		none	generic				16	
-gn-passport-generic	GN	passport	#{9}	1900-01-01		td3	generic					
-gq-id-card-generic	GQ	id_card	#{9}	1900-01-01		none	generic					
-gq-passport-generic	GQ	passport	#{9}	1900-01-01		td3	generic					
-gr-id-card-2023	GR	id_card	@#{8}	2023-01-01		td1	specimen				12	
-gr-id-card-generic	GR	id_card	#{9}	1900-01-01	2023-01-01	td1	generic				12	
-gr-passport-2023	GR	passport	@{2}#{7}	2023-01-01		td3	reference					
-gr-passport-generic	GR	passport	#{9}	1900-01-01	2023-01-01	td3	generic					
-gt-id-card-generic	GT	id_card	#{9}	1900-01-01		none	generic				18	
-gt-passport-2023	GT	passport	#{15}	2023-01-01		td3	issuer					
-gt-passport-generic	GT	passport	#{9}	1900-01-01	2023-01-01	td3	generic					
-gw-id-card-generic	GW	id_card	#{9}	1900-01-01		none	generic					
-gw-passport-generic	GW	passport	#{9}	1900-01-01		td3	generic					
-gy-id-card-generic	GY	id_card	#{9}	1900-01-01		none	generic					
-gy-passport-generic	GY	passport	#{9}	1900-01-01		td3	generic					
-hk-id-card-2018	HK	id_card	@{1,2}#{6}\([0-9A]\)	2018-01-01		none	reference				11	
-hk-id-card-generic	HK	id_card	#{9}	1900-01-01	2018-01-01	none	generic				11	
-hk-passport-2007	HK	passport	K#{8}	2007-01-01	2019-01-01	td3	placeholder			hk-hkid		
-hk-passport-2019	HK	passport	H#{8}	2019-01-01		td3	placeholder			hk-hkid		
-hk-passport-generic	HK	passport	#{9}	1900-01-01	2007-01-01	td3	generic			hk-hkid		
-hn-id-card-generic	HN	id_card	#{9}	1900-01-01		td1	generic				18	
-hn-passport-generic	HN	passport	#{9}	1900-01-01		td3	generic					
-hr-id-card-2021	HR	id_card	#{9}	2021-01-01		td1	reference		IO	hr-oib	0	
-hr-id-card-generic	HR	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		IO	hr-oib	0	
-hr-passport-2009	HR	passport	#{9}	2009-01-01		td3	reference					
-hr-passport-generic	HR	passport	#{9}	1900-01-01	2009-01-01	td3	generic					
-ht-id-card-2018	HT	id_card	*{9}	2018-01-01		none	reference				18	
-ht-id-card-generic	HT	id_card	#{9}	1900-01-01	2018-01-01	none	generic				18	
-ht-passport-generic	HT	passport	#{9}	1900-01-01		td3	generic					
-hu-id-card-2000	HU	id_card	#{6}@{2}	2000-01-01		td1	reference				0	
-hu-id-card-generic	HU	id_card	#{9}	1900-01-01	2000-01-01	td1	generic				0	
-hu-passport-2012	HU	passport	@{2}#{7}	2012-01-01		td3	specimen					
-hu-passport-generic	HU	passport	#{9}	1900-01-01	2012-01-01	td3	generic					
-id-id-card-2011	ID	id_card	#{16}	2011-01-01		none	reference				17	
-id-id-card-generic	ID	id_card	#{9}	1900-01-01	2011-01-01	none	generic				17	
-id-passport-current	ID	passport	@#{6}	1900-01-01		td3	placeholder					
-ie-passport-current	IE	passport	[PL]@#{7}	1900-01-01		td3	issuer					
-il-id-card-2013	IL	id_card	#{9}	2013-01-01		none	reference				16	
-il-id-card-generic	IL	id_card	#{9}	1900-01-01	2013-01-01	none	generic				16	
-il-passport-2013	IL	passport	#{8}	2013-01-01		td3	specimen					
-il-passport-generic	IL	passport	#{9}	1900-01-01	2013-01-01	td3	generic					
-in-id-card-2010	IN	id_card	[2-9]#{11}	2010-01-01		none	issuer				0	
-in-id-card-generic	IN	id_card	#{9}	1900-01-01	2010-01-01	none	generic				0	
-in-passport-2024	IN	passport	@{2}#{6}	2024-04-01		td3	reference					
-in-passport-current	IN	passport	@#{7}	1900-01-01	2024-04-01	td3	placeholder					
-iq-id-card-2016	IQ	id_card	@{2}#{7}	2016-01-01		td1	reference					
-iq-id-card-generic	IQ	id_card	#{9}	1900-01-01	2016-01-01	td1	generic					
-iq-passport-2023	IQ	passport	@#{8}	2023-01-01		td3	placeholder					
-iq-passport-generic	IQ	passport	#{9}	1900-01-01	2023-01-01	td3	generic					
-ir-id-card-2015	IR	id_card	#{10}	2015-01-01		none	reference				15	
-ir-id-card-generic	IR	id_card	#{9}	1900-01-01	2015-01-01	none	generic				15	
-ir-passport-2011	IR	passport	@#{8}	2011-01-01		td3	placeholder					
-ir-passport-generic	IR	passport	#{9}	1900-01-01	2011-01-01	td3	generic					
-is-id-card-2024	IS	id_card	@{2}#{7}	2024-01-01		td1	placeholder			is-kennitala	0	
-is-id-card-generic	IS	id_card	#{9}	1900-01-01	2024-01-01	td1	generic			is-kennitala	0	
-is-passport-2019	IS	passport	@#{7}	2019-01-01		td3	specimen		PA	is-kennitala		
-is-passport-generic	IS	passport	#{9}	1900-01-01	2019-01-01	td3	generic		PA	is-kennitala		
-it-id-card-2016	IT	id_card	@{2}#{5}@{2}	2016-01-01		td1	issuer				0	
-it-id-card-current	IT	id_card	@{2}#{7}	1900-01-01	2016-01-01	td1	placeholder				0	
-it-passport-current	IT	passport	@{2}#{7}	1900-01-01		td3	issuer					
-jm-id-card-generic	JM	id_card	#{9}	1900-01-01		none	generic					
-jm-passport-generic	JM	passport	#{9}	1900-01-01		td3	generic					
-jo-id-card-generic	JO	id_card	#{9}	1900-01-01		none	generic				16	
-jo-passport-generic	JO	passport	#{9}	1900-01-01		td3	generic					
-jp-id-card-2016	JP	id_card	#{12}	2016-01-01		none	issuer				0	
-jp-id-card-generic	JP	id_card	#{9}	1900-01-01	2016-01-01	none	generic				0	
-jp-passport-current	JP	passport	@{2}#{7}	1900-01-01		td3	issuer					
-ke-id-card-generic	KE	id_card	#{9}	1900-01-01		td1	generic				18	
-ke-passport-generic	KE	passport	#{9}	1900-01-01		td3	generic					
-kg-id-card-generic	KG	id_card	#{9}	1900-01-01		td1	generic		I<		16	
-kg-passport-2024	KG	passport	@{2}#{7}	2024-01-01		td3	specimen					
-kg-passport-generic	KG	passport	#{9}	1900-01-01	2024-01-01	td3	generic					
-kh-id-card-generic	KH	id_card	#{9}	1900-01-01		none	generic					
-kh-passport-generic	KH	passport	#{9}	1900-01-01		td3	generic					
-ki-id-card-generic	KI	id_card	#{9}	1900-01-01		none	generic				18	
-ki-passport-generic	KI	passport	#{9}	1900-01-01		td3	generic					
-km-id-card-generic	KM	id_card	#{9}	1900-01-01		none	generic					
-km-passport-generic	KM	passport	#{9}	1900-01-01		td3	generic					
-kn-id-card-generic	KN	id_card	#{9}	1900-01-01		none	generic					
-kn-passport-generic	KN	passport	#{9}	1900-01-01		td3	generic					
-kp-id-card-generic	KP	id_card	#{9}	1900-01-01		none	generic				17	
-kp-passport-generic	KP	passport	#{9}	1900-01-01		td3	generic					
-kr-id-card-1968	KR	id_card	#{6}-[1-8]#{6}	1968-01-01		none	reference				17	
-kr-id-card-generic	KR	id_card	#{9}	1900-01-01	1968-01-01	none	generic				17	
-kr-passport-2008	KR	passport	[MS]#{8}	2008-01-01	2021-12-21	td3	specimen					
-kr-passport-2021	KR	passport	[MS]#{3}@#{4}	2021-12-21		td3	issuer					
-kr-passport-generic	KR	passport	#{9}	1900-01-01	2008-01-01	td3	generic					
-kw-id-card-current	KW	id_card	[123]#{11}	1900-01-01		none	reference				0	
-kw-passport-generic	KW	passport	#{9}	1900-01-01		td3	generic					
-kz-id-card-2014	KZ	id_card	#{9}	2014-01-01		td1	issuer			kz-iin	16	
-kz-id-card-generic	KZ	id_card	#{9}	1900-01-01	2014-01-01	td1	generic			kz-iin	16	
-kz-passport-2009	KZ	passport	N#{8}	2009-01-01		td3	issuer					
-kz-passport-generic	KZ	passport	#{9}	1900-01-01	2009-01-01	td3	generic					
-la-id-card-generic	LA	id_card	#{9}	1900-01-01		none	generic				16	
-la-passport-generic	LA	passport	#{9}	1900-01-01		td3	generic					
-lb-id-card-generic	LB	id_card	#{9}	1900-01-01		none	generic					
-lb-passport-generic	LB	passport	#{9}	1900-01-01		td3	generic					
-lc-id-card-generic	LC	id_card	#{9}	1900-01-01		none	generic					
-lc-passport-generic	LC	passport	#{9}	1900-01-01		td3	generic					
-li-id-card-2009	LI	id_card	ID#{7}	2009-01-01		td1	specimen				0	
-li-id-card-generic	LI	id_card	#{9}	1900-01-01	2009-01-01	td1	generic				0	
-li-passport-2006	LI	passport	R#{5}	2006-01-01	2026-01-01	td3	placeholder					
-li-passport-2026	LI	passport	@{2}#{7}	2026-01-01		td3	placeholder		PP			
-li-passport-generic	LI	passport	#{9}	1900-01-01	2006-01-01	td3	generic					
-lk-id-card-2016	LK	id_card	#{12}	2016-01-01		none	reference				16	
-lk-id-card-current	LK	id_card	#{9}[VX]	1900-01-01	2016-01-01	none	reference				16	
-lk-passport-generic	LK	passport	#{9}	1900-01-01		td3	generic					
-lr-id-card-generic	LR	id_card	#{9}	1900-01-01		none	generic					
-lr-passport-generic	LR	passport	#{9}	1900-01-01		td3	generic					
-ls-id-card-generic	LS	id_card	#{9}	1900-01-01		none	generic				16	
-ls-passport-generic	LS	passport	#{9}	1900-01-01		td3	generic					
-lt-id-card-2021	LT	id_card	#{8}	2021-01-01		td1	placeholder		I<	lt-asmens-kodas	0	
-lt-id-card-generic	LT	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	lt-asmens-kodas	0	
-lt-passport-2019	LT	passport	#{8}	2019-01-01		td3	placeholder			lt-asmens-kodas		
-lt-passport-generic	LT	passport	#{9}	1900-01-01	2019-01-01	td3	generic			lt-asmens-kodas		
-lu-id-card-generic	LU	id_card	#{9}	1900-01-01		td1	generic				0	
-lu-passport-2015	LU	passport	*{8}	2015-01-01		td3	specimen					
-lu-passport-generic	LU	passport	#{9}	1900-01-01	2015-01-01	td3	generic					
-lv-id-card-2021	LV	id_card	@{2}#{7}	2021-01-01		td1	specimen		I<	lv-personas-kods	0	
-lv-id-card-generic	LV	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	lv-personas-kods	0	
-lv-passport-2023	LV	passport	@{2}#{7}	2023-01-01		td3	reference			lv-personas-kods		
-lv-passport-generic	LV	passport	#{9}	1900-01-01	2023-01-01	td3	generic			lv-personas-kods		
-ly-id-card-generic	LY	id_card	#{9}	1900-01-01		none	generic				16	
-ly-passport-generic	LY	passport	#{9}	1900-01-01		td3	generic					
-ma-id-card-2020	MA	id_card	@{3}#{5}	2020-01-01		td1	specimen		I<		16	
-ma-id-card-generic	MA	id_card	#{9}	1900-01-01	2020-01-01	td1	generic		I<		16	
-ma-passport-generic	MA	passport	#{9}	1900-01-01		td3	generic					
-mc-id-card-2009	MC	id_card	#{6}	2009-01-01		td1	specimen		I<		0	
-mc-id-card-generic	MC	id_card	#{9}	1900-01-01	2009-01-01	td1	generic		I<		0	
-mc-passport-generic	MC	passport	#{9}	1900-01-01		td3	generic					
-md-id-card-2025	MD	id_card	@#{8}	2025-01-01		td1	placeholder				0	
-md-id-card-generic	MD	id_card	#{9}	1900-01-01	2025-01-01	td1	generic				0	
-md-passport-2023	MD	passport	@{2}#{7}	2023-01-01		td3	placeholder		PA			
-md-passport-generic	MD	passport	#{9}	1900-01-01	2023-01-01	td3	generic		PA			
-me-id-card-generic	ME	id_card	#{9}	1900-01-01		td1	generic				0	
-me-passport-generic	ME	passport	#{9}	1900-01-01		td3	generic			me-jmbg		
-mg-id-card-generic	MG	id_card	#{9}	1900-01-01		none	generic				18	
-mg-passport-generic	MG	passport	#{9}	1900-01-01		td3	generic					
-mh-passport-generic	MH	passport	#{9}	1900-01-01		td3	generic					
-mk-id-card-generic	MK	id_card	#{9}	1900-01-01		td1	generic				15	
-mk-passport-2007	MK	passport	@#{7}	2007-01-01		td3	specimen			mk-embg		
-mk-passport-generic	MK	passport	#{9}	1900-01-01	2007-01-01	td3	generic			mk-embg		
-ml-id-card-generic	ML	id_card	#{9}	1900-01-01		none	generic				15	
-ml-passport-generic	ML	passport	#{9}	1900-01-01		td3	generic					
-mm-id-card-generic	MM	id_card	#{9}	1900-01-01		none	generic					
-mm-passport-2010	MM	passport	MA#{6}	2010-01-01		td3	specimen					
-mm-passport-generic	MM	passport	#{9}	1900-01-01	2010-01-01	td3	generic					
-mn-id-card-generic	MN	id_card	#{9}	1900-01-01		none	generic				16	
-mn-passport-generic	MN	passport	#{9}	1900-01-01		td3	generic					
-mo-id-card-2002	MO	id_card	#{7}\(#\)	2002-01-01		none	reference				5	
-mo-id-card-generic	MO	id_card	#{9}	1900-01-01	2002-01-01	none	generic				5	
-mo-passport-2009	MO	passport	M@#{7}	2009-01-01		td3	reference					
-mo-passport-generic	MO	passport	#{9}	1900-01-01	2009-01-01	td3	generic					
-mr-id-card-generic	MR	id_card	#{9}	1900-01-01		td1	generic				6	
-mr-passport-2010	MR	passport	@{2}#{7}	2010-01-01		td3	placeholder					
-mr-passport-generic	MR	passport	#{9}	1900-01-01	2010-01-01	td3	generic					
-mt-id-card-2020	MT	id_card	#{8}	2020-01-01		td1	specimen				14	
-mt-id-card-generic	MT	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				14	
-mt-passport-current	MT	passport	#{7}	1900-01-01		td3	reference					
-mu-id-card-2013	MU	id_card	*{9}	2013-01-01		none	issuer				18	
-mu-id-card-generic	MU	id_card	#{9}	1900-01-01	2013-01-01	none	generic				18	
-mu-passport-generic	MU	passport	#{9}	1900-01-01		td3	generic					
-mv-id-card-generic	MV	id_card	#{9}	1900-01-01		none	generic					
-mv-passport-generic	MV	passport	#{9}	1900-01-01		td3	generic					
-mw-id-card-generic	MW	id_card	#{9}	1900-01-01		none	generic				16	
-mw-passport-generic	MW	passport	#{9}	1900-01-01		td3	generic					
-mx-id-card-2019	MX	id_card	#{9}	2019-01-01		td1	specimen				18	
-mx-id-card-generic	MX	id_card	#{9}	1900-01-01	2019-01-01	td1	generic				18	
-mx-passport-generic	MX	passport	#{9}	1900-01-01		td3	generic					
-my-id-card-2001	MY	id_card	#{6}-#{2}-#{4}	2001-01-01		none	reference				12	
-my-id-card-generic	MY	id_card	#{9}	1900-01-01	2001-01-01	none	generic				12	
-my-passport-current	MY	passport	[AHK]#{8}	1900-01-01		td3	reference			my-mykad		
-mz-id-card-generic	MZ	id_card	#{9}	1900-01-01		none	generic				6	
-mz-passport-generic	MZ	passport	#{9}	1900-01-01		td3	generic					
-na-id-card-2016	NA	id_card	#{11}	2016-01-01		td1	issuer				16	
-na-id-card-generic	NA	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				16	
-na-passport-generic	NA	passport	#{9}	1900-01-01		td3	generic					
-ne-id-card-generic	NE	id_card	#{9}	1900-01-01		none	generic				15	
-ne-passport-generic	NE	passport	#{9}	1900-01-01		td3	generic					
-ng-id-card-generic	NG	id_card	#{9}	1900-01-01		td1	generic				16	
-ng-passport-generic	NG	passport	#{9}	1900-01-01		td3	generic					
-ni-id-card-generic	NI	id_card	#{9}	1900-01-01		none	generic				16	
-ni-passport-generic	NI	passport	#{9}	1900-01-01		td3	generic					
-nl-id-card-2019	NL	id_card	[A-NP-Z]{2}[A-NP-Z1-9]{6}[1-9]	2019-12-01		td1	issuer				0	
-nl-id-card-current	NL	id_card	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	td1	issuer				0	
-nl-passport-2019	NL	passport	[A-NP-Z]{2}[A-NP-Z1-9]{6}[1-9]	2019-12-01		td3	issuer					
-nl-passport-current	NL	passport	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	td3	issuer					
-no-id-card-2020	NO	id_card	@{3}#{6}	2020-01-01		td1	placeholder		CA	no-fodselsnummer	0	
-no-id-card-generic	NO	id_card	#{9}	1900-01-01	2020-01-01	td1	generic		CA	no-fodselsnummer	0	
-no-passport-2020	NO	passport	@{3}#{6}	2020-01-01		td3	specimen					
-no-passport-generic	NO	passport	#{9}	1900-01-01	2020-01-01	td3	generic					
-np-id-card-generic	NP	id_card	#{9}	1900-01-01		none	generic				16	
-np-passport-2021	NP	passport	PA#{7}	2021-01-01		td3	placeholder					
-np-passport-generic	NP	passport	#{9}	1900-01-01	2021-01-01	td3	generic					
-nr-passport-current	NR	passport	#{6}	1900-01-01		td3	specimen					
-nz-passport-2020	NZ	passport	@{2}#{6}	2020-01-01		td3	specimen					
-nz-passport-generic	NZ	passport	#{9}	1900-01-01	2020-01-01	td3	generic					
-om-id-card-generic	OM	id_card	#{9}	1900-01-01		none	generic				10	
-om-passport-2014	OM	passport	@{2}#{7}	2014-01-01		td3	specimen					
-om-passport-generic	OM	passport	#{9}	1900-01-01	2014-01-01	td3	generic					
-pa-id-card-generic	PA	id_card	#{9}	1900-01-01		none	generic				12	
-pa-passport-generic	PA	passport	#{9}	1900-01-01		td3	generic					
-pe-id-card-1996	PE	id_card	#{8}	1996-01-01		td1	specimen				0	
-pe-id-card-generic	PE	id_card	#{9}	1900-01-01	1996-01-01	td1	generic				0	
-pe-passport-generic	PE	passport	#{9}	1900-01-01		td3	generic					
-pg-id-card-generic	PG	id_card	#{9}	1900-01-01		none	generic				18	
-pg-passport-generic	PG	passport	#{9}	1900-01-01		td3	generic					
-ph-id-card-2021	PH	id_card	#{4}-#{4}-#{4}-#{4}	2021-01-01		none	issuer					
-ph-id-card-generic	PH	id_card	#{9}	1900-01-01	2021-01-01	none	generic					
-ph-passport-2009	PH	passport	@{2}#{7}	2009-01-01	2016-01-01	td3	placeholder					
-ph-passport-2016	PH	passport	P#{7}@	2016-01-01		td3	reference					
-ph-passport-generic	PH	passport	#{9}	1900-01-01	2009-01-01	td3	generic					
-pk-id-card-2000	PK	id_card	#{5}-#{7}-#	2000-01-01		none	reference				18	
-pk-id-card-generic	PK	id_card	#{9}	1900-01-01	2000-01-01	none	generic				18	
-pk-passport-generic	PK	passport	#{9}	1900-01-01		td3	generic					
-pl-id-card-2021	PL	id_card	[A-NPR-Z]{3}#{6}	2021-01-01		td1	reference			pl-pesel	0	
-pl-id-card-generic	PL	id_card	#{9}	1900-01-01	2021-01-01	td1	generic			pl-pesel	0	
-pl-passport-2001	PL	passport	@{2}#{7}	2001-01-01		td3	reference					
-pl-passport-generic	PL	passport	#{9}	1900-01-01	2001-01-01	td3	generic					
-ps-id-card-current	PS	id_card	#{9}	1900-01-01		none	placeholder				16	
-ps-passport-current	PS	passport	#{8}	1900-01-01		td3	specimen					
-pt-id-card-2007	PT	id_card	#{8}#[A-Z0-9]{2}#	2007-01-01		td1	reference		I<		0	
-pt-id-card-generic	PT	id_card	#{9}	1900-01-01	2007-01-01	td1	generic		I<		0	
-pt-passport-2017	PT	passport	@#{6}	2017-01-01		td3	reference					
-pt-passport-generic	PT	passport	#{9}	1900-01-01	2017-01-01	td3	generic					
-pw-passport-generic	PW	passport	#{9}	1900-01-01		td3	generic					
-py-id-card-generic	PY	id_card	#{9}	1900-01-01		none	generic					
-py-passport-generic	PY	passport	#{9}	1900-01-01		td3	generic					
-qa-id-card-current	QA	id_card	[23]#{2}634#{5}	1900-01-01		none	reference				15	
-qa-passport-generic	QA	passport	#{9}	1900-01-01		td3	generic					
-ro-id-card-2025	RO	id_card	@{2}#{7}	2025-03-20		td1	specimen				0	
-ro-id-card-current	RO	id_card	@{2}#{6}	1900-01-01	2025-03-20	td1	reference				0	
-ro-passport-2024	RO	passport	#{9}	2024-01-01		td3	specimen		PE	ro-cnp		
-ro-passport-generic	RO	passport	#{9}	1900-01-01	2024-01-01	td3	generic			ro-cnp		
-rs-id-card-2008	RS	id_card	#{9}	2008-01-01		td1	specimen			rs-jmbg	10	
-rs-id-card-generic	RS	id_card	#{9}	1900-01-01	2008-01-01	td1	generic			rs-jmbg	10	
-rs-passport-2008	RS	passport	#{9}	2008-01-01		td3	placeholder			rs-jmbg		
-rs-passport-generic	RS	passport	#{9}	1900-01-01	2008-01-01	td3	generic			rs-jmbg		
-ru-id-card-1997	RU	id_card	#{4}#{6}	1997-01-01		none	issuer				14	
-ru-id-card-generic	RU	id_card	#{9}	1900-01-01	1997-01-01	none	generic				14	
-ru-passport-current	RU	passport	#{2}#{7}	1900-01-01		td3	specimen					
-rw-id-card-generic	RW	id_card	#{9}	1900-01-01		none	generic				16	
-rw-passport-generic	RW	passport	#{9}	1900-01-01		td3	generic					
-sa-id-card-current	SA	id_card	1#{9}	1900-01-01		none	reference				15	
-sa-passport-generic	SA	passport	#{9}	1900-01-01		td3	generic					
-sb-passport-generic	SB	passport	#{9}	1900-01-01		td3	generic					
-sc-id-card-generic	SC	id_card	#{9}	1900-01-01		none	generic					
-sc-passport-2022	SC	passport	@{2}#{6}	2022-01-01		td3	specimen					
-sc-passport-generic	SC	passport	#{9}	1900-01-01	2022-01-01	td3	generic					
-sd-id-card-generic	SD	id_card	#{9}	1900-01-01		none	generic				16	
-sd-passport-generic	SD	passport	#{9}	1900-01-01		td3	generic					
-se-id-card-2021	SE	id_card	@{2}#{7}	2021-01-01		td1	placeholder		I<	se-personnummer	0	
-se-id-card-generic	SE	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	se-personnummer	0	
-se-passport-2022	SE	passport	@{2}#{7}	2022-01-01		td3	placeholder			se-personnummer		
-se-passport-current	SE	passport	#{8}	1900-01-01	2022-01-01	td3	reference			se-personnummer		
-sg-id-card-1966	SG	id_card	[ST]#{7}@	1966-01-01		none	reference				15	
-sg-id-card-generic	SG	id_card	#{9}	1900-01-01	1966-01-01	none	generic				15	
-sg-passport-2006	SG	passport	@#{7}@	2006-01-01		td3	reference					
-sg-passport-generic	SG	passport	#{9}	1900-01-01	2006-01-01	td3	generic					
-si-id-card-2022	SI	id_card	@{2}#{7}	2022-03-28		td1	specimen				0	
-si-id-card-generic	SI	id_card	#{9}	1900-01-01	2022-03-28	td1	generic				0	
-si-passport-2006	SI	passport	P@#{7}	2006-01-01		td3	specimen			si-emso		
-si-passport-generic	SI	passport	#{9}	1900-01-01	2006-01-01	td3	generic			si-emso		
-sk-id-card-2022	SK	id_card	@{2}#{6}	2022-01-01		td1	specimen				0	
-sk-id-card-generic	SK	id_card	#{9}	1900-01-01	2022-01-01	td1	generic				0	
-sk-passport-2024	SK	passport	@{2}#{7}	2024-01-01		td3	specimen		PP	sk-rc		
-sk-passport-generic	SK	passport	#{9}	1900-01-01	2024-01-01	td3	generic			sk-rc		
-sl-id-card-generic	SL	id_card	#{9}	1900-01-01		none	generic				12	
-sl-passport-generic	SL	passport	#{9}	1900-01-01		td3	generic					
-sm-id-card-2024	SM	id_card	2003#{5}	2024-01-01		td1	issuer				0	
-sm-id-card-generic	SM	id_card	#{9}	1900-01-01	2024-01-01	td1	generic				0	
-sm-passport-generic	SM	passport	#{9}	1900-01-01		td3	generic					
-sn-id-card-generic	SN	id_card	#{9}	1900-01-01		td1	generic				5	
-sn-passport-generic	SN	passport	#{9}	1900-01-01		td3	generic					
-so-id-card-generic	SO	id_card	#{9}	1900-01-01		none	generic					
-so-passport-generic	SO	passport	#{9}	1900-01-01		td3	generic					
-sr-id-card-generic	SR	id_card	#{9}	1900-01-01		none	generic					
-sr-passport-generic	SR	passport	#{9}	1900-01-01		td3	generic					
-ss-id-card-generic	SS	id_card	#{9}	1900-01-01		none	generic				18	
-ss-passport-generic	SS	passport	#{9}	1900-01-01		td3	generic					
-st-id-card-generic	ST	id_card	#{9}	1900-01-01		none	generic					
-st-passport-generic	ST	passport	#{9}	1900-01-01		td3	generic					
-sv-id-card-current	SV	id_card	#{8}-#	1900-01-01		none	specimen				18	
-sv-passport-generic	SV	passport	#{9}	1900-01-01		td3	generic					
-sy-id-card-generic	SY	id_card	#{9}	1900-01-01		none	generic				14	
-sy-passport-generic	SY	passport	#{9}	1900-01-01		td3	generic		PN			
-sz-id-card-generic	SZ	id_card	#{9}	1900-01-01		none	generic					
-sz-passport-generic	SZ	passport	#{9}	1900-01-01		td3	generic					
-td-id-card-generic	TD	id_card	#{9}	1900-01-01		none	generic					
-td-passport-generic	TD	passport	#{9}	1900-01-01		td3	generic					
-tg-id-card-generic	TG	id_card	#{9}	1900-01-01		none	generic					
-tg-passport-generic	TG	passport	#{9}	1900-01-01		td3	generic					
-th-id-card-1984	TH	id_card	#{13}	1984-01-01		none	reference				7	
-th-id-card-generic	TH	id_card	#{9}	1900-01-01	1984-01-01	none	generic				7	
-th-passport-current	TH	passport	@{2}#{7}	1900-01-01		td3	specimen					
-tj-id-card-generic	TJ	id_card	#{9}	1900-01-01		none	generic					
-tj-passport-generic	TJ	passport	#{9}	1900-01-01		td3	generic					
-tl-id-card-generic	TL	id_card	#{9}	1900-01-01		none	generic				0	
-tl-passport-generic	TL	passport	#{9}	1900-01-01		td3	generic					
-tm-passport-generic	TM	passport	#{9}	1900-01-01		td3	generic					
-tn-id-card-1993	TN	id_card	#{8}	1993-01-01		none	reference				18	
-tn-id-card-generic	TN	id_card	#{9}	1900-01-01	1993-01-01	none	generic				18	
-tn-passport-generic	TN	passport	#{9}	1900-01-01		td3	generic					
-to-id-card-generic	TO	id_card	#{9}	1900-01-01		none	generic				14	
-to-passport-generic	TO	passport	#{9}	1900-01-01		td3	generic				16	
-tr-id-card-2017	TR	id_card	@#{2}@#{5}	2017-01-01		td1	placeholder		I<	tr-tckn	0	
-tr-id-card-generic	TR	id_card	#{9}	1900-01-01	2017-01-01	td1	generic		I<	tr-tckn	0	
-tr-passport-generic	TR	passport	#{9}	1900-01-01		td3	generic					
-tt-id-card-generic	TT	id_card	#{9}	1900-01-01		none	generic				15	
-tt-passport-generic	TT	passport	#{9}	1900-01-01		td3	generic					
-tv-passport-generic	TV	passport	#{9}	1900-01-01		td3	generic					
-tw-id-card-2005	TW	id_card	@[12]#{8}	2005-01-01		none	reference				14	
-tw-id-card-generic	TW	id_card	#{9}	1900-01-01	2005-01-01	none	generic				14	
-tw-passport-2008	TW	passport	3#{8}	2008-01-01		td3	reference			tw-nid		
-tw-passport-generic	TW	passport	#{9}	1900-01-01	2008-01-01	td3	generic			tw-nid		
-tz-id-card-generic	TZ	id_card	#{9}	1900-01-01		none	generic				18	
-tz-passport-generic	TZ	passport	#{9}	1900-01-01		td3	generic					
-ua-id-card-2016	UA	id_card	#{9}	2016-01-01		td1	reference				14	
-ua-id-card-generic	UA	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				14	
-ua-passport-2015	UA	passport	@{2}#{6}	2015-01-01		td3	placeholder					
-ua-passport-generic	UA	passport	#{9}	1900-01-01	2015-01-01	td3	generic					
-ug-id-card-generic	UG	id_card	#{9}	1900-01-01		none	generic				16	
-ug-passport-generic	UG	passport	#{9}	1900-01-01		td3	generic					
-us-id-card-2008	US	id_card	C#{8}	2008-01-01		td1	specimen		IP			
-us-id-card-generic	US	id_card	#{9}	1900-01-01	2008-01-01	td1	generic		IP			
-us-passport-2021	US	passport	@#{8}	2021-01-01		td3	specimen					
-us-passport-current	US	passport	#{9}	1900-01-01	2021-01-01	td3	specimen					
-uy-id-card-generic	UY	id_card	#{9}	1900-01-01		none	generic				0	
-uy-passport-2015	UY	passport	#{2}@{2}#{5}	2015-01-01		td3	specimen			uy-cedula		
-uy-passport-generic	UY	passport	#{9}	1900-01-01	2015-01-01	td3	generic			uy-cedula		
-uz-id-card-2021	UZ	id_card	@{2}#{7}	2021-01-01		none	placeholder				0	
-uz-id-card-generic	UZ	id_card	#{9}	1900-01-01	2021-01-01	none	generic				0	
-uz-passport-current	UZ	passport	@{2}#{7}	1900-01-01		td3	placeholder					
-va-id-card-generic	VA	id_card	#{9}	1900-01-01		none	generic					
-va-passport-generic	VA	passport	#{9}	1900-01-01		td3	generic		PP			
-vc-id-card-generic	VC	id_card	#{9}	1900-01-01		none	generic					
-vc-passport-generic	VC	passport	#{9}	1900-01-01		td3	generic					
-ve-id-card-current	VE	id_card	V#{7,8}	1900-01-01		none	specimen				9	
-ve-passport-generic	VE	passport	#{9}	1900-01-01		td3	generic					
-vn-id-card-2016	VN	id_card	0#{11}	2016-01-01		td1	reference				0	
-vn-id-card-generic	VN	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				0	
-vn-passport-2022	VN	passport	P#{8}	2022-01-01		td3	placeholder			vn-cccd		
-vn-passport-current	VN	passport	@#{7}	1900-01-01	2022-01-01	td3	placeholder			vn-cccd		
-vu-id-card-generic	VU	id_card	#{9}	1900-01-01		none	generic					
-vu-passport-generic	VU	passport	#{9}	1900-01-01		td3	generic					
-ws-passport-generic	WS	passport	#{9}	1900-01-01		td3	generic					
-xk-id-card-2013	XK	id_card	ID#{7}	2013-01-01		td1	placeholder					
-xk-id-card-generic	XK	id_card	#{9}	1900-01-01	2013-01-01	td1	generic					
-xk-passport-2011	XK	passport	P#{8}	2011-01-01		td3	placeholder					
-xk-passport-generic	XK	passport	#{9}	1900-01-01	2011-01-01	td3	generic					
-ye-id-card-generic	YE	id_card	#{9}	1900-01-01		none	generic					
-ye-passport-generic	YE	passport	#{9}	1900-01-01		td3	generic		PR			
-za-id-card-2013	ZA	id_card	#{9}	2013-01-01		none	placeholder				16	
-za-id-card-generic	ZA	id_card	#{9}	1900-01-01	2013-01-01	none	generic				16	
-za-passport-2009	ZA	passport	[AM]#{8}	2009-01-01		td3	specimen					
-za-passport-generic	ZA	passport	#{9}	1900-01-01	2009-01-01	td3	generic					
-zm-id-card-1965	ZM	id_card	#{6}/##/[123]	1965-01-01		none	reference				16	
-zm-id-card-generic	ZM	id_card	#{9}	1900-01-01	1965-01-01	none	generic				16	
-zm-passport-generic	ZM	passport	#{9}	1900-01-01		td3	generic					
-zw-id-card-current	ZW	id_card	##-#{6,7}@##	1900-01-01		none	reference				16	
-zw-passport-generic	ZW	passport	#{9}	1900-01-01		td3	generic					
+key	country	kind	pattern	from	until	mrz	evidence	prefix_places	mrz_code	mrz_optional	min_age	weight	year_at	number_scheme
+ad-passport-generic	AD	passport	#{9}	1900-01-01		td3	generic							
+ae-id-card-generic	AE	id_card	#{9}	1900-01-01		td1	generic			ae-eid	0			
+ae-passport-generic	AE	passport	#{9}	1900-01-01		td3	generic							
+af-id-card-2018	AF	id_card	#{4}-#{4}-#{5}	2018-01-01		td1	reference				0			
+af-id-card-generic	AF	id_card	#{9}	1900-01-01	2018-01-01	td1	generic				0			
+af-passport-generic	AF	passport	#{9}	1900-01-01		td3	generic							
+ag-id-card-generic	AG	id_card	#{9}	1900-01-01		none	generic							
+ag-passport-generic	AG	passport	#{9}	1900-01-01		td3	generic							
+al-id-card-2009	AL	id_card	#{9}	2009-01-01		td1	specimen		I<		16			
+al-id-card-generic	AL	id_card	#{9}	1900-01-01	2009-01-01	td1	generic		I<		16			
+al-passport-generic	AL	passport	#{9}	1900-01-01		td3	generic							
+am-id-card-2026	AM	id_card	#{9}	2026-01-01		td1	placeholder		I<		16			
+am-id-card-generic	AM	id_card	#{9}	1900-01-01	2026-01-01	td1	generic		I<		16			
+am-passport-2026	AM	passport	*{9}	2026-01-01		td3	placeholder							
+am-passport-generic	AM	passport	#{9}	1900-01-01	2026-01-01	td3	generic							
+ao-id-card-2018	AO	id_card	#{9}@{2}#{3}	2018-01-01		none	reference				0			
+ao-id-card-generic	AO	id_card	#{9}	1900-01-01	2018-01-01	none	generic				0			
+ao-passport-current	AO	passport	N#{7}	1900-01-01		td3	specimen							
+ar-id-card-2009	AR	id_card	#{8}	2009-01-01		td1	reference				0			ar-dni
+ar-id-card-generic	AR	id_card	#{9}	1900-01-01	2009-01-01	td1	generic				0			
+ar-passport-current	AR	passport	@{3}#{6}	1900-01-01		td3	issuer			ar-dni				
+at-id-card-2021	AT	id_card	@{2}#{7}	2021-01-01		td1	placeholder				0			
+at-id-card-generic	AT	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0			
+at-passport-2023	AT	passport	@{2}#{7}	2023-01-01		td3	placeholder		PP					
+at-passport-generic	AT	passport	#{9}	1900-01-01	2023-01-01	td3	generic							
+au-passport-2014	AU	passport	P@#{7}	2014-01-01	2022-01-01	td3	reference							
+au-passport-2022	AU	passport	R@#{7}	2022-01-01		td3	placeholder							
+au-passport-current	AU	passport	[NEDFACUX]#{7}	1900-01-01	2014-01-01	td3	reference							
+az-id-card-generic	AZ	id_card	#{9}	1900-01-01		td1	generic				15			
+az-passport-2013	AZ	passport	@#{8}	2013-01-01		td3	specimen		PC					
+az-passport-generic	AZ	passport	#{9}	1900-01-01	2013-01-01	td3	generic		PC					
+ba-id-card-2013	BA	id_card	@{2}#{7}	2013-01-01		td1	specimen				15			
+ba-id-card-generic	BA	id_card	#{9}	1900-01-01	2013-01-01	td1	generic				15			
+ba-passport-2009	BA	passport	@#{7}	2009-01-01		td3	specimen			ba-jmb				
+ba-passport-generic	BA	passport	#{9}	1900-01-01	2009-01-01	td3	generic			ba-jmb				
+bb-id-card-generic	BB	id_card	#{9}	1900-01-01		none	generic							
+bb-passport-generic	BB	passport	#{9}	1900-01-01		td3	generic				5			
+bd-id-card-generic	BD	id_card	#{9}	1900-01-01		none	generic				18			
+bd-passport-generic	BD	passport	#{9}	1900-01-01		td3	generic							
+be-id-card-2020	BE	id_card	#{12}	2020-01-01		td1	reference			be-nn	12			
+be-id-card-generic	BE	id_card	#{9}	1900-01-01	2020-01-01	td1	generic			be-nn	12			
+be-passport-2022	BE	passport	@{2}#{7}	2022-01-01		td3	specimen							
+be-passport-current	BE	passport	@{2}#{6}	1900-01-01	2022-01-01	td3	specimen							
+bf-id-card-generic	BF	id_card	#{9}	1900-01-01		none	generic				5			
+bf-passport-generic	BF	passport	#{9}	1900-01-01		td3	generic							
+bg-id-card-2024	BG	id_card	@{2}#{7}	2024-06-17		td1	placeholder			bg-egn	14			
+bg-id-card-current	BG	id_card	#{9}	1900-01-01	2024-06-17	td1	reference			bg-egn	14			
+bg-passport-2010	BG	passport	#{9}	2010-01-01		td3	reference			bg-egn				
+bg-passport-generic	BG	passport	#{9}	1900-01-01	2010-01-01	td3	generic			bg-egn				
+bh-id-card-current	BH	id_card	#{9}	1900-01-01		none	placeholder				0			
+bh-passport-2022	BH	passport	@#{7}	2022-01-01		td3	placeholder		PB					
+bh-passport-generic	BH	passport	#{9}	1900-01-01	2022-01-01	td3	generic		PB					
+bi-id-card-generic	BI	id_card	#{9}	1900-01-01		none	generic							
+bi-passport-generic	BI	passport	#{9}	1900-01-01		td3	generic							
+bj-id-card-generic	BJ	id_card	#{9}	1900-01-01		none	generic				18			
+bj-passport-generic	BJ	passport	#{9}	1900-01-01		td3	generic							
+bn-id-card-generic	BN	id_card	#{9}	1900-01-01		none	generic				12			
+bn-passport-generic	BN	passport	#{9}	1900-01-01		td3	generic							
+bo-id-card-generic	BO	id_card	#{9}	1900-01-01		none	generic				0			
+bo-passport-2018	BO	passport	@{2}#{5}	2018-01-01		td3	specimen							
+bo-passport-generic	BO	passport	#{9}	1900-01-01	2018-01-01	td3	generic							
+br-id-card-2022	BR	id_card	#{3}.#{3}.#{3}-#{2}	2022-01-01		td1	issuer				0			br-cpf
+br-id-card-generic	BR	id_card	#{9}	1900-01-01	2022-01-01	td1	generic				0			
+br-passport-current	BR	passport	@{2}#{6}	1900-01-01		td3	specimen							
+bs-passport-generic	BS	passport	#{9}	1900-01-01		td3	generic		PA					
+bt-id-card-generic	BT	id_card	#{9}	1900-01-01		none	generic				15			
+bt-passport-generic	BT	passport	#{9}	1900-01-01		td3	generic							
+bw-id-card-generic	BW	id_card	#{9}	1900-01-01		none	generic				16			
+bw-passport-generic	BW	passport	#{9}	1900-01-01		td3	generic							
+by-id-card-2021	BY	id_card	@{2}#{7}	2021-01-01		td1	specimen				14			
+by-id-card-generic	BY	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				14			
+by-passport-2021	BY	passport	@{2}#{7}	2021-01-01		td3	issuer							
+by-passport-generic	BY	passport	#{9}	1900-01-01	2021-01-01	td3	generic							
+bz-id-card-generic	BZ	id_card	#{9}	1900-01-01		none	generic							
+bz-passport-generic	BZ	passport	#{9}	1900-01-01		td3	generic							
+ca-passport-2023	CA	passport	@#{6}@{2}	2023-01-01		td3	specimen							
+ca-passport-current	CA	passport	@{2}#{6}	1900-01-01	2023-01-01	td3	reference							
+cd-passport-2015	CD	passport	OP#{7}	2015-01-01		td3	reference							
+cd-passport-current	CD	passport	OB#{7}	1900-01-01	2015-01-01	td3	reference							
+cf-id-card-generic	CF	id_card	#{9}	1900-01-01		none	generic							
+cf-passport-generic	CF	passport	#{9}	1900-01-01		td3	generic							
+cg-id-card-generic	CG	id_card	#{9}	1900-01-01		none	generic				18			
+cg-passport-generic	CG	passport	#{9}	1900-01-01		td3	generic							
+ch-id-card-2023	CH	id_card	[A-HJ-NP-Z0-9]{8}	2023-01-01		td1	specimen				0			
+ch-id-card-generic	CH	id_card	#{9}	1900-01-01	2023-01-01	td1	generic				0			
+ch-passport-2022	CH	passport	[A-HJ-NP-Z0-9]{8}	2022-10-31		td3	reference		PM					
+ch-passport-generic	CH	passport	#{9}	1900-01-01	2022-10-31	td3	generic		PM					
+ci-id-card-generic	CI	id_card	#{9}	1900-01-01		none	generic				5			
+ci-passport-generic	CI	passport	#{9}	1900-01-01		td3	generic							
+cl-id-card-2013	CL	id_card	#{9}	2013-01-01	2024-01-01	td1	specimen		IN	cl-run	0			
+cl-id-card-2024	CL	id_card	@{2}#{7}	2024-01-01		td1	issuer		IN	cl-run	0			
+cl-id-card-generic	CL	id_card	#{9}	1900-01-01	2013-01-01	td1	generic		IN	cl-run	0			
+cl-passport-2024	CL	passport	*{9}	2024-01-01		td3	issuer			cl-run				
+cl-passport-generic	CL	passport	#{9}	1900-01-01	2024-01-01	td3	generic			cl-run				
+cm-id-card-generic	CM	id_card	#{9}	1900-01-01		none	generic							
+cm-passport-generic	CM	passport	#{9}	1900-01-01		td3	generic							
+cn-id-card-1999	CN	id_card	#{17}[0-9X]	1999-01-01		none	issuer				0			cn-ric
+cn-id-card-generic	CN	id_card	#{9}	1900-01-01	1999-01-01	none	generic				0			
+cn-passport-2012	CN	passport	E#{8}	2012-01-01	2017-01-01	td3	reference							
+cn-passport-2017	CN	passport	E[A-HJ-NP-Z]#{7}	2017-01-01		td3	issuer							
+cn-passport-current	CN	passport	G#{8}	1900-01-01	2012-01-01	td3	specimen							
+co-id-card-2004	CO	id_card	1#{9}	2004-01-01		td1	reference				18			
+co-id-card-generic	CO	id_card	#{9}	1900-01-01	2004-01-01	td1	generic				18			
+co-passport-current	CO	passport	@{2}#{6}	1900-01-01		td3	specimen							
+cr-id-card-2025	CR	id_card	#{9}	2025-01-01		none	specimen				18			
+cr-id-card-generic	CR	id_card	#{9}	1900-01-01	2025-01-01	none	generic				18			
+cr-passport-generic	CR	passport	#{9}	1900-01-01		td3	generic							
+cu-id-card-generic	CU	id_card	#{9}	1900-01-01		none	generic				16			
+cu-passport-generic	CU	passport	#{9}	1900-01-01		td3	generic							
+cv-id-card-generic	CV	id_card	#{9}	1900-01-01		td1	generic				0			
+cv-passport-generic	CV	passport	#{9}	1900-01-01		td3	generic							
+cy-id-card-2020	CY	id_card	@{2}#{7}	2020-01-01		td1	placeholder				0			
+cy-id-card-generic	CY	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				0			
+cy-passport-2020	CY	passport	@#{8}	2020-01-01		td3	reference							
+cy-passport-generic	CY	passport	#{9}	1900-01-01	2020-01-01	td3	generic							
+cz-id-card-2012	CZ	id_card	#{9}	2012-01-01		td1	specimen				0			
+cz-id-card-generic	CZ	id_card	#{9}	1900-01-01	2012-01-01	td1	generic				0			
+cz-passport-2006	CZ	passport	#{8}	2006-01-01		td3	specimen			cz-rc				
+cz-passport-generic	CZ	passport	#{9}	1900-01-01	2006-01-01	td3	generic			cz-rc				
+de-id-card-2010	DE	id_card	[LMNPRTVWXY][CFGHJKLMNPRTVWXYZ1-9]{8}	2010-01-01		td1	reference				0			
+de-id-card-generic	DE	id_card	#{9}	1900-01-01	2010-01-01	td1	generic				0			
+de-passport-2007	DE	passport	[CFGHJK][CFGHJKLMNPRTVWXYZ1-9]{8}	2007-11-01		td3	reference							
+de-passport-current	DE	passport	#{9}	1900-01-01	2007-11-01	td3	reference							
+dj-id-card-generic	DJ	id_card	#{9}	1900-01-01		none	generic							
+dj-passport-generic	DJ	passport	#{9}	1900-01-01		td3	generic							
+dk-passport-current	DK	passport	#{9}	1900-01-01		td3	placeholder			dk-cpr				
+dm-id-card-generic	DM	id_card	#{9}	1900-01-01		none	generic							
+dm-passport-generic	DM	passport	#{9}	1900-01-01		td3	generic							
+do-id-card-2026	DO	id_card	#{3}-#{7}-#	2026-01-01		td1	specimen				16			
+do-id-card-generic	DO	id_card	#{9}	1900-01-01	2026-01-01	td1	generic				16			
+do-passport-2026	DO	passport	@#{8}	2026-01-01		td3	placeholder		PP					
+do-passport-generic	DO	passport	#{9}	1900-01-01	2026-01-01	td3	generic							
+dz-id-card-generic	DZ	id_card	#{9}	1900-01-01		td1	generic							
+dz-passport-generic	DZ	passport	#{9}	1900-01-01		td3	generic							
+ec-id-card-2020	EC	id_card	#{9}	2020-01-01		td1	specimen				0			
+ec-id-card-generic	EC	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				0			
+ec-passport-generic	EC	passport	#{9}	1900-01-01		td3	generic			ec-cedula				
+ee-id-card-2021	EE	id_card	@{2}#{7}	2021-01-01		td1	specimen			ee-isikukood	0			
+ee-id-card-generic	EE	id_card	#{9}	1900-01-01	2021-01-01	td1	generic			ee-isikukood	0			
+ee-passport-2021	EE	passport	@{2}#{7}	2021-01-01		td3	placeholder			ee-isikukood				
+ee-passport-current	EE	passport	@#{7}	1900-01-01	2021-01-01	td3	reference			ee-isikukood				
+eg-id-card-current	EG	id_card	[23]#{13}	1900-01-01		none	reference				15			
+eg-passport-2008	EG	passport	A#{8}	2008-01-01		td3	specimen							
+eg-passport-generic	EG	passport	#{9}	1900-01-01	2008-01-01	td3	generic							
+er-id-card-generic	ER	id_card	#{9}	1900-01-01		none	generic							
+er-passport-generic	ER	passport	#{9}	1900-01-01		td3	generic							
+es-id-card-2006	ES	id_card	@{3}#{6}	2006-01-01		td1	issuer				0			
+es-id-card-generic	ES	id_card	#{9}	1900-01-01	2006-01-01	td1	generic				0			
+es-passport-current	ES	passport	@{3}#{6}	1900-01-01		td3	reference							
+et-id-card-2023	ET	id_card	#{12}	2023-01-01		none	specimen							
+et-id-card-generic	ET	id_card	#{9}	1900-01-01	2023-01-01	none	generic							
+et-passport-generic	ET	passport	#{9}	1900-01-01		td3	generic							
+fi-id-card-2021	FI	id_card	#{9}	2021-01-01		td1	placeholder				0			
+fi-id-card-generic	FI	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0			
+fi-passport-2023	FI	passport	@{2}#{7}	2023-01-01		td3	reference			fi-hetu				
+fi-passport-generic	FI	passport	#{9}	1900-01-01	2023-01-01	td3	generic			fi-hetu				
+fj-passport-generic	FJ	passport	#{9}	1900-01-01		td3	generic							
+fm-id-card-generic	FM	id_card	#{9}	1900-01-01		none	generic							
+fm-passport-generic	FM	passport	#{9}	1900-01-01		td3	generic							
+fr-id-card-2021	FR	id_card	*{9}	2021-01-01		td1	specimen				0			
+fr-id-card-generic	FR	id_card	#{9}	1900-01-01	2021-01-01	td1	generic				0			
+fr-passport-current	FR	passport	#{2}@{2}#{5}	1900-01-01		td3	specimen							
+ga-id-card-generic	GA	id_card	#{9}	1900-01-01		none	generic				16			
+ga-passport-generic	GA	passport	#{9}	1900-01-01		td3	generic							
+gb-passport-1988	GB	passport	#{9}	1988-01-01		td3	issuer							
+gb-passport-generic	GB	passport	#{9}	1900-01-01	1988-01-01	td3	generic							
+gd-id-card-generic	GD	id_card	#{9}	1900-01-01		none	generic							
+gd-passport-generic	GD	passport	#{9}	1900-01-01		td3	generic							
+ge-id-card-generic	GE	id_card	#{9}	1900-01-01		td1	generic				14			
+ge-passport-generic	GE	passport	#{9}	1900-01-01		td3	generic							
+gh-id-card-generic	GH	id_card	#{9}	1900-01-01		td1	generic				15			
+gh-passport-2010	GH	passport	@#{7}	2010-01-01		td3	specimen							
+gh-passport-generic	GH	passport	#{9}	1900-01-01	2010-01-01	td3	generic							
+gm-id-card-generic	GM	id_card	#{9}	1900-01-01		none	generic				18			
+gm-passport-generic	GM	passport	#{9}	1900-01-01		td3	generic							
+gn-id-card-generic	GN	id_card	#{9}	1900-01-01		none	generic				16			
+gn-passport-generic	GN	passport	#{9}	1900-01-01		td3	generic							
+gq-id-card-generic	GQ	id_card	#{9}	1900-01-01		none	generic							
+gq-passport-generic	GQ	passport	#{9}	1900-01-01		td3	generic							
+gr-id-card-2023	GR	id_card	@#{8}	2023-01-01		td1	specimen				12			
+gr-id-card-generic	GR	id_card	#{9}	1900-01-01	2023-01-01	td1	generic				12			
+gr-passport-2023	GR	passport	@{2}#{7}	2023-01-01		td3	reference							
+gr-passport-generic	GR	passport	#{9}	1900-01-01	2023-01-01	td3	generic							
+gt-id-card-generic	GT	id_card	#{9}	1900-01-01		none	generic				18			
+gt-passport-2023	GT	passport	#{15}	2023-01-01		td3	issuer							
+gt-passport-generic	GT	passport	#{9}	1900-01-01	2023-01-01	td3	generic							
+gw-id-card-generic	GW	id_card	#{9}	1900-01-01		none	generic							
+gw-passport-generic	GW	passport	#{9}	1900-01-01		td3	generic							
+gy-id-card-generic	GY	id_card	#{9}	1900-01-01		none	generic							
+gy-passport-generic	GY	passport	#{9}	1900-01-01		td3	generic							
+hk-id-card-2018	HK	id_card	@{1,2}#{6}\([0-9A]\)	2018-01-01		none	reference				11			hk-hkid
+hk-id-card-generic	HK	id_card	#{9}	1900-01-01	2018-01-01	none	generic				11			
+hk-passport-2007	HK	passport	K#{8}	2007-01-01	2019-01-01	td3	placeholder			hk-hkid				
+hk-passport-2019	HK	passport	H#{8}	2019-01-01		td3	placeholder			hk-hkid				
+hk-passport-generic	HK	passport	#{9}	1900-01-01	2007-01-01	td3	generic			hk-hkid				
+hn-id-card-generic	HN	id_card	#{9}	1900-01-01		td1	generic				18			
+hn-passport-generic	HN	passport	#{9}	1900-01-01		td3	generic							
+hr-id-card-2021	HR	id_card	#{9}	2021-01-01		td1	reference		IO	hr-oib	0			
+hr-id-card-generic	HR	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		IO	hr-oib	0			
+hr-passport-2009	HR	passport	#{9}	2009-01-01		td3	reference							
+hr-passport-generic	HR	passport	#{9}	1900-01-01	2009-01-01	td3	generic							
+ht-id-card-2018	HT	id_card	*{9}	2018-01-01		none	reference				18			
+ht-id-card-generic	HT	id_card	#{9}	1900-01-01	2018-01-01	none	generic				18			
+ht-passport-generic	HT	passport	#{9}	1900-01-01		td3	generic							
+hu-id-card-2000	HU	id_card	#{6}@{2}	2000-01-01		td1	reference				0			
+hu-id-card-generic	HU	id_card	#{9}	1900-01-01	2000-01-01	td1	generic				0			
+hu-passport-2012	HU	passport	@{2}#{7}	2012-01-01		td3	specimen							
+hu-passport-generic	HU	passport	#{9}	1900-01-01	2012-01-01	td3	generic							
+id-id-card-2011	ID	id_card	#{16}	2011-01-01		none	reference				17			id-nik
+id-id-card-generic	ID	id_card	#{9}	1900-01-01	2011-01-01	none	generic				17			
+id-passport-current	ID	passport	@#{6}	1900-01-01		td3	placeholder							
+ie-passport-current	IE	passport	[PL]@#{7}	1900-01-01		td3	issuer							
+il-id-card-2013	IL	id_card	#{9}	2013-01-01		none	reference				16			il-idnr
+il-id-card-generic	IL	id_card	#{9}	1900-01-01	2013-01-01	none	generic				16			
+il-passport-2013	IL	passport	#{8}	2013-01-01		td3	specimen							
+il-passport-generic	IL	passport	#{9}	1900-01-01	2013-01-01	td3	generic							
+in-id-card-2010	IN	id_card	[2-9]#{11}	2010-01-01		none	issuer				0			in-aadhaar
+in-id-card-generic	IN	id_card	#{9}	1900-01-01	2010-01-01	none	generic				0			
+in-passport-2024	IN	passport	@{2}#{6}	2024-04-01		td3	reference							
+in-passport-current	IN	passport	@#{7}	1900-01-01	2024-04-01	td3	placeholder							
+iq-id-card-2016	IQ	id_card	@{2}#{7}	2016-01-01		td1	reference							
+iq-id-card-generic	IQ	id_card	#{9}	1900-01-01	2016-01-01	td1	generic							
+iq-passport-2023	IQ	passport	@#{8}	2023-01-01		td3	placeholder							
+iq-passport-generic	IQ	passport	#{9}	1900-01-01	2023-01-01	td3	generic							
+ir-id-card-2015	IR	id_card	#{10}	2015-01-01		none	reference				15			ir-codemeli
+ir-id-card-generic	IR	id_card	#{9}	1900-01-01	2015-01-01	none	generic				15			
+ir-passport-2011	IR	passport	@#{8}	2011-01-01		td3	placeholder							
+ir-passport-generic	IR	passport	#{9}	1900-01-01	2011-01-01	td3	generic							
+is-id-card-2024	IS	id_card	@{2}#{7}	2024-01-01		td1	placeholder			is-kennitala	0			
+is-id-card-generic	IS	id_card	#{9}	1900-01-01	2024-01-01	td1	generic			is-kennitala	0			
+is-passport-2019	IS	passport	@#{7}	2019-01-01		td3	specimen		PA	is-kennitala				
+is-passport-generic	IS	passport	#{9}	1900-01-01	2019-01-01	td3	generic		PA	is-kennitala				
+it-id-card-2016	IT	id_card	@{2}#{5}@{2}	2016-01-01		td1	issuer				0			
+it-id-card-current	IT	id_card	@{2}#{7}	1900-01-01	2016-01-01	td1	placeholder				0			
+it-passport-current	IT	passport	@{2}#{7}	1900-01-01		td3	issuer							
+jm-id-card-generic	JM	id_card	#{9}	1900-01-01		none	generic							
+jm-passport-generic	JM	passport	#{9}	1900-01-01		td3	generic							
+jo-id-card-generic	JO	id_card	#{9}	1900-01-01		none	generic				16			
+jo-passport-generic	JO	passport	#{9}	1900-01-01		td3	generic							
+jp-id-card-2016	JP	id_card	#{12}	2016-01-01		none	issuer				0			jp-mynumber
+jp-id-card-generic	JP	id_card	#{9}	1900-01-01	2016-01-01	none	generic				0			
+jp-passport-current	JP	passport	@{2}#{7}	1900-01-01		td3	issuer							
+ke-id-card-generic	KE	id_card	#{9}	1900-01-01		td1	generic				18			
+ke-passport-generic	KE	passport	#{9}	1900-01-01		td3	generic							
+kg-id-card-generic	KG	id_card	#{9}	1900-01-01		td1	generic		I<		16			
+kg-passport-2024	KG	passport	@{2}#{7}	2024-01-01		td3	specimen							
+kg-passport-generic	KG	passport	#{9}	1900-01-01	2024-01-01	td3	generic							
+kh-id-card-generic	KH	id_card	#{9}	1900-01-01		none	generic							
+kh-passport-generic	KH	passport	#{9}	1900-01-01		td3	generic							
+ki-id-card-generic	KI	id_card	#{9}	1900-01-01		none	generic				18			
+ki-passport-generic	KI	passport	#{9}	1900-01-01		td3	generic							
+km-id-card-generic	KM	id_card	#{9}	1900-01-01		none	generic							
+km-passport-generic	KM	passport	#{9}	1900-01-01		td3	generic							
+kn-id-card-generic	KN	id_card	#{9}	1900-01-01		none	generic							
+kn-passport-generic	KN	passport	#{9}	1900-01-01		td3	generic							
+kp-id-card-generic	KP	id_card	#{9}	1900-01-01		none	generic				17			
+kp-passport-generic	KP	passport	#{9}	1900-01-01		td3	generic							
+kr-id-card-1968	KR	id_card	#{6}-[1-8]#{6}	1968-01-01		none	reference				17			kr-rrn
+kr-id-card-generic	KR	id_card	#{9}	1900-01-01	1968-01-01	none	generic				17			
+kr-passport-2008	KR	passport	[MS]#{8}	2008-01-01	2021-12-21	td3	specimen							
+kr-passport-2021	KR	passport	[MS]#{3}@#{4}	2021-12-21		td3	issuer							
+kr-passport-generic	KR	passport	#{9}	1900-01-01	2008-01-01	td3	generic							
+kw-id-card-current	KW	id_card	[123]#{11}	1900-01-01		none	reference				0			
+kw-passport-generic	KW	passport	#{9}	1900-01-01		td3	generic							
+kz-id-card-2014	KZ	id_card	#{9}	2014-01-01		td1	issuer			kz-iin	16			
+kz-id-card-generic	KZ	id_card	#{9}	1900-01-01	2014-01-01	td1	generic			kz-iin	16			
+kz-passport-2009	KZ	passport	N#{8}	2009-01-01		td3	issuer							
+kz-passport-generic	KZ	passport	#{9}	1900-01-01	2009-01-01	td3	generic							
+la-id-card-generic	LA	id_card	#{9}	1900-01-01		none	generic				16			
+la-passport-generic	LA	passport	#{9}	1900-01-01		td3	generic							
+lb-id-card-generic	LB	id_card	#{9}	1900-01-01		none	generic							
+lb-passport-generic	LB	passport	#{9}	1900-01-01		td3	generic							
+lc-id-card-generic	LC	id_card	#{9}	1900-01-01		none	generic							
+lc-passport-generic	LC	passport	#{9}	1900-01-01		td3	generic							
+li-id-card-2009	LI	id_card	ID#{7}	2009-01-01		td1	specimen				0			
+li-id-card-generic	LI	id_card	#{9}	1900-01-01	2009-01-01	td1	generic				0			
+li-passport-2006	LI	passport	R#{5}	2006-01-01	2026-01-01	td3	placeholder							
+li-passport-2026	LI	passport	@{2}#{7}	2026-01-01		td3	placeholder		PP					
+li-passport-generic	LI	passport	#{9}	1900-01-01	2006-01-01	td3	generic							
+lk-id-card-2016	LK	id_card	#{12}	2016-01-01		none	reference				16			
+lk-id-card-current	LK	id_card	#{9}[VX]	1900-01-01	2016-01-01	none	reference				16			
+lk-passport-generic	LK	passport	#{9}	1900-01-01		td3	generic							
+lr-id-card-generic	LR	id_card	#{9}	1900-01-01		none	generic							
+lr-passport-generic	LR	passport	#{9}	1900-01-01		td3	generic							
+ls-id-card-generic	LS	id_card	#{9}	1900-01-01		none	generic				16			
+ls-passport-generic	LS	passport	#{9}	1900-01-01		td3	generic							
+lt-id-card-2021	LT	id_card	#{8}	2021-01-01		td1	placeholder		I<	lt-asmens-kodas	0			
+lt-id-card-generic	LT	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	lt-asmens-kodas	0			
+lt-passport-2019	LT	passport	#{8}	2019-01-01		td3	placeholder			lt-asmens-kodas				
+lt-passport-generic	LT	passport	#{9}	1900-01-01	2019-01-01	td3	generic			lt-asmens-kodas				
+lu-id-card-generic	LU	id_card	#{9}	1900-01-01		td1	generic				0			
+lu-passport-2015	LU	passport	*{8}	2015-01-01		td3	specimen							
+lu-passport-generic	LU	passport	#{9}	1900-01-01	2015-01-01	td3	generic							
+lv-id-card-2021	LV	id_card	@{2}#{7}	2021-01-01		td1	specimen		I<	lv-personas-kods	0			
+lv-id-card-generic	LV	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	lv-personas-kods	0			
+lv-passport-2023	LV	passport	@{2}#{7}	2023-01-01		td3	reference			lv-personas-kods				
+lv-passport-generic	LV	passport	#{9}	1900-01-01	2023-01-01	td3	generic			lv-personas-kods				
+ly-id-card-generic	LY	id_card	#{9}	1900-01-01		none	generic				16			
+ly-passport-generic	LY	passport	#{9}	1900-01-01		td3	generic							
+ma-id-card-2020	MA	id_card	@{3}#{5}	2020-01-01		td1	specimen		I<		16			
+ma-id-card-generic	MA	id_card	#{9}	1900-01-01	2020-01-01	td1	generic		I<		16			
+ma-passport-generic	MA	passport	#{9}	1900-01-01		td3	generic							
+mc-id-card-2009	MC	id_card	#{6}	2009-01-01		td1	specimen		I<		0			
+mc-id-card-generic	MC	id_card	#{9}	1900-01-01	2009-01-01	td1	generic		I<		0			
+mc-passport-generic	MC	passport	#{9}	1900-01-01		td3	generic							
+md-id-card-2025	MD	id_card	@#{8}	2025-01-01		td1	placeholder				0			
+md-id-card-generic	MD	id_card	#{9}	1900-01-01	2025-01-01	td1	generic				0			
+md-passport-2023	MD	passport	@{2}#{7}	2023-01-01		td3	placeholder		PA					
+md-passport-generic	MD	passport	#{9}	1900-01-01	2023-01-01	td3	generic		PA					
+me-id-card-generic	ME	id_card	#{9}	1900-01-01		td1	generic				0			
+me-passport-generic	ME	passport	#{9}	1900-01-01		td3	generic			me-jmbg				
+mg-id-card-generic	MG	id_card	#{9}	1900-01-01		none	generic				18			
+mg-passport-generic	MG	passport	#{9}	1900-01-01		td3	generic							
+mh-passport-generic	MH	passport	#{9}	1900-01-01		td3	generic							
+mk-id-card-generic	MK	id_card	#{9}	1900-01-01		td1	generic				15			
+mk-passport-2007	MK	passport	@#{7}	2007-01-01		td3	specimen			mk-embg				
+mk-passport-generic	MK	passport	#{9}	1900-01-01	2007-01-01	td3	generic			mk-embg				
+ml-id-card-generic	ML	id_card	#{9}	1900-01-01		none	generic				15			
+ml-passport-generic	ML	passport	#{9}	1900-01-01		td3	generic							
+mm-id-card-generic	MM	id_card	#{9}	1900-01-01		none	generic							
+mm-passport-2010	MM	passport	MA#{6}	2010-01-01		td3	specimen							
+mm-passport-generic	MM	passport	#{9}	1900-01-01	2010-01-01	td3	generic							
+mn-id-card-generic	MN	id_card	#{9}	1900-01-01		none	generic				16			
+mn-passport-generic	MN	passport	#{9}	1900-01-01		td3	generic							
+mo-id-card-2002	MO	id_card	#{7}\(#\)	2002-01-01		none	reference				5			
+mo-id-card-generic	MO	id_card	#{9}	1900-01-01	2002-01-01	none	generic				5			
+mo-passport-2009	MO	passport	M@#{7}	2009-01-01		td3	reference							
+mo-passport-generic	MO	passport	#{9}	1900-01-01	2009-01-01	td3	generic							
+mr-id-card-generic	MR	id_card	#{9}	1900-01-01		td1	generic				6			
+mr-passport-2010	MR	passport	@{2}#{7}	2010-01-01		td3	placeholder							
+mr-passport-generic	MR	passport	#{9}	1900-01-01	2010-01-01	td3	generic							
+mt-id-card-2020	MT	id_card	#{8}	2020-01-01		td1	specimen				14			
+mt-id-card-generic	MT	id_card	#{9}	1900-01-01	2020-01-01	td1	generic				14			
+mt-passport-current	MT	passport	#{7}	1900-01-01		td3	reference							
+mu-id-card-2013	MU	id_card	*{9}	2013-01-01		none	issuer				18			
+mu-id-card-generic	MU	id_card	#{9}	1900-01-01	2013-01-01	none	generic				18			
+mu-passport-generic	MU	passport	#{9}	1900-01-01		td3	generic							
+mv-id-card-generic	MV	id_card	#{9}	1900-01-01		none	generic							
+mv-passport-generic	MV	passport	#{9}	1900-01-01		td3	generic							
+mw-id-card-generic	MW	id_card	#{9}	1900-01-01		none	generic				16			
+mw-passport-generic	MW	passport	#{9}	1900-01-01		td3	generic							
+mx-id-card-2019	MX	id_card	#{9}	2019-01-01		td1	specimen				18			
+mx-id-card-generic	MX	id_card	#{9}	1900-01-01	2019-01-01	td1	generic				18			
+mx-passport-generic	MX	passport	#{9}	1900-01-01		td3	generic							
+my-id-card-2001	MY	id_card	#{6}-#{2}-#{4}	2001-01-01		none	reference				12			my-mykad
+my-id-card-generic	MY	id_card	#{9}	1900-01-01	2001-01-01	none	generic				12			
+my-passport-current	MY	passport	[AHK]#{8}	1900-01-01		td3	reference			my-mykad				
+mz-id-card-generic	MZ	id_card	#{9}	1900-01-01		none	generic				6			
+mz-passport-generic	MZ	passport	#{9}	1900-01-01		td3	generic							
+na-id-card-2016	NA	id_card	#{11}	2016-01-01		td1	issuer				16			
+na-id-card-generic	NA	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				16			
+na-passport-generic	NA	passport	#{9}	1900-01-01		td3	generic							
+ne-id-card-generic	NE	id_card	#{9}	1900-01-01		none	generic				15			
+ne-passport-generic	NE	passport	#{9}	1900-01-01		td3	generic							
+ng-id-card-generic	NG	id_card	#{9}	1900-01-01		td1	generic				16			
+ng-passport-generic	NG	passport	#{9}	1900-01-01		td3	generic							
+ni-id-card-generic	NI	id_card	#{9}	1900-01-01		none	generic				16			
+ni-passport-generic	NI	passport	#{9}	1900-01-01		td3	generic							
+nl-id-card-2019	NL	id_card	[A-NP-Z]{2}[A-NP-Z1-9]{6}[1-9]	2019-12-01		td1	issuer				0			
+nl-id-card-current	NL	id_card	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	td1	issuer				0			
+nl-passport-2019	NL	passport	[A-NP-Z]{2}[A-NP-Z1-9]{6}[1-9]	2019-12-01		td3	issuer							
+nl-passport-current	NL	passport	[A-NP-Z]{2}[A-NP-Z0-9]{6}[0-9]	1900-01-01	2019-12-01	td3	issuer							
+no-id-card-2020	NO	id_card	@{3}#{6}	2020-01-01		td1	placeholder		CA	no-fodselsnummer	0			
+no-id-card-generic	NO	id_card	#{9}	1900-01-01	2020-01-01	td1	generic		CA	no-fodselsnummer	0			
+no-passport-2020	NO	passport	@{3}#{6}	2020-01-01		td3	specimen							
+no-passport-generic	NO	passport	#{9}	1900-01-01	2020-01-01	td3	generic							
+np-id-card-generic	NP	id_card	#{9}	1900-01-01		none	generic				16			
+np-passport-2021	NP	passport	PA#{7}	2021-01-01		td3	placeholder							
+np-passport-generic	NP	passport	#{9}	1900-01-01	2021-01-01	td3	generic							
+nr-passport-current	NR	passport	#{6}	1900-01-01		td3	specimen							
+nz-passport-2020	NZ	passport	@{2}#{6}	2020-01-01		td3	specimen							
+nz-passport-generic	NZ	passport	#{9}	1900-01-01	2020-01-01	td3	generic							
+om-id-card-generic	OM	id_card	#{9}	1900-01-01		none	generic				10			
+om-passport-2014	OM	passport	@{2}#{7}	2014-01-01		td3	specimen							
+om-passport-generic	OM	passport	#{9}	1900-01-01	2014-01-01	td3	generic							
+pa-id-card-generic	PA	id_card	#{9}	1900-01-01		none	generic				12			
+pa-passport-generic	PA	passport	#{9}	1900-01-01		td3	generic							
+pe-id-card-1996	PE	id_card	#{8}	1996-01-01		td1	specimen				0			pe-dni
+pe-id-card-generic	PE	id_card	#{9}	1900-01-01	1996-01-01	td1	generic				0			
+pe-passport-generic	PE	passport	#{9}	1900-01-01		td3	generic							
+pg-id-card-generic	PG	id_card	#{9}	1900-01-01		none	generic				18			
+pg-passport-generic	PG	passport	#{9}	1900-01-01		td3	generic							
+ph-id-card-2021	PH	id_card	#{4}-#{4}-#{4}-#{4}	2021-01-01		none	issuer							
+ph-id-card-generic	PH	id_card	#{9}	1900-01-01	2021-01-01	none	generic							
+ph-passport-2009	PH	passport	@{2}#{7}	2009-01-01	2016-01-01	td3	placeholder							
+ph-passport-2016	PH	passport	P#{7}@	2016-01-01		td3	reference							
+ph-passport-generic	PH	passport	#{9}	1900-01-01	2009-01-01	td3	generic							
+pk-id-card-2000	PK	id_card	#{5}-#{7}-#	2000-01-01		none	reference				18			pk-cnic
+pk-id-card-generic	PK	id_card	#{9}	1900-01-01	2000-01-01	none	generic				18			
+pk-passport-generic	PK	passport	#{9}	1900-01-01		td3	generic							
+pl-id-card-2021	PL	id_card	[A-NPR-Z]{3}#{6}	2021-01-01		td1	reference			pl-pesel	0			
+pl-id-card-generic	PL	id_card	#{9}	1900-01-01	2021-01-01	td1	generic			pl-pesel	0			
+pl-passport-2001	PL	passport	@{2}#{7}	2001-01-01		td3	reference							
+pl-passport-generic	PL	passport	#{9}	1900-01-01	2001-01-01	td3	generic							
+ps-id-card-current	PS	id_card	#{9}	1900-01-01		none	placeholder				16			
+ps-passport-current	PS	passport	#{8}	1900-01-01		td3	specimen							
+pt-id-card-2007	PT	id_card	#{8}#[A-Z0-9]{2}#	2007-01-01		td1	reference		I<		0			
+pt-id-card-generic	PT	id_card	#{9}	1900-01-01	2007-01-01	td1	generic		I<		0			
+pt-passport-2017	PT	passport	@#{6}	2017-01-01		td3	reference							
+pt-passport-generic	PT	passport	#{9}	1900-01-01	2017-01-01	td3	generic							
+pw-passport-generic	PW	passport	#{9}	1900-01-01		td3	generic							
+py-id-card-generic	PY	id_card	#{9}	1900-01-01		none	generic							
+py-passport-generic	PY	passport	#{9}	1900-01-01		td3	generic							
+qa-id-card-current	QA	id_card	[23]#{2}634#{5}	1900-01-01		none	reference				15			
+qa-passport-generic	QA	passport	#{9}	1900-01-01		td3	generic							
+ro-id-card-2025	RO	id_card	@{2}#{7}	2025-03-20		td1	specimen				0			
+ro-id-card-current	RO	id_card	@{2}#{6}	1900-01-01	2025-03-20	td1	reference				0			
+ro-passport-2024	RO	passport	#{9}	2024-01-01		td3	specimen		PE	ro-cnp				
+ro-passport-generic	RO	passport	#{9}	1900-01-01	2024-01-01	td3	generic			ro-cnp				
+rs-id-card-2008	RS	id_card	#{9}	2008-01-01		td1	specimen			rs-jmbg	10			
+rs-id-card-generic	RS	id_card	#{9}	1900-01-01	2008-01-01	td1	generic			rs-jmbg	10			
+rs-passport-2008	RS	passport	#{9}	2008-01-01		td3	placeholder			rs-jmbg				
+rs-passport-generic	RS	passport	#{9}	1900-01-01	2008-01-01	td3	generic			rs-jmbg				
+ru-id-card-1997	RU	id_card	#{4}#{6}	1997-01-01		none	issuer				14		2	
+ru-id-card-generic	RU	id_card	#{9}	1900-01-01	1997-01-01	none	generic				14			
+ru-passport-current	RU	passport	#{2}#{7}	1900-01-01		td3	specimen							
+rw-id-card-generic	RW	id_card	#{9}	1900-01-01		none	generic				16			
+rw-passport-generic	RW	passport	#{9}	1900-01-01		td3	generic							
+sa-id-card-current	SA	id_card	1#{9}	1900-01-01		none	reference				15			sa-nid
+sa-passport-generic	SA	passport	#{9}	1900-01-01		td3	generic							
+sb-passport-generic	SB	passport	#{9}	1900-01-01		td3	generic							
+sc-id-card-generic	SC	id_card	#{9}	1900-01-01		none	generic							
+sc-passport-2022	SC	passport	@{2}#{6}	2022-01-01		td3	specimen							
+sc-passport-generic	SC	passport	#{9}	1900-01-01	2022-01-01	td3	generic							
+sd-id-card-generic	SD	id_card	#{9}	1900-01-01		none	generic				16			
+sd-passport-generic	SD	passport	#{9}	1900-01-01		td3	generic							
+se-id-card-2021	SE	id_card	@{2}#{7}	2021-01-01		td1	placeholder		I<	se-personnummer	0			
+se-id-card-generic	SE	id_card	#{9}	1900-01-01	2021-01-01	td1	generic		I<	se-personnummer	0			
+se-passport-2022	SE	passport	@{2}#{7}	2022-01-01		td3	placeholder			se-personnummer				
+se-passport-current	SE	passport	#{8}	1900-01-01	2022-01-01	td3	reference			se-personnummer				
+sg-id-card-1966	SG	id_card	[ST]#{7}@	1966-01-01		none	reference				15			sg-nric
+sg-id-card-generic	SG	id_card	#{9}	1900-01-01	1966-01-01	none	generic				15			
+sg-passport-2006	SG	passport	@#{7}@	2006-01-01		td3	reference							
+sg-passport-generic	SG	passport	#{9}	1900-01-01	2006-01-01	td3	generic							
+si-id-card-2022	SI	id_card	@{2}#{7}	2022-03-28		td1	specimen				0			
+si-id-card-generic	SI	id_card	#{9}	1900-01-01	2022-03-28	td1	generic				0			
+si-passport-2006	SI	passport	P@#{7}	2006-01-01		td3	specimen			si-emso				
+si-passport-generic	SI	passport	#{9}	1900-01-01	2006-01-01	td3	generic			si-emso				
+sk-id-card-2022	SK	id_card	@{2}#{6}	2022-01-01		td1	specimen				0			
+sk-id-card-generic	SK	id_card	#{9}	1900-01-01	2022-01-01	td1	generic				0			
+sk-passport-2024	SK	passport	@{2}#{7}	2024-01-01		td3	specimen		PP	sk-rc				
+sk-passport-generic	SK	passport	#{9}	1900-01-01	2024-01-01	td3	generic			sk-rc				
+sl-id-card-generic	SL	id_card	#{9}	1900-01-01		none	generic				12			
+sl-passport-generic	SL	passport	#{9}	1900-01-01		td3	generic							
+sm-id-card-2024	SM	id_card	2003#{5}	2024-01-01		td1	issuer				0			
+sm-id-card-generic	SM	id_card	#{9}	1900-01-01	2024-01-01	td1	generic				0			
+sm-passport-generic	SM	passport	#{9}	1900-01-01		td3	generic							
+sn-id-card-generic	SN	id_card	#{9}	1900-01-01		td1	generic				5			
+sn-passport-generic	SN	passport	#{9}	1900-01-01		td3	generic							
+so-id-card-generic	SO	id_card	#{9}	1900-01-01		none	generic							
+so-passport-generic	SO	passport	#{9}	1900-01-01		td3	generic							
+sr-id-card-generic	SR	id_card	#{9}	1900-01-01		none	generic							
+sr-passport-generic	SR	passport	#{9}	1900-01-01		td3	generic							
+ss-id-card-generic	SS	id_card	#{9}	1900-01-01		none	generic				18			
+ss-passport-generic	SS	passport	#{9}	1900-01-01		td3	generic							
+st-id-card-generic	ST	id_card	#{9}	1900-01-01		none	generic							
+st-passport-generic	ST	passport	#{9}	1900-01-01		td3	generic							
+sv-id-card-current	SV	id_card	#{8}-#	1900-01-01		none	specimen				18			
+sv-passport-generic	SV	passport	#{9}	1900-01-01		td3	generic							
+sy-id-card-generic	SY	id_card	#{9}	1900-01-01		none	generic				14			
+sy-passport-generic	SY	passport	#{9}	1900-01-01		td3	generic		PN					
+sz-id-card-generic	SZ	id_card	#{9}	1900-01-01		none	generic							
+sz-passport-generic	SZ	passport	#{9}	1900-01-01		td3	generic							
+td-id-card-generic	TD	id_card	#{9}	1900-01-01		none	generic							
+td-passport-generic	TD	passport	#{9}	1900-01-01		td3	generic							
+tg-id-card-generic	TG	id_card	#{9}	1900-01-01		none	generic							
+tg-passport-generic	TG	passport	#{9}	1900-01-01		td3	generic							
+th-id-card-1984	TH	id_card	#{13}	1984-01-01		none	reference				7			th-pin
+th-id-card-generic	TH	id_card	#{9}	1900-01-01	1984-01-01	none	generic				7			
+th-passport-current	TH	passport	@{2}#{7}	1900-01-01		td3	specimen							
+tj-id-card-generic	TJ	id_card	#{9}	1900-01-01		none	generic							
+tj-passport-generic	TJ	passport	#{9}	1900-01-01		td3	generic							
+tl-id-card-generic	TL	id_card	#{9}	1900-01-01		none	generic				0			
+tl-passport-generic	TL	passport	#{9}	1900-01-01		td3	generic							
+tm-passport-generic	TM	passport	#{9}	1900-01-01		td3	generic							
+tn-id-card-1993	TN	id_card	#{8}	1993-01-01		none	reference				18			
+tn-id-card-generic	TN	id_card	#{9}	1900-01-01	1993-01-01	none	generic				18			
+tn-passport-generic	TN	passport	#{9}	1900-01-01		td3	generic							
+to-id-card-generic	TO	id_card	#{9}	1900-01-01		none	generic				14			
+to-passport-generic	TO	passport	#{9}	1900-01-01		td3	generic				16			
+tr-id-card-2017	TR	id_card	@#{2}@#{5}	2017-01-01		td1	placeholder		I<	tr-tckn	0			
+tr-id-card-generic	TR	id_card	#{9}	1900-01-01	2017-01-01	td1	generic		I<	tr-tckn	0			
+tr-passport-generic	TR	passport	#{9}	1900-01-01		td3	generic							
+tt-id-card-generic	TT	id_card	#{9}	1900-01-01		none	generic				15			
+tt-passport-generic	TT	passport	#{9}	1900-01-01		td3	generic							
+tv-passport-generic	TV	passport	#{9}	1900-01-01		td3	generic							
+tw-id-card-2005	TW	id_card	@[12]#{8}	2005-01-01		none	reference				14			tw-nid
+tw-id-card-generic	TW	id_card	#{9}	1900-01-01	2005-01-01	none	generic				14			
+tw-passport-2008	TW	passport	3#{8}	2008-01-01		td3	reference			tw-nid				
+tw-passport-generic	TW	passport	#{9}	1900-01-01	2008-01-01	td3	generic			tw-nid				
+tz-id-card-generic	TZ	id_card	#{9}	1900-01-01		none	generic				18			
+tz-passport-generic	TZ	passport	#{9}	1900-01-01		td3	generic							
+ua-id-card-2016	UA	id_card	#{9}	2016-01-01		td1	reference				14			
+ua-id-card-generic	UA	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				14			
+ua-passport-2015	UA	passport	@{2}#{6}	2015-01-01		td3	placeholder							
+ua-passport-generic	UA	passport	#{9}	1900-01-01	2015-01-01	td3	generic							
+ug-id-card-generic	UG	id_card	#{9}	1900-01-01		none	generic				16			
+ug-passport-generic	UG	passport	#{9}	1900-01-01		td3	generic							
+us-id-card-2008	US	id_card	C#{8}	2008-01-01		td1	specimen		IP					
+us-id-card-generic	US	id_card	#{9}	1900-01-01	2008-01-01	td1	generic		IP					
+us-passport-2021	US	passport	@#{8}	2021-01-01		td3	specimen							
+us-passport-current	US	passport	#{9}	1900-01-01	2021-01-01	td3	specimen							
+uy-id-card-generic	UY	id_card	#{9}	1900-01-01		none	generic				0			
+uy-passport-2015	UY	passport	#{2}@{2}#{5}	2015-01-01		td3	specimen			uy-cedula				
+uy-passport-generic	UY	passport	#{9}	1900-01-01	2015-01-01	td3	generic			uy-cedula				
+uz-id-card-2021	UZ	id_card	@{2}#{7}	2021-01-01		none	placeholder				0			
+uz-id-card-generic	UZ	id_card	#{9}	1900-01-01	2021-01-01	none	generic				0			
+uz-passport-current	UZ	passport	@{2}#{7}	1900-01-01		td3	placeholder							
+va-id-card-generic	VA	id_card	#{9}	1900-01-01		none	generic							
+va-passport-generic	VA	passport	#{9}	1900-01-01		td3	generic		PP					
+vc-id-card-generic	VC	id_card	#{9}	1900-01-01		none	generic							
+vc-passport-generic	VC	passport	#{9}	1900-01-01		td3	generic							
+ve-id-card-current	VE	id_card	V#{7,8}	1900-01-01		none	specimen				9			
+ve-passport-generic	VE	passport	#{9}	1900-01-01		td3	generic							
+vn-id-card-2016	VN	id_card	0#{11}	2016-01-01		td1	reference				0			vn-cccd
+vn-id-card-generic	VN	id_card	#{9}	1900-01-01	2016-01-01	td1	generic				0			
+vn-passport-2022	VN	passport	P#{8}	2022-01-01		td3	placeholder			vn-cccd				
+vn-passport-current	VN	passport	@#{7}	1900-01-01	2022-01-01	td3	placeholder			vn-cccd				
+vu-id-card-generic	VU	id_card	#{9}	1900-01-01		none	generic							
+vu-passport-generic	VU	passport	#{9}	1900-01-01		td3	generic							
+ws-passport-generic	WS	passport	#{9}	1900-01-01		td3	generic							
+xk-id-card-2013	XK	id_card	ID#{7}	2013-01-01		td1	placeholder							
+xk-id-card-generic	XK	id_card	#{9}	1900-01-01	2013-01-01	td1	generic							
+xk-passport-2011	XK	passport	P#{8}	2011-01-01		td3	placeholder							
+xk-passport-generic	XK	passport	#{9}	1900-01-01	2011-01-01	td3	generic							
+ye-id-card-generic	YE	id_card	#{9}	1900-01-01		none	generic							
+ye-passport-generic	YE	passport	#{9}	1900-01-01		td3	generic		PR					
+za-id-card-2013	ZA	id_card	#{9}	2013-01-01		none	placeholder				16			
+za-id-card-generic	ZA	id_card	#{9}	1900-01-01	2013-01-01	none	generic				16			
+za-passport-2009	ZA	passport	[AM]#{8}	2009-01-01		td3	specimen							
+za-passport-generic	ZA	passport	#{9}	1900-01-01	2009-01-01	td3	generic							
+zm-id-card-1965	ZM	id_card	#{6}/##/[123]	1965-01-01		none	reference				16			
+zm-id-card-generic	ZM	id_card	#{9}	1900-01-01	1965-01-01	none	generic				16			
+zm-passport-generic	ZM	passport	#{9}	1900-01-01		td3	generic							
+zw-id-card-current	ZW	id_card	##-#{6,7}@##	1900-01-01		none	reference				16			
+zw-passport-generic	ZW	passport	#{9}	1900-01-01		td3	generic							
